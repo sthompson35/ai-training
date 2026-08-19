@@ -1,7 +1,7 @@
 {
   "package": "AI Training Academy Institutional Standard",
   "version": "2.4.0",
-  "created_utc": "2026-08-19T17:51:01.630890+00:00",
+  "created_utc": "2026-08-19T18:19:10.760691+00:00",
   "files": [
     {
       "path": ".env.example",
@@ -1365,8 +1365,8 @@
     },
     {
       "path": "07_PLATFORM/frontend/e2e/auth.spec.ts",
-      "bytes": 2165,
-      "sha256": "f3dd13df3a24724185e2e6c9a3289d5fc6d5d1762cbc4f5bcaaeaae1b278ad20"
+      "bytes": 2182,
+      "sha256": "01166c125e30ab96ddffcbdb174bfa60f22b045ec8a99cb69a85c2ba4e41c83a"
     },
     {
       "path": "07_PLATFORM/frontend/e2e/crud-and-audit.spec.ts",
@@ -1575,8 +1575,8 @@
     },
     {
       "path": "07_PLATFORM/frontend/src/components/UserForm.tsx",
-      "bytes": 2149,
-      "sha256": "372553632b89730d48529943385d435e5e4b8866e194cc1eecc79c01c3bc1039"
+      "bytes": 2167,
+      "sha256": "6246f2d07b5e75bb4fbc9635f6d42fd0289d1ff9c78cf5cc063c9acb5ddc9524"
     },
     {
       "path": "07_PLATFORM/frontend/src/hooks/useAuthState.test.tsx",

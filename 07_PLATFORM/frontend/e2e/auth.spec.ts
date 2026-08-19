@@ -22,7 +22,7 @@ test.describe("admin", () => {
     await page.goto("/users");
     await page.getByLabel("Username").fill(username);
     await page.getByLabel("Password").fill("throwaway-pass-12345");
-    await page.getByLabel("Role").selectOption("contributor");
+    await page.getByLabel("Role", { exact: true }).selectOption("contributor");
     await page.getByRole("button", { name: "Create user" }).click();
     await expect(page.getByText(username)).toBeVisible();
 

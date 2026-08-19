@@ -46,7 +46,7 @@ export function UserForm({ submitLabel, onSubmit, onCancel }: Props): React.Reac
       </label>
       <label>
         Role
-        <select value={values.role} onChange={(e) => setValues({ ...values, role: e.target.value as UserInput["role"] })}>
+        <select aria-label="Role" value={values.role} onChange={(e) => setValues({ ...values, role: e.target.value as UserInput["role"] })}>
           {USER_ROLES.map((role) => (
             <option key={role} value={role}>
               {role}
