@@ -37,7 +37,7 @@ EXCLUDED_DIR_NAMES = {
     ".vscode",
 }
 EXCLUDED_PATH_PREFIXES = ("07_PLATFORM/frontend/e2e/.auth",)
-EXCLUDED_FILENAMES = {".env", ".DS_Store"}
+EXCLUDED_FILENAMES = {".env", ".DS_Store", "manifest.json"}
 EXCLUDED_SUFFIXES = {".pyc", ".pyo", ".log", ".sqlite", ".db"}
 
 

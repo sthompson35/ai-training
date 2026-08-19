@@ -1,7 +1,7 @@
 {
   "package": "AI Training Academy Institutional Standard",
   "version": "2.4.0",
-  "created_utc": "2026-08-19T15:46:57.943769+00:00",
+  "created_utc": "2026-08-19T17:51:01.630890+00:00",
   "files": [
     {
       "path": ".env.example",
@@ -25,8 +25,8 @@
     },
     {
       "path": ".github/workflows/ci.yml",
-      "bytes": 5098,
-      "sha256": "b327a80f3abee7fa6a713b534df0aed02cdf7d1efa02ffee109d0da57f9607d7"
+      "bytes": 5208,
+      "sha256": "23ec4fd10b9d7a11a3fea681404b704443cd6aeb4b29d68dce56efb607a7c0b9"
     },
     {
       "path": ".github/workflows/release.yml",
@@ -44,9 +44,19 @@
       "sha256": "77fa55217723d172f4894ad24f61d5a05680ad19172c2fd6ef4be83fbcd52ac2"
     },
     {
+      "path": "00_SOURCE/README_GITHUB_PRE_RECONCILIATION.md",
+      "bytes": 305,
+      "sha256": "8ab0dc573162df43ece00aa84396a7f09374008a3c3747c54da1a51766167b8a"
+    },
+    {
       "path": "00_SOURCE/README_v2.0.0_ORIGINAL.md",
       "bytes": 58701,
       "sha256": "07029d4b1f8afa0418f1f9c3cb854e45bea85aad32c64da7a0f02e119ada7379"
+    },
+    {
+      "path": "00_SOURCE/README_v2.0.0_SOURCE_MANIFEST.md",
+      "bytes": 751,
+      "sha256": "8cc713b888477a61c52418d76a654cefebc05c999456271fed8515d7c73a3230"
     },
     {
       "path": "01_CURRICULUM/AI_Training_Curriculum.md",
@@ -55,23 +65,23 @@
     },
     {
       "path": "01_CURRICULUM/lab_catalog.csv",
-      "bytes": 1458,
-      "sha256": "797df041cee287b20db7f2ec6c718e9786fff61f1f4d6261120cbbe1659c6f60"
+      "bytes": 1445,
+      "sha256": "ff309353daa95b1319fce41ef10a7b538c64743f986e9aa4101efae4892c1a6e"
     },
     {
       "path": "01_CURRICULUM/module_catalog.csv",
-      "bytes": 11619,
-      "sha256": "f957ac6e8aac0674bd1727315d028ab2f0e1cf400c092d7943e695eefe902dda"
-    },
-    {
-      "path": "02_CERTIFICATION/assessment_blueprints.csv",
-      "bytes": 563,
-      "sha256": "dbc5e2dfdebefd97a769b6b9cd88ec029676496d53d440f195002f3a7d5df22f"
+      "bytes": 11547,
+      "sha256": "de698b089fed33932bf95a1c1c9f115e48b7065444e8a2ae6eaf86ff6937adca"
     },
     {
       "path": "02_CERTIFICATION/Certification_Path.md",
       "bytes": 1791,
       "sha256": "1dbcaa63f9af3f95a7a9f1322e7a018c85d054565fd0cb98212c70455e710578"
+    },
+    {
+      "path": "02_CERTIFICATION/assessment_blueprints.csv",
+      "bytes": 556,
+      "sha256": "4f3d7f891d057a005fe01ddb5465ec2931a8c10fd24fa58e762ffefacbdbf19d"
     },
     {
       "path": "03_OPERATING_MANUAL/Internal_Operating_Manual.md",
@@ -99,14 +109,14 @@
       "sha256": "6d803919587079f8e50fbca318dbdec13d61cb0ad8bc8f7c8957d71b8b606e74"
     },
     {
-      "path": "04_KNOWLEDGE_BASE/glossary.csv",
-      "bytes": 1388,
-      "sha256": "fea2b9234a09388f30ed5367d2341aeeca75c4df1a908b11ac9cfcdb38723e60"
-    },
-    {
       "path": "04_KNOWLEDGE_BASE/Knowledge_Base_Index.md",
       "bytes": 1238,
       "sha256": "aa1b9775558e04f38dcf5ceca89c6f5cbf0acd38f0a67ebff86474b9201c5b7d"
+    },
+    {
+      "path": "04_KNOWLEDGE_BASE/glossary.csv",
+      "bytes": 1372,
+      "sha256": "47be102d07ff7e526c192ba76c8ad5c09bd00e938237539f8b241295ced2b354"
     },
     {
       "path": "04_KNOWLEDGE_BASE/taxonomy.json",
@@ -120,8 +130,8 @@
     },
     {
       "path": "05_TEMPLATES/evaluation_scorecard.csv",
-      "bytes": 374,
-      "sha256": "3e1d6616892a65649852ffe490f07d253103ebbfe5d1c94842b26d0581f819d9"
+      "bytes": 366,
+      "sha256": "6242ebd084dede829670156dee6d6d92d8f2bfabcb0a3ae557c204ab0e7f0daa"
     },
     {
       "path": "05_TEMPLATES/lab_template.md",
@@ -145,8 +155,8 @@
     },
     {
       "path": "06_IMPLEMENTATION/governance_raci.csv",
-      "bytes": 288,
-      "sha256": "79392be478b8a145bd9729cbe288e782f184d7c4cb3d64c18f39656a137ccdd4"
+      "bytes": 281,
+      "sha256": "fbfb3af1d262d47427a12a5ace6800873553157c959d56aa9a473923f0c3d629"
     },
     {
       "path": "07_PLATFORM/backend/app/__init__.py",
@@ -299,19 +309,19 @@
       "sha256": "b29641f14db12a50318c01520c4dbc84eb1e172c7a92ab5687fa61ad93385fad"
     },
     {
-      "path": "07_PLATFORM/backend/tests/fixtures/synthetic_personnel/personnel_role_history_seed.csv",
-      "bytes": 407,
-      "sha256": "cabfceeca89c52699e0d96146717b26c445c02a35a01e9e113e2f1ccb9e9a34d"
-    },
-    {
-      "path": "07_PLATFORM/backend/tests/fixtures/synthetic_personnel/personnel_roster.csv",
-      "bytes": 19087,
-      "sha256": "e461408cdfb251f2b8149f2339c89bb18f1f073c8e702b0feb873d2b1e63e72f"
-    },
-    {
       "path": "07_PLATFORM/backend/tests/fixtures/synthetic_personnel/README.md",
       "bytes": 764,
       "sha256": "8af69bb888d56400c12fea2b99f44b6d0828d5376b9f33de9fcca4552308a963"
+    },
+    {
+      "path": "07_PLATFORM/backend/tests/fixtures/synthetic_personnel/personnel_role_history_seed.csv",
+      "bytes": 403,
+      "sha256": "fd4afe80f0c1ff5ed66076e246cc71162872782ff100bd7d5d85c7fa45caa6a1"
+    },
+    {
+      "path": "07_PLATFORM/backend/tests/fixtures/synthetic_personnel/personnel_roster.csv",
+      "bytes": 19020,
+      "sha256": "03ade6a2acbef6e0f06af7dae5aa0dd7eb2e64b7bf37b0fc19aadc7cc142a706"
     },
     {
       "path": "07_PLATFORM/backend/tests/test_agents.py",
@@ -405,8 +415,8 @@
     },
     {
       "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/AI-Training.Gui.csproj",
-      "bytes": 496,
-      "sha256": "be8cf9d8584c9eb74813456c363d820e8916fa95655fc86c5aa193bf44050f4e"
+      "bytes": 478,
+      "sha256": "c2f33b1c17031e423ca3b694851d93e5e7fc2a9ee448ee921f9f884458aee8fe"
     },
     {
       "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/App.xaml",
@@ -419,44 +429,9 @@
       "sha256": "c37ac8bf9ad9dd5a44f307b1e5d15a2ee1a4b7c2d34026c360524891485887fd"
     },
     {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/appsettings.json",
-      "bytes": 49,
-      "sha256": "4b62c864275d52d1c4213ce5fdc09e4cbe442d3e2f2c427bdfcda544fb5bf54b"
-    },
-    {
       "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/AssemblyInfo.cs",
-      "bytes": 643,
-      "sha256": "3fac2af92385f676e9a941befd23fe38f0a5fa6167d4a3a88f07e730c5595ca3"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/bin/Debug/net10.0-windows/AI-Training.Gui.deps.json",
-      "bytes": 439,
-      "sha256": "2bb70d65df6b270ba094e49a40cad72cddcf59762e6e9bce2acd126ee2c7cfbb"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/bin/Debug/net10.0-windows/AI-Training.Gui.dll",
-      "bytes": 24064,
-      "sha256": "3813956c6d4e4557b5a57e3fe0bd6a95f95da235cfb642459898ed9c1d01bca4"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/bin/Debug/net10.0-windows/AI-Training.Gui.exe",
-      "bytes": 162304,
-      "sha256": "ac4461810f97d39c01db3bb664474ccc23d20bbc69be48b6aa08c893ebcf6ef5"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/bin/Debug/net10.0-windows/AI-Training.Gui.pdb",
-      "bytes": 18120,
-      "sha256": "30691f67cb880867be33dbc5fa30d29c66bfaf32ce7411ffaccc3a8b1f7a2d13"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/bin/Debug/net10.0-windows/AI-Training.Gui.runtimeconfig.json",
-      "bytes": 447,
-      "sha256": "039a0defb81019310fa2e8a17ef8d2ad086b1a37656149aa598f1f75893f2a22"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/bin/Debug/net10.0-windows/appsettings.json",
-      "bytes": 49,
-      "sha256": "4b62c864275d52d1c4213ce5fdc09e4cbe442d3e2f2c427bdfcda544fb5bf54b"
+      "bytes": 633,
+      "sha256": "d41e48d2bce7f9eda84eef27c4008920a5639dd3f56baeff39273d58381575fe"
     },
     {
       "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/LoginWindow.xaml",
@@ -489,196 +464,6 @@
       "sha256": "78a89c4d4e892c18458884c16cda94a6907f43c8b047ab948aab228eab28c989"
     },
     {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/AI-Training.Gui.csproj.nuget.dgspec.json",
-      "bytes": 23404,
-      "sha256": "d263427c73ae20a52ace2088acee4647d47eb3552261d27b32db2d7022dbe2e1"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/AI-Training.Gui.csproj.nuget.g.props",
-      "bytes": 1302,
-      "sha256": "003cab03ddab7fd71139832b0e7073564aebab83c088e103a5d11be6b7f1d1bf"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/AI-Training.Gui.csproj.nuget.g.targets",
-      "bytes": 150,
-      "sha256": "971cc9b535384849b5c661d776cd7a80833a416265e32e8968e06c367368b8b5"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Debug/net10.0-windows/.NETCoreApp,Version=v10.0.AssemblyAttributes.cs",
-      "bytes": 200,
-      "sha256": "93d67476196ebfc80d1d7d8844b91146cfd678d105f5ce635eb900ca40610c9b"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Debug/net10.0-windows/AI-Training.Gui.AssemblyInfo.cs",
-      "bytes": 1137,
-      "sha256": "61a13f019d5a0f191f0e4fcad082dc78cc7157bba2708dfda23f978c152c9371"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Debug/net10.0-windows/AI-Training.Gui.AssemblyInfoInputs.cache",
-      "bytes": 66,
-      "sha256": "a1806226a064559f59dec9bbc949a919a3720b4075fd42a04bbe613cd07f71c7"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Debug/net10.0-windows/AI-Training.Gui.assets.cache",
-      "bytes": 228,
-      "sha256": "b73a281a2c34cdede0d7b894c713f010d71ccb28f47206488eb94dde53bd1aac"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Debug/net10.0-windows/AI-Training.Gui.csproj.CoreCompileInputs.cache",
-      "bytes": 66,
-      "sha256": "3b62ed82780241af36c4e70bf352746998f14f84242421f1feb9e72226a9a8d3"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Debug/net10.0-windows/AI-Training.Gui.csproj.FileListAbsolute.txt",
-      "bytes": 3445,
-      "sha256": "4378f758b50bd44f7a05a928f9a37db20d15d13d3e4a42e84e5d419456dcc816"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Debug/net10.0-windows/AI-Training.Gui.dll",
-      "bytes": 24064,
-      "sha256": "3813956c6d4e4557b5a57e3fe0bd6a95f95da235cfb642459898ed9c1d01bca4"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Debug/net10.0-windows/AI-Training.Gui.g.resources",
-      "bytes": 3871,
-      "sha256": "20ad634e4a04b268bbfd57f768108feb8fd14ced0d533538cbc0eb46d437de2c"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Debug/net10.0-windows/AI-Training.Gui.GeneratedMSBuildEditorConfig.editorconfig",
-      "bytes": 962,
-      "sha256": "dd6b594a777cc4ccd79d01340ed3d57d88b8c33e8a2acd7f415c8c27538c3d1e"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Debug/net10.0-windows/AI-Training.Gui.genruntimeconfig.cache",
-      "bytes": 66,
-      "sha256": "2449ee9d292cadf9857e564fb550c3bb77a0a0156818133d9c3d9a4aaadd224d"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Debug/net10.0-windows/AI-Training.Gui.GlobalUsings.g.cs",
-      "bytes": 183,
-      "sha256": "fe45ea572aadfd1a9b54cf7251405cfa11b748ca88b034f06a724d49758ced2d"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Debug/net10.0-windows/AI-Training.Gui.pdb",
-      "bytes": 18120,
-      "sha256": "30691f67cb880867be33dbc5fa30d29c66bfaf32ce7411ffaccc3a8b1f7a2d13"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Debug/net10.0-windows/AI-Training.Gui_MarkupCompile.cache",
-      "bytes": 648,
-      "sha256": "a12de34cf201d40ee87916a54783fa7656b8fc44e29448cb5b73225cd81ffd0e"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Debug/net10.0-windows/App.g.cs",
-      "bytes": 1792,
-      "sha256": "52fda26678df230b04cd08754637f0cad806b5efb25506308fcebb0753b8919d"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Debug/net10.0-windows/apphost.exe",
-      "bytes": 162304,
-      "sha256": "ac4461810f97d39c01db3bb664474ccc23d20bbc69be48b6aa08c893ebcf6ef5"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Debug/net10.0-windows/LoginWindow.baml",
-      "bytes": 1544,
-      "sha256": "0030a60e5756e730b547ee9756f587407afe68706a8bf5a409be76121f96fc59"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Debug/net10.0-windows/LoginWindow.g.cs",
-      "bytes": 5066,
-      "sha256": "610323103c59e7dc82006aad424351065c1af263f520ebecf45f7bdd224f7b51"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Debug/net10.0-windows/MainWindow.baml",
-      "bytes": 2049,
-      "sha256": "192df9ca6286fd19c9e56b75d8decf504a70e120e388487371a5dcc3c944d8c7"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Debug/net10.0-windows/MainWindow.g.cs",
-      "bytes": 5058,
-      "sha256": "abf893ad94ce53471447bec9319ae01fdd6af23e1a9d1eafb637f7cf2652431d"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Debug/net10.0-windows/ref/AI-Training.Gui.dll",
-      "bytes": 9728,
-      "sha256": "149bd7265738955ffda377ea00ad8f380c213f0e12b6c76f48ffb7f8d1d6bc53"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Debug/net10.0-windows/refint/AI-Training.Gui.dll",
-      "bytes": 9728,
-      "sha256": "149bd7265738955ffda377ea00ad8f380c213f0e12b6c76f48ffb7f8d1d6bc53"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/project.assets.json",
-      "bytes": 22671,
-      "sha256": "034f8598ad52a150be334ef47c9e4a99c919b5cd7950602e1e309ce2f67f2160"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/project.nuget.cache",
-      "bytes": 276,
-      "sha256": "006fa4578d3d1a1d3c1439e87ae5586d30d947e2b506075cf7bf0b6c7d8894e9"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Release/net10.0-windows/.NETCoreApp,Version=v10.0.AssemblyAttributes.cs",
-      "bytes": 200,
-      "sha256": "93d67476196ebfc80d1d7d8844b91146cfd678d105f5ce635eb900ca40610c9b"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Release/net10.0-windows/AI-Training.Gui.AssemblyInfo.cs",
-      "bytes": 1179,
-      "sha256": "8b4bc522d1c3f07c68ee9a212d1e482a4d65f0568777c61dd856bde12d357a5e"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Release/net10.0-windows/AI-Training.Gui.AssemblyInfoInputs.cache",
-      "bytes": 66,
-      "sha256": "292b186b300f6c5e951f4b763ecce8661f72345c263686983512ddc958fc1b0a"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Release/net10.0-windows/AI-Training.Gui.assets.cache",
-      "bytes": 228,
-      "sha256": "3f3ade7c340ff401a143cc453d32ef8791f3c331726eeb30f5b15fd3fee7d9d6"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Release/net10.0-windows/AI-Training.Gui.GeneratedMSBuildEditorConfig.editorconfig",
-      "bytes": 962,
-      "sha256": "dd6b594a777cc4ccd79d01340ed3d57d88b8c33e8a2acd7f415c8c27538c3d1e"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Release/net10.0-windows/AI-Training.Gui.GlobalUsings.g.cs",
-      "bytes": 183,
-      "sha256": "fe45ea572aadfd1a9b54cf7251405cfa11b748ca88b034f06a724d49758ced2d"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Release/net10.0-windows/AI-Training.Gui_MarkupCompile.cache",
-      "bytes": 643,
-      "sha256": "96f26b0f856dd705b6669e564c199091b73977321175323fc9569e945df42e9f"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Release/net10.0-windows/App.g.cs",
-      "bytes": 1832,
-      "sha256": "f4d1ba775bc47788bc7aad9277629acce9274e5baa1ad548bfa1ea5f577bc20f"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Release/net10.0-windows/LoginWindow.baml",
-      "bytes": 1238,
-      "sha256": "d23d13e31f8a7f071abdd0cabe37d5a2c820a8d6b575c831fa9dd3d8d7b970c3"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Release/net10.0-windows/LoginWindow.g.cs",
-      "bytes": 5097,
-      "sha256": "51619c756d9dcf449d72af5ed792c4f64077590bbe783e47b48291bfabf05f7c"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Release/net10.0-windows/MainWindow.baml",
-      "bytes": 1638,
-      "sha256": "4e3aa8d5dc76258f37e415b8c468c3acf0ec212af9ea9be7a8de236f53d53f2f"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Release/net10.0-windows/MainWindow.g.cs",
-      "bytes": 5089,
-      "sha256": "ae865ae3bb99b6ac454146b5da2e3fe5f053a9105923ae512bf7f5e4da8f02ba"
-    },
-    {
       "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/Properties/launchSettings.json",
       "bytes": 86,
       "sha256": "1335d7399ee30b5f148e3da2fefe99066f62d6360c7666427856aaedb0be869f"
@@ -694,9 +479,234 @@
       "sha256": "17be3892ffc86c4ae5785fd2204ff8c4cde729492dd9b25565e7894c086b039c"
     },
     {
+      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/appsettings.json",
+      "bytes": 49,
+      "sha256": "4b62c864275d52d1c4213ce5fdc09e4cbe442d3e2f2c427bdfcda544fb5bf54b"
+    },
+    {
+      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/bin/Debug/net10.0-windows/AI-Training.Gui.deps.json",
+      "bytes": 417,
+      "sha256": "7d87547f5109f49efee88ced63f007eaccb7c555f00f11fbf85e7da6de3e0a91"
+    },
+    {
+      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/bin/Debug/net10.0-windows/AI-Training.Gui.dll",
+      "bytes": 24064,
+      "sha256": "3813956c6d4e4557b5a57e3fe0bd6a95f95da235cfb642459898ed9c1d01bca4"
+    },
+    {
+      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/bin/Debug/net10.0-windows/AI-Training.Gui.exe",
+      "bytes": 162304,
+      "sha256": "ac4461810f97d39c01db3bb664474ccc23d20bbc69be48b6aa08c893ebcf6ef5"
+    },
+    {
+      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/bin/Debug/net10.0-windows/AI-Training.Gui.pdb",
+      "bytes": 18120,
+      "sha256": "30691f67cb880867be33dbc5fa30d29c66bfaf32ce7411ffaccc3a8b1f7a2d13"
+    },
+    {
+      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/bin/Debug/net10.0-windows/AI-Training.Gui.runtimeconfig.json",
+      "bytes": 429,
+      "sha256": "62f07835ae91aa8de2f38f7566b475ee1b9336b13bc5fe97e28c743af68a2ed8"
+    },
+    {
+      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/bin/Debug/net10.0-windows/appsettings.json",
+      "bytes": 49,
+      "sha256": "4b62c864275d52d1c4213ce5fdc09e4cbe442d3e2f2c427bdfcda544fb5bf54b"
+    },
+    {
+      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/AI-Training.Gui.csproj.nuget.dgspec.json",
+      "bytes": 23036,
+      "sha256": "a2fae5e574c5d03ace45632b7d32eb2aa80b00dab31ba3843a502a709b1e7df3"
+    },
+    {
+      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/AI-Training.Gui.csproj.nuget.g.props",
+      "bytes": 1287,
+      "sha256": "d8e764fbcc9827cc07b474ccc7fee8f78b078d6de562a732de94824502b46295"
+    },
+    {
+      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/AI-Training.Gui.csproj.nuget.g.targets",
+      "bytes": 149,
+      "sha256": "b14461e0cb1be3f77fcf9fe2fdd62889325ca92523d0f606980ed59eb5c4aa1c"
+    },
+    {
+      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Debug/net10.0-windows/.NETCoreApp,Version=v10.0.AssemblyAttributes.cs",
+      "bytes": 196,
+      "sha256": "f79c1ad9a9fc76110b3655f5bfb5ff4e3168e9addceff05b937c0796f0ec34eb"
+    },
+    {
+      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Debug/net10.0-windows/AI-Training.Gui.AssemblyInfo.cs",
+      "bytes": 1113,
+      "sha256": "564d82d7a662815f67737ef81ec6c5e3492a0c34a524f1bfbd37480e56e32325"
+    },
+    {
+      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Debug/net10.0-windows/AI-Training.Gui.AssemblyInfoInputs.cache",
+      "bytes": 65,
+      "sha256": "127d2412b8f08680c140656f21141d58bb11cef709b1891a8ac1a72fcb2521d7"
+    },
+    {
+      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Debug/net10.0-windows/AI-Training.Gui.GeneratedMSBuildEditorConfig.editorconfig",
+      "bytes": 943,
+      "sha256": "2e8978736d6eab58f054372df1d6f97765bbe9d5fbc74b3245ed5977c7f2d15b"
+    },
+    {
+      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Debug/net10.0-windows/AI-Training.Gui.GlobalUsings.g.cs",
+      "bytes": 177,
+      "sha256": "7edae69b7b83f15f0a18cd279829bd011a2f5da720a54b569606e635305037da"
+    },
+    {
+      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Debug/net10.0-windows/AI-Training.Gui.assets.cache",
+      "bytes": 228,
+      "sha256": "b73a281a2c34cdede0d7b894c713f010d71ccb28f47206488eb94dde53bd1aac"
+    },
+    {
+      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Debug/net10.0-windows/AI-Training.Gui.csproj.CoreCompileInputs.cache",
+      "bytes": 65,
+      "sha256": "92d54a38040de11d39edcc5e27eddbbec75dc1d99d5a91384933c99f7dc71f7e"
+    },
+    {
+      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Debug/net10.0-windows/AI-Training.Gui.csproj.FileListAbsolute.txt",
+      "bytes": 3423,
+      "sha256": "d470f27b75ec7ee327c4817ba341a1e9f5b07c105704060ec78197997c9aad8c"
+    },
+    {
+      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Debug/net10.0-windows/AI-Training.Gui.dll",
+      "bytes": 24064,
+      "sha256": "3813956c6d4e4557b5a57e3fe0bd6a95f95da235cfb642459898ed9c1d01bca4"
+    },
+    {
+      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Debug/net10.0-windows/AI-Training.Gui.g.resources",
+      "bytes": 3871,
+      "sha256": "20ad634e4a04b268bbfd57f768108feb8fd14ced0d533538cbc0eb46d437de2c"
+    },
+    {
+      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Debug/net10.0-windows/AI-Training.Gui.genruntimeconfig.cache",
+      "bytes": 65,
+      "sha256": "fb8708f19a0174ab608c47f412a25af74095252cf4d04506063f6c2718b26696"
+    },
+    {
+      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Debug/net10.0-windows/AI-Training.Gui.pdb",
+      "bytes": 18120,
+      "sha256": "30691f67cb880867be33dbc5fa30d29c66bfaf32ce7411ffaccc3a8b1f7a2d13"
+    },
+    {
+      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Debug/net10.0-windows/AI-Training.Gui_MarkupCompile.cache",
+      "bytes": 628,
+      "sha256": "ae7325eba6107c432761dc2ce899d7cf03a9631a27dffc685042a45a098e12dd"
+    },
+    {
+      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Debug/net10.0-windows/App.g.cs",
+      "bytes": 1737,
+      "sha256": "598a18adf6a64d425daa75f8b08e645a6ded1c91820f796cb0fde696527f1950"
+    },
+    {
+      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Debug/net10.0-windows/LoginWindow.baml",
+      "bytes": 1544,
+      "sha256": "0030a60e5756e730b547ee9756f587407afe68706a8bf5a409be76121f96fc59"
+    },
+    {
+      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Debug/net10.0-windows/LoginWindow.g.cs",
+      "bytes": 4939,
+      "sha256": "5d765ccc2d7633e15c8c92bbe089071bacc8cdb52b88b739fcd1f30d922f9611"
+    },
+    {
+      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Debug/net10.0-windows/MainWindow.baml",
+      "bytes": 2049,
+      "sha256": "192df9ca6286fd19c9e56b75d8decf504a70e120e388487371a5dcc3c944d8c7"
+    },
+    {
+      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Debug/net10.0-windows/MainWindow.g.cs",
+      "bytes": 4931,
+      "sha256": "aaf02d826f054f58894337f275aa69a2f2f96315556d4ee02756027496992547"
+    },
+    {
+      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Debug/net10.0-windows/apphost.exe",
+      "bytes": 162304,
+      "sha256": "ac4461810f97d39c01db3bb664474ccc23d20bbc69be48b6aa08c893ebcf6ef5"
+    },
+    {
+      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Debug/net10.0-windows/ref/AI-Training.Gui.dll",
+      "bytes": 9728,
+      "sha256": "149bd7265738955ffda377ea00ad8f380c213f0e12b6c76f48ffb7f8d1d6bc53"
+    },
+    {
+      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Debug/net10.0-windows/refint/AI-Training.Gui.dll",
+      "bytes": 9728,
+      "sha256": "149bd7265738955ffda377ea00ad8f380c213f0e12b6c76f48ffb7f8d1d6bc53"
+    },
+    {
+      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Release/net10.0-windows/.NETCoreApp,Version=v10.0.AssemblyAttributes.cs",
+      "bytes": 196,
+      "sha256": "f79c1ad9a9fc76110b3655f5bfb5ff4e3168e9addceff05b937c0796f0ec34eb"
+    },
+    {
+      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Release/net10.0-windows/AI-Training.Gui.AssemblyInfo.cs",
+      "bytes": 1154,
+      "sha256": "73cfc6c01cce882a3679f875b89fed4c63de0327dff20f06afad36b1f56058ff"
+    },
+    {
+      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Release/net10.0-windows/AI-Training.Gui.AssemblyInfoInputs.cache",
+      "bytes": 65,
+      "sha256": "d13020bc9fadc1d5358209a3b06d07f5d0a65c001970874f328b480c9fb5f73f"
+    },
+    {
+      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Release/net10.0-windows/AI-Training.Gui.GeneratedMSBuildEditorConfig.editorconfig",
+      "bytes": 943,
+      "sha256": "2e8978736d6eab58f054372df1d6f97765bbe9d5fbc74b3245ed5977c7f2d15b"
+    },
+    {
+      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Release/net10.0-windows/AI-Training.Gui.GlobalUsings.g.cs",
+      "bytes": 177,
+      "sha256": "7edae69b7b83f15f0a18cd279829bd011a2f5da720a54b569606e635305037da"
+    },
+    {
+      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Release/net10.0-windows/AI-Training.Gui.assets.cache",
+      "bytes": 228,
+      "sha256": "3f3ade7c340ff401a143cc453d32ef8791f3c331726eeb30f5b15fd3fee7d9d6"
+    },
+    {
+      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Release/net10.0-windows/AI-Training.Gui_MarkupCompile.cache",
+      "bytes": 623,
+      "sha256": "7042341feac502fa28c65c8710f653dbb5e54491888d432b92533dd032b4c19d"
+    },
+    {
+      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Release/net10.0-windows/App.g.cs",
+      "bytes": 1776,
+      "sha256": "7849e4db1ca192b466a3468530215e191e4a59796ce5e867364b971ba79ebb73"
+    },
+    {
+      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Release/net10.0-windows/LoginWindow.baml",
+      "bytes": 1238,
+      "sha256": "d23d13e31f8a7f071abdd0cabe37d5a2c820a8d6b575c831fa9dd3d8d7b970c3"
+    },
+    {
+      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Release/net10.0-windows/LoginWindow.g.cs",
+      "bytes": 4969,
+      "sha256": "cd4297fe94e77ed713ee5bf73ba645b1f13d7d14334130fa119c747ccccc1a17"
+    },
+    {
+      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Release/net10.0-windows/MainWindow.baml",
+      "bytes": 1638,
+      "sha256": "4e3aa8d5dc76258f37e415b8c468c3acf0ec212af9ea9be7a8de236f53d53f2f"
+    },
+    {
+      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Release/net10.0-windows/MainWindow.g.cs",
+      "bytes": 4961,
+      "sha256": "d1d0e937de3667b7903f4cd6aea6958cee526bfcad21507cc062b4dc51a18c36"
+    },
+    {
+      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/project.assets.json",
+      "bytes": 22297,
+      "sha256": "330b21f01e51382923d60078430627da819e7005609f6200a05b2bf237fba21a"
+    },
+    {
+      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/project.nuget.cache",
+      "bytes": 269,
+      "sha256": "be947f9ada1e1e0ef71f3f979f67923955bc99bc6f6a1f7542059e49b7b0d9b7"
+    },
+    {
       "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/AI-Training.Gui.Tests.csproj",
-      "bytes": 811,
-      "sha256": "1a86793edd45b38346581bc6fb62de389b3cc98314560cc30cc3620345104fb1"
+      "bytes": 786,
+      "sha256": "b3f1b278f376d3dfd7c2b65eea69680db5807fdb8bb6e8ce83104a7fa33f9aed"
     },
     {
       "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/ApiClientTests.cs",
@@ -704,14 +714,39 @@
       "sha256": "d14f11abfd5d178d378d2b7638e766e24bd67d81e44c0f3793321b5f29d3d45b"
     },
     {
+      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/FakeHttpMessageHandler.cs",
+      "bytes": 795,
+      "sha256": "961a9a18071f6e5877500d782603c747349d7cb272d3f36ce2799d9ed5cf3c5f"
+    },
+    {
       "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/.msCoverageSourceRootsMapping_AI-Training.Gui.Tests",
       "bytes": 914,
       "sha256": "fd5e851deef4b77d6c321b848a10356343dd87c70d7652223b28a7d5ec3e567d"
     },
     {
+      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/AI-Training.Gui.Tests.deps.json",
+      "bytes": 16436,
+      "sha256": "9c29f98d2cfdfa8614f6979074ab5a590b79974b87f5a3bec6035a6dccfc8e6b"
+    },
+    {
+      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/AI-Training.Gui.Tests.dll",
+      "bytes": 11264,
+      "sha256": "75737b9d175ebc09257567eb2502a3cec6d914d3a84fc3aee7cb19180681f9c6"
+    },
+    {
+      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/AI-Training.Gui.Tests.pdb",
+      "bytes": 15476,
+      "sha256": "f2a84a114c873539efb27ead81a206311b250a789b72b9d6e0ca1a395e243b46"
+    },
+    {
+      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/AI-Training.Gui.Tests.runtimeconfig.json",
+      "bytes": 476,
+      "sha256": "3ebbbaf583807cd6d7becc34f1989710e47674cac93c2083777a812acbf06cd4"
+    },
+    {
       "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/AI-Training.Gui.deps.json",
-      "bytes": 439,
-      "sha256": "2bb70d65df6b270ba094e49a40cad72cddcf59762e6e9bce2acd126ee2c7cfbb"
+      "bytes": 417,
+      "sha256": "7d87547f5109f49efee88ced63f007eaccb7c555f00f11fbf85e7da6de3e0a91"
     },
     {
       "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/AI-Training.Gui.dll",
@@ -730,38 +765,63 @@
     },
     {
       "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/AI-Training.Gui.runtimeconfig.json",
-      "bytes": 447,
-      "sha256": "039a0defb81019310fa2e8a17ef8d2ad086b1a37656149aa598f1f75893f2a22"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/AI-Training.Gui.Tests.deps.json",
-      "bytes": 16868,
-      "sha256": "ff0d90921fe8f307873d36377260517e109639d6180326d1beb2269a4a5454f0"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/AI-Training.Gui.Tests.dll",
-      "bytes": 11264,
-      "sha256": "75737b9d175ebc09257567eb2502a3cec6d914d3a84fc3aee7cb19180681f9c6"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/AI-Training.Gui.Tests.pdb",
-      "bytes": 15476,
-      "sha256": "f2a84a114c873539efb27ead81a206311b250a789b72b9d6e0ca1a395e243b46"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/AI-Training.Gui.Tests.runtimeconfig.json",
-      "bytes": 495,
-      "sha256": "d09fa6ce9d7c530764ba8ff39de41e1f4650a89368d54dca487e744e2ce2bd0a"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/appsettings.json",
-      "bytes": 49,
-      "sha256": "4b62c864275d52d1c4213ce5fdc09e4cbe442d3e2f2c427bdfcda544fb5bf54b"
+      "bytes": 429,
+      "sha256": "62f07835ae91aa8de2f38f7566b475ee1b9336b13bc5fe97e28c743af68a2ed8"
     },
     {
       "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/CoverletSourceRootsMapping_AI-Training.Gui.Tests",
       "bytes": 914,
       "sha256": "fd5e851deef4b77d6c321b848a10356343dd87c70d7652223b28a7d5ec3e567d"
+    },
+    {
+      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/Microsoft.TestPlatform.CommunicationUtilities.dll",
+      "bytes": 137776,
+      "sha256": "e38a359aa502bb1867d6092dca9aba5c130dd6f9111decea8156aa746b2c69e6"
+    },
+    {
+      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/Microsoft.TestPlatform.CoreUtilities.dll",
+      "bytes": 98336,
+      "sha256": "f6e2495c44640d8915b2aefc938f391c970300266da014350ff35512a448ee84"
+    },
+    {
+      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/Microsoft.TestPlatform.CrossPlatEngine.dll",
+      "bytes": 316960,
+      "sha256": "d55399bc66dc5b451d60ad82662452ca4a5f735918135dfc91ca9b5e3e38a6ab"
+    },
+    {
+      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/Microsoft.TestPlatform.PlatformAbstractions.dll",
+      "bytes": 51232,
+      "sha256": "7b919ce4429c3b7b8fa2c36fd641b70b2f459a30ecb7c65fd80f437673cec930"
+    },
+    {
+      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/Microsoft.TestPlatform.Utilities.dll",
+      "bytes": 67104,
+      "sha256": "01ffd64d25a4bd905aef9594d2aa700e020273a90a77a8720af6bec8b4fd5444"
+    },
+    {
+      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/Microsoft.VisualStudio.CodeCoverage.Shim.dll",
+      "bytes": 17464,
+      "sha256": "a753bc15f23a957f4f91a059376e4472c6bacd1503622de4b9b2b079ad8ea289"
+    },
+    {
+      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/Microsoft.VisualStudio.TestPlatform.Common.dll",
+      "bytes": 248352,
+      "sha256": "059aa2f335c3f7b14ac3fb7caa1625bc2767581b9548e9ff53a246c7f2f94d6a"
+    },
+    {
+      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/Microsoft.VisualStudio.TestPlatform.ObjectModel.dll",
+      "bytes": 334392,
+      "sha256": "f83e38ee9020baa42e284e2299e233070ffa86ce4b10213583f9b7c8a521bcd0"
+    },
+    {
+      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/Newtonsoft.Json.dll",
+      "bytes": 712464,
+      "sha256": "22c649f75fce5be7c7ccda8880473b634ef69ecf33f5d1ab8ad892caf47d5a07"
+    },
+    {
+      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/appsettings.json",
+      "bytes": 49,
+      "sha256": "4b62c864275d52d1c4213ce5fdc09e4cbe442d3e2f2c427bdfcda544fb5bf54b"
     },
     {
       "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/cs/Microsoft.TestPlatform.CommunicationUtilities.resources.dll",
@@ -937,51 +997,6 @@
       "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/ko/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll",
       "bytes": 24120,
       "sha256": "4f427ed5c7c78043c7a9a7c9dc659133d96f6100ca9ba8719857709832e4bb58"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/Microsoft.TestPlatform.CommunicationUtilities.dll",
-      "bytes": 137776,
-      "sha256": "e38a359aa502bb1867d6092dca9aba5c130dd6f9111decea8156aa746b2c69e6"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/Microsoft.TestPlatform.CoreUtilities.dll",
-      "bytes": 98336,
-      "sha256": "f6e2495c44640d8915b2aefc938f391c970300266da014350ff35512a448ee84"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/Microsoft.TestPlatform.CrossPlatEngine.dll",
-      "bytes": 316960,
-      "sha256": "d55399bc66dc5b451d60ad82662452ca4a5f735918135dfc91ca9b5e3e38a6ab"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/Microsoft.TestPlatform.PlatformAbstractions.dll",
-      "bytes": 51232,
-      "sha256": "7b919ce4429c3b7b8fa2c36fd641b70b2f459a30ecb7c65fd80f437673cec930"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/Microsoft.TestPlatform.Utilities.dll",
-      "bytes": 67104,
-      "sha256": "01ffd64d25a4bd905aef9594d2aa700e020273a90a77a8720af6bec8b4fd5444"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/Microsoft.VisualStudio.CodeCoverage.Shim.dll",
-      "bytes": 17464,
-      "sha256": "a753bc15f23a957f4f91a059376e4472c6bacd1503622de4b9b2b079ad8ea289"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/Microsoft.VisualStudio.TestPlatform.Common.dll",
-      "bytes": 248352,
-      "sha256": "059aa2f335c3f7b14ac3fb7caa1625bc2767581b9548e9ff53a246c7f2f94d6a"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/Microsoft.VisualStudio.TestPlatform.ObjectModel.dll",
-      "bytes": 334392,
-      "sha256": "f83e38ee9020baa42e284e2299e233070ffa86ce4b10213583f9b7c8a521bcd0"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/Newtonsoft.Json.dll",
-      "bytes": 712464,
-      "sha256": "22c649f75fce5be7c7ccda8880473b634ef69ecf33f5d1ab8ad892caf47d5a07"
     },
     {
       "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/pl/Microsoft.TestPlatform.CommunicationUtilities.resources.dll",
@@ -1179,39 +1194,44 @@
       "sha256": "fd5e851deef4b77d6c321b848a10356343dd87c70d7652223b28a7d5ec3e567d"
     },
     {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/FakeHttpMessageHandler.cs",
-      "bytes": 795,
-      "sha256": "961a9a18071f6e5877500d782603c747349d7cb272d3f36ce2799d9ed5cf3c5f"
-    },
-    {
       "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/obj/AI-Training.Gui.Tests.csproj.nuget.dgspec.json",
-      "bytes": 46457,
-      "sha256": "97700fdc3187501660adc637e8c2aba625ed36ba4a14663e13fa7ec90add3626"
+      "bytes": 45725,
+      "sha256": "88dacc78bc555c0cc0da9c9eef65518ff8ded5900f6e22147ef6c2db3f96fcfe"
     },
     {
       "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/obj/AI-Training.Gui.Tests.csproj.nuget.g.props",
-      "bytes": 2790,
-      "sha256": "367749fc016be1d1f9ab496ff9b998754d26a6af583b2b66ad8f9f7c912d3e0c"
+      "bytes": 2765,
+      "sha256": "fbfe913018ab5120d4edcb601ef533421b1f490e52e204ef7020cff6de5f16e9"
     },
     {
       "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/obj/AI-Training.Gui.Tests.csproj.nuget.g.targets",
-      "bytes": 1415,
-      "sha256": "d6d31691e2e6b1d767207351739231f1ba23e6f3e5cf79d78a78c81c65e4407f"
+      "bytes": 1406,
+      "sha256": "4b2bcc7200a6aea29a9f9a365a2967e0d1d9e6c0a2b88c4c240c84188ce80eff"
     },
     {
       "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/obj/Debug/net10.0/.NETCoreApp,Version=v10.0.AssemblyAttributes.cs",
-      "bytes": 200,
-      "sha256": "93d67476196ebfc80d1d7d8844b91146cfd678d105f5ce635eb900ca40610c9b"
+      "bytes": 196,
+      "sha256": "f79c1ad9a9fc76110b3655f5bfb5ff4e3168e9addceff05b937c0796f0ec34eb"
     },
     {
       "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/obj/Debug/net10.0/AI-Training.Gui.Tests.AssemblyInfo.cs",
-      "bytes": 996,
-      "sha256": "19521cad6b1fc841e3a102c8f0b15621b10c5741e145413bcf87e6111d6e69b9"
+      "bytes": 974,
+      "sha256": "79749f3ad47ed9285006d9df593bcee827ee5d3e0a20d0e72ecb4a066386c373"
     },
     {
       "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/obj/Debug/net10.0/AI-Training.Gui.Tests.AssemblyInfoInputs.cache",
-      "bytes": 66,
-      "sha256": "c2267e76c5ea896ebc3c8da2a06d78fe029cefeb5f8cdd7d689dae966b00ad33"
+      "bytes": 65,
+      "sha256": "90885b358869ff92d38dc600cf02083713e15f0fbe490d742c9378049f615f9e"
+    },
+    {
+      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/obj/Debug/net10.0/AI-Training.Gui.Tests.GeneratedMSBuildEditorConfig.editorconfig",
+      "bytes": 886,
+      "sha256": "293567fa1769ab1a0963e76778f1eb9b5a9a70733f430dc6c968509bd32e564e"
+    },
+    {
+      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/obj/Debug/net10.0/AI-Training.Gui.Tests.GlobalUsings.g.cs",
+      "bytes": 251,
+      "sha256": "303e9cd7ab294ddd335cd7bba5ab391da9053502115a0a650433a369b543873f"
     },
     {
       "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/obj/Debug/net10.0/AI-Training.Gui.Tests.assets.cache",
@@ -1224,19 +1244,9 @@
       "sha256": "91e718de1b872a02fa6f4c8d165eab8da66b144b8612f9ccef74d2f6847e9495"
     },
     {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/obj/Debug/net10.0/AI-Training.Gui.Tests.GeneratedMSBuildEditorConfig.editorconfig",
-      "bytes": 904,
-      "sha256": "f11483292e0a0a0882ba0cdc54454a8fd38e8aded9da0047fd80679be3fe1c7c"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/obj/Debug/net10.0/AI-Training.Gui.Tests.GlobalUsings.g.cs",
-      "bytes": 260,
-      "sha256": "bc157bfcc147099886e678131c99ae69211e8650751a8d7b5fe5b410a5b6e421"
-    },
-    {
       "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/obj/Debug/net10.0-windows/.NETCoreApp,Version=v10.0.AssemblyAttributes.cs",
-      "bytes": 200,
-      "sha256": "93d67476196ebfc80d1d7d8844b91146cfd678d105f5ce635eb900ca40610c9b"
+      "bytes": 196,
+      "sha256": "f79c1ad9a9fc76110b3655f5bfb5ff4e3168e9addceff05b937c0796f0ec34eb"
     },
     {
       "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/obj/Debug/net10.0-windows/AI-Train.C4991171.Up2Date",
@@ -1245,13 +1255,23 @@
     },
     {
       "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/obj/Debug/net10.0-windows/AI-Training.Gui.Tests.AssemblyInfo.cs",
-      "bytes": 1155,
-      "sha256": "d44414a61cc47c99280aa3306f0920ee1b4327ccd5ef6bc2276015ee76d2af75"
+      "bytes": 1131,
+      "sha256": "063a78505b28f8410040d63a6ea97b6507f2fad3be9cc52a6429bf7feb3a7ff9"
     },
     {
       "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/obj/Debug/net10.0-windows/AI-Training.Gui.Tests.AssemblyInfoInputs.cache",
-      "bytes": 66,
-      "sha256": "9f0f23049204854c7b7f43264d222e14fc27e56ad296531e16f80646cc952404"
+      "bytes": 65,
+      "sha256": "f2d6e9d16a587c30915da1e72dceed8cfa9ba85ad00f63a57ec611a2d0f06a68"
+    },
+    {
+      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/obj/Debug/net10.0-windows/AI-Training.Gui.Tests.GeneratedMSBuildEditorConfig.editorconfig",
+      "bytes": 955,
+      "sha256": "60ca4abdbc824fe1e3a659bef70e425c82a12d63b457859c01015c2079332611"
+    },
+    {
+      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/obj/Debug/net10.0-windows/AI-Training.Gui.Tests.GlobalUsings.g.cs",
+      "bytes": 251,
+      "sha256": "303e9cd7ab294ddd335cd7bba5ab391da9053502115a0a650433a369b543873f"
     },
     {
       "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/obj/Debug/net10.0-windows/AI-Training.Gui.Tests.assets.cache",
@@ -1265,13 +1285,13 @@
     },
     {
       "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/obj/Debug/net10.0-windows/AI-Training.Gui.Tests.csproj.CoreCompileInputs.cache",
-      "bytes": 66,
-      "sha256": "4401333b0d20126d6dada17fb68bd19ecd77ff9198748d110b4e3889b44689d9"
+      "bytes": 65,
+      "sha256": "193b37414040baedbb74d27acdf5c9125de5a54cbbec4d3e81c3da4e046f16d0"
     },
     {
       "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/obj/Debug/net10.0-windows/AI-Training.Gui.Tests.csproj.FileListAbsolute.txt",
-      "bytes": 19421,
-      "sha256": "2ed68705d6e5f307d8899631b0d860ea76e862f13209b2f0f41623c2b9e17263"
+      "bytes": 19317,
+      "sha256": "7cebefabd982edb16a74e97b02dacc1f742dcec0625af97023a861a0b84d6568"
     },
     {
       "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/obj/Debug/net10.0-windows/AI-Training.Gui.Tests.dll",
@@ -1279,19 +1299,9 @@
       "sha256": "75737b9d175ebc09257567eb2502a3cec6d914d3a84fc3aee7cb19180681f9c6"
     },
     {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/obj/Debug/net10.0-windows/AI-Training.Gui.Tests.GeneratedMSBuildEditorConfig.editorconfig",
-      "bytes": 974,
-      "sha256": "3c7173600d67ff895327694d399c3260405f4c4f65110e1faa7d1382763e457b"
-    },
-    {
       "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/obj/Debug/net10.0-windows/AI-Training.Gui.Tests.genruntimeconfig.cache",
-      "bytes": 66,
-      "sha256": "baa3914049702236f7d66763b823c2904823ec4469c4c594d2576dfabe753086"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/obj/Debug/net10.0-windows/AI-Training.Gui.Tests.GlobalUsings.g.cs",
-      "bytes": 260,
-      "sha256": "bc157bfcc147099886e678131c99ae69211e8650751a8d7b5fe5b410a5b6e421"
+      "bytes": 65,
+      "sha256": "969c88da7295a7b1f64dc4dc412476a52a760ad8cfd058a7a8e1bcf47e5cda1d"
     },
     {
       "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/obj/Debug/net10.0-windows/AI-Training.Gui.Tests.pdb",
@@ -1309,29 +1319,29 @@
       "sha256": "9b303566c7294d862901f9cdcf22741da46146272ce84df48418e244503ef55e"
     },
     {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/obj/project.assets.json",
-      "bytes": 68211,
-      "sha256": "f2de5923f01d0297be75179e95487d762af3acf87126f45422190dff298f1f35"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/obj/project.nuget.cache",
-      "bytes": 1893,
-      "sha256": "55308737fcb8f24cea3059556fba9978782e20589764cdae503356c327939deb"
-    },
-    {
       "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/obj/Release/net10.0-windows/.NETCoreApp,Version=v10.0.AssemblyAttributes.cs",
-      "bytes": 200,
-      "sha256": "93d67476196ebfc80d1d7d8844b91146cfd678d105f5ce635eb900ca40610c9b"
+      "bytes": 196,
+      "sha256": "f79c1ad9a9fc76110b3655f5bfb5ff4e3168e9addceff05b937c0796f0ec34eb"
     },
     {
       "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/obj/Release/net10.0-windows/AI-Training.Gui.Tests.AssemblyInfo.cs",
-      "bytes": 1197,
-      "sha256": "c6a792239f64d688176d6d87fd3f2a26adf9ad336bc6f62c0fda31ea9426af07"
+      "bytes": 1172,
+      "sha256": "d8a9db37e0047e8bb4eb4ecde104fc0dddd33e897716e5890c705f83fc562c16"
     },
     {
       "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/obj/Release/net10.0-windows/AI-Training.Gui.Tests.AssemblyInfoInputs.cache",
-      "bytes": 66,
-      "sha256": "b00cdafc68fa46b34836d29d0fff87ada0812bbcdb623f30918915e702cbef63"
+      "bytes": 65,
+      "sha256": "a63bf6a53d882a5b1fa6c95acef66e3cdc536c9bab8637d56f68941b548c40ee"
+    },
+    {
+      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/obj/Release/net10.0-windows/AI-Training.Gui.Tests.GeneratedMSBuildEditorConfig.editorconfig",
+      "bytes": 955,
+      "sha256": "60ca4abdbc824fe1e3a659bef70e425c82a12d63b457859c01015c2079332611"
+    },
+    {
+      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/obj/Release/net10.0-windows/AI-Training.Gui.Tests.GlobalUsings.g.cs",
+      "bytes": 251,
+      "sha256": "303e9cd7ab294ddd335cd7bba5ab391da9053502115a0a650433a369b543873f"
     },
     {
       "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/obj/Release/net10.0-windows/AI-Training.Gui.Tests.assets.cache",
@@ -1344,14 +1354,14 @@
       "sha256": "a2dafaf09531b3c277184f27fb478511a470d17744f1d748de447451bef55559"
     },
     {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/obj/Release/net10.0-windows/AI-Training.Gui.Tests.GeneratedMSBuildEditorConfig.editorconfig",
-      "bytes": 974,
-      "sha256": "3c7173600d67ff895327694d399c3260405f4c4f65110e1faa7d1382763e457b"
+      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/obj/project.assets.json",
+      "bytes": 66909,
+      "sha256": "5853769934ea966ed21c22a5051bea1020b67cc9775977e84057fa60a2e0693c"
     },
     {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/obj/Release/net10.0-windows/AI-Training.Gui.Tests.GlobalUsings.g.cs",
-      "bytes": 260,
-      "sha256": "bc157bfcc147099886e678131c99ae69211e8650751a8d7b5fe5b410a5b6e421"
+      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/obj/project.nuget.cache",
+      "bytes": 1871,
+      "sha256": "2b160fd10b8556a980949dded7a351f059d192802b3f727a213bb86970581ce4"
     },
     {
       "path": "07_PLATFORM/frontend/e2e/auth.spec.ts",
@@ -1900,8 +1910,8 @@
     },
     {
       "path": "08_INFRASTRUCTURE/scripts/generate_manifest.py",
-      "bytes": 2748,
-      "sha256": "bca36a483dc2195e812e700f48c3415841f65208fd59933e9f795605f4a901a6"
+      "bytes": 2765,
+      "sha256": "2e92df309dfd09014c52b61b8b981abb8ecb0402c6382dacd87fda51ef0d8b1e"
     },
     {
       "path": "08_INFRASTRUCTURE/scripts/generate_release_status.py",
@@ -1972,11 +1982,6 @@
       "path": "CONTRIBUTING.md",
       "bytes": 879,
       "sha256": "4e78eecebf2d3dd9e6cd0e1ad3c47bde6d6059d826fe16e3abcc7c47f84aa72e"
-    },
-    {
-      "path": "docker-compose.yml",
-      "bytes": 2006,
-      "sha256": "ba636ac9a66ab5701c26ad663db07db49cbad032a298992ba552a37b9416f682"
     },
     {
       "path": "Iteration_8_Delta_Audit_Eighth_Updated_ZIP.json",
@@ -2050,18 +2055,13 @@
     },
     {
       "path": "LICENSE",
-      "bytes": 398,
-      "sha256": "8c67ab48c2ec5786beb228b90dd5fbe01726b4ff58fd3a7a9742f18a0a74bfdc"
+      "bytes": 35149,
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
     },
     {
       "path": "Makefile",
       "bytes": 2362,
       "sha256": "92c9926494397b8dcbf2bf1cc31187effaed7b79b9b1107c9ffe2fe2af39d986"
-    },
-    {
-      "path": "manifest.json",
-      "bytes": 88776,
-      "sha256": "9a4e0ab9245acae769a7c070d018f903b6cc5b711a3fff04dcf8f2648c2fc00d"
     },
     {
       "path": "README.md",
@@ -2075,13 +2075,18 @@
     },
     {
       "path": "RELEASE_STATUS.json",
-      "bytes": 781,
-      "sha256": "bd981cab4aeaea445b3b935d6179ef8a9c13530c9d36752b5ac9eb17a7d9945e"
+      "bytes": 755,
+      "sha256": "9cf5a1dccd9e04fbf90e2a616a76567a35b99699625685eba90f599c9955ed0d"
     },
     {
       "path": "SECURITY.md",
       "bytes": 903,
       "sha256": "169ef6b4985d7981751f3e6d5ef35111914821ae2af60b86d3acaf46348aca66"
+    },
+    {
+      "path": "docker-compose.yml",
+      "bytes": 2006,
+      "sha256": "ba636ac9a66ab5701c26ad663db07db49cbad032a298992ba552a37b9416f682"
     }
   ]
 }

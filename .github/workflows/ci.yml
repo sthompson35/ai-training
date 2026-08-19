@@ -34,7 +34,7 @@ jobs:
 
       - name: Install frontend dependencies
         working-directory: 07_PLATFORM/frontend
-        run: npm install
+        run: npm ci
 
       - name: Test frontend
         working-directory: 07_PLATFORM/frontend
@@ -130,6 +130,9 @@ jobs:
       - name: Prepare environment file
         run: cp .env.example .env
 
+      - name: Prepare frontend dependency mountpoint
+        run: mkdir -p 07_PLATFORM/frontend/node_modules
+
       - name: Start the stack
         run: docker compose up -d --build
 
@@ -143,7 +146,7 @@ jobs:
 
       - name: Install frontend dependencies
         working-directory: 07_PLATFORM/frontend
-        run: npm install
+        run: npm ci
 
       - name: Install Playwright browsers
         working-directory: 07_PLATFORM/frontend
