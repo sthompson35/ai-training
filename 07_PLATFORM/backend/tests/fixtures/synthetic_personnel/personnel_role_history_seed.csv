@@ -1,0 +1,4 @@
+service_member_id,role_version,role,command_layer,readiness_state,change_reason
+ATA-CINDY-000,2,Logistics Lead,field_operations,ready,Promoted after leading supply-chain incident response
+ATA-MAPE-000,2,Intelligence Officer,field_operations,ready,Promoted following a successful field assessment
+ATA-MAPE-000,3,Senior Intelligence Officer,command,ready,Advanced to command layer after leadership review

@@ -1,0 +1,101 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install Python dependencies
+        run: pip install -r 07_PLATFORM/backend/requirements.txt
+
+      - name: Compile Python
+        run: python -m compileall 07_PLATFORM/backend/app
+
+      - name: Test backend
+        working-directory: 07_PLATFORM/backend
+        run: pytest -q
+
+      - name: Syntax-check legacy hybrid-routing reference script (not part of the app bundle)
+        run: node --check 07_PLATFORM/frontend/src/lib/hybridRouter.js
+
+      - name: Install frontend dependencies
+        working-directory: 07_PLATFORM/frontend
+        run: npm install
+
+      - name: Test frontend
+        working-directory: 07_PLATFORM/frontend
+        run: npm run test
+
+      - name: Typecheck and build frontend
+        working-directory: 07_PLATFORM/frontend
+        run: npm run build
+
+      - name: Validate PHP syntax
+        run: php -l 07_PLATFORM/php/health.php
+
+      - name: Validate Docker Compose
+        run: cp .env.example .env && docker compose config
+
+  e2e:
+    runs-on: ubuntu-latest
+    needs: validate
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Prepare environment file
+        run: cp .env.example .env
+
+      - name: Start the stack
+        run: docker compose up -d --build
+
+      - name: Wait for the gateway to become healthy
+        run: |
+          for i in $(seq 1 30); do
+            if curl -sf http://localhost:8080/api/health; then exit 0; fi
+            sleep 2
+          done
+          echo "Gateway never became healthy" && exit 1
+
+      - name: Install frontend dependencies
+        working-directory: 07_PLATFORM/frontend
+        run: npm install
+
+      - name: Install Playwright browsers
+        working-directory: 07_PLATFORM/frontend
+        run: npx playwright install --with-deps chromium
+
+      - name: Run E2E suite
+        working-directory: 07_PLATFORM/frontend
+        env:
+          E2E_BASE_URL: http://localhost:8080
+        run: npx playwright test
+
+      - name: Upload Playwright traces on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-traces
+          path: 07_PLATFORM/frontend/test-results
+
+      - name: Tear down
+        if: always()
+        run: docker compose down -v

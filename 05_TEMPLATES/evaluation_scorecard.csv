@@ -1,0 +1,8 @@
+criterion,weight_percent,minimum,measurement
+Task accuracy,25,80,Human or rule-based score
+Groundedness,20,90,Claims supported by approved sources
+Format compliance,10,98,Schema validation
+Safety and policy,15,100,No critical violations
+Latency,10,90,Requests within SLA
+Cost,10,90,Requests within budget
+Fallback reliability,10,100,All required fallback tests pass

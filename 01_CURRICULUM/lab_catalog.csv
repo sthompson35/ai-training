@@ -1,0 +1,13 @@
+lab_id,title,domain,deliverable
+LAB-001,Availability-state simulator,Client-side AI,Simulate available/downloadable/downloading/unavailable states and prove fallback behavior.
+LAB-002,Offline summarizer,Offline AI,Run a local summary workflow with cached model and offline UI messaging.
+LAB-003,Hybrid router,Hybrid AI,"Route by task complexity, network quality, privacy, and device capability."
+LAB-004,Unified response contract,Architecture,Normalize local and cloud output into one typed response schema.
+LAB-005,Prompt regression suite,Prompt Engineering,"Create golden inputs, expected properties, and automated format checks."
+LAB-006,Grounded document assistant,RAG,Answer only from approved documents and attach citations.
+LAB-007,Prompt injection defense,Security,Test hostile document instructions and enforce tool/data boundaries.
+LAB-008,Tool-calling agent,Agents,Execute one approved business function with validation and audit logs.
+LAB-009,Reviewer-agent gate,Multi-Agent,"Separate generator and reviewer, then block release on failed criteria."
+LAB-010,Cost-aware model routing,FinOps,Route high-volume simple work to an efficient model and complex work to a stronger model.
+LAB-011,Incident rollback drill,AIOps,"Detect a regression, disable a feature flag, restore a prior prompt/model, and document the event."
+LAB-012,Enterprise capstone,Capstone,"Deliver architecture, code, evaluation, governance, and operating evidence."

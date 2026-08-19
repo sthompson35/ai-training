@@ -1,0 +1,16 @@
+term,definition
+Agent,"A software system that uses a model, instructions, state, and tools to pursue a bounded objective."
+Built-in AI,AI capabilities and models managed by the browser or platform and exposed through APIs.
+Client-side AI,Inference performed on the user's device or browser.
+Server-side AI,Inference performed on remote infrastructure.
+Hybrid AI,An architecture combining client-side and server-side inference with routing and fallback.
+Inference,The process of generating outputs from a trained model using new input.
+Fine-tuning,"Additional training that adapts an existing model to a repeated task, style, or domain."
+RAG,Retrieval-augmented generation; supplying retrieved source content to a model at inference time.
+Embedding,A numeric vector representation used to compare semantic similarity.
+Context window,The maximum amount of input and conversation state a model can process at once.
+Hallucination,An unsupported or incorrect model-generated claim.
+Prompt injection,Untrusted instructions that attempt to override intended model or tool behavior.
+Graceful fallback,A controlled alternate path used when the preferred model or environment is unavailable.
+Model routing,"Selecting an execution path and model using task, risk, cost, privacy, and capability criteria."
+Groundedness,The degree to which an output is supported by approved evidence.

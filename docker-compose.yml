@@ -1,0 +1,78 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-academy}
+      POSTGRES_USER: ${POSTGRES_USER:-academy}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-academy}
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    volumes:
+      - academy_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-academy} -d ${POSTGRES_DB:-academy}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  api:
+    build:
+      context: .
+      dockerfile: 08_INFRASTRUCTURE/docker/Dockerfile.api
+    env_file:
+      - .env
+    ports:
+      - "${API_PORT:-8000}:8000"
+    volumes:
+      - ./07_PLATFORM/backend:/app
+      - ./01_CURRICULUM:/app/seed:ro
+      - ./02_CERTIFICATION:/app/seed_cert:ro
+      - ./04_KNOWLEDGE_BASE:/app/seed_kb:ro
+      - ./06_IMPLEMENTATION:/app/seed_governance:ro
+      - ./11_PERSONNEL:/app/seed_personnel:ro
+    depends_on:
+      db:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+
+  frontend:
+    build:
+      context: .
+      dockerfile: 08_INFRASTRUCTURE/docker/Dockerfile.frontend
+    environment:
+      VITE_API_BASE_URL: http://localhost:${GATEWAY_PORT:-8080}/api
+    ports:
+      - "${FRONTEND_PORT:-3000}:3000"
+    volumes:
+      - ./07_PLATFORM/frontend:/app
+      - /app/node_modules
+    depends_on:
+      api:
+        condition: service_healthy
+
+  php:
+    image: php:8.3-cli-alpine
+    working_dir: /app
+    command: php -S 0.0.0.0:8081 -t /app
+    volumes:
+      - ./07_PLATFORM/php:/app:ro
+    ports:
+      - "${PHP_PORT:-8081}:8081"
+
+  gateway:
+    image: nginx:1.27-alpine
+    ports:
+      - "${GATEWAY_PORT:-8080}:80"
+    volumes:
+      - ./08_INFRASTRUCTURE/nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+    depends_on:
+      - api
+      - frontend
+      - php
+
+volumes:
+  academy_pgdata:

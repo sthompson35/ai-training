@@ -1,0 +1,22 @@
+{
+  "audit_date": "2026-08-09",
+  "input": "ai-training.zip",
+  "sha256": "740f975c4d6a83af85f91fd70b4c6be5960968699663fe4b46027f4c89879097",
+  "disposition": "PRODUCTION_PROMOTION_HOLD",
+  "files_total": 6390,
+  "nonvendored_files_v2": 218,
+  "manifest_version": "2.0.0",
+  "readme_updated_version": "2.1.0",
+  "canonical_schema_implemented": false,
+  "legacy_alias_migration_implemented": false,
+  "identity_canary_runnable": false,
+  "production_verified": false,
+  "critical_findings": [
+    "Canonical identity contract exists only in README_UPDATED.md; runtime schema/API do not implement it.",
+    "agent_cards uses integer id and unique name instead of immutable canonical service_member_id/callsign model.",
+    "No canonical identity SQL migrations or database dump were present.",
+    "No canonical roster or legacy alias seeder was found.",
+    "Manifest remains 2.0.0 while README_UPDATED.md declares 2.1.0.",
+    ".env is present in release ZIP despite .gitignore excluding it."
+  ]
+}

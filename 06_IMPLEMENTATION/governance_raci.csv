@@ -1,0 +1,7 @@
+activity,executive_sponsor,academy_owner,ai_architect,security_owner,certification_board
+Curriculum governance,A,R,C,C,C
+Source approval,C,A/R,C,C,C
+Technical labs,C,C,A/R,C,C
+Security curriculum,C,C,C,A/R,C
+Certification decisions,A,C,C,C,R
+Production capstone approval,A,C,R,R,C

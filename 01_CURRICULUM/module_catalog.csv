@@ -1,0 +1,72 @@
+level,level_title,module_code,module_title,learning_outcome,estimated_hours,assessment
+00,Orientation and AI Literacy,00.1,"Mission, scope, and responsible use","Explain the academy mission, acceptable use, human accountability, and the difference between assistance and autonomous execution.",4,Quiz + Lab + Evidence
+00,Orientation and AI Literacy,00.2,AI terminology and system map,"Use core terms correctly: model, parameter, token, context, inference, fine-tuning, embeddings, RAG, agent, tool, memory, and evaluation.",4,Quiz + Lab + Evidence
+00,Orientation and AI Literacy,00.3,AI risk awareness,"Identify hallucinations, non-determinism, prompt injection, privacy exposure, and over-automation.",4,Quiz + Lab + Evidence
+01,AI Foundations,01.1,Machine learning and neural networks,"Describe training, validation, inference, weights, and model generalization.",4,Quiz + Lab + Evidence
+01,AI Foundations,01.2,Transformers and attention,"Explain attention, tokenization, embeddings, layers, and context windows.",4,Quiz + Lab + Evidence
+01,AI Foundations,01.3,Model classes and right-sizing,"Compare expert models, foundation models, SLMs, LLMs, multimodal models, and task-specific models.",4,Quiz + Lab + Evidence
+01,AI Foundations,01.4,Inference economics,"Estimate latency, throughput, token usage, hardware requirements, and cost.",4,Quiz + Lab + Evidence
+02,Prompt Engineering,02.1,Prompt anatomy,"Construct system, developer, user, context, constraints, examples, and output schemas.",4,Quiz + Lab + Evidence
+02,Prompt Engineering,02.2,Few-shot and structured prompting,"Use examples, rubrics, JSON schemas, and deterministic formatting.",4,Quiz + Lab + Evidence
+02,Prompt Engineering,02.3,Prompt chains and decomposition,Break complex work into bounded stages with verification gates.,4,Quiz + Lab + Evidence
+02,Prompt Engineering,02.4,Prompt testing and version control,"Create prompt test sets, compare versions, and manage regression risk.",4,Quiz + Lab + Evidence
+03,Built-in and Client-Side AI,03.1,Built-in AI task APIs,"Select summarization, translation, language detection, writing, rewriting, proofreading, and prompt APIs.",6,Quiz + Lab + Evidence
+03,Built-in and Client-Side AI,03.2,On-device model availability,"Handle available, downloadable, downloading, and unavailable states.",6,Quiz + Lab + Evidence
+03,Built-in and Client-Side AI,03.3,"Hardware, storage, and runtime constraints","Plan for CPU, GPU, NPU, RAM, VRAM, disk, battery, and download limits.",6,Quiz + Lab + Evidence
+03,Built-in and Client-Side AI,03.4,Offline AI and privacy,Design local inference workflows that preserve core features without connectivity.,6,Quiz + Lab + Evidence
+04,Server-Side and Cloud AI,04.1,Cloud model selection,"Match model capacity, context, tools, latency, and pricing to the workload.",6,Quiz + Lab + Evidence
+04,Server-Side and Cloud AI,04.2,Secure API architecture,"Protect credentials, authenticate users, rate-limit requests, and isolate secrets.",6,Quiz + Lab + Evidence
+04,Server-Side and Cloud AI,04.3,"Streaming, state, and background work","Implement streaming responses, multi-turn state, retries, and long-running jobs.",6,Quiz + Lab + Evidence
+04,Server-Side and Cloud AI,04.4,Cloud cost controls,"Use quotas, caching, batching, monitoring, and model routing.",6,Quiz + Lab + Evidence
+05,Hybrid AI Architecture,05.1,Client/server routing,"Route by complexity, privacy, connectivity, device capability, cost, and business tier.",6,Quiz + Lab + Evidence
+05,Hybrid AI Architecture,05.2,Graceful fallback,"Provide alternate execution paths when models, devices, networks, or APIs fail.",6,Quiz + Lab + Evidence
+05,Hybrid AI Architecture,05.3,Resiliency patterns,"Use server-first, local-first, and adaptive strategies appropriately.",6,Quiz + Lab + Evidence
+05,Hybrid AI Architecture,05.4,Unified response contracts,Normalize outputs so the application remains provider-agnostic.,6,Quiz + Lab + Evidence
+06,AI-Enhanced Content Consumption,06.1,Summarization,Produce faithful summaries at multiple lengths and validate factual alignment.,4,Quiz + Lab + Evidence
+06,AI-Enhanced Content Consumption,06.2,Translation and language detection,Support multilingual content while preserving meaning and tone.,4,Quiz + Lab + Evidence
+06,AI-Enhanced Content Consumption,06.3,Categorization and characterization,"Extract topic, intent, sentiment, entities, risk, priority, and actions.",4,Quiz + Lab + Evidence
+06,AI-Enhanced Content Consumption,06.4,Knowledge provider experiences,Answer grounded questions across approved sources with citations.,4,Quiz + Lab + Evidence
+07,AI-Supported Content Creation,07.1,Writing assistance,"Generate outlines, drafts, and audience-specific content from verified facts.",4,Quiz + Lab + Evidence
+07,AI-Supported Content Creation,07.2,Proofreading and grammar correction,Correct mechanics without changing intent or facts.,4,Quiz + Lab + Evidence
+07,AI-Supported Content Creation,07.3,Rephrasing and tone control,"Adapt clarity, formality, persuasion, reading level, and channel.",4,Quiz + Lab + Evidence
+07,AI-Supported Content Creation,07.4,Human approval and publication,Apply review gates to high-impact content.,4,Quiz + Lab + Evidence
+08,Knowledge Systems and RAG,08.1,Document ingestion and chunking,"Prepare source content with metadata, access controls, and quality checks.",6,Quiz + Lab + Evidence
+08,Knowledge Systems and RAG,08.2,Embeddings and vector search,Build semantic retrieval and understand similarity limitations.,6,Quiz + Lab + Evidence
+08,Knowledge Systems and RAG,08.3,Hybrid retrieval and reranking,"Combine keyword, vector, graph, and metadata filters.",6,Quiz + Lab + Evidence
+08,Knowledge Systems and RAG,08.4,Grounded generation and citations,"Require source support, traceability, and refusal when evidence is missing.",6,Quiz + Lab + Evidence
+09,Fine-Tuning and Model Adaptation,09.1,Prompting versus fine-tuning,"Choose adaptation methods based on task repetition, quality, and data availability.",6,Quiz + Lab + Evidence
+09,Fine-Tuning and Model Adaptation,09.2,Fine-tuning data design,"Create labeled examples, split datasets, and prevent leakage.",6,Quiz + Lab + Evidence
+09,Fine-Tuning and Model Adaptation,09.3,"LoRA, quantization, pruning, and distillation",Understand efficient adaptation and model shrinking.,6,Quiz + Lab + Evidence
+09,Fine-Tuning and Model Adaptation,09.4,Evaluation and rollback,Benchmark adapted models against baselines before release.,6,Quiz + Lab + Evidence
+10,AI Agents and Tool Use,10.1,Agent architecture,"Design planner, executor, reviewer, memory, and supervisor roles.",6,Quiz + Lab + Evidence
+10,AI Agents and Tool Use,10.2,Function calling and tools,"Connect models to APIs, databases, code execution, files, search, and business systems.",6,Quiz + Lab + Evidence
+10,AI Agents and Tool Use,10.3,Agent memory and state,"Separate session memory, durable memory, source knowledge, and audit history.",6,Quiz + Lab + Evidence
+10,AI Agents and Tool Use,10.4,Human-in-the-loop controls,"Define approval thresholds, action permissions, and escalation paths.",6,Quiz + Lab + Evidence
+11,Multi-Agent Systems,11.1,Delegation and orchestration,Assign work by capability and prevent duplicate or conflicting execution.,6,Quiz + Lab + Evidence
+11,Multi-Agent Systems,11.2,Shared context and communication,"Use structured handoffs, contracts, and evidence bundles.",6,Quiz + Lab + Evidence
+11,Multi-Agent Systems,11.3,Reviewer and verification agents,Separate generation from validation and authorization.,6,Quiz + Lab + Evidence
+11,Multi-Agent Systems,11.4,Failure containment,"Limit blast radius with scopes, budgets, timeouts, and kill switches.",6,Quiz + Lab + Evidence
+12,Automation and Integration,12.1,"APIs, webhooks, and event flows","Build reliable triggers, actions, callbacks, and idempotency.",6,Quiz + Lab + Evidence
+12,Automation and Integration,12.2,Workflow orchestration,"Use queues, retries, branching, human approvals, and compensating actions.",6,Quiz + Lab + Evidence
+12,Automation and Integration,12.3,MCP and connected tools,Expose governed capabilities and current documentation to agents.,6,Quiz + Lab + Evidence
+12,Automation and Integration,12.4,Observability,"Track inputs, outputs, tool calls, latency, failures, and cost.",6,Quiz + Lab + Evidence
+13,AI Software and Infrastructure,13.1,Application architecture,"Separate UI, orchestration, model gateway, tools, data, and evaluation layers.",6,Quiz + Lab + Evidence
+13,AI Software and Infrastructure,13.2,Local runtimes and model formats,"Operate LM Studio, llama.cpp-style runtimes, GGUF, quantization, and GPU offload.",6,Quiz + Lab + Evidence
+13,AI Software and Infrastructure,13.3,"Containers, CI/CD, and deployment","Package, test, release, and roll back AI services safely.",6,Quiz + Lab + Evidence
+13,AI Software and Infrastructure,13.4,Capacity planning,"Plan concurrency, memory, storage, bandwidth, and fallback capacity.",6,Quiz + Lab + Evidence
+14,"Security, Privacy, and Governance",14.1,Threat model,"Address prompt injection, data exfiltration, malicious tools, model abuse, and supply-chain risk.",6,Quiz + Lab + Evidence
+14,"Security, Privacy, and Governance",14.2,Identity and access control,"Apply least privilege, user consent, tenant isolation, and secrets management.",6,Quiz + Lab + Evidence
+14,"Security, Privacy, and Governance",14.3,Data governance,"Classify data, enforce retention, maintain lineage, and control training use.",6,Quiz + Lab + Evidence
+14,"Security, Privacy, and Governance",14.4,Audit and compliance,"Maintain logs, approvals, model cards, incidents, and policy evidence.",6,Quiz + Lab + Evidence
+15,Evaluation and AI Operations,15.1,Quality metrics,"Measure accuracy, alignment, coverage, richness, groundedness, usefulness, and format compliance.",6,Quiz + Lab + Evidence
+15,Evaluation and AI Operations,15.2,Automated and human evaluation,"Use test sets, reviewers, model-as-judge carefully, and adjudication.",6,Quiz + Lab + Evidence
+15,Evaluation and AI Operations,15.3,Production monitoring,"Detect drift, regressions, unusual cost, latency, and safety failures.",6,Quiz + Lab + Evidence
+15,Evaluation and AI Operations,15.4,Incident response,"Triage, contain, roll back, communicate, and prevent recurrence.",6,Quiz + Lab + Evidence
+16,Business and Enterprise AI,16.1,Use-case selection,"Prioritize measurable value, feasibility, risk, adoption, and data readiness.",6,Quiz + Lab + Evidence
+16,Business and Enterprise AI,16.2,Product design and monetization,"Use client-side previews, premium cloud features, and cost-aware routing.",6,Quiz + Lab + Evidence
+16,Business and Enterprise AI,16.3,Change management,"Train users, redesign work, establish accountability, and measure adoption.",6,Quiz + Lab + Evidence
+16,Business and Enterprise AI,16.4,Executive governance,"Manage portfolio, vendors, investment, risk appetite, and strategic roadmaps.",6,Quiz + Lab + Evidence
+17,Capstones and Mastery,17.1,Built-in AI application,Ship a task-API feature with model availability handling and offline behavior.,24,Quiz + Lab + Evidence
+17,Capstones and Mastery,17.2,Hybrid AI platform,"Implement dynamic routing, server fallback, unified contracts, and monitoring.",24,Quiz + Lab + Evidence
+17,Capstones and Mastery,17.3,Grounded agent system,"Build an agent with RAG, tools, approvals, citations, and audit trails.",24,Quiz + Lab + Evidence
+17,Capstones and Mastery,17.4,Enterprise production review,"Defend architecture, security, economics, evaluation evidence, and operating plan.",24,Quiz + Lab + Evidence
