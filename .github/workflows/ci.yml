@@ -27,7 +27,7 @@ jobs:
 
       - name: Test backend
         working-directory: 07_PLATFORM/backend
-        run: pytest -q
+        run: python -m pytest -q
 
       - name: Syntax-check legacy hybrid-routing reference script (not part of the app bundle)
         run: node --check 07_PLATFORM/frontend/src/lib/hybridRouter.js
