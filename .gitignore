@@ -21,3 +21,13 @@ test-results/
 playwright-report/
 playwright/.cache/
 07_PLATFORM/frontend/e2e/.auth/
+
+# .NET build output (07_PLATFORM/dotnet-client) — compiled binaries, not
+# source; some resource DLL paths under here are long enough to break a
+# plain `git clone` on Windows without core.longpaths, on top of just being
+# build artifacts that don't belong in version control.
+bin/
+obj/
+*.dll
+*.pdb
+*.exe
