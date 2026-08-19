@@ -1,7 +1,7 @@
 {
   "package": "AI Training Academy Institutional Standard",
   "version": "2.4.0",
-  "created_utc": "2026-08-19T22:19:10.840596+00:00",
+  "created_utc": "2026-08-19T22:26:11.520301+00:00",
   "files": [
     {
       "path": ".env.example",
@@ -15,18 +15,18 @@
     },
     {
       "path": ".github/BRANCH_PROTECTION.md",
-      "bytes": 4363,
-      "sha256": "b36d90c5908527165df7b0f8d5715468c452100b2608a9af91d6fff1d2ad50d7"
+      "bytes": 7504,
+      "sha256": "e0e04f2a6f4af6dd26057a9864048b39f9fdd3a03a35c34e8670637078bac8ea"
     },
     {
       "path": ".github/CODEOWNERS",
-      "bytes": 3696,
-      "sha256": "a87b3de5c51e3fb7f232b0424cc3bf67ae77c5a329ef8a104aae2f1ca6155cea"
+      "bytes": 4080,
+      "sha256": "d01539ea2c85fb40459678e152dd9ccfc61578b0631028a791b8b3f8989b6f43"
     },
     {
       "path": ".github/ENVIRONMENTS.md",
-      "bytes": 4019,
-      "sha256": "c38eeecd1146fd443d6eca0f2f5ec130adccb643d1a966a92940aab374ebcbe6"
+      "bytes": 4456,
+      "sha256": "7639f90bf1b38ad0eb9e55f03f81a154ce9d09929cc8fcfd455832e2a653f913"
     },
     {
       "path": ".github/workflows/ci.yml",
