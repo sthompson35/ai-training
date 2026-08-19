@@ -7,6 +7,12 @@ release.yml`'s `deploy-production` job already references `environment:
 production`; that reference is inert (the job will fail to resolve the
 environment) until the environment actually exists.
 
+`OWNER/REPO` below means `sthompson35/<repo-name>` — a personal account, not
+an organization (see `BRANCH_PROTECTION.md`). Create this only *after*
+`main` is actually protected (per that file's bootstrap sequencing) — the
+deployment-branch policy below depends on `main` already being protected
+for "protected branches only" to mean anything.
+
 Create it
 
 ```bash
