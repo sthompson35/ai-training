@@ -103,8 +103,11 @@ gh api -X PUT repos/OWNER/REPO/branches/main/protection \
 }
 JSON
 
-# Signed commits — separate endpoint, no body.
-gh api -X PUT repos/OWNER/REPO/branches/main/protection/required_signatures \
+# Signed commits — separate endpoint, no body. Note: this one is POST,
+# not PUT, unlike every other branch-protection sub-resource here — GitHub's
+# API is inconsistent on this specific endpoint (confirmed empirically:
+# PUT returns 404, POST returns {"enabled": true}).
+gh api -X POST repos/OWNER/REPO/branches/main/protection/required_signatures \
   -H "Accept: application/vnd.github+json"
 ```
 

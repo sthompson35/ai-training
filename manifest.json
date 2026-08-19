@@ -1,7 +1,7 @@
 {
   "package": "AI Training Academy Institutional Standard",
   "version": "2.4.0",
-  "created_utc": "2026-08-19T22:31:43.354227+00:00",
+  "created_utc": "2026-08-19T22:41:35.354483+00:00",
   "files": [
     {
       "path": ".env.example",
@@ -15,8 +15,8 @@
     },
     {
       "path": ".github/BRANCH_PROTECTION.md",
-      "bytes": 7370,
-      "sha256": "9ba45c87f9c11007e52e70976d7088ca2261392f43b57f5f984dd3741eda1281"
+      "bytes": 7598,
+      "sha256": "262934e7bf0dccdb9040bac2885487176979174ca56fb2c398d4a58e6f418986"
     },
     {
       "path": ".github/CODEOWNERS",
