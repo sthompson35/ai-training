@@ -1,0 +1,15 @@
+# Force LF everywhere, on every platform, for every checkout — the root
+# cause of the manifest.json mismatch between a Windows working tree
+# (core.autocrlf=true converts stored LF to CRLF on checkout) and CI's
+# Linux runner (checks out exactly what's stored, LF). Without this, the
+# same commit produces two different sets of file hashes depending on which
+# OS generated manifest.json, which defeats the point of a checksum-based
+# evidence file. `text=auto` still lets git skip binaries by content
+# detection; `eol=lf` pins the normalized line ending instead of leaving it
+# to each platform's core.autocrlf default.
+* text=auto eol=lf
+
+# Anything under a build-output directory is binary/generated regardless of
+# extension — don't let text=auto's content sniffing guess wrong on these.
+07_PLATFORM/dotnet-client/**/bin/** -text
+07_PLATFORM/dotnet-client/**/obj/** -text
