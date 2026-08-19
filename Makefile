@@ -1,6 +1,6 @@
 SHELL := /bin/bash
 
-.PHONY: help install validate test lint up down logs clean production-canary manifest
+.PHONY: help install validate test lint up down logs clean production-canary manifest release-status
 
 help:
 	@echo "AI Training Academy commands"
@@ -17,6 +17,8 @@ help:
 	@echo "                         PASS/FAIL against real onboarded identities otherwise) — run"
 	@echo "                         this inside the api container to check a live deployment"
 	@echo "  make manifest          Regenerate manifest.json from the current file tree (.env excluded)"
+	@echo "  make release-status    Regenerate RELEASE_STATUS.json (accepts the same flags as"
+	@echo "                         generate_release_status.py — see that file's docstring)"
 
 install:
 	python -m pip install -r 07_PLATFORM/backend/requirements.txt
@@ -56,3 +58,6 @@ production-canary:
 
 manifest:
 	python 08_INFRASTRUCTURE/scripts/generate_manifest.py
+
+release-status:
+	python 08_INFRASTRUCTURE/scripts/generate_release_status.py $(ARGS)

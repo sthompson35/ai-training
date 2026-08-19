@@ -1,5 +1,16 @@
 # Changelog
 
+## 2.4.0 — Git history, GitHub governance, and release infrastructure
+
+- Initialized this repository as a git repository (`main` as the default branch) — everything before this point existed only as an uncommitted working tree
+- Added `.github/CODEOWNERS` mapping required review to four domains — runtime, registry (the canonical identity system specifically), governance, and evidence — using placeholder team handles that must be replaced with real GitHub users/teams before GitHub will actually enforce them (documented in the file's own header)
+- Added `.github/BRANCH_PROTECTION.md`: the full required ruleset for `main` (PR + 1 approval, required CI checks, up-to-date branch, conversation resolution, no force-push/deletion, admin enforcement, signed commits, CODEOWNERS review) as the exact `gh api` commands to apply it — branch protection is GitHub-side configuration with no file-based form, so this is the source of truth until it's actually applied to a real remote
+- Added `.github/ENVIRONMENTS.md`: the `production` GitHub Environment spec — deployment restricted to `main`/`v*` tags only, required-reviewer approval gate, and the deployment secret *names* the release workflow expects (no values, none fabricated)
+- Added `.github/workflows/release.yml`: tag-triggered (`v*`) release pipeline — runs the full test suite, a live production-identity-canary check, confirms `manifest.json` is current, generates `RELEASE_STATUS.json` and `SHA256SUMS.txt`, publishes a GitHub Release with those as evidence attachments, then gates an actual `production` Environment deployment job (currently a documented placeholder — no real registry/cluster credentials exist to deploy to yet)
+- Added `.github/workflows/ci.yml`'s new `evidence` job: fails CI if `manifest.json` has drifted from the actual tree (the exact class of bug the 2.3.1 audit sweep found by hand), and uploads a per-commit CI evidence record with checksums as a workflow artifact
+- Added `08_INFRASTRUCTURE/scripts/generate_release_status.py` (`make release-status`) — assembles the canonical `RELEASE_STATUS.json` from whatever CI actually measured (test counts, canary status, manifest state), never from typed-in numbers
+- Generated the first `RELEASE_STATUS.json`, from real measurements: 163/163 backend tests, 133/133 frontend tests, canary `NOT_APPLICABLE_NO_PRODUCTION_IDENTITIES`, gate decision `GO`
+
 ## 2.3.1 — Audit sweep: version drift, provenance gap, dependency fix
 
 - Fixed a real bug: `.env`/`.env.example` still had `APP_VERSION=2.0.0`, which **overrides** `main.py`'s code default — every version bump from 2.1.0 through 2.3.0 was cosmetic, and the live API was actually reporting `2.0.0` in its OpenAPI schema the entire time. `APP_VERSION` is now `2.3.1` everywhere it's declared (`.env`, `.env.example`, `08_INFRASTRUCTURE/kubernetes/academy.yaml`); confirmed live post-fix. `POLICY_VERSION` intentionally left at `2.0.0` — it versions the routing policy independently, per this README's own versioning rule, and hasn't changed

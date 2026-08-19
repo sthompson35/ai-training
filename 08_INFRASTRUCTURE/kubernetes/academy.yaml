@@ -4,7 +4,7 @@ metadata:
   name: academy-config
 data:
   APP_ENV: "production"
-  APP_VERSION: "2.3.1"
+  APP_VERSION: "2.4.0"
   POLICY_VERSION: "2.0.0"
   AI_LOCAL_ENABLED: "true"
   AI_MAX_INPUT_CHARS_LOCAL: "12000"
@@ -115,7 +115,7 @@ spec:
     spec:
       containers:
         - name: api
-          image: example/ai-training-academy-api:2.3.1
+          image: example/ai-training-academy-api:2.4.0
           ports:
             - containerPort: 8000
           envFrom:
@@ -178,7 +178,7 @@ spec:
           # URL is baked in at build time as the relative path `/api`, so this
           # image works behind whatever hostname the gateway below is reached
           # at, with no per-environment env var needed here.
-          image: example/ai-training-academy-frontend:2.3.1
+          image: example/ai-training-academy-frontend:2.4.0
           ports:
             - containerPort: 80
           readinessProbe:

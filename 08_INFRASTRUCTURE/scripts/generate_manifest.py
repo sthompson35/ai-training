@@ -18,7 +18,7 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
-APP_VERSION = "2.3.1"  # keep aligned with README_UPDATED.md's version badge and main.py's APP_VERSION default
+APP_VERSION = "2.4.0"  # keep aligned with README_UPDATED.md's version badge and main.py's APP_VERSION default
 
 EXCLUDED_DIR_NAMES = {
     "__pycache__",

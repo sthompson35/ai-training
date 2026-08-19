@@ -1,17 +1,37 @@
 {
   "package": "AI Training Academy Institutional Standard",
-  "version": "2.3.1",
-  "created_utc": "2026-08-19T15:21:18.543662+00:00",
+  "version": "2.4.0",
+  "created_utc": "2026-08-19T15:45:52.427992+00:00",
   "files": [
     {
       "path": ".env.example",
       "bytes": 1743,
-      "sha256": "5f23762d084614a82da0d85f007a81a233a7ba96c4bbb076e49133f8c40cc43a"
+      "sha256": "d9118ded28e285ade6e50a2cbf9850f2a208cc5d5449259b96cf60b4fb30d566"
+    },
+    {
+      "path": ".github/BRANCH_PROTECTION.md",
+      "bytes": 4363,
+      "sha256": "b36d90c5908527165df7b0f8d5715468c452100b2608a9af91d6fff1d2ad50d7"
+    },
+    {
+      "path": ".github/CODEOWNERS",
+      "bytes": 3696,
+      "sha256": "a87b3de5c51e3fb7f232b0424cc3bf67ae77c5a329ef8a104aae2f1ca6155cea"
+    },
+    {
+      "path": ".github/ENVIRONMENTS.md",
+      "bytes": 4019,
+      "sha256": "c38eeecd1146fd443d6eca0f2f5ec130adccb643d1a966a92940aab374ebcbe6"
     },
     {
       "path": ".github/workflows/ci.yml",
-      "bytes": 2603,
-      "sha256": "d5b2e300e266ad1b524188b5c5909d496bb68e272e470cdcfee5a1909fe01908"
+      "bytes": 5098,
+      "sha256": "b327a80f3abee7fa6a713b534df0aed02cdf7d1efa02ffee109d0da57f9607d7"
+    },
+    {
+      "path": ".github/workflows/release.yml",
+      "bytes": 8516,
+      "sha256": "90b617d6147d3122a06d3fdab42704c15a2a5b262a039a80bbaafc1c091a291d"
     },
     {
       "path": ".gitignore",
@@ -206,7 +226,7 @@
     {
       "path": "07_PLATFORM/backend/app/main.py",
       "bytes": 12892,
-      "sha256": "02e05fe041a494f1f2e8310499cf3e10214c676df1d208e6bf72436801e985a4"
+      "sha256": "f8f7d09dd095b99f41d856acf7b092d87f8761b06df6123b9ccd51c4459d1728"
     },
     {
       "path": "07_PLATFORM/backend/app/models.py",
@@ -1361,12 +1381,12 @@
     {
       "path": "07_PLATFORM/frontend/package-lock.json",
       "bytes": 115272,
-      "sha256": "8f3b3528670953966403dd03c6048545efe5ef181de299e3c5cbd33a883ea701"
+      "sha256": "98f1e1b72c132bd4f8f6e7670f70e30801bd8f025a97d8ae554bb3f7002b37ef"
     },
     {
       "path": "07_PLATFORM/frontend/package.json",
       "bytes": 851,
-      "sha256": "6e1a90e39b2742b908b3cbedffa608ed0c27a04edba7dbaedda888188be79822"
+      "sha256": "9fcc5fa5ae749665572fd98b90de351079534eba6069f5411da9d20f56aaf423"
     },
     {
       "path": "07_PLATFORM/frontend/playwright.config.ts",
@@ -1871,7 +1891,7 @@
     {
       "path": "08_INFRASTRUCTURE/kubernetes/academy.yaml",
       "bytes": 7584,
-      "sha256": "e92a8408587e89d41da115be7da5cf6387f2334e28a872fb10fa37608ad66787"
+      "sha256": "8a9b0f508a0081b46ec414dd88794649ff0cb37f0b29498c14fac896daf570a6"
     },
     {
       "path": "08_INFRASTRUCTURE/nginx/default.conf",
@@ -1881,7 +1901,12 @@
     {
       "path": "08_INFRASTRUCTURE/scripts/generate_manifest.py",
       "bytes": 2748,
-      "sha256": "1ca64cbbac336f34965f3f8ac65b16996a5a9da0239fd2bce323d8b4be115447"
+      "sha256": "bca36a483dc2195e812e700f48c3415841f65208fd59933e9f795605f4a901a6"
+    },
+    {
+      "path": "08_INFRASTRUCTURE/scripts/generate_release_status.py",
+      "bytes": 3953,
+      "sha256": "cddff273e65a15c2db432c617a617040c1cb125f90c43c76040d6c0467921a3c"
     },
     {
       "path": "08_INFRASTRUCTURE/scripts/validate_env.py",
@@ -1935,8 +1960,8 @@
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 8206,
-      "sha256": "954233a4367f40fc53cf448896f22424a90625ec8a5ef14f971620338134e17c"
+      "bytes": 10609,
+      "sha256": "d5f63ad6c75fd409ba629881b8c8711c2426c70b4cceb83ad343d5401a383a4d"
     },
     {
       "path": "CODE_OF_CONDUCT.md",
@@ -2030,13 +2055,13 @@
     },
     {
       "path": "Makefile",
-      "bytes": 2077,
-      "sha256": "3aea8b01c9bff3c5dcd75cb2b8f810fe73c09d49ceff76fc256f60bd6868c0e4"
+      "bytes": 2362,
+      "sha256": "92c9926494397b8dcbf2bf1cc31187effaed7b79b9b1107c9ffe2fe2af39d986"
     },
     {
       "path": "manifest.json",
-      "bytes": 87421,
-      "sha256": "2cd0c3a39213aa5aad0e5d17f86c25590727995059409502f7c58499fbc9f693"
+      "bytes": 87767,
+      "sha256": "312efba6a1c6a006675a4b256baff519110569a44d17ecb0150c6f38acc14465"
     },
     {
       "path": "README.md",
@@ -2045,8 +2070,13 @@
     },
     {
       "path": "README_UPDATED.md",
-      "bytes": 62917,
-      "sha256": "280488bd3665210cf6273a7b002470458507b946b007c87398eebbf9972a209b"
+      "bytes": 63458,
+      "sha256": "c93b3c06ca558f00ada7982594acf0767efb1297d23e9c179962fdace3b8cf8c"
+    },
+    {
+      "path": "RELEASE_STATUS.json",
+      "bytes": 781,
+      "sha256": "bd981cab4aeaea445b3b935d6179ef8a9c13530c9d36752b5ac9eb17a7d9945e"
     },
     {
       "path": "SECURITY.md",

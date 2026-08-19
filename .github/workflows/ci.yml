@@ -50,6 +50,72 @@ jobs:
       - name: Validate Docker Compose
         run: cp .env.example .env && docker compose config
 
+  evidence:
+    runs-on: ubuntu-latest
+    needs: validate
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Confirm manifest.json matches the actual tree
+        run: |
+          cp manifest.json /tmp/manifest.committed.json
+          python 08_INFRASTRUCTURE/scripts/generate_manifest.py
+          if ! diff -q <(python -c "import json;d=json.load(open('/tmp/manifest.committed.json'));d['created_utc']='';print(json.dumps(d,sort_keys=True))") \
+                       <(python -c "import json;d=json.load(open('manifest.json'));d['created_utc']='';print(json.dumps(d,sort_keys=True))") > /dev/null; then
+            echo "::error::manifest.json is stale — run 'make manifest' and commit the result" >&2
+            diff <(python -m json.tool /tmp/manifest.committed.json) <(python -m json.tool manifest.json) || true
+            exit 1
+          fi
+          echo "manifest.json is current."
+
+      - name: Generate CI run evidence
+        env:
+          GITHUB_SHA: ${{ github.sha }}
+          GITHUB_RUN_ID: ${{ github.run_id }}
+          GITHUB_REF_NAME: ${{ github.ref_name }}
+        run: |
+          mkdir -p evidence
+          python - <<'PY'
+          import hashlib, json, os
+          from datetime import datetime, timezone
+
+          def sha256_of(path):
+              h = hashlib.sha256()
+              with open(path, "rb") as f:
+                  h.update(f.read())
+              return h.hexdigest()
+
+          checksums = {}
+          for path in ("manifest.json", "CHANGELOG.md", "README_UPDATED.md"):
+              if os.path.exists(path):
+                  checksums[path] = sha256_of(path)
+
+          record = {
+              "generated_by": "ci.yml / evidence job",
+              "generated_utc": datetime.now(timezone.utc).isoformat(),
+              "commit": os.environ.get("GITHUB_SHA"),
+              "ref": os.environ.get("GITHUB_REF_NAME"),
+              "run_id": os.environ.get("GITHUB_RUN_ID"),
+              "checksums": checksums,
+          }
+          with open("evidence/ci_evidence.json", "w", encoding="utf-8") as f:
+              json.dump(record, f, indent=2)
+              f.write("\n")
+          print(json.dumps(record, indent=2))
+          PY
+
+      - name: Upload CI evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: ci-evidence-${{ github.sha }}
+          path: evidence/ci_evidence.json
+          retention-days: 90
+
   e2e:
     runs-on: ubuntu-latest
     needs: validate

@@ -1,0 +1,55 @@
+# CODEOWNERS — required review by domain.
+#
+# GitHub only enforces this once branch protection on `main` has
+# "Require review from Code Owners" enabled (see BRANCH_PROTECTION.md)
+# AND every handle below is replaced with a real GitHub user or team that
+# actually exists in this organization. Unrecognized/placeholder handles
+# are silently ignored by GitHub, not an error — so this file is inert
+# until that replacement happens. Do not treat its presence alone as
+# evidence that review is enforced.
+#
+# Later patterns win on overlap, matching GitHub's own precedence rule —
+# most specific path last.
+
+# Runtime — the platform that actually executes: backend, frontend, PHP
+# integration endpoint, and the containers/compose config that ship them.
+/07_PLATFORM/backend/app/           @ai-training-academy/runtime-owners
+/07_PLATFORM/frontend/src/          @ai-training-academy/runtime-owners
+/07_PLATFORM/php/                   @ai-training-academy/runtime-owners
+/08_INFRASTRUCTURE/docker/          @ai-training-academy/runtime-owners
+/08_INFRASTRUCTURE/kubernetes/      @ai-training-academy/runtime-owners
+/docker-compose.yml                 @ai-training-academy/runtime-owners
+
+# Registry — the canonical identity system specifically (R2): schema,
+# resolution, verification workflow, and the production seed location.
+/07_PLATFORM/backend/app/orm.py                    @ai-training-academy/registry-owners
+/07_PLATFORM/backend/app/schemas.py                @ai-training-academy/registry-owners
+/07_PLATFORM/backend/app/service_members.py        @ai-training-academy/registry-owners
+/07_PLATFORM/backend/app/identity_resolution.py    @ai-training-academy/registry-owners
+/07_PLATFORM/backend/app/seed.py                   @ai-training-academy/registry-owners
+/07_PLATFORM/backend/app/canary.py                 @ai-training-academy/registry-owners
+/07_PLATFORM/backend/app/users.py                  @ai-training-academy/registry-owners
+/11_PERSONNEL/                                      @ai-training-academy/registry-owners
+
+# Governance — institutional doctrine, policy config, and the standards
+# that define what "correct" means for the platform above.
+/README_UPDATED.md                  @ai-training-academy/governance-owners
+/03_OPERATING_MANUAL/               @ai-training-academy/governance-owners
+/09_CONFIG/                         @ai-training-academy/governance-owners
+/SECURITY.md                        @ai-training-academy/governance-owners
+/CONTRIBUTING.md                    @ai-training-academy/governance-owners
+/CODE_OF_CONDUCT.md                 @ai-training-academy/governance-owners
+/CHANGELOG.md                       @ai-training-academy/governance-owners
+/10_DOCS/                           @ai-training-academy/governance-owners
+/CARC_AUDIT_SWEEP_*.md              @ai-training-academy/governance-owners
+/Iteration_8_*                      @ai-training-academy/governance-owners
+
+# Evidence — what proves any of the above is actually true: the release
+# manifest, release-status record, canary, and the tests/workflows that
+# generate and check them. Highest-stakes category, most specific pattern.
+/manifest.json                                      @ai-training-academy/evidence-owners
+/RELEASE_STATUS.json                                 @ai-training-academy/evidence-owners
+/08_INFRASTRUCTURE/scripts/generate_manifest.py      @ai-training-academy/evidence-owners
+/08_INFRASTRUCTURE/scripts/generate_release_status.py @ai-training-academy/evidence-owners
+/07_PLATFORM/backend/tests/test_production_identity_canary.py @ai-training-academy/evidence-owners
+/.github/workflows/                                  @ai-training-academy/evidence-owners

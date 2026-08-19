@@ -199,7 +199,7 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(
     title="AI Training Academy API",
-    version=os.getenv("APP_VERSION", "2.3.1"),
+    version=os.getenv("APP_VERSION", "2.4.0"),
     description="Reference API for hybrid AI routing and academy operations.",
     lifespan=lifespan,
 )

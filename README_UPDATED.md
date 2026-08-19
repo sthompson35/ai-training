@@ -6,7 +6,7 @@ AI Training Academy™
 [![Architecture](https://img.shields.io/badge/architecture-hybrid_AI-purple)](#reference-architecture)
 [![Governance](https://img.shields.io/badge/governance-required-darkgreen)](#governance-standard)
 [![Security](https://img.shields.io/badge/security-zero_trust-red)](#security-standard)
-[![Version](https://img.shields.io/badge/version-2.3.1-black)](#versioning)
+[![Version](https://img.shields.io/badge/version-2.4.0-black)](#versioning)
 
 The AI Training Academy is a complete institutional framework for training people and AI agents to design, build, deploy, govern, evaluate, and improve trustworthy AI systems.
 
@@ -641,6 +641,11 @@ Documentation Map
 | `CONTRIBUTING.md` | Contribution workflow |
 | `SECURITY.md` | Security policy |
 | `CHANGELOG.md` | Release history |
+| `.github/BRANCH_PROTECTION.md` | Required `main` branch ruleset and how to apply it |
+| `.github/ENVIRONMENTS.md` | The `production` GitHub Environment, approval gate, and deployment secrets |
+| `.github/CODEOWNERS` | Required reviewers by domain (runtime, registry, governance, evidence) |
+| `RELEASE_STATUS.json` | The canonical, CI-generated record of the current release's test results, canary status, and production gate decision |
+| `manifest.json` | File-hash manifest of the distributable package (`make manifest` to regenerate) |
 
 Contribution Workflow
 
@@ -667,7 +672,7 @@ The repository follows semantic versioning:
 
 Model IDs, prompts, policies, schemas, and knowledge collections must be versioned independently.
 
-Current institutional package: 2.3.1
+Current institutional package: 2.4.0
 
 Roadmap
 
