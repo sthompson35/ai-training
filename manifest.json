@@ -1,7 +1,7 @@
 {
   "package": "AI Training Academy Institutional Standard",
   "version": "2.4.0",
-  "created_utc": "2026-08-19T22:12:00.387711+00:00",
+  "created_utc": "2026-08-19T22:19:10.840596+00:00",
   "files": [
     {
       "path": ".env.example",
@@ -79,14 +79,14 @@
       "sha256": "de698b089fed33932bf95a1c1c9f115e48b7065444e8a2ae6eaf86ff6937adca"
     },
     {
-      "path": "02_CERTIFICATION/assessment_blueprints.csv",
-      "bytes": 556,
-      "sha256": "4f3d7f891d057a005fe01ddb5465ec2931a8c10fd24fa58e762ffefacbdbf19d"
-    },
-    {
       "path": "02_CERTIFICATION/Certification_Path.md",
       "bytes": 1791,
       "sha256": "1dbcaa63f9af3f95a7a9f1322e7a018c85d054565fd0cb98212c70455e710578"
+    },
+    {
+      "path": "02_CERTIFICATION/assessment_blueprints.csv",
+      "bytes": 556,
+      "sha256": "4f3d7f891d057a005fe01ddb5465ec2931a8c10fd24fa58e762ffefacbdbf19d"
     },
     {
       "path": "03_OPERATING_MANUAL/Internal_Operating_Manual.md",
@@ -114,14 +114,14 @@
       "sha256": "6d803919587079f8e50fbca318dbdec13d61cb0ad8bc8f7c8957d71b8b606e74"
     },
     {
-      "path": "04_KNOWLEDGE_BASE/glossary.csv",
-      "bytes": 1372,
-      "sha256": "47be102d07ff7e526c192ba76c8ad5c09bd00e938237539f8b241295ced2b354"
-    },
-    {
       "path": "04_KNOWLEDGE_BASE/Knowledge_Base_Index.md",
       "bytes": 1238,
       "sha256": "aa1b9775558e04f38dcf5ceca89c6f5cbf0acd38f0a67ebff86474b9201c5b7d"
+    },
+    {
+      "path": "04_KNOWLEDGE_BASE/glossary.csv",
+      "bytes": 1372,
+      "sha256": "47be102d07ff7e526c192ba76c8ad5c09bd00e938237539f8b241295ced2b354"
     },
     {
       "path": "04_KNOWLEDGE_BASE/taxonomy.json",
@@ -314,6 +314,11 @@
       "sha256": "b29641f14db12a50318c01520c4dbc84eb1e172c7a92ab5687fa61ad93385fad"
     },
     {
+      "path": "07_PLATFORM/backend/tests/fixtures/synthetic_personnel/README.md",
+      "bytes": 764,
+      "sha256": "8af69bb888d56400c12fea2b99f44b6d0828d5376b9f33de9fcca4552308a963"
+    },
+    {
       "path": "07_PLATFORM/backend/tests/fixtures/synthetic_personnel/personnel_role_history_seed.csv",
       "bytes": 403,
       "sha256": "fd4afe80f0c1ff5ed66076e246cc71162872782ff100bd7d5d85c7fa45caa6a1"
@@ -322,11 +327,6 @@
       "path": "07_PLATFORM/backend/tests/fixtures/synthetic_personnel/personnel_roster.csv",
       "bytes": 19020,
       "sha256": "03ade6a2acbef6e0f06af7dae5aa0dd7eb2e64b7bf37b0fc19aadc7cc142a706"
-    },
-    {
-      "path": "07_PLATFORM/backend/tests/fixtures/synthetic_personnel/README.md",
-      "bytes": 764,
-      "sha256": "8af69bb888d56400c12fea2b99f44b6d0828d5376b9f33de9fcca4552308a963"
     },
     {
       "path": "07_PLATFORM/backend/tests/test_agents.py",
@@ -419,6 +419,21 @@
       "sha256": "6ff857d2eff183021bc46d276ca77bf0a57d155428e733b5cd55dd00480a2b49"
     },
     {
+      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/AI-Training.Gui.Tests.csproj",
+      "bytes": 786,
+      "sha256": "b3f1b278f376d3dfd7c2b65eea69680db5807fdb8bb6e8ce83104a7fa33f9aed"
+    },
+    {
+      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/ApiClientTests.cs",
+      "bytes": 1890,
+      "sha256": "d14f11abfd5d178d378d2b7638e766e24bd67d81e44c0f3793321b5f29d3d45b"
+    },
+    {
+      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/FakeHttpMessageHandler.cs",
+      "bytes": 795,
+      "sha256": "961a9a18071f6e5877500d782603c747349d7cb272d3f36ce2799d9ed5cf3c5f"
+    },
+    {
       "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/AI-Training.Gui.csproj",
       "bytes": 478,
       "sha256": "c2f33b1c17031e423ca3b694851d93e5e7fc2a9ee448ee921f9f884458aee8fe"
@@ -432,11 +447,6 @@
       "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/App.xaml.cs",
       "bytes": 1078,
       "sha256": "c37ac8bf9ad9dd5a44f307b1e5d15a2ee1a4b7c2d34026c360524891485887fd"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/appsettings.json",
-      "bytes": 49,
-      "sha256": "4b62c864275d52d1c4213ce5fdc09e4cbe442d3e2f2c427bdfcda544fb5bf54b"
     },
     {
       "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/AssemblyInfo.cs",
@@ -489,19 +499,9 @@
       "sha256": "17be3892ffc86c4ae5785fd2204ff8c4cde729492dd9b25565e7894c086b039c"
     },
     {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/AI-Training.Gui.Tests.csproj",
-      "bytes": 786,
-      "sha256": "b3f1b278f376d3dfd7c2b65eea69680db5807fdb8bb6e8ce83104a7fa33f9aed"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/ApiClientTests.cs",
-      "bytes": 1890,
-      "sha256": "d14f11abfd5d178d378d2b7638e766e24bd67d81e44c0f3793321b5f29d3d45b"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/FakeHttpMessageHandler.cs",
-      "bytes": 795,
-      "sha256": "961a9a18071f6e5877500d782603c747349d7cb272d3f36ce2799d9ed5cf3c5f"
+      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/appsettings.json",
+      "bytes": 49,
+      "sha256": "4b62c864275d52d1c4213ce5fdc09e4cbe442d3e2f2c427bdfcda544fb5bf54b"
     },
     {
       "path": "07_PLATFORM/frontend/e2e/auth.spec.ts",
@@ -1050,8 +1050,8 @@
     },
     {
       "path": "08_INFRASTRUCTURE/scripts/generate_manifest.py",
-      "bytes": 3183,
-      "sha256": "e32db3333d48ca89b9dfb7d3114600e3f0f145f02413bc2e913a8fa867e9a095"
+      "bytes": 3722,
+      "sha256": "9fac4d855c6f9e1e3a73c970d692eb8eb396d79f9d9963630db0ae894a39accf"
     },
     {
       "path": "08_INFRASTRUCTURE/scripts/generate_release_status.py",
@@ -1122,11 +1122,6 @@
       "path": "CONTRIBUTING.md",
       "bytes": 879,
       "sha256": "4e78eecebf2d3dd9e6cd0e1ad3c47bde6d6059d826fe16e3abcc7c47f84aa72e"
-    },
-    {
-      "path": "docker-compose.yml",
-      "bytes": 2006,
-      "sha256": "ba636ac9a66ab5701c26ad663db07db49cbad032a298992ba552a37b9416f682"
     },
     {
       "path": "Iteration_8_Delta_Audit_Eighth_Updated_ZIP.json",
@@ -1227,6 +1222,11 @@
       "path": "SECURITY.md",
       "bytes": 903,
       "sha256": "169ef6b4985d7981751f3e6d5ef35111914821ae2af60b86d3acaf46348aca66"
+    },
+    {
+      "path": "docker-compose.yml",
+      "bytes": 2006,
+      "sha256": "ba636ac9a66ab5701c26ad663db07db49cbad032a298992ba552a37b9416f682"
     }
   ]
 }

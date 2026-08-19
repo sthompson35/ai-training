@@ -64,7 +64,17 @@ def is_excluded(rel_path: Path) -> bool:
 def main() -> None:
     root = Path(".")
     files = []
-    for path in sorted(p for p in root.rglob("*") if p.is_file()):
+    # Sort by the posix-style relative path *string*, not by comparing Path
+    # objects directly: pathlib's ordering is case-insensitive on Windows
+    # (NTFS semantics) but case-sensitive on POSIX, so the same file set
+    # produces a different manifest ordering depending which OS generated
+    # it — exactly the kind of platform-dependent "evidence" this script
+    # exists to avoid. String comparison is deterministic everywhere.
+    all_files = sorted(
+        (p for p in root.rglob("*") if p.is_file()),
+        key=lambda p: p.relative_to(root).as_posix(),
+    )
+    for path in all_files:
         rel = path.relative_to(root)
         if is_excluded(rel):
             continue
