@@ -1,7 +1,7 @@
 {
   "package": "AI Training Academy Institutional Standard",
   "version": "2.4.0",
-  "created_utc": "2026-08-19T15:45:52.427992+00:00",
+  "created_utc": "2026-08-19T15:46:57.943769+00:00",
   "files": [
     {
       "path": ".env.example",
@@ -2060,8 +2060,8 @@
     },
     {
       "path": "manifest.json",
-      "bytes": 87767,
-      "sha256": "312efba6a1c6a006675a4b256baff519110569a44d17ecb0150c6f38acc14465"
+      "bytes": 88776,
+      "sha256": "9a4e0ab9245acae769a7c070d018f903b6cc5b711a3fff04dcf8f2648c2fc00d"
     },
     {
       "path": "README.md",

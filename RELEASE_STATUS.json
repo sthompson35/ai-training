@@ -1,9 +1,9 @@
 {
   "package": "AI Training Academy Institutional Standard",
-  "version": "2.3.1",
-  "git_commit": "727159b8d5e00b94fd5a2a261c6bab9692d173ab",
-  "git_ref": "727159b",
-  "generated_utc": "2026-08-19T15:41:20.034526+00:00",
+  "version": "2.4.0",
+  "git_commit": "39146108b892a660d99a9e8f5bc071ea26b58434",
+  "git_ref": "3914610",
+  "generated_utc": "2026-08-19T15:46:58.039511+00:00",
   "backend_tests": {
     "passed": 163,
     "total": 163,
@@ -17,9 +17,9 @@
   "production_identity_canary": "NOT_APPLICABLE_NO_PRODUCTION_IDENTITIES",
   "manifest": {
     "present": true,
-    "version": "2.3.1",
-    "file_count": 410,
-    "generated_utc": "2026-08-19T15:21:18.543662+00:00"
+    "version": "2.4.0",
+    "file_count": 416,
+    "generated_utc": "2026-08-19T15:46:57.943769+00:00"
   },
   "production_gate_decision": "GO",
   "notes": "Manually generated pending first tag-triggered release.yml run against a real GitHub remote."
