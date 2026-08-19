@@ -35,10 +35,17 @@ EXCLUDED_DIR_NAMES = {
     ".git",
     ".idea",
     ".vscode",
+    # .NET build output (07_PLATFORM/dotnet-client) — see .gitignore for why
+    # these are excluded there too; this list is intentionally kept in sync
+    # with .gitignore's build-artifact entries rather than reading it
+    # directly, so a change to one is a deliberate edit to both, not a
+    # silent behavior change picked up from a file this script doesn't own.
+    "bin",
+    "obj",
 }
 EXCLUDED_PATH_PREFIXES = ("07_PLATFORM/frontend/e2e/.auth",)
 EXCLUDED_FILENAMES = {".env", ".DS_Store", "manifest.json"}
-EXCLUDED_SUFFIXES = {".pyc", ".pyo", ".log", ".sqlite", ".db"}
+EXCLUDED_SUFFIXES = {".pyc", ".pyo", ".log", ".sqlite", ".db", ".dll", ".pdb", ".exe"}
 
 
 def is_excluded(rel_path: Path) -> bool:

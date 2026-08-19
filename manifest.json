@@ -1,42 +1,42 @@
 {
   "package": "AI Training Academy Institutional Standard",
   "version": "2.4.0",
-  "created_utc": "2026-08-19T18:19:10.760691+00:00",
+  "created_utc": "2026-08-19T22:06:06.372814+00:00",
   "files": [
     {
       "path": ".env.example",
-      "bytes": 1743,
-      "sha256": "d9118ded28e285ade6e50a2cbf9850f2a208cc5d5449259b96cf60b4fb30d566"
+      "bytes": 1795,
+      "sha256": "10b12259c3b7e05fd24523135d8fa83611336fc858eecb211e2a87b35a76db46"
     },
     {
       "path": ".github/BRANCH_PROTECTION.md",
-      "bytes": 4363,
-      "sha256": "b36d90c5908527165df7b0f8d5715468c452100b2608a9af91d6fff1d2ad50d7"
+      "bytes": 4445,
+      "sha256": "9ca577eb7cee538ada2100f340959eb61d8d8fb894b32bf1cf35bf87f4456aec"
     },
     {
       "path": ".github/CODEOWNERS",
-      "bytes": 3696,
-      "sha256": "a87b3de5c51e3fb7f232b0424cc3bf67ae77c5a329ef8a104aae2f1ca6155cea"
+      "bytes": 3751,
+      "sha256": "f8563a0d7f2a1f54128f3a67a366850fe7b6da9efa694945119d466d476f02c7"
     },
     {
       "path": ".github/ENVIRONMENTS.md",
-      "bytes": 4019,
-      "sha256": "c38eeecd1146fd443d6eca0f2f5ec130adccb643d1a966a92940aab374ebcbe6"
+      "bytes": 4102,
+      "sha256": "557a6ad7e0254956fdd817f2d031260b007a9520017c887a63220085bfab6097"
     },
     {
       "path": ".github/workflows/ci.yml",
-      "bytes": 5208,
-      "sha256": "23ec4fd10b9d7a11a3fea681404b704443cd6aeb4b29d68dce56efb607a7c0b9"
+      "bytes": 5378,
+      "sha256": "81bd8f76a9f912b505958ad462add0a32899b612a168aa697c2409d320f26256"
     },
     {
       "path": ".github/workflows/release.yml",
-      "bytes": 8516,
-      "sha256": "90b617d6147d3122a06d3fdab42704c15a2a5b262a039a80bbaafc1c091a291d"
+      "bytes": 8727,
+      "sha256": "aaa3af974e9328643cb168f967052443affd799e585229b7d2c0025658263ac0"
     },
     {
       "path": ".gitignore",
-      "bytes": 252,
-      "sha256": "b47406c0c0b3f243b5332d1331a4f2a18dcf2231b7dac966428fd008d26414a5"
+      "bytes": 593,
+      "sha256": "ec03f27e1fafadd257d150e80106611e23546522994d60726ee4c8d49c096d92"
     },
     {
       "path": "00_SOURCE/AI_TRAINING_SOURCE.pdf",
@@ -45,118 +45,118 @@
     },
     {
       "path": "00_SOURCE/README_GITHUB_PRE_RECONCILIATION.md",
-      "bytes": 305,
-      "sha256": "8ab0dc573162df43ece00aa84396a7f09374008a3c3747c54da1a51766167b8a"
+      "bytes": 307,
+      "sha256": "f0fbae178e56dfe24a3a66de2cc0c38bc4d15c978956c48182c8d8332b353242"
     },
     {
       "path": "00_SOURCE/README_v2.0.0_ORIGINAL.md",
-      "bytes": 58701,
-      "sha256": "07029d4b1f8afa0418f1f9c3cb854e45bea85aad32c64da7a0f02e119ada7379"
+      "bytes": 59719,
+      "sha256": "43386a7d41b89dbbb218c8905c3ce4f22b9c9f71bf913cff4311c73075b1d4fd"
     },
     {
       "path": "00_SOURCE/README_v2.0.0_SOURCE_MANIFEST.md",
-      "bytes": 751,
-      "sha256": "8cc713b888477a61c52418d76a654cefebc05c999456271fed8515d7c73a3230"
+      "bytes": 759,
+      "sha256": "89c8915067c86cfd5dbf0be93137ca0aa946377a48fad21ea1e67ac2da2e2d70"
     },
     {
       "path": "01_CURRICULUM/AI_Training_Curriculum.md",
-      "bytes": 11668,
-      "sha256": "3858dd3c5fa1c6b2e00683f668023f40010d1cd8161b2878cad8cbe049c2b1db"
+      "bytes": 11979,
+      "sha256": "3b684d44e013b8bfe34d1f68d2e6a08ccf0e0782387ec123cdd9cee0a626b886"
     },
     {
       "path": "01_CURRICULUM/lab_catalog.csv",
-      "bytes": 1445,
-      "sha256": "ff309353daa95b1319fce41ef10a7b538c64743f986e9aa4101efae4892c1a6e"
+      "bytes": 1458,
+      "sha256": "797df041cee287b20db7f2ec6c718e9786fff61f1f4d6261120cbbe1659c6f60"
     },
     {
       "path": "01_CURRICULUM/module_catalog.csv",
-      "bytes": 11547,
-      "sha256": "de698b089fed33932bf95a1c1c9f115e48b7065444e8a2ae6eaf86ff6937adca"
-    },
-    {
-      "path": "02_CERTIFICATION/Certification_Path.md",
-      "bytes": 1791,
-      "sha256": "1dbcaa63f9af3f95a7a9f1322e7a018c85d054565fd0cb98212c70455e710578"
+      "bytes": 11619,
+      "sha256": "f957ac6e8aac0674bd1727315d028ab2f0e1cf400c092d7943e695eefe902dda"
     },
     {
       "path": "02_CERTIFICATION/assessment_blueprints.csv",
-      "bytes": 556,
-      "sha256": "4f3d7f891d057a005fe01ddb5465ec2931a8c10fd24fa58e762ffefacbdbf19d"
+      "bytes": 563,
+      "sha256": "dbc5e2dfdebefd97a769b6b9cd88ec029676496d53d440f195002f3a7d5df22f"
+    },
+    {
+      "path": "02_CERTIFICATION/Certification_Path.md",
+      "bytes": 1843,
+      "sha256": "ce77929f1dda6e6c3e33a6476232b1e720a4239eafc695b689909b042486eb0c"
     },
     {
       "path": "03_OPERATING_MANUAL/Internal_Operating_Manual.md",
-      "bytes": 3639,
-      "sha256": "cdb93c6c445bfae87499d3b8cfec7d0377ae3e1621a3adc67dbbcccc62703027"
+      "bytes": 3722,
+      "sha256": "4d9de50422f6323f4d50d55e4f27f878ed47ed628459ee8a4c2912229cd4eea5"
     },
     {
       "path": "03_OPERATING_MANUAL/SOP_Agent_Deployment.md",
-      "bytes": 560,
-      "sha256": "86757f182106d8a85fe6c1d96e9c52b7cd6c639fe22cffb33c6668a8816b8130"
+      "bytes": 572,
+      "sha256": "51307bc0da6e1ce40ba3d951f16aa3446e28d37f59877dd82a5cd0a29991dc8d"
     },
     {
       "path": "03_OPERATING_MANUAL/SOP_Incident_Response.md",
-      "bytes": 568,
-      "sha256": "d14fe4093ba0d3251731016e6568d94904cfdad7b4e71ef8886059fb5ba3ddfa"
+      "bytes": 580,
+      "sha256": "4416dee509c85d2d7bff909c6028f71d9e3d1ceeb5b882df4b639c2c1d68966f"
     },
     {
       "path": "03_OPERATING_MANUAL/SOP_Model_Routing.md",
-      "bytes": 757,
-      "sha256": "21af94d5c144137e88449189b05746da67d44d59e796667e68fb2ebae0f68bb7"
+      "bytes": 772,
+      "sha256": "1934c57fd7797d904fe98b220cc94014b2a7f2c18ae9e03cc908c7413b33e045"
     },
     {
       "path": "03_OPERATING_MANUAL/SOP_Prompt_Release.md",
-      "bytes": 579,
-      "sha256": "6d803919587079f8e50fbca318dbdec13d61cb0ad8bc8f7c8957d71b8b606e74"
-    },
-    {
-      "path": "04_KNOWLEDGE_BASE/Knowledge_Base_Index.md",
-      "bytes": 1238,
-      "sha256": "aa1b9775558e04f38dcf5ceca89c6f5cbf0acd38f0a67ebff86474b9201c5b7d"
+      "bytes": 591,
+      "sha256": "7fbba03fef4e00f30d5fdf125923ef7b7fcc881b61d05ba371e67b0d31ae9ee5"
     },
     {
       "path": "04_KNOWLEDGE_BASE/glossary.csv",
-      "bytes": 1372,
-      "sha256": "47be102d07ff7e526c192ba76c8ad5c09bd00e938237539f8b241295ced2b354"
+      "bytes": 1388,
+      "sha256": "fea2b9234a09388f30ed5367d2341aeeca75c4df1a908b11ac9cfcdb38723e60"
+    },
+    {
+      "path": "04_KNOWLEDGE_BASE/Knowledge_Base_Index.md",
+      "bytes": 1290,
+      "sha256": "f83b2edac2cfb2fdcd0ea7e7bdc52690c4210339c79f0ecc5eb1af764ada60fb"
     },
     {
       "path": "04_KNOWLEDGE_BASE/taxonomy.json",
-      "bytes": 8685,
-      "sha256": "89cebbf69696bd4163881770e72cc291461d295320cb4e172182a86f40341025"
+      "bytes": 9106,
+      "sha256": "7fd3f9db18364964b64f5302014e3359bf28426f5aa80dfb2449918959bc1a06"
     },
     {
       "path": "05_TEMPLATES/agent_card.md",
-      "bytes": 261,
-      "sha256": "cd25031cad657e1c18f33a28ee49f855bd820f2b557bc5e106ac18babe00877c"
+      "bytes": 280,
+      "sha256": "9537d67ae72e3f254b7933b29242b4369cc094135b9e2faa94d0cff7a0ef2e34"
     },
     {
       "path": "05_TEMPLATES/evaluation_scorecard.csv",
-      "bytes": 366,
-      "sha256": "6242ebd084dede829670156dee6d6d92d8f2bfabcb0a3ae557c204ab0e7f0daa"
+      "bytes": 374,
+      "sha256": "3e1d6616892a65649852ffe490f07d253103ebbfe5d1c94842b26d0581f819d9"
     },
     {
       "path": "05_TEMPLATES/lab_template.md",
-      "bytes": 178,
-      "sha256": "28a3cde3a202cd1773853154bbe17b4cfd992721b3e96759c893f423ff6ee59b"
+      "bytes": 191,
+      "sha256": "64b96ff27c11ba1e3af0fd5153950c6f6d121c486884508e5d45bc989b46cf29"
     },
     {
       "path": "05_TEMPLATES/lesson_template.md",
-      "bytes": 274,
-      "sha256": "9aad8a6ccc8f20c5b2ba578c131df2827121843accbbdc8a79efe566d217cabc"
+      "bytes": 294,
+      "sha256": "792337fad0e107e256c5149daa417077f54feebbedcf39906e6e051f9595c8e3"
     },
     {
       "path": "05_TEMPLATES/release_checklist.md",
-      "bytes": 415,
-      "sha256": "58d691273d7086086b0207c4ac4207aaeabb81051506469e913d267900ec7d64"
+      "bytes": 431,
+      "sha256": "09cbbc7a418d54e5439f271154f884b637c253a2f06997efb139819c7ded6844"
     },
     {
       "path": "06_IMPLEMENTATION/90_day_rollout.md",
-      "bytes": 1199,
-      "sha256": "ae7ff15e86a11eee26a86d6277e109d552ed0bc2d3ab70149a8016b2cb72b1c8"
+      "bytes": 1234,
+      "sha256": "eac2f1230008c43e66d8ada62a3c6f0d024921df03863a5e5edd9035399cfdba"
     },
     {
       "path": "06_IMPLEMENTATION/governance_raci.csv",
-      "bytes": 281,
-      "sha256": "fbfb3af1d262d47427a12a5ace6800873553157c959d56aa9a473923f0c3d629"
+      "bytes": 288,
+      "sha256": "79392be478b8a145bd9729cbe288e782f184d7c4cb3d64c18f39656a137ccdd4"
     },
     {
       "path": "07_PLATFORM/backend/app/__init__.py",
@@ -165,1703 +165,838 @@
     },
     {
       "path": "07_PLATFORM/backend/app/agents.py",
-      "bytes": 7823,
-      "sha256": "994340fe85736a1915abffc7baaf9ef875e1e5a37a21d681b0286015f1bc46f9"
+      "bytes": 8023,
+      "sha256": "61af519a3652f4a36fcb39dffa0b2a0f2e74a1d4cebc24c51c5a91302f9e6157"
     },
     {
       "path": "07_PLATFORM/backend/app/analytics.py",
-      "bytes": 2324,
-      "sha256": "3674ea81fc7bc93583de8d599c14c668729e3859d53ea688e33c4bfc7858463f"
+      "bytes": 2383,
+      "sha256": "9cc479e0d387893b8bfa963656d986e65466fa462d8e4c3f49a1426b99d66276"
     },
     {
       "path": "07_PLATFORM/backend/app/audit.py",
-      "bytes": 3334,
-      "sha256": "e5d8ef25a01327f3ed794daa0f39360cc349eaba83371e66f01a4edfcade7acd"
+      "bytes": 3429,
+      "sha256": "d9842cd46729f542412b0e2282f78cdad158e7643063f9845c24f43eaac68407"
     },
     {
       "path": "07_PLATFORM/backend/app/auth.py",
-      "bytes": 2562,
-      "sha256": "40d7807cb277442440f1aab253fcf447dc66446a6dfc86fdf688a22e529d7719"
+      "bytes": 2632,
+      "sha256": "13399701f04c1c54de3b4b3eea3eb01fea67495345013cb6934c530cd462b87e"
     },
     {
       "path": "07_PLATFORM/backend/app/canary.py",
-      "bytes": 4443,
-      "sha256": "1962f9c9da8c32ed4110d8ee49f34386c9b58548a4a30027273da6d24a652e09"
+      "bytes": 4557,
+      "sha256": "90b002564f1e06672e92bcd8ec88d229da5fa64381f44dbc5bf952eefe2ba2a0"
     },
     {
       "path": "07_PLATFORM/backend/app/certification.py",
-      "bytes": 10756,
-      "sha256": "3d05d89a2689ab48c304936bf0a5bfaace588c0f6e3004a025793031519be863"
+      "bytes": 11054,
+      "sha256": "b36e498bcfc54baad64d30862a3dd9eae2b640588d1f9f54b4899fb10d68857b"
     },
     {
       "path": "07_PLATFORM/backend/app/csv_export.py",
-      "bytes": 544,
-      "sha256": "f4fe00341b004c71aaddcc0280ce5c6dfa4f3d59e726de7e8f9e78f278148e89"
+      "bytes": 562,
+      "sha256": "90e3c0b03e89c222b564ec4b647fcaa01a3086f18d1af62c6651bca09d4d4f15"
     },
     {
       "path": "07_PLATFORM/backend/app/csv_import.py",
-      "bytes": 221,
-      "sha256": "b84d671767510bb55f3e866ac59965fc4240d2530322ce32c72fe6ead9bcffd5"
+      "bytes": 230,
+      "sha256": "5679775d10a5f248cfbe5d4f6cdcc1a189611e25bc5f2946fe8c8e55ed9d5fe4"
     },
     {
       "path": "07_PLATFORM/backend/app/curriculum.py",
-      "bytes": 9415,
-      "sha256": "d272ed23fa6f3e717e4d192e1b1935487c9b56995718f67efe2476c7ebbe3f03"
+      "bytes": 9700,
+      "sha256": "19ce7f60eeadc89b785419aa310eefcdebc232c3bfcaa7562c41b25412e69bd2"
     },
     {
       "path": "07_PLATFORM/backend/app/db.py",
-      "bytes": 1152,
-      "sha256": "681cfdba37f8ac1d07c0e1d2c020862d6d5870edbdfbfa3e1ed94f239f58b159"
+      "bytes": 1183,
+      "sha256": "bf2490aabbb43ea9abe17c21cc2f9774e02554a3a0c88d51e472f431139c02af"
     },
     {
       "path": "07_PLATFORM/backend/app/governance.py",
-      "bytes": 3960,
-      "sha256": "a6dfcd1511ce4e50e417eb8cf5f821908236eb3b34c14f8e565aa31504a323f7"
+      "bytes": 4082,
+      "sha256": "f0977f2a379b6e3dcb5092b3014d5d6c6dfd50d5874505effe2a8c9c826717dc"
     },
     {
       "path": "07_PLATFORM/backend/app/identity_resolution.py",
-      "bytes": 6084,
-      "sha256": "92f149a3d1f07e476da01d16bd9b8d1e890da5f2f5c75b0c0976b8f6a1a476ff"
+      "bytes": 6241,
+      "sha256": "99e9625dcb31066c34bdeb779ed50ef8568dd4a7f154e6dd018d7c4a47a6d20c"
     },
     {
       "path": "07_PLATFORM/backend/app/incidents.py",
-      "bytes": 8593,
-      "sha256": "f2538c052570976e6694aeac59c171f1f821e15b20a81e28d2fcb1bc25c6d035"
+      "bytes": 8818,
+      "sha256": "ef7b01c057b8babf52055396c98614cf488950041e8ce543c88c51e9ee71a0a0"
     },
     {
       "path": "07_PLATFORM/backend/app/knowledge_base.py",
-      "bytes": 9215,
-      "sha256": "d58076f89af95bf9d20969bfc8561fd06f2b298f76061b085a499b2a0d61df54"
+      "bytes": 9489,
+      "sha256": "ed3378c93db192770e0844055aa0d616bced1accb1cf9a1e7ece023ba2be9e2a"
     },
     {
       "path": "07_PLATFORM/backend/app/main.py",
-      "bytes": 12892,
-      "sha256": "f8f7d09dd095b99f41d856acf7b092d87f8761b06df6123b9ccd51c4459d1728"
+      "bytes": 13191,
+      "sha256": "f5d86f41a64820ed0823300b1825349762384617cb308944ecc113a2d5745286"
     },
     {
       "path": "07_PLATFORM/backend/app/models.py",
-      "bytes": 952,
-      "sha256": "f961a606324f8fa1db75c38b586435f1457227257ce8770b18c58389891b5ba4"
+      "bytes": 988,
+      "sha256": "1d3d738c795bcdeabb5884373336885a038ae65f7c2db42af87ca5b03a66780e"
     },
     {
       "path": "07_PLATFORM/backend/app/orm.py",
-      "bytes": 17375,
-      "sha256": "d4d15427504229b8f65d382f00059389a1ba7e7a667dee1a5e59161c7f93e884"
+      "bytes": 17724,
+      "sha256": "85aa8aa89374e1d31fe93936668f9ffe9cb1699c57df37a281143445008f9c22"
     },
     {
       "path": "07_PLATFORM/backend/app/pagination.py",
-      "bytes": 440,
-      "sha256": "27d7b3af490e620ea6c921dc0c24351682400d295f40dd080e2148c2c06e1731"
+      "bytes": 450,
+      "sha256": "3d2c2914cb3a60fd34c8929fdeff5bd03a831483607cf4c9750a875d0a679724"
     },
     {
       "path": "07_PLATFORM/backend/app/policy.py",
-      "bytes": 3385,
-      "sha256": "d50377a55c0aa2974fbebdb63e013be9719cc36b882d735fc990e271c84f7487"
+      "bytes": 3480,
+      "sha256": "03fbc12aae55b82a1cd9461458fe6f0a651b45f251453a4ada8a04d6c4b65c19"
     },
     {
       "path": "07_PLATFORM/backend/app/rate_limit.py",
-      "bytes": 1953,
-      "sha256": "14382cc42224a5fe6398f460bfb6586b8cfd1514a34d0b4b465bfb65e05ca992"
+      "bytes": 2014,
+      "sha256": "f7d97c5c2743d68e51701138a01bd5f93dec4f3f08206265fc28bfc272911d03"
     },
     {
       "path": "07_PLATFORM/backend/app/releases.py",
-      "bytes": 6170,
-      "sha256": "20dbecf45f29a9d78e4344038c64320de277bdc6783b9555f8a6c272fd56facf"
+      "bytes": 6343,
+      "sha256": "99ca6df8b5be22c870957a7e3f5d28dd8fba1dea84dbbca1f8dd567240e33121"
     },
     {
       "path": "07_PLATFORM/backend/app/router.py",
-      "bytes": 3933,
-      "sha256": "34494c0603fd593f78098729b1a87702c0ce1c4a2c19a24cf67a517286541cf6"
+      "bytes": 4030,
+      "sha256": "538a3d29adf45061608d722c363ad7c9ad1422b16936625a1f77fe333d8ad3e4"
     },
     {
       "path": "07_PLATFORM/backend/app/schemas.py",
-      "bytes": 14595,
-      "sha256": "282bb390fa621c0bbb3d1fb292c6419cc3f3d8cdc255b248d090c82942f9f42a"
+      "bytes": 15237,
+      "sha256": "e5d18e730b03bea37415f0cc3ccb063dd88ed98b93f822660c3387d9e24a53ab"
     },
     {
       "path": "07_PLATFORM/backend/app/search.py",
-      "bytes": 5867,
-      "sha256": "a32419675ce677c8eb7e6abcffa15e9ea20ab18a5dd2bef125150595f5294c7c"
+      "bytes": 6070,
+      "sha256": "19305d907bc68624288e857b302367e955020c56abff02a60594d2c0210a5b2f"
     },
     {
       "path": "07_PLATFORM/backend/app/seed.py",
-      "bytes": 8779,
-      "sha256": "63e1142a4bb2812b8ba41e616502cbf5a5304bdd8c06da2719770eff4b7a7152"
+      "bytes": 9017,
+      "sha256": "be4668f4a305685f416120bffae55ecb24f9b8f9421a965412f75585d7a6eccd"
     },
     {
       "path": "07_PLATFORM/backend/app/service_members.py",
-      "bytes": 10987,
-      "sha256": "b9c3f145fed96b56d2ae4469b2cb663684136bb813cff4b107b0f8ac16e9a01e"
+      "bytes": 11265,
+      "sha256": "b813d510951bffd4cb2e20ed86f3e6e83990329dfa439091f91e3d1b39620740"
     },
     {
       "path": "07_PLATFORM/backend/app/users.py",
-      "bytes": 10071,
-      "sha256": "f3bdaa331945f099c29e21fb4fca2d440b626f6d7b7a2e6545873ff7866d36a8"
+      "bytes": 10331,
+      "sha256": "d02a6609023a80dfb6f072395a1af487e097974fbce73b57d9f01de99ca3e816"
     },
     {
       "path": "07_PLATFORM/backend/requirements.txt",
-      "bytes": 206,
-      "sha256": "c59ef1416e312ed48fb9e238f99ca9199ec436f7b1dd48d94aef216ac893710d"
+      "bytes": 217,
+      "sha256": "39af1cc34f4cbdb179e11dd4290fe0d8cda900cacc5329eb5e750d48d12fecd4"
     },
     {
       "path": "07_PLATFORM/backend/tests/conftest.py",
-      "bytes": 748,
-      "sha256": "b29641f14db12a50318c01520c4dbc84eb1e172c7a92ab5687fa61ad93385fad"
-    },
-    {
-      "path": "07_PLATFORM/backend/tests/fixtures/synthetic_personnel/README.md",
-      "bytes": 764,
-      "sha256": "8af69bb888d56400c12fea2b99f44b6d0828d5376b9f33de9fcca4552308a963"
+      "bytes": 774,
+      "sha256": "1a3e26c0c608bdc31219b114dc4667ad7678b9b9e86dfe1db05d469f7e3d35fb"
     },
     {
       "path": "07_PLATFORM/backend/tests/fixtures/synthetic_personnel/personnel_role_history_seed.csv",
-      "bytes": 403,
-      "sha256": "fd4afe80f0c1ff5ed66076e246cc71162872782ff100bd7d5d85c7fa45caa6a1"
+      "bytes": 407,
+      "sha256": "cabfceeca89c52699e0d96146717b26c445c02a35a01e9e113e2f1ccb9e9a34d"
     },
     {
       "path": "07_PLATFORM/backend/tests/fixtures/synthetic_personnel/personnel_roster.csv",
-      "bytes": 19020,
-      "sha256": "03ade6a2acbef6e0f06af7dae5aa0dd7eb2e64b7bf37b0fc19aadc7cc142a706"
+      "bytes": 19087,
+      "sha256": "e461408cdfb251f2b8149f2339c89bb18f1f073c8e702b0feb873d2b1e63e72f"
+    },
+    {
+      "path": "07_PLATFORM/backend/tests/fixtures/synthetic_personnel/README.md",
+      "bytes": 777,
+      "sha256": "82e3c834fb10324e86cd02753758817233122ff84ba90332dba6ce540014f9c5"
     },
     {
       "path": "07_PLATFORM/backend/tests/test_agents.py",
-      "bytes": 5260,
-      "sha256": "41f85df0f7f9b1dfab656281873083a5d5d30c8a542a52adbfe8162f04c7c93f"
+      "bytes": 5421,
+      "sha256": "31d3f663b803352847dab210a6584db4e3a547936351bf30a11c7ca896bbfe3f"
     },
     {
       "path": "07_PLATFORM/backend/tests/test_analytics.py",
-      "bytes": 6621,
-      "sha256": "9ef37f684b78a70ee654a5db8bb5c1b82c0d6a4e38abe55b14af49128a9f9f27"
+      "bytes": 6805,
+      "sha256": "29c090f4049760a7d453fa2f8e204450c6dcd392c2f74536c3a0b0ceb60e5cfd"
     },
     {
       "path": "07_PLATFORM/backend/tests/test_audit.py",
-      "bytes": 3764,
-      "sha256": "f0e077e378e4908b47262073aa38414619c50df2b0fbfae638517956e66e389e"
+      "bytes": 3888,
+      "sha256": "3cac2dc81303b347b03e45c42284adb6215b7ec12d395062fd15b7e462976157"
     },
     {
       "path": "07_PLATFORM/backend/tests/test_auth.py",
-      "bytes": 2720,
-      "sha256": "170fe8c0b67be793aef9e9aa8a718f53fc402f972076f7eb1f2bc77d3f457594"
+      "bytes": 2808,
+      "sha256": "6c5599c04abf798484caaf29a93db58dcf0557afee6ad6783809f3ef41fe8630"
     },
     {
       "path": "07_PLATFORM/backend/tests/test_certification.py",
-      "bytes": 9052,
-      "sha256": "1dfe2d9b14ddc345222431239de0e9dcc5e6eae96e33c0a281e0bf875ffb0139"
+      "bytes": 9320,
+      "sha256": "53893df54c27a31691025714e9e93483bff62ea3f72f6fbf4e60eb02c24dff02"
     },
     {
       "path": "07_PLATFORM/backend/tests/test_cors.py",
-      "bytes": 1076,
-      "sha256": "d13e73fc5f90fffe07c5c34d3f6bd5f77421774271bb71347d705426960928e9"
+      "bytes": 1105,
+      "sha256": "317e967f0409f93efcd3dad7fa9dd7699551ee6b2e356337b2c2badd1a549e93"
     },
     {
       "path": "07_PLATFORM/backend/tests/test_curriculum.py",
-      "bytes": 5340,
-      "sha256": "5c4fa386e8e2c75494db8cbccd98df9f1224e79a2e76709a9682806e8833a593"
+      "bytes": 5510,
+      "sha256": "b2776fdfdfee589d9b1844324295e76e57801ae48f9635a57c997eba28c0653d"
     },
     {
       "path": "07_PLATFORM/backend/tests/test_governance.py",
-      "bytes": 3847,
-      "sha256": "feb93beffd2ffcbfb183472b5ef73cde7c2987f4bd9d3acf4c32d9a746be8ea8"
+      "bytes": 3964,
+      "sha256": "1d4ced1b1c833a333dd045d0c0ef1fd4b1304e5b2f54996abe10d0e4c0e4e6a3"
     },
     {
       "path": "07_PLATFORM/backend/tests/test_incidents.py",
-      "bytes": 12712,
-      "sha256": "e08056943a62388546982c684b6f41812b2854270d0fe4d01f67fac193262589"
+      "bytes": 13069,
+      "sha256": "9722ec28381ecba144ba12e8f26523b4597cb6d5c759fad9edbd96e9dd36bd8f"
     },
     {
       "path": "07_PLATFORM/backend/tests/test_knowledge_base.py",
-      "bytes": 6895,
-      "sha256": "041d02970a7ba78eb33f37d420192228a27774ee046b1452ab43876a2879a2cc"
+      "bytes": 7094,
+      "sha256": "1f3bf328627cb98730e1a0b44fb49224558bc0c39d77147e67d4eec5a94733b0"
     },
     {
       "path": "07_PLATFORM/backend/tests/test_policy.py",
-      "bytes": 4859,
-      "sha256": "6693991a7a4b726408e2d9218b1026ca61f6b45fbc9d76f6ad984a3691a9e41d"
+      "bytes": 5005,
+      "sha256": "6c7633a830dafa5adc9ec9124f78c8c1f528f2bea9a6200d95d2a95ddf2aa941"
     },
     {
       "path": "07_PLATFORM/backend/tests/test_production_identity_canary.py",
-      "bytes": 11548,
-      "sha256": "1e67ee383765d4356834920c90ad0ba5da5fb80121e8bb50553f397c97c59f39"
+      "bytes": 11847,
+      "sha256": "4ae7744d25a6de955174cd3f21e3c29064f28c7a72911c60ed5743e6d1265257"
     },
     {
       "path": "07_PLATFORM/backend/tests/test_rate_limit.py",
-      "bytes": 2208,
-      "sha256": "383947da61b857513069401bbb6c90139ca067aa9c88f6327e0849be13380b38"
+      "bytes": 2281,
+      "sha256": "3863faab4a1c030e08523d91a50b52d8b6d9c58145fd9568d41a16d2670e605b"
     },
     {
       "path": "07_PLATFORM/backend/tests/test_releases.py",
-      "bytes": 5720,
-      "sha256": "4b95ee8d6c22998e35edaa171b8456adac337f0f3b8cad79a187a8b148873567"
+      "bytes": 5893,
+      "sha256": "e7044cd8c3497fd0aa8129e93b88e4027f34bbce3db09d525af6781ecf631ce8"
     },
     {
       "path": "07_PLATFORM/backend/tests/test_router.py",
-      "bytes": 1858,
-      "sha256": "2a020daefb9a0a59b99d78444def90ccc0d7fb48620595c43a51c252bad443b8"
+      "bytes": 1928,
+      "sha256": "9ddb586332e4e772f15f90b64cbce760eb4dffe9a29cda512eb29ef4926e46b5"
     },
     {
       "path": "07_PLATFORM/backend/tests/test_search.py",
-      "bytes": 3352,
-      "sha256": "0208cb20a8986e60ac6feec5e4dd9e18558605121168a67976ca3093934f9e7e"
+      "bytes": 3457,
+      "sha256": "4365f198fccecee67cc5e90906c4df5468b716bd54c0c36d0221a1d4a2165424"
     },
     {
       "path": "07_PLATFORM/backend/tests/test_service_members.py",
-      "bytes": 26207,
-      "sha256": "e23cd892a376dea5c97d9e51cdf94571b704349733087179a35d590f073401f5"
+      "bytes": 26872,
+      "sha256": "cd0b076a86a7e79664e0bf7330e32911f72c1cd51443c38818ac1be9b560a492"
     },
     {
       "path": "07_PLATFORM/backend/tests/test_users.py",
-      "bytes": 11695,
-      "sha256": "6ff857d2eff183021bc46d276ca77bf0a57d155428e733b5cd55dd00480a2b49"
+      "bytes": 12025,
+      "sha256": "0a15cbf9c4f5c2f6f3251d61d3b538bde1b723cb5e92f2f26779db188b41db36"
     },
     {
       "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/AI-Training.Gui.csproj",
-      "bytes": 478,
-      "sha256": "c2f33b1c17031e423ca3b694851d93e5e7fc2a9ee448ee921f9f884458aee8fe"
+      "bytes": 496,
+      "sha256": "be8cf9d8584c9eb74813456c363d820e8916fa95655fc86c5aa193bf44050f4e"
     },
     {
       "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/App.xaml",
-      "bytes": 321,
-      "sha256": "3bdaf68d80330866e4974ccb7709be2fdacd63ac86d62d8f1ef55c9d36026621"
+      "bytes": 329,
+      "sha256": "886e2f357011fbf5ed96eff80a1e872ed8ee9090ea866d539de21bfa6d62e13b"
     },
     {
       "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/App.xaml.cs",
-      "bytes": 1078,
-      "sha256": "c37ac8bf9ad9dd5a44f307b1e5d15a2ee1a4b7c2d34026c360524891485887fd"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/AssemblyInfo.cs",
-      "bytes": 633,
-      "sha256": "d41e48d2bce7f9eda84eef27c4008920a5639dd3f56baeff39273d58381575fe"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/LoginWindow.xaml",
-      "bytes": 946,
-      "sha256": "c471cbce956d3b7caac60af07a884ef465dfc789fbfb6d6a36e4e5f0380cccf6"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/LoginWindow.xaml.cs",
-      "bytes": 876,
-      "sha256": "4b390c4907c9fc8332cb45b5d3183a16abe862cb8cdecd729161ff6e808d69d8"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/MainWindow.xaml",
-      "bytes": 1313,
-      "sha256": "1705222b6629cb73066d7e5281967fefcec6e0ca5d10fd54c0ccf1f9efc23a33"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/MainWindow.xaml.cs",
-      "bytes": 1250,
-      "sha256": "fb04240b2b963140108a92399baa14551cdc36c2ce75acc83aa77f8d2dee97f9"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/Models/Level.cs",
-      "bytes": 264,
-      "sha256": "cda47b96ed3c6219d50982b75df2e8fd61bb056de1d98b9befcf185af4f8ace0"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/Models/LoginResponse.cs",
-      "bytes": 474,
-      "sha256": "78a89c4d4e892c18458884c16cda94a6907f43c8b047ab948aab228eab28c989"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/Properties/launchSettings.json",
-      "bytes": 86,
-      "sha256": "1335d7399ee30b5f148e3da2fefe99066f62d6360c7666427856aaedb0be869f"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/Services/ApiClient.cs",
-      "bytes": 2997,
-      "sha256": "15f3427ad2410a253a2727eb5c88060b14e2e98fb3c48f2af32138b7925cc8b1"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/Services/ApiException.cs",
-      "bytes": 147,
-      "sha256": "17be3892ffc86c4ae5785fd2204ff8c4cde729492dd9b25565e7894c086b039c"
+      "bytes": 1120,
+      "sha256": "95a276956e51dba3fa4c995b4186e6ade731645f08dfd50eae3d8c323f960ec4"
     },
     {
       "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/appsettings.json",
-      "bytes": 49,
-      "sha256": "4b62c864275d52d1c4213ce5fdc09e4cbe442d3e2f2c427bdfcda544fb5bf54b"
+      "bytes": 52,
+      "sha256": "0d04010d6f9c234deef363bc4dce53ce1a02447c26a16c59564e379d993e07b8"
     },
     {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/bin/Debug/net10.0-windows/AI-Training.Gui.deps.json",
-      "bytes": 417,
-      "sha256": "7d87547f5109f49efee88ced63f007eaccb7c555f00f11fbf85e7da6de3e0a91"
+      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/AssemblyInfo.cs",
+      "bytes": 643,
+      "sha256": "3fac2af92385f676e9a941befd23fe38f0a5fa6167d4a3a88f07e730c5595ca3"
     },
     {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/bin/Debug/net10.0-windows/AI-Training.Gui.dll",
-      "bytes": 24064,
-      "sha256": "3813956c6d4e4557b5a57e3fe0bd6a95f95da235cfb642459898ed9c1d01bca4"
+      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/LoginWindow.xaml",
+      "bytes": 966,
+      "sha256": "aa9537f95b77dfa1d68c45441c5705d0c8f3e84a6730d724428f357d6207a975"
     },
     {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/bin/Debug/net10.0-windows/AI-Training.Gui.exe",
-      "bytes": 162304,
-      "sha256": "ac4461810f97d39c01db3bb664474ccc23d20bbc69be48b6aa08c893ebcf6ef5"
+      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/LoginWindow.xaml.cs",
+      "bytes": 912,
+      "sha256": "a9888bd57ce9570d873740924c68e26e570e18ee3360c844b7ccb8978c71c5de"
     },
     {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/bin/Debug/net10.0-windows/AI-Training.Gui.pdb",
-      "bytes": 18120,
-      "sha256": "30691f67cb880867be33dbc5fa30d29c66bfaf32ce7411ffaccc3a8b1f7a2d13"
+      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/MainWindow.xaml",
+      "bytes": 1339,
+      "sha256": "f31073e41d0a754134288d3bd4b64e69df51764ae9efa98497155fab97f15783"
     },
     {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/bin/Debug/net10.0-windows/AI-Training.Gui.runtimeconfig.json",
-      "bytes": 429,
-      "sha256": "62f07835ae91aa8de2f38f7566b475ee1b9336b13bc5fe97e28c743af68a2ed8"
+      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/MainWindow.xaml.cs",
+      "bytes": 1299,
+      "sha256": "1adcc72f2c25e0d72a8cd9826d55b3410656785b1d36b5fad8ff49c84a04a5a9"
     },
     {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/bin/Debug/net10.0-windows/appsettings.json",
-      "bytes": 49,
-      "sha256": "4b62c864275d52d1c4213ce5fdc09e4cbe442d3e2f2c427bdfcda544fb5bf54b"
+      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/Models/Level.cs",
+      "bytes": 276,
+      "sha256": "c0d114cbdd95a462b003c1706824c8df41ac60c882e83fc66b1a439453df69b0"
     },
     {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/AI-Training.Gui.csproj.nuget.dgspec.json",
-      "bytes": 23036,
-      "sha256": "a2fae5e574c5d03ace45632b7d32eb2aa80b00dab31ba3843a502a709b1e7df3"
+      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/Models/LoginResponse.cs",
+      "bytes": 492,
+      "sha256": "e92f0e7e9fb38f29d28d3b9e34041b162f7d1cd386407fe7a69fffe4a928e75a"
     },
     {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/AI-Training.Gui.csproj.nuget.g.props",
-      "bytes": 1287,
-      "sha256": "d8e764fbcc9827cc07b474ccc7fee8f78b078d6de562a732de94824502b46295"
+      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/Properties/launchSettings.json",
+      "bytes": 93,
+      "sha256": "1d9623699e611e8763f4def69d737fa82b940894fe02fef34abdfe5c68a57f98"
     },
     {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/AI-Training.Gui.csproj.nuget.g.targets",
-      "bytes": 149,
-      "sha256": "b14461e0cb1be3f77fcf9fe2fdd62889325ca92523d0f606980ed59eb5c4aa1c"
+      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/Services/ApiClient.cs",
+      "bytes": 3085,
+      "sha256": "0ccdf8c30c5a703710bd42cc5abcf439457cbd28ca456f022454065d049ea3f2"
     },
     {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Debug/net10.0-windows/.NETCoreApp,Version=v10.0.AssemblyAttributes.cs",
-      "bytes": 196,
-      "sha256": "f79c1ad9a9fc76110b3655f5bfb5ff4e3168e9addceff05b937c0796f0ec34eb"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Debug/net10.0-windows/AI-Training.Gui.AssemblyInfo.cs",
-      "bytes": 1113,
-      "sha256": "564d82d7a662815f67737ef81ec6c5e3492a0c34a524f1bfbd37480e56e32325"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Debug/net10.0-windows/AI-Training.Gui.AssemblyInfoInputs.cache",
-      "bytes": 65,
-      "sha256": "127d2412b8f08680c140656f21141d58bb11cef709b1891a8ac1a72fcb2521d7"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Debug/net10.0-windows/AI-Training.Gui.GeneratedMSBuildEditorConfig.editorconfig",
-      "bytes": 943,
-      "sha256": "2e8978736d6eab58f054372df1d6f97765bbe9d5fbc74b3245ed5977c7f2d15b"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Debug/net10.0-windows/AI-Training.Gui.GlobalUsings.g.cs",
-      "bytes": 177,
-      "sha256": "7edae69b7b83f15f0a18cd279829bd011a2f5da720a54b569606e635305037da"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Debug/net10.0-windows/AI-Training.Gui.assets.cache",
-      "bytes": 228,
-      "sha256": "b73a281a2c34cdede0d7b894c713f010d71ccb28f47206488eb94dde53bd1aac"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Debug/net10.0-windows/AI-Training.Gui.csproj.CoreCompileInputs.cache",
-      "bytes": 65,
-      "sha256": "92d54a38040de11d39edcc5e27eddbbec75dc1d99d5a91384933c99f7dc71f7e"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Debug/net10.0-windows/AI-Training.Gui.csproj.FileListAbsolute.txt",
-      "bytes": 3423,
-      "sha256": "d470f27b75ec7ee327c4817ba341a1e9f5b07c105704060ec78197997c9aad8c"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Debug/net10.0-windows/AI-Training.Gui.dll",
-      "bytes": 24064,
-      "sha256": "3813956c6d4e4557b5a57e3fe0bd6a95f95da235cfb642459898ed9c1d01bca4"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Debug/net10.0-windows/AI-Training.Gui.g.resources",
-      "bytes": 3871,
-      "sha256": "20ad634e4a04b268bbfd57f768108feb8fd14ced0d533538cbc0eb46d437de2c"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Debug/net10.0-windows/AI-Training.Gui.genruntimeconfig.cache",
-      "bytes": 65,
-      "sha256": "fb8708f19a0174ab608c47f412a25af74095252cf4d04506063f6c2718b26696"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Debug/net10.0-windows/AI-Training.Gui.pdb",
-      "bytes": 18120,
-      "sha256": "30691f67cb880867be33dbc5fa30d29c66bfaf32ce7411ffaccc3a8b1f7a2d13"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Debug/net10.0-windows/AI-Training.Gui_MarkupCompile.cache",
-      "bytes": 628,
-      "sha256": "ae7325eba6107c432761dc2ce899d7cf03a9631a27dffc685042a45a098e12dd"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Debug/net10.0-windows/App.g.cs",
-      "bytes": 1737,
-      "sha256": "598a18adf6a64d425daa75f8b08e645a6ded1c91820f796cb0fde696527f1950"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Debug/net10.0-windows/LoginWindow.baml",
-      "bytes": 1544,
-      "sha256": "0030a60e5756e730b547ee9756f587407afe68706a8bf5a409be76121f96fc59"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Debug/net10.0-windows/LoginWindow.g.cs",
-      "bytes": 4939,
-      "sha256": "5d765ccc2d7633e15c8c92bbe089071bacc8cdb52b88b739fcd1f30d922f9611"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Debug/net10.0-windows/MainWindow.baml",
-      "bytes": 2049,
-      "sha256": "192df9ca6286fd19c9e56b75d8decf504a70e120e388487371a5dcc3c944d8c7"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Debug/net10.0-windows/MainWindow.g.cs",
-      "bytes": 4931,
-      "sha256": "aaf02d826f054f58894337f275aa69a2f2f96315556d4ee02756027496992547"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Debug/net10.0-windows/apphost.exe",
-      "bytes": 162304,
-      "sha256": "ac4461810f97d39c01db3bb664474ccc23d20bbc69be48b6aa08c893ebcf6ef5"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Debug/net10.0-windows/ref/AI-Training.Gui.dll",
-      "bytes": 9728,
-      "sha256": "149bd7265738955ffda377ea00ad8f380c213f0e12b6c76f48ffb7f8d1d6bc53"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Debug/net10.0-windows/refint/AI-Training.Gui.dll",
-      "bytes": 9728,
-      "sha256": "149bd7265738955ffda377ea00ad8f380c213f0e12b6c76f48ffb7f8d1d6bc53"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Release/net10.0-windows/.NETCoreApp,Version=v10.0.AssemblyAttributes.cs",
-      "bytes": 196,
-      "sha256": "f79c1ad9a9fc76110b3655f5bfb5ff4e3168e9addceff05b937c0796f0ec34eb"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Release/net10.0-windows/AI-Training.Gui.AssemblyInfo.cs",
-      "bytes": 1154,
-      "sha256": "73cfc6c01cce882a3679f875b89fed4c63de0327dff20f06afad36b1f56058ff"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Release/net10.0-windows/AI-Training.Gui.AssemblyInfoInputs.cache",
-      "bytes": 65,
-      "sha256": "d13020bc9fadc1d5358209a3b06d07f5d0a65c001970874f328b480c9fb5f73f"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Release/net10.0-windows/AI-Training.Gui.GeneratedMSBuildEditorConfig.editorconfig",
-      "bytes": 943,
-      "sha256": "2e8978736d6eab58f054372df1d6f97765bbe9d5fbc74b3245ed5977c7f2d15b"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Release/net10.0-windows/AI-Training.Gui.GlobalUsings.g.cs",
-      "bytes": 177,
-      "sha256": "7edae69b7b83f15f0a18cd279829bd011a2f5da720a54b569606e635305037da"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Release/net10.0-windows/AI-Training.Gui.assets.cache",
-      "bytes": 228,
-      "sha256": "3f3ade7c340ff401a143cc453d32ef8791f3c331726eeb30f5b15fd3fee7d9d6"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Release/net10.0-windows/AI-Training.Gui_MarkupCompile.cache",
-      "bytes": 623,
-      "sha256": "7042341feac502fa28c65c8710f653dbb5e54491888d432b92533dd032b4c19d"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Release/net10.0-windows/App.g.cs",
-      "bytes": 1776,
-      "sha256": "7849e4db1ca192b466a3468530215e191e4a59796ce5e867364b971ba79ebb73"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Release/net10.0-windows/LoginWindow.baml",
-      "bytes": 1238,
-      "sha256": "d23d13e31f8a7f071abdd0cabe37d5a2c820a8d6b575c831fa9dd3d8d7b970c3"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Release/net10.0-windows/LoginWindow.g.cs",
-      "bytes": 4969,
-      "sha256": "cd4297fe94e77ed713ee5bf73ba645b1f13d7d14334130fa119c747ccccc1a17"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Release/net10.0-windows/MainWindow.baml",
-      "bytes": 1638,
-      "sha256": "4e3aa8d5dc76258f37e415b8c468c3acf0ec212af9ea9be7a8de236f53d53f2f"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/Release/net10.0-windows/MainWindow.g.cs",
-      "bytes": 4961,
-      "sha256": "d1d0e937de3667b7903f4cd6aea6958cee526bfcad21507cc062b4dc51a18c36"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/project.assets.json",
-      "bytes": 22297,
-      "sha256": "330b21f01e51382923d60078430627da819e7005609f6200a05b2bf237fba21a"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/obj/project.nuget.cache",
-      "bytes": 269,
-      "sha256": "be947f9ada1e1e0ef71f3f979f67923955bc99bc6f6a1f7542059e49b7b0d9b7"
+      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui/Services/ApiException.cs",
+      "bytes": 155,
+      "sha256": "47c96ef46d4ecb67e1bfca78d1b6e09f67c30cd4af7e43f5d9e358f7e67b0437"
     },
     {
       "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/AI-Training.Gui.Tests.csproj",
-      "bytes": 786,
-      "sha256": "b3f1b278f376d3dfd7c2b65eea69680db5807fdb8bb6e8ce83104a7fa33f9aed"
+      "bytes": 811,
+      "sha256": "1a86793edd45b38346581bc6fb62de389b3cc98314560cc30cc3620345104fb1"
     },
     {
       "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/ApiClientTests.cs",
-      "bytes": 1890,
-      "sha256": "d14f11abfd5d178d378d2b7638e766e24bd67d81e44c0f3793321b5f29d3d45b"
+      "bytes": 1947,
+      "sha256": "82505295b892f990c7dc1f8ad2df7179504290379662a3464e801af96e2c829c"
     },
     {
       "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/FakeHttpMessageHandler.cs",
-      "bytes": 795,
-      "sha256": "961a9a18071f6e5877500d782603c747349d7cb272d3f36ce2799d9ed5cf3c5f"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/.msCoverageSourceRootsMapping_AI-Training.Gui.Tests",
-      "bytes": 914,
-      "sha256": "fd5e851deef4b77d6c321b848a10356343dd87c70d7652223b28a7d5ec3e567d"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/AI-Training.Gui.Tests.deps.json",
-      "bytes": 16436,
-      "sha256": "9c29f98d2cfdfa8614f6979074ab5a590b79974b87f5a3bec6035a6dccfc8e6b"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/AI-Training.Gui.Tests.dll",
-      "bytes": 11264,
-      "sha256": "75737b9d175ebc09257567eb2502a3cec6d914d3a84fc3aee7cb19180681f9c6"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/AI-Training.Gui.Tests.pdb",
-      "bytes": 15476,
-      "sha256": "f2a84a114c873539efb27ead81a206311b250a789b72b9d6e0ca1a395e243b46"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/AI-Training.Gui.Tests.runtimeconfig.json",
-      "bytes": 476,
-      "sha256": "3ebbbaf583807cd6d7becc34f1989710e47674cac93c2083777a812acbf06cd4"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/AI-Training.Gui.deps.json",
-      "bytes": 417,
-      "sha256": "7d87547f5109f49efee88ced63f007eaccb7c555f00f11fbf85e7da6de3e0a91"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/AI-Training.Gui.dll",
-      "bytes": 24064,
-      "sha256": "3813956c6d4e4557b5a57e3fe0bd6a95f95da235cfb642459898ed9c1d01bca4"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/AI-Training.Gui.exe",
-      "bytes": 162304,
-      "sha256": "ac4461810f97d39c01db3bb664474ccc23d20bbc69be48b6aa08c893ebcf6ef5"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/AI-Training.Gui.pdb",
-      "bytes": 18120,
-      "sha256": "30691f67cb880867be33dbc5fa30d29c66bfaf32ce7411ffaccc3a8b1f7a2d13"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/AI-Training.Gui.runtimeconfig.json",
-      "bytes": 429,
-      "sha256": "62f07835ae91aa8de2f38f7566b475ee1b9336b13bc5fe97e28c743af68a2ed8"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/CoverletSourceRootsMapping_AI-Training.Gui.Tests",
-      "bytes": 914,
-      "sha256": "fd5e851deef4b77d6c321b848a10356343dd87c70d7652223b28a7d5ec3e567d"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/Microsoft.TestPlatform.CommunicationUtilities.dll",
-      "bytes": 137776,
-      "sha256": "e38a359aa502bb1867d6092dca9aba5c130dd6f9111decea8156aa746b2c69e6"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/Microsoft.TestPlatform.CoreUtilities.dll",
-      "bytes": 98336,
-      "sha256": "f6e2495c44640d8915b2aefc938f391c970300266da014350ff35512a448ee84"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/Microsoft.TestPlatform.CrossPlatEngine.dll",
-      "bytes": 316960,
-      "sha256": "d55399bc66dc5b451d60ad82662452ca4a5f735918135dfc91ca9b5e3e38a6ab"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/Microsoft.TestPlatform.PlatformAbstractions.dll",
-      "bytes": 51232,
-      "sha256": "7b919ce4429c3b7b8fa2c36fd641b70b2f459a30ecb7c65fd80f437673cec930"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/Microsoft.TestPlatform.Utilities.dll",
-      "bytes": 67104,
-      "sha256": "01ffd64d25a4bd905aef9594d2aa700e020273a90a77a8720af6bec8b4fd5444"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/Microsoft.VisualStudio.CodeCoverage.Shim.dll",
-      "bytes": 17464,
-      "sha256": "a753bc15f23a957f4f91a059376e4472c6bacd1503622de4b9b2b079ad8ea289"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/Microsoft.VisualStudio.TestPlatform.Common.dll",
-      "bytes": 248352,
-      "sha256": "059aa2f335c3f7b14ac3fb7caa1625bc2767581b9548e9ff53a246c7f2f94d6a"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/Microsoft.VisualStudio.TestPlatform.ObjectModel.dll",
-      "bytes": 334392,
-      "sha256": "f83e38ee9020baa42e284e2299e233070ffa86ce4b10213583f9b7c8a521bcd0"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/Newtonsoft.Json.dll",
-      "bytes": 712464,
-      "sha256": "22c649f75fce5be7c7ccda8880473b634ef69ecf33f5d1ab8ad892caf47d5a07"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/appsettings.json",
-      "bytes": 49,
-      "sha256": "4b62c864275d52d1c4213ce5fdc09e4cbe442d3e2f2c427bdfcda544fb5bf54b"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/cs/Microsoft.TestPlatform.CommunicationUtilities.resources.dll",
-      "bytes": 16440,
-      "sha256": "b983773dc5112854fe411fa22223e929c7fa230a1a843fcc58023237aca326f4"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/cs/Microsoft.TestPlatform.CoreUtilities.resources.dll",
-      "bytes": 16944,
-      "sha256": "26be9bb3a8932ba04014e4ae9b8f20a0222a3e2c1a1b41cec11d49bff609ce72"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/cs/Microsoft.TestPlatform.CrossPlatEngine.resources.dll",
-      "bytes": 21040,
-      "sha256": "2f776bf0e946ffcd3f8a38af2653137785eb55db3cdb0c5a392bbe07d2ccc082"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/cs/Microsoft.VisualStudio.TestPlatform.Common.resources.dll",
-      "bytes": 20520,
-      "sha256": "cd637384e1b3973be3c18409ed886f8234e2e3c3a65edf7d721d154e26aa64f3"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/cs/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll",
-      "bytes": 23624,
-      "sha256": "12b0829d24f6f53f0e22fcbe370d3f91b67bbcaca7f0d82323d08cd7752f4519"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/de/Microsoft.TestPlatform.CommunicationUtilities.resources.dll",
-      "bytes": 16928,
-      "sha256": "d11f2a5262947fc1b6d426a6e1828325cedf40fee28e29ed856804ec9ef3f15c"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/de/Microsoft.TestPlatform.CoreUtilities.resources.dll",
-      "bytes": 16952,
-      "sha256": "403e0eaf8528656c0b47c31cd5fe9a25b8fd733adccb8e6d47a09f28658b5283"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/de/Microsoft.TestPlatform.CrossPlatEngine.resources.dll",
-      "bytes": 21048,
-      "sha256": "7ad3c45f58aa4d030fd5d65d9d4ac9cabbc06d79d071c29727b5376cd3459d77"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/de/Microsoft.VisualStudio.TestPlatform.Common.resources.dll",
-      "bytes": 21064,
-      "sha256": "ca308a5d314fa7d7e9cae94083cc1f62375ac225094d289961d9bce49b564b65"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/de/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll",
-      "bytes": 24136,
-      "sha256": "e91489bb7ec3e2e97d19cf32bc5e3f7fc57e994e0315f0870fd2024ccb2cf337"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/es/Microsoft.TestPlatform.CommunicationUtilities.resources.dll",
-      "bytes": 16928,
-      "sha256": "ddbdd3bf9afe6ddd3babd4f0358ab2f4697fc5d5ec72b60cb772085af9bf9859"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/es/Microsoft.TestPlatform.CoreUtilities.resources.dll",
-      "bytes": 16952,
-      "sha256": "7ec8e83494a8a50f1158c85d29b98e87c85d74ad5c4d94e2e9656e1cf60b0dff"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/es/Microsoft.TestPlatform.CrossPlatEngine.resources.dll",
-      "bytes": 21032,
-      "sha256": "67063a36cfcae95b3ea4646b88c3cf3642f0914dfc06ecc5fc4d3f77e0e97e64"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/es/Microsoft.VisualStudio.TestPlatform.Common.resources.dll",
-      "bytes": 21040,
-      "sha256": "b5340851bd9cb979d497f67123d09f91ba20ac9d2b3e0e17076fd2abd615c933"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/es/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll",
-      "bytes": 24120,
-      "sha256": "f19c11474e9074d5407f9b5a78cfb0bc1b4aeb90ffec819a676f63509cec443a"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/fr/Microsoft.TestPlatform.CommunicationUtilities.resources.dll",
-      "bytes": 16952,
-      "sha256": "044cf1373cc4527fff78adb5ad70489532303b58ba0de2c059c422926af46c4b"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/fr/Microsoft.TestPlatform.CoreUtilities.resources.dll",
-      "bytes": 16944,
-      "sha256": "78d675cbab45a56cc8916466ba13f16fab18a44fd3ad4481c8f5f4e13b1f8b5d"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/fr/Microsoft.TestPlatform.CrossPlatEngine.resources.dll",
-      "bytes": 21040,
-      "sha256": "3fe869c312793444f9509af17ca0b14f444cbddef60a47251f441a5d7859a05f"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/fr/Microsoft.VisualStudio.TestPlatform.Common.resources.dll",
-      "bytes": 21048,
-      "sha256": "5a8f4f4ea8b5a332883a67202877bd19100b21d766bf0443ffec21610dfb2ecf"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/fr/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll",
-      "bytes": 24096,
-      "sha256": "ba030af725dea6bceb72c4eb49ccc3520222a97ea0fae812e16b7ba78450b98a"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/it/Microsoft.TestPlatform.CommunicationUtilities.resources.dll",
-      "bytes": 16928,
-      "sha256": "b023b85f510d1e5c6d5183ba51614ea1b6dee5c25ab287773bebc8cdb36e3168"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/it/Microsoft.TestPlatform.CoreUtilities.resources.dll",
-      "bytes": 16928,
-      "sha256": "a1ac732615a7dc5c59e01a1570da23210ede65ef24d5bb101294cf68481fe984"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/it/Microsoft.TestPlatform.CrossPlatEngine.resources.dll",
-      "bytes": 21048,
-      "sha256": "b6b4b25e77f51f4ef5252512d1ea2cd8025ff388852ea93897b136bcc33bb5e0"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/it/Microsoft.VisualStudio.TestPlatform.Common.resources.dll",
-      "bytes": 21040,
-      "sha256": "b9f6be59cc1c05594f9b19db9e72add58d6b37661397f81a62d4fee37e7be621"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/it/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll",
-      "bytes": 24096,
-      "sha256": "93911f7a3c20cecd88ddb85dfdaaa9bf768e72a0fa5f745f3f3ae40dc78da66b"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/ja/Microsoft.TestPlatform.CommunicationUtilities.resources.dll",
-      "bytes": 16928,
-      "sha256": "5db61a11e8c40176f0293658e48bc955ebed6a3dd46d3808aacc762f71732544"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/ja/Microsoft.TestPlatform.CoreUtilities.resources.dll",
-      "bytes": 17440,
-      "sha256": "1ded53cdfde469bbb90d12f371891d3789a835e976557541c43166f027f7f111"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/ja/Microsoft.TestPlatform.CrossPlatEngine.resources.dll",
-      "bytes": 22088,
-      "sha256": "f6d2748ee250f131374c306d7dc8a905464dbda3f75e857d333946c7ff89494c"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/ja/Microsoft.VisualStudio.TestPlatform.Common.resources.dll",
-      "bytes": 21552,
-      "sha256": "c55083e71e3a5bb8dbe36e10eb12b301ccfd809e8fe1187350beb6774c7f794b"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/ja/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll",
-      "bytes": 24632,
-      "sha256": "c2c077136e3ccfd8a249758979c0f754fe3c8a35b0c6478aa7a87ea38a817690"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/ko/Microsoft.TestPlatform.CommunicationUtilities.resources.dll",
-      "bytes": 16944,
-      "sha256": "7026d9d93b3fb7b521fc4a35fcb8348020fe466c054309e8ec0d27e84a555cb9"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/ko/Microsoft.TestPlatform.CoreUtilities.resources.dll",
-      "bytes": 16936,
-      "sha256": "fdc5422bb6f99cb357515ac6edd47c6f495da1da0eca43b7f85fdb7fd1c2492a"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/ko/Microsoft.TestPlatform.CrossPlatEngine.resources.dll",
-      "bytes": 21560,
-      "sha256": "e5231e879c215210cfe0b6d8f5740f8ecb2b08afa98ee4055fff6ba10ddac96c"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/ko/Microsoft.VisualStudio.TestPlatform.Common.resources.dll",
-      "bytes": 21048,
-      "sha256": "e90ac368f79ea0e99f44fe1133db10af08c3653749056362822b2c8f414ccd64"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/ko/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll",
-      "bytes": 24120,
-      "sha256": "4f427ed5c7c78043c7a9a7c9dc659133d96f6100ca9ba8719857709832e4bb58"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/pl/Microsoft.TestPlatform.CommunicationUtilities.resources.dll",
-      "bytes": 16928,
-      "sha256": "0d1c05f1c3dfa21fbaca7537910bea9a54a52a9a800caf1c7d46691fb3a41eaa"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/pl/Microsoft.TestPlatform.CoreUtilities.resources.dll",
-      "bytes": 16936,
-      "sha256": "4b7843359aea21962c73c7474d374410fe8d039a30ac7902f5f09a19a52c778a"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/pl/Microsoft.TestPlatform.CrossPlatEngine.resources.dll",
-      "bytes": 21536,
-      "sha256": "2f82d58fb67a8261ad060a2633b872c7867f48608368144db3a93bf4debe2444"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/pl/Microsoft.VisualStudio.TestPlatform.Common.resources.dll",
-      "bytes": 21048,
-      "sha256": "911ef37ee7d78eb7132581aeaeb7753e81589600535c3c2244b1c447b61e1a5a"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/pl/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll",
-      "bytes": 24136,
-      "sha256": "88993b0056f183385a9e9e67931932bce0e564d288164ad43b2cc1bf6cacfb1c"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/pt-BR/Microsoft.TestPlatform.CommunicationUtilities.resources.dll",
-      "bytes": 16416,
-      "sha256": "f2292ef0dd72f1a95892714f17e5d49259452e27332d54dbff308236a50d7d40"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/pt-BR/Microsoft.TestPlatform.CoreUtilities.resources.dll",
-      "bytes": 16928,
-      "sha256": "119f896f964ce17da4558c72b728d832fa19abc2dcf12bbed7cc386b741edd6b"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/pt-BR/Microsoft.TestPlatform.CrossPlatEngine.resources.dll",
-      "bytes": 21048,
-      "sha256": "ea5d8ecffcb9371d3e559e1d477ebdf5e7c3bd0663746fdccebd9330df2b9008"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/pt-BR/Microsoft.VisualStudio.TestPlatform.Common.resources.dll",
-      "bytes": 21048,
-      "sha256": "b33e6b979805fa9047ebfb7722c4c3b07b1d3706acc108883b8c30d77d10db72"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/pt-BR/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll",
-      "bytes": 24120,
-      "sha256": "976fae7c172b9170340633a3fe1a3f0ec6fc0731f4bf089ddaf611d60d446f40"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/ru/Microsoft.TestPlatform.CommunicationUtilities.resources.dll",
-      "bytes": 17440,
-      "sha256": "4b29d6fadb5b709c5c90f25a8934e6c3c58027cf35aa28c6ef7100ab30f9cd39"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/ru/Microsoft.TestPlatform.CoreUtilities.resources.dll",
-      "bytes": 17464,
-      "sha256": "67820043048cca339e29b563b1ed9da9f7d702b67c0cadd0b643f5781bc78789"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/ru/Microsoft.TestPlatform.CrossPlatEngine.resources.dll",
-      "bytes": 23072,
-      "sha256": "4970c26bed952eccea42fbd3c7064bdd690eb5a7e538a77ce78ffed487877d9b"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/ru/Microsoft.VisualStudio.TestPlatform.Common.resources.dll",
-      "bytes": 23096,
-      "sha256": "fcaedb770d94be752a6c9befe5d2b8219bb8d1bfce83f2dc9011fa4b7eebd00a"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/ru/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll",
-      "bytes": 26168,
-      "sha256": "f7084df5889cd4a8d141f73be63b267519ae4daa75c6394cf39c4a96fba35d68"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/testhost.dll",
-      "bytes": 49696,
-      "sha256": "92cbdf52db5249112f9f53f1fcdaf9f9aa3fce467141c688a31a7fe095e4d304"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/testhost.exe",
-      "bytes": 150576,
-      "sha256": "fb63eb314f25584a532683de7abf4ca8a0b43103f3699f5d5d87317338eeda76"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/tr/Microsoft.TestPlatform.CommunicationUtilities.resources.dll",
-      "bytes": 16952,
-      "sha256": "ef6bf78a0fd4613b1ffe8dc560b0f2f5cf2c05724fc8aed314f9ced18a90cf03"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/tr/Microsoft.TestPlatform.CoreUtilities.resources.dll",
-      "bytes": 16928,
-      "sha256": "a4d0c1d36f10425e39cdaade487220a9808e6f6954998644c57011fbeb3a33a0"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/tr/Microsoft.TestPlatform.CrossPlatEngine.resources.dll",
-      "bytes": 21024,
-      "sha256": "6ad665b04f30253b05acdbcf02196af45332a95091e112e55d2f2379273d9cac"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/tr/Microsoft.VisualStudio.TestPlatform.Common.resources.dll",
-      "bytes": 20536,
-      "sha256": "96efbcb535b02ad348598505210ae60b3d24ba7b8d364547ec89d353e891fae2"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/tr/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll",
-      "bytes": 23608,
-      "sha256": "5a392fba8650b4b574e5e7c42615f5c6d2a879c3838cf5b5219856185b33c8f5"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/xunit.abstractions.dll",
-      "bytes": 21928,
-      "sha256": "3166dc70323fb30ccf1cedb0fe86f2ad122c46d254542342d90386efc4c9285c"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/xunit.assert.dll",
-      "bytes": 187088,
-      "sha256": "bcd9711b22d227ac8cd4c1568e72433a0f576d2ec8aae64ac508081892015b1d"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/xunit.core.dll",
-      "bytes": 70352,
-      "sha256": "2f7feeec8c6dec7df684c25fb80aadb292b963d09723460f03d53c5ad2088acc"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/xunit.execution.dotnet.dll",
-      "bytes": 279760,
-      "sha256": "e70febe547c15f8155db3e2d95c3ba4445a59cbc21a3e7541ab22ed49d3dcf7b"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/xunit.runner.visualstudio.testadapter.dll",
-      "bytes": 1251840,
-      "sha256": "98a7395cd6abd03d0ac8eeb82d720c24db00602f047ca49bd6e88e77fc6d1153"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/zh-Hans/Microsoft.TestPlatform.CommunicationUtilities.resources.dll",
-      "bytes": 16416,
-      "sha256": "61e5b362940ca90e3b89a452218fb1d3882aea679a1b73e6ad868d0ac1bb88fc"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/zh-Hans/Microsoft.TestPlatform.CoreUtilities.resources.dll",
-      "bytes": 16928,
-      "sha256": "4a8c0ef1c60069942082fa7493dbe683033e14e15dff09c8ba8c230e2a4443c6"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/zh-Hans/Microsoft.TestPlatform.CrossPlatEngine.resources.dll",
-      "bytes": 20008,
-      "sha256": "0b12a586cd3759757f641a6219f491aff7c5fbdf603a6339b98faa57ce6eb7c0"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/zh-Hans/Microsoft.VisualStudio.TestPlatform.Common.resources.dll",
-      "bytes": 20040,
-      "sha256": "8fb34ecf4343a77647006f0ad1fb41e8c4dd48cf38fe97b93c345b743f538908"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/zh-Hans/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll",
-      "bytes": 23072,
-      "sha256": "396cc3c959cfc9f24bbe7a2d38846dfb97b696a9610eb95234306cbcdebd4f06"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/zh-Hant/Microsoft.TestPlatform.CommunicationUtilities.resources.dll",
-      "bytes": 16416,
-      "sha256": "b411fe26d281ec982d0432f1b0bce2c1c86f200d17e837bbbe91086f8e38270f"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/zh-Hant/Microsoft.TestPlatform.CoreUtilities.resources.dll",
-      "bytes": 16952,
-      "sha256": "a9012f419d3b66a730d635760f63fea1721a63b2105a4146c2d1309bb6f31b14"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/zh-Hant/Microsoft.TestPlatform.CrossPlatEngine.resources.dll",
-      "bytes": 20552,
-      "sha256": "540bee11c69534fc48bb4a9626683a6203e9f1f4bae15ff72069eaf9f65f5e81"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/zh-Hant/Microsoft.VisualStudio.TestPlatform.Common.resources.dll",
-      "bytes": 20024,
-      "sha256": "d69e7127de46141b6406fd968d4a66271dda99271701f912d56ce6813af48cf2"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Debug/net10.0-windows/zh-Hant/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll",
-      "bytes": 23096,
-      "sha256": "b90f264a4d72987fd0aa0d11fc51dd248f831740bcd72d281045e16936fda16b"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Release/net10.0-windows/.msCoverageSourceRootsMapping_AI-Training.Gui.Tests",
-      "bytes": 914,
-      "sha256": "fd5e851deef4b77d6c321b848a10356343dd87c70d7652223b28a7d5ec3e567d"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/bin/Release/net10.0-windows/CoverletSourceRootsMapping_AI-Training.Gui.Tests",
-      "bytes": 914,
-      "sha256": "fd5e851deef4b77d6c321b848a10356343dd87c70d7652223b28a7d5ec3e567d"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/obj/AI-Training.Gui.Tests.csproj.nuget.dgspec.json",
-      "bytes": 45725,
-      "sha256": "88dacc78bc555c0cc0da9c9eef65518ff8ded5900f6e22147ef6c2db3f96fcfe"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/obj/AI-Training.Gui.Tests.csproj.nuget.g.props",
-      "bytes": 2765,
-      "sha256": "fbfe913018ab5120d4edcb601ef533421b1f490e52e204ef7020cff6de5f16e9"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/obj/AI-Training.Gui.Tests.csproj.nuget.g.targets",
-      "bytes": 1406,
-      "sha256": "4b2bcc7200a6aea29a9f9a365a2967e0d1d9e6c0a2b88c4c240c84188ce80eff"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/obj/Debug/net10.0/.NETCoreApp,Version=v10.0.AssemblyAttributes.cs",
-      "bytes": 196,
-      "sha256": "f79c1ad9a9fc76110b3655f5bfb5ff4e3168e9addceff05b937c0796f0ec34eb"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/obj/Debug/net10.0/AI-Training.Gui.Tests.AssemblyInfo.cs",
-      "bytes": 974,
-      "sha256": "79749f3ad47ed9285006d9df593bcee827ee5d3e0a20d0e72ecb4a066386c373"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/obj/Debug/net10.0/AI-Training.Gui.Tests.AssemblyInfoInputs.cache",
-      "bytes": 65,
-      "sha256": "90885b358869ff92d38dc600cf02083713e15f0fbe490d742c9378049f615f9e"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/obj/Debug/net10.0/AI-Training.Gui.Tests.GeneratedMSBuildEditorConfig.editorconfig",
-      "bytes": 886,
-      "sha256": "293567fa1769ab1a0963e76778f1eb9b5a9a70733f430dc6c968509bd32e564e"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/obj/Debug/net10.0/AI-Training.Gui.Tests.GlobalUsings.g.cs",
-      "bytes": 251,
-      "sha256": "303e9cd7ab294ddd335cd7bba5ab391da9053502115a0a650433a369b543873f"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/obj/Debug/net10.0/AI-Training.Gui.Tests.assets.cache",
-      "bytes": 31402,
-      "sha256": "2f30efc673d2ecc94661fa024a9a0f454f75ca8e74553854c168bdca0ddab3df"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/obj/Debug/net10.0/AI-Training.Gui.Tests.csproj.AssemblyReference.cache",
-      "bytes": 8222,
-      "sha256": "91e718de1b872a02fa6f4c8d165eab8da66b144b8612f9ccef74d2f6847e9495"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/obj/Debug/net10.0-windows/.NETCoreApp,Version=v10.0.AssemblyAttributes.cs",
-      "bytes": 196,
-      "sha256": "f79c1ad9a9fc76110b3655f5bfb5ff4e3168e9addceff05b937c0796f0ec34eb"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/obj/Debug/net10.0-windows/AI-Train.C4991171.Up2Date",
-      "bytes": 0,
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/obj/Debug/net10.0-windows/AI-Training.Gui.Tests.AssemblyInfo.cs",
-      "bytes": 1131,
-      "sha256": "063a78505b28f8410040d63a6ea97b6507f2fad3be9cc52a6429bf7feb3a7ff9"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/obj/Debug/net10.0-windows/AI-Training.Gui.Tests.AssemblyInfoInputs.cache",
-      "bytes": 65,
-      "sha256": "f2d6e9d16a587c30915da1e72dceed8cfa9ba85ad00f63a57ec611a2d0f06a68"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/obj/Debug/net10.0-windows/AI-Training.Gui.Tests.GeneratedMSBuildEditorConfig.editorconfig",
-      "bytes": 955,
-      "sha256": "60ca4abdbc824fe1e3a659bef70e425c82a12d63b457859c01015c2079332611"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/obj/Debug/net10.0-windows/AI-Training.Gui.Tests.GlobalUsings.g.cs",
-      "bytes": 251,
-      "sha256": "303e9cd7ab294ddd335cd7bba5ab391da9053502115a0a650433a369b543873f"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/obj/Debug/net10.0-windows/AI-Training.Gui.Tests.assets.cache",
-      "bytes": 31439,
-      "sha256": "d05ec9b92593f6318a1dc1c331a3329025a4dec630600a81bac543bccf9fab74"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/obj/Debug/net10.0-windows/AI-Training.Gui.Tests.csproj.AssemblyReference.cache",
-      "bytes": 9488,
-      "sha256": "01162315d566e8705a2500316bc61492d133e73a1e68f8675701523bc0423634"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/obj/Debug/net10.0-windows/AI-Training.Gui.Tests.csproj.CoreCompileInputs.cache",
-      "bytes": 65,
-      "sha256": "193b37414040baedbb74d27acdf5c9125de5a54cbbec4d3e81c3da4e046f16d0"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/obj/Debug/net10.0-windows/AI-Training.Gui.Tests.csproj.FileListAbsolute.txt",
-      "bytes": 19317,
-      "sha256": "7cebefabd982edb16a74e97b02dacc1f742dcec0625af97023a861a0b84d6568"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/obj/Debug/net10.0-windows/AI-Training.Gui.Tests.dll",
-      "bytes": 11264,
-      "sha256": "75737b9d175ebc09257567eb2502a3cec6d914d3a84fc3aee7cb19180681f9c6"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/obj/Debug/net10.0-windows/AI-Training.Gui.Tests.genruntimeconfig.cache",
-      "bytes": 65,
-      "sha256": "969c88da7295a7b1f64dc4dc412476a52a760ad8cfd058a7a8e1bcf47e5cda1d"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/obj/Debug/net10.0-windows/AI-Training.Gui.Tests.pdb",
-      "bytes": 15476,
-      "sha256": "f2a84a114c873539efb27ead81a206311b250a789b72b9d6e0ca1a395e243b46"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/obj/Debug/net10.0-windows/ref/AI-Training.Gui.Tests.dll",
-      "bytes": 8192,
-      "sha256": "9b303566c7294d862901f9cdcf22741da46146272ce84df48418e244503ef55e"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/obj/Debug/net10.0-windows/refint/AI-Training.Gui.Tests.dll",
-      "bytes": 8192,
-      "sha256": "9b303566c7294d862901f9cdcf22741da46146272ce84df48418e244503ef55e"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/obj/Release/net10.0-windows/.NETCoreApp,Version=v10.0.AssemblyAttributes.cs",
-      "bytes": 196,
-      "sha256": "f79c1ad9a9fc76110b3655f5bfb5ff4e3168e9addceff05b937c0796f0ec34eb"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/obj/Release/net10.0-windows/AI-Training.Gui.Tests.AssemblyInfo.cs",
-      "bytes": 1172,
-      "sha256": "d8a9db37e0047e8bb4eb4ecde104fc0dddd33e897716e5890c705f83fc562c16"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/obj/Release/net10.0-windows/AI-Training.Gui.Tests.AssemblyInfoInputs.cache",
-      "bytes": 65,
-      "sha256": "a63bf6a53d882a5b1fa6c95acef66e3cdc536c9bab8637d56f68941b548c40ee"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/obj/Release/net10.0-windows/AI-Training.Gui.Tests.GeneratedMSBuildEditorConfig.editorconfig",
-      "bytes": 955,
-      "sha256": "60ca4abdbc824fe1e3a659bef70e425c82a12d63b457859c01015c2079332611"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/obj/Release/net10.0-windows/AI-Training.Gui.Tests.GlobalUsings.g.cs",
-      "bytes": 251,
-      "sha256": "303e9cd7ab294ddd335cd7bba5ab391da9053502115a0a650433a369b543873f"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/obj/Release/net10.0-windows/AI-Training.Gui.Tests.assets.cache",
-      "bytes": 31439,
-      "sha256": "e090b4748b7e89d238d2d3c62e7b07904c27fe9c8b9a76a0b18c914c52fb0452"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/obj/Release/net10.0-windows/AI-Training.Gui.Tests.csproj.AssemblyReference.cache",
-      "bytes": 10338,
-      "sha256": "a2dafaf09531b3c277184f27fb478511a470d17744f1d748de447451bef55559"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/obj/project.assets.json",
-      "bytes": 66909,
-      "sha256": "5853769934ea966ed21c22a5051bea1020b67cc9775977e84057fa60a2e0693c"
-    },
-    {
-      "path": "07_PLATFORM/dotnet-client/AI-Training.Gui.Tests/obj/project.nuget.cache",
-      "bytes": 1871,
-      "sha256": "2b160fd10b8556a980949dded7a351f059d192802b3f727a213bb86970581ce4"
+      "bytes": 823,
+      "sha256": "44374a9e0196f549556ce40fa403fed7f3e3633059caf7699660e5b42bcbedd8"
     },
     {
       "path": "07_PLATFORM/frontend/e2e/auth.spec.ts",
-      "bytes": 2182,
-      "sha256": "01166c125e30ab96ddffcbdb174bfa60f22b045ec8a99cb69a85c2ba4e41c83a"
+      "bytes": 2233,
+      "sha256": "ccc23faee9baf3b699c1092fbd67e5a9a7fe9ae5b05ab0315e506944ad63618e"
     },
     {
       "path": "07_PLATFORM/frontend/e2e/crud-and-audit.spec.ts",
-      "bytes": 1967,
-      "sha256": "b950df708fba54e3eeb49c293e03327ee4d60c441838f58994a19104a7771210"
+      "bytes": 2010,
+      "sha256": "fa047c9d0c06e373b3b5eb74a4195956ce19818d5be8a3eb38a33d5482b557cb"
     },
     {
       "path": "07_PLATFORM/frontend/e2e/csv-export.spec.ts",
-      "bytes": 820,
-      "sha256": "636788c8f49c489fdcbc9ae7a27b9e156c21e961d738e9a064c3c113ab8ac88f"
+      "bytes": 841,
+      "sha256": "466cb5690c92019313f563d79b3909ed7b3bec410a410e26cde8d4b08dc2e642"
     },
     {
       "path": "07_PLATFORM/frontend/e2e/global-setup.ts",
-      "bytes": 3899,
-      "sha256": "9eae4a367e4b16375b1124e8a9385d426d62ff57cad204e6fcb8f12044e389c3"
+      "bytes": 4002,
+      "sha256": "d31346ed640ef68338aa02a0ebfbaa686660b4428d088585e5a60cb1d4f8b08a"
     },
     {
       "path": "07_PLATFORM/frontend/index.html",
-      "bytes": 306,
-      "sha256": "75a4c0b8789cdc8666ad22e7d25c78b0cd299811718180dc0da65e4e689a649e"
+      "bytes": 318,
+      "sha256": "4d045e0b409afd4930f0a9aa40edf3e70f096c512fd02fd806ce21fceb8e46ab"
     },
     {
       "path": "07_PLATFORM/frontend/package-lock.json",
-      "bytes": 115272,
-      "sha256": "98f1e1b72c132bd4f8f6e7670f70e30801bd8f025a97d8ae554bb3f7002b37ef"
+      "bytes": 118607,
+      "sha256": "7745c8ee9908317da8663a5094207dbd60e08e6b6583af6dc4ffc05ca94d9ecd"
     },
     {
       "path": "07_PLATFORM/frontend/package.json",
-      "bytes": 851,
-      "sha256": "9fcc5fa5ae749665572fd98b90de351079534eba6069f5411da9d20f56aaf423"
+      "bytes": 883,
+      "sha256": "92c63732d06dd4cd1a8c2f210fbd231764cb497f83b48ca8f3dd579efb473dca"
     },
     {
       "path": "07_PLATFORM/frontend/playwright.config.ts",
-      "bytes": 907,
-      "sha256": "481d906b3e08367075104521155158b670d5ed4437627f7c8f745c3e620b9e00"
+      "bytes": 933,
+      "sha256": "6d614648a1b711b9feede0e0d011ce7f279ec42d8bbd8a48166b93f20b5bb6aa"
     },
     {
       "path": "07_PLATFORM/frontend/src/components/AgentCardForm.test.tsx",
-      "bytes": 2870,
-      "sha256": "f8658eb88b773cb1b3f6a84ba6c86371c19305f153e8cd1b58b9bf086213a0e3"
+      "bytes": 2956,
+      "sha256": "eefd031f0602a51f57e37a59552b45d460f1c074cac952971aeca678690282fe"
     },
     {
       "path": "07_PLATFORM/frontend/src/components/AgentCardForm.tsx",
-      "bytes": 4493,
-      "sha256": "072487d81d767eac560fb50198a838bb9625520731b88ca43b4ab89bda835bd1"
+      "bytes": 4648,
+      "sha256": "bc381d927318b284a89974ce22fb029400c1f8d183f6824961e624b5fc00e623"
     },
     {
       "path": "07_PLATFORM/frontend/src/components/BarChart.test.tsx",
-      "bytes": 1446,
-      "sha256": "29dfad914ee35a262443fda698824e07305ea4fa54dc7933d58fd34f4c07f8ee"
+      "bytes": 1492,
+      "sha256": "602553c9d98845cbedd074f3b636f8bdab9e1780bac2648317b4e2215f77f3e0"
     },
     {
       "path": "07_PLATFORM/frontend/src/components/BarChart.tsx",
-      "bytes": 1343,
-      "sha256": "abbc4a7eea3fbb2557a16a8338229bd41cdafac09fd6abd4928be7cc288ec54c"
+      "bytes": 1384,
+      "sha256": "ecbcf15fdd169c384645c225efea1dfd7090df8a4329415b610bf1be8ee1cde9"
     },
     {
       "path": "07_PLATFORM/frontend/src/components/BulkDeleteButton.tsx",
-      "bytes": 1220,
-      "sha256": "88ec2d0851e31dc4a90e86031657166f5797e8f9185d57663ea8e0f371fb9150"
+      "bytes": 1257,
+      "sha256": "23a128cb86414fd8c881359419ef3f5e9876eddc3df04a76f47e55908fc5f875"
     },
     {
       "path": "07_PLATFORM/frontend/src/components/BulkEditButton.tsx",
-      "bytes": 1769,
-      "sha256": "eb3ef57d628b3be55ced85437964f048d2415d3d4a4571bf98f01c1b88d440d9"
+      "bytes": 1827,
+      "sha256": "221342df8d2990c961565c64c619fc9cb552e7c8efb1bd42a8c702dcbefc91a8"
     },
     {
       "path": "07_PLATFORM/frontend/src/components/EnrollmentForm.test.tsx",
-      "bytes": 1369,
-      "sha256": "1a0ce423f052e22fac7577e4e08a9dcde2805333cc2daecabd34f985cad6f30e"
+      "bytes": 1403,
+      "sha256": "42bc56d0ca92f6a07dc6564b41934779e16353b63ac1585c4a0529dd98646295"
     },
     {
       "path": "07_PLATFORM/frontend/src/components/EnrollmentForm.tsx",
-      "bytes": 2263,
-      "sha256": "74f51a482dd7a7daff37c3584203cc2edbdae5ccef44054b5d6a174ddf28a77d"
+      "bytes": 2345,
+      "sha256": "c79b76b11799cba48ee186845fb3e95e91e1a5b05d944f83ab98dc010ecd029c"
     },
     {
       "path": "07_PLATFORM/frontend/src/components/GlobalSearch.test.tsx",
-      "bytes": 5551,
-      "sha256": "46f78fb32d6c9dc5f210f2e89cc521db793bb65b0f7d84b46f9fe9c969493937"
+      "bytes": 5714,
+      "sha256": "eed886bcf9e00d5e8fb83b8286baa3434c1e3b87a7df8cc5c06f785ccbd6c3a9"
     },
     {
       "path": "07_PLATFORM/frontend/src/components/GlobalSearch.tsx",
-      "bytes": 5819,
-      "sha256": "e37b34f60b97ec3e7c392afc29069479f3866e04903fa6adfdb1ae4ba9f32875"
+      "bytes": 5995,
+      "sha256": "003bd1312ebd89dee6aaa84b3e6b3a0a28959034071e1c0b546ee17e037188b4"
     },
     {
       "path": "07_PLATFORM/frontend/src/components/GlossaryTermForm.test.tsx",
-      "bytes": 1160,
-      "sha256": "2529031f7b662d01dbf4f61a8afc6d6b3a56e308aaaa2a84f7413f0eef11d87f"
+      "bytes": 1193,
+      "sha256": "aed9e9c754d3c1375627d2726681778ea918e9fcfa593e6ec6eb61a27afd4b5f"
     },
     {
       "path": "07_PLATFORM/frontend/src/components/GlossaryTermForm.tsx",
-      "bytes": 1536,
-      "sha256": "c62552a7cc52bf5566b31209547d69384ced7a9e031b9e5b86eb2cdfa825c500"
+      "bytes": 1589,
+      "sha256": "bef342027c3b368dbc16d7bb625f816a7c4833cf4240c9114d518131ad0c931d"
     },
     {
       "path": "07_PLATFORM/frontend/src/components/IdentityPicker.test.tsx",
-      "bytes": 2653,
-      "sha256": "6f245b2e42ae276d98941131b583f7301663d06bf342e19510f6905ee264359f"
+      "bytes": 2732,
+      "sha256": "824f0034401e140244c6d716312b7626827688fc648eaee22846c75cf16bd638"
     },
     {
       "path": "07_PLATFORM/frontend/src/components/IdentityPicker.tsx",
-      "bytes": 2333,
-      "sha256": "2e03c9ec468980724fec4d5af6663d7e3c315065c35f2ec4930ace77498cb008"
+      "bytes": 2405,
+      "sha256": "0620684dcccf5c9a33865e6f724d3acff52b3d01d6779e954ae65a9684973fc7"
     },
     {
       "path": "07_PLATFORM/frontend/src/components/ImportCsvButton.tsx",
-      "bytes": 1832,
-      "sha256": "39b66178e86b4fdc16c4e1bb83b7aa4c4f4a2fee421f96f76f31965174bce93b"
+      "bytes": 1894,
+      "sha256": "49369e2de05233fb2dd5ebb0d80a984c3be4f41fdfc921521e844b3cd28391f9"
     },
     {
       "path": "07_PLATFORM/frontend/src/components/IncidentForm.test.tsx",
-      "bytes": 3294,
-      "sha256": "27672ac0bef20e2229f486c66f4ba338373abc1ec4485ef8f16912cc3cf86a44"
+      "bytes": 3366,
+      "sha256": "61c25f02a2a649c0be3183526dda1e946ddbac406edf6405cb8a4d956d64eca9"
     },
     {
       "path": "07_PLATFORM/frontend/src/components/IncidentForm.tsx",
-      "bytes": 5337,
-      "sha256": "0cde2ff9c59939110782dfe9df819809a11764edc80cb9cde3ecb241e851ac6d"
+      "bytes": 5519,
+      "sha256": "9fbe89e243315eb9c4a5e914973381f7c2a92629cd998c89f187b79bbe57028c"
     },
     {
       "path": "07_PLATFORM/frontend/src/components/KBArticleForm.test.tsx",
-      "bytes": 2087,
-      "sha256": "c14684e34ca05c4c9eacd2a20ad11c44c01c657dcfbbeaa0325251f7416d74b5"
+      "bytes": 2144,
+      "sha256": "0f43a1919ae1bd3c505fddd5f9f2cf8d29a1e87af0578cec2b3942f0a609ca72"
     },
     {
       "path": "07_PLATFORM/frontend/src/components/KBArticleForm.tsx",
-      "bytes": 4115,
-      "sha256": "4a298f9c23cb91457a7c20822f58401b46a8f8daeb62034db2e228e95b0ace2d"
+      "bytes": 4254,
+      "sha256": "0b1ae9adba931ea1c0a7a6c5cd80be9f41ef652a5df098fa0e065c3a6e1d3ec6"
     },
     {
       "path": "07_PLATFORM/frontend/src/components/LabForm.test.tsx",
-      "bytes": 1100,
-      "sha256": "e85a3781a9b29cefe20e7c55ff3d48ac1a81070b1ae77f8cc09a197b92d42887"
+      "bytes": 1128,
+      "sha256": "92aeba6656266f673afdf6ef6fe2b86027e1818c1895e2289299ed194af56bfc"
     },
     {
       "path": "07_PLATFORM/frontend/src/components/LabForm.tsx",
-      "bytes": 1754,
-      "sha256": "1d5c8f25d8552478ccaa614cc12ce2bf53666328ed8f2049455f895a1033a84f"
+      "bytes": 1819,
+      "sha256": "22182a598d163969ab83a930584c225f7df6e4afd154836edcffeaaac1892fa7"
     },
     {
       "path": "07_PLATFORM/frontend/src/components/Layout.test.tsx",
-      "bytes": 2793,
-      "sha256": "92a8000e3e3a875757f892dd1e6c01bbd1758edf1073cb5013fb825774aca06a"
+      "bytes": 2868,
+      "sha256": "c0bccaacff0031658699f263d0435c81234f28943e02718de5349dd29a99fb02"
     },
     {
       "path": "07_PLATFORM/frontend/src/components/Layout.tsx",
-      "bytes": 4138,
-      "sha256": "40bf590d4027a59f1e5b99bfdacc05a4ced3c96f620dc9b1d34aa47c426959bc"
+      "bytes": 4264,
+      "sha256": "591488ae4c061af5001e0c300a8bd49b007b81ad6ad3386dfa684474900d7e33"
     },
     {
       "path": "07_PLATFORM/frontend/src/components/ModuleForm.test.tsx",
-      "bytes": 1629,
-      "sha256": "e3a3dda0427c2a4cefb2e6eb7714a3109af755e1e270365c6905bf6c8a902345"
+      "bytes": 1676,
+      "sha256": "b6e9b9b211d5320067609fde472926698aa5cdba48817d16d0529ea02200f028"
     },
     {
       "path": "07_PLATFORM/frontend/src/components/ModuleForm.tsx",
-      "bytes": 2133,
-      "sha256": "8a1834ec471279929697ef4f5d4723f93bf209d5e2e18a81958add004c9054a6"
+      "bytes": 2213,
+      "sha256": "749f8e1e43363825f273c423e1fad9fd462eaa91b491332fce08b26cfc2779fa"
     },
     {
       "path": "07_PLATFORM/frontend/src/components/Pagination.tsx",
-      "bytes": 770,
-      "sha256": "c23f2aefaf3ebaaa56d44d838baa11649202d53f0e21f8871c0068b414be5a68"
+      "bytes": 799,
+      "sha256": "23ad8c55c53ef74c3ebe6113dcd6097568b10f06ee8e3f42395602d1fc291328"
     },
     {
       "path": "07_PLATFORM/frontend/src/components/RaciEntryForm.test.tsx",
-      "bytes": 1322,
-      "sha256": "7aae95e0b12c0c39afba0cf4553e514921135bbd33665ab21eedb25e0b352f17"
+      "bytes": 1358,
+      "sha256": "b3a9b955fa9d51fe20fec09558c70c05e36160f58527db9df8af3b426e2817e4"
     },
     {
       "path": "07_PLATFORM/frontend/src/components/RaciEntryForm.tsx",
-      "bytes": 1842,
-      "sha256": "54aeb171e828788dbe91ac6dec7a7947f04fec22309f33ce85332a372ef2ec02"
+      "bytes": 1907,
+      "sha256": "7ec6d3270aac787cf05675610b21016727f7aa73ce021e6c9f47f215be64b641"
     },
     {
       "path": "07_PLATFORM/frontend/src/components/ReleaseForm.test.tsx",
-      "bytes": 1804,
-      "sha256": "5881fb9b6fc2127f5d92132daa08b37405648af2c2cdce46917d0ba43213e795"
+      "bytes": 1840,
+      "sha256": "02314eb5f8a5e9ea1df53c13bc27906127cd27b8c12c7f97c361f8471eb5810a"
     },
     {
       "path": "07_PLATFORM/frontend/src/components/ReleaseForm.tsx",
-      "bytes": 3654,
-      "sha256": "8017372291244f8fede50928562e0a3e8798cd22d3f13e4cbdf31884e38170ed"
+      "bytes": 3781,
+      "sha256": "d1a8df476e625136b2fa45f1318aa6f29d752ff47e088511e20fbe460843b724"
     },
     {
       "path": "07_PLATFORM/frontend/src/components/ThemeProvider.test.tsx",
-      "bytes": 1908,
-      "sha256": "2088a0a9a2be989258f2d488b3b28ab24eb99cb5284d651e6a6683ff3e540528"
+      "bytes": 1970,
+      "sha256": "d774106d32e43b045fff49d4a964d13d57f8ccc4f6f0e5479f2ef6fa15b4ee50"
     },
     {
       "path": "07_PLATFORM/frontend/src/components/ThemeProvider.tsx",
-      "bytes": 1220,
-      "sha256": "8a94332ce42acfa86cd2e3233d0c5662696e0cd6e8cbd584358c4dd4bbc8e627"
+      "bytes": 1254,
+      "sha256": "daaf4b12965de2a3681c296ac4c506c6d02aa1925513417258bd86f65e6b1324"
     },
     {
       "path": "07_PLATFORM/frontend/src/components/ToastProvider.test.tsx",
-      "bytes": 3045,
-      "sha256": "2570ed22f72cc01761e8feff161f8212541dde4a20b4449a369a1ec9a5a845ee"
+      "bytes": 3141,
+      "sha256": "e3014d9542a6ec48de72a96e07d20ce3f6c3459f7e9c1ab9d30465b526e2e775"
     },
     {
       "path": "07_PLATFORM/frontend/src/components/ToastProvider.tsx",
-      "bytes": 3317,
-      "sha256": "8819c614879684b70ea683bb5344a937fa6efa5ab2d95618f3c158cf892fdf54"
+      "bytes": 3423,
+      "sha256": "c4d43e463327198ef1f666397ce2a403d10a081f56aa9e334df31bb57eccb0bf"
     },
     {
       "path": "07_PLATFORM/frontend/src/components/UserForm.tsx",
-      "bytes": 2167,
-      "sha256": "6246f2d07b5e75bb4fbc9635f6d42fd0289d1ff9c78cf5cc063c9acb5ddc9524"
+      "bytes": 2241,
+      "sha256": "8d41e9d95b8ca3945f2b9b4caf742d0e518c75bf970f99809487e1b984cd23d3"
     },
     {
       "path": "07_PLATFORM/frontend/src/hooks/useAuthState.test.tsx",
-      "bytes": 2091,
-      "sha256": "968a5347299b4034286e473bf0e6edc1e1fe70778143f4c45c527e3ec0b5a91f"
+      "bytes": 2149,
+      "sha256": "06b1f41925ef44c0c9cbec2affd024fcacec9874ac4ef6a64ab3309298a6d02b"
     },
     {
       "path": "07_PLATFORM/frontend/src/hooks/useAuthState.ts",
-      "bytes": 1031,
-      "sha256": "71303c16d2d059c7d6a1ff416d149d7b3d714813f8dd8df3198733a5bbf579fa"
+      "bytes": 1066,
+      "sha256": "556a8547778286d142d9d2f801103864ad6db64618c5345329686f6007675f76"
     },
     {
       "path": "07_PLATFORM/frontend/src/hooks/useFocusHeadingOnMount.ts",
-      "bytes": 213,
-      "sha256": "acbb884066e6e990674f71d2ce1572e66ef46d2e2324a70c5cb215925503cdf2"
+      "bytes": 222,
+      "sha256": "2c89837d8db79c5d7d348cbff5d573c73510c84a908bc7e5773b5093442870b4"
     },
     {
       "path": "07_PLATFORM/frontend/src/hooks/usePendingDeletes.ts",
-      "bytes": 418,
-      "sha256": "471ce452d6e50f59fa8e340cb3d7d4483499672fd655fe0590ac65f613ff00c1"
+      "bytes": 437,
+      "sha256": "18576da31cb1683defd62fef7707c436c75890154d3aa56c7c2692af54d02b41"
     },
     {
       "path": "07_PLATFORM/frontend/src/hooks/useSelection.ts",
-      "bytes": 555,
-      "sha256": "875bcdc24a86258f39437f6a8edf1d7e6dc7163566db4fde24a19593d62dd60d"
+      "bytes": 579,
+      "sha256": "4f7f93d173d4814d63c4ca707b0f6993b89abf7398998c5155aaac904ecf3bf9"
     },
     {
       "path": "07_PLATFORM/frontend/src/index.css",
-      "bytes": 661,
-      "sha256": "466ac348bb2ff00cc52e7895b1791e28b53c680b00ea9dd373cd79e9475850fa"
+      "bytes": 691,
+      "sha256": "c040c7673b5939e3f9e502f6969c1b96c688c6fdf2a1672cdf62af27e30cf963"
     },
     {
       "path": "07_PLATFORM/frontend/src/lib/api.test.ts",
-      "bytes": 4034,
-      "sha256": "e9b94accf585e06681c7e7a2f8a607a1b4d0ad584a6a3a3b00d9e798b7eaeae7"
+      "bytes": 4165,
+      "sha256": "67ae53db259b438f10591dbcb39bc42140c48f5c25322d99b6487416fc3716e2"
     },
     {
       "path": "07_PLATFORM/frontend/src/lib/api.ts",
-      "bytes": 33722,
-      "sha256": "fc351fb9d03d7000713d5b3de095b1dae449fb629dbd1424e06322f6f67a9811"
+      "bytes": 34646,
+      "sha256": "0641dd4b0bf592dbfd0dc016985e73403348e11ff655323071b47b99ac4bbedf"
     },
     {
       "path": "07_PLATFORM/frontend/src/lib/hybridRouter.js",
-      "bytes": 1533,
-      "sha256": "2981b2c9fd2337c0359ecd97728444d625bd6a2185bf2626207e4090a5446d4c"
+      "bytes": 1593,
+      "sha256": "78ba2aa38b6d1b9ee22bfd5b3ea67db05aa9f35cf208a7f30c516b231b599f13"
     },
     {
       "path": "07_PLATFORM/frontend/src/main.tsx",
-      "bytes": 3789,
-      "sha256": "0b49752d181f7d627d63589bb7a4f8e7100952b8020533c2631ea71f4daf7cba"
+      "bytes": 3864,
+      "sha256": "910841316dc04bb6f6fbc4650a8ec1aaa003dcbd618b02a000bd41b4a6c656d4"
     },
     {
       "path": "07_PLATFORM/frontend/src/pages/AgentDetailPage.test.tsx",
-      "bytes": 3732,
-      "sha256": "01280e6945e26d86e9ddab822f60390b1edaa902b4531d2a4a7c87973eb90d98"
+      "bytes": 3842,
+      "sha256": "5d69196b00e1c221b6489b8ef14e6713740d434f03014e8053ff0fc1b5df7434"
     },
     {
       "path": "07_PLATFORM/frontend/src/pages/AgentDetailPage.tsx",
-      "bytes": 3427,
-      "sha256": "090a8d3993cf90962e0f9b739e4ef7d69ccd9b56f18cd71156f0af4128f235f1"
+      "bytes": 3533,
+      "sha256": "6994783199d7eb5ce05b7b3d4500ee95c5b861fc136adcd8022bfdc86cbc31f6"
     },
     {
       "path": "07_PLATFORM/frontend/src/pages/AgentsPage.test.tsx",
-      "bytes": 2882,
-      "sha256": "8c2b58e107fc7f6cd2c7c6e00642fa89b21046e679ca014599535bf28a104267"
+      "bytes": 2974,
+      "sha256": "389a0e4c88c7cf12252858682963de1a16b576378f3daf811ba10d53d09c3a80"
     },
     {
       "path": "07_PLATFORM/frontend/src/pages/AgentsPage.tsx",
-      "bytes": 4312,
-      "sha256": "c81cadf140e30fae3021139d9a501182fa8a6cc5cd2f4d40a0955a768bdb3608"
+      "bytes": 4428,
+      "sha256": "4a326e61c7a0e59d0573cce384c5d54438a748b39524fa98247c053f05fb009b"
     },
     {
       "path": "07_PLATFORM/frontend/src/pages/AuditLogPage.tsx",
-      "bytes": 2896,
-      "sha256": "c24deef5a5b586414796f61cb47d57698a655cfdd8beada4898b45c0201b469a"
+      "bytes": 2976,
+      "sha256": "7f563c5dbc49c0657abebed9d3f0bac29b53f2c4e463c6ed790299c84c267254"
     },
     {
       "path": "07_PLATFORM/frontend/src/pages/CertificationDetailPage.tsx",
-      "bytes": 8214,
-      "sha256": "33a14430d064db6313e1a02a3d88895aeed3a4ec8c51ba7dc1808225c366ef0f"
+      "bytes": 8439,
+      "sha256": "028ee92a553ae5d2fe3c18ac80bb62f01b01a424d21f56eb7e0a2bb9c0625aea"
     },
     {
       "path": "07_PLATFORM/frontend/src/pages/CertificationsPage.test.tsx",
-      "bytes": 1207,
-      "sha256": "aaca52a1c32346b801902a55a9f2c64becd3e1d11b1a9cc600c4cd5c4d387ad1"
+      "bytes": 1241,
+      "sha256": "1819799f18492488e5035df1a14d94373c891f2192714de1f9650495b7e0f52f"
     },
     {
       "path": "07_PLATFORM/frontend/src/pages/CertificationsPage.tsx",
-      "bytes": 1439,
-      "sha256": "2b577ca4a32ebecf2165a37c8c992cedae71555b3fa2e9b1079d1e1ef95b1375"
+      "bytes": 1479,
+      "sha256": "2364dfb2419fa121f8c1effa23d01386e1619532fe9cfbab4710e8df2c9cccd4"
     },
     {
       "path": "07_PLATFORM/frontend/src/pages/ChangePasswordPage.tsx",
-      "bytes": 1698,
-      "sha256": "dc2dfd5ccb4d9b326fec5e4ac5bee23a10c351917d741cf5ba1d9583a92876ae"
+      "bytes": 1753,
+      "sha256": "65fb2d0a1068604eb43f78b5d098473e98ad66b31d163d2073afabd1b5cb41c6"
     },
     {
       "path": "07_PLATFORM/frontend/src/pages/GlossaryPage.test.tsx",
-      "bytes": 2822,
-      "sha256": "5d5d9762afd75abf7e2584c1ef14cd0167cb3139cb5d441bef5b7d1617f7ac96"
+      "bytes": 2913,
+      "sha256": "05216c6e717d2a74f46b965aa7cff07c5d9cbc0fc91dd35af95585fd82dbec5e"
     },
     {
       "path": "07_PLATFORM/frontend/src/pages/GlossaryPage.tsx",
-      "bytes": 4633,
-      "sha256": "4cbbf8b7f7c6a32d2426366bef770b020297a3952dc06c1bd8b33e76ce0e86a3"
+      "bytes": 4770,
+      "sha256": "b2ea060d32bfa92b3b2e3fcc94802ed44d91f2c68e0e6de09edcd3caf8405376"
     },
     {
       "path": "07_PLATFORM/frontend/src/pages/GovernancePage.test.tsx",
-      "bytes": 4163,
-      "sha256": "4a9fa73723c6548fee6766579bba1267ee14bea0f1a7acf4e96b9ed510f08fef"
+      "bytes": 4289,
+      "sha256": "79889329f60a30b7ba1b7860a8e85ef4aa342863744de97e8f1af577ec319641"
     },
     {
       "path": "07_PLATFORM/frontend/src/pages/GovernancePage.tsx",
-      "bytes": 5790,
-      "sha256": "807b9095c2edfb2f846f41cf4be9483ebb63b5e41bac14b3331de239ac3b3e89"
+      "bytes": 5953,
+      "sha256": "b756a56ce418ba985150efcd1fbf7b3fa96c1e1463df1a40fabc70e32d1398f8"
     },
     {
       "path": "07_PLATFORM/frontend/src/pages/HomePage.test.tsx",
-      "bytes": 8896,
-      "sha256": "ebc149c145a99971e9af5a8a0fe681105628aba015f4c9fd336912db8923fc71"
+      "bytes": 9177,
+      "sha256": "1b4e37dd229fa4e6806069bcaf274ff068fff4b67b17a24a19e5d6309dc30387"
     },
     {
       "path": "07_PLATFORM/frontend/src/pages/HomePage.tsx",
-      "bytes": 9971,
-      "sha256": "eb78de178732d80fd3abda0abc2329820c489fa0b51fc5822b7a5202f27dbd1d"
+      "bytes": 10260,
+      "sha256": "910c3b9a0ed55c04df46f0a3ba0c72fb175dfb8cb9ce7da282692c2155dbb9b0"
     },
     {
       "path": "07_PLATFORM/frontend/src/pages/IncidentDetailPage.test.tsx",
-      "bytes": 3359,
-      "sha256": "f035af7599eef63e89a92bf232a011fb822773f2fde2c066dd6e8662c24a380e"
+      "bytes": 3453,
+      "sha256": "a33a8b55eca43b6d48f4a77fb0854075326cd4b230b9b4c9df13bdb124add79c"
     },
     {
       "path": "07_PLATFORM/frontend/src/pages/IncidentDetailPage.tsx",
-      "bytes": 2606,
-      "sha256": "8b72793b9780489aed819228594c068d3f331dd7f9cbd98ba4d000f9a4067f0d"
+      "bytes": 2689,
+      "sha256": "69debe3e3a38754d1204538c72871041e1f1f288048d3a9a33328e1bd2ff3fdb"
     },
     {
       "path": "07_PLATFORM/frontend/src/pages/IncidentsPage.test.tsx",
-      "bytes": 4731,
-      "sha256": "b74bd774e22dce604c2e03ea744723467fe52ad60bbaec05f87f06f7b3703cc7"
+      "bytes": 4877,
+      "sha256": "2b15288bc9fdc43303e4ca90e337c76a60b84de8bb29605caa4f98251fb8787c"
     },
     {
       "path": "07_PLATFORM/frontend/src/pages/IncidentsPage.tsx",
-      "bytes": 7378,
-      "sha256": "226fa85eefe2c4655011f7f756991833293f9d007d479c7f021e2d929d494e87"
+      "bytes": 7584,
+      "sha256": "23038125e46d78fa8b8c2c6bca1cb84109e54c20375a669df91bdb36dbc33266"
     },
     {
       "path": "07_PLATFORM/frontend/src/pages/KBArticleDetailPage.tsx",
-      "bytes": 2623,
-      "sha256": "cfbaac135ac20dea74bdbf1f2a8cce72d4393d3322cdcc06b80c4a212cd5864c"
+      "bytes": 2703,
+      "sha256": "44747406e53fc8887ce538e1c460886011669ddeefab18a529bdb6d37899eb41"
     },
     {
       "path": "07_PLATFORM/frontend/src/pages/KnowledgeBasePage.test.tsx",
-      "bytes": 3002,
-      "sha256": "781e5585a062838993346390f170b987880db8368dd7cb9be7af71589b2cbc90"
+      "bytes": 3103,
+      "sha256": "1c70f9a29d63cd7f858c636c5414b8ec53a5c393e062be1a8be48d8842ba91be"
     },
     {
       "path": "07_PLATFORM/frontend/src/pages/KnowledgeBasePage.tsx",
-      "bytes": 4951,
-      "sha256": "031ae97e91a2de2f3088d4014d835388db0cdbb2eca3762687677dc011a6b90c"
+      "bytes": 5100,
+      "sha256": "d9519f71e520fb7d93052758f814ed6d1b91e386b4b8afe927fbf42477e5d38a"
     },
     {
       "path": "07_PLATFORM/frontend/src/pages/LabsPage.test.tsx",
-      "bytes": 3978,
-      "sha256": "db61bea079e92bb8626c101e573a2e238828b17202d40834ca6b0a81426897a9"
+      "bytes": 4108,
+      "sha256": "b8d1c0fa5d354b284d468d130e32bfcfd5291eac00064543fcb87eb619181c04"
     },
     {
       "path": "07_PLATFORM/frontend/src/pages/LabsPage.tsx",
-      "bytes": 6183,
-      "sha256": "af523b56f16af1136eaafb68f0391970092ce5b405c6e7c1fa1d2025f71789c9"
+      "bytes": 6361,
+      "sha256": "020320da89173248587ba72d6ced372bff950d79dde2c98c2a636a94fc7eccf3"
     },
     {
       "path": "07_PLATFORM/frontend/src/pages/LearnerDetailPage.tsx",
-      "bytes": 3642,
-      "sha256": "03d2d9fa86f577a21c375f15e07633c2ad2d3fa2c83cc5f1a04f4425c57950c7"
+      "bytes": 3743,
+      "sha256": "3b647b898ae599dfa6367f27fafc371fbef2f3d1d7fc507d215b65c71bfebf20"
     },
     {
       "path": "07_PLATFORM/frontend/src/pages/LearnersPage.test.tsx",
-      "bytes": 3987,
-      "sha256": "4b49ff13d0efadbe57c5ed8ea1d97eb1c49480b41235343385da6cbb60025583"
+      "bytes": 4111,
+      "sha256": "de576bc1ac7a47305e8368e79e5de6d33be268dfed4f488d170fb0db65ad7e94"
     },
     {
       "path": "07_PLATFORM/frontend/src/pages/LearnersPage.tsx",
-      "bytes": 5265,
-      "sha256": "279281222c996e41e16f88545faf4286b4ad6ba7eb83ce09d38aa9b4804e3cf8"
+      "bytes": 5425,
+      "sha256": "785ef5a4850d7aaa9f7a94d6985f9ba80414d82d2a84282c47f2fb35e59d32fd"
     },
     {
       "path": "07_PLATFORM/frontend/src/pages/LevelDetailPage.test.tsx",
-      "bytes": 3880,
-      "sha256": "f4898aa276625d13441c5d710774e3d1adcd2cc2e0018b71d31257e5dc596f62"
+      "bytes": 4003,
+      "sha256": "16f1fff8ba02c816c3050aef720abd33fd1dd9e8546f8d311cc03bd4da49a65d"
     },
     {
       "path": "07_PLATFORM/frontend/src/pages/LevelDetailPage.tsx",
-      "bytes": 6315,
-      "sha256": "06772dc5ebb9ce2c129c4ae2085f45dbe0a31bfce98e80fe1dc416ec05af83c6"
+      "bytes": 6502,
+      "sha256": "46d6ae5eaea61d54cc432d2bcf6fbfd8091139e1f05a85b6ba184c0d7b7aa23a"
     },
     {
       "path": "07_PLATFORM/frontend/src/pages/LevelsPage.test.tsx",
-      "bytes": 1257,
-      "sha256": "e7151ce6d002fc57a610e1226cdbebf4d338503ef31d4db36d6d866b00ec3bda"
+      "bytes": 1297,
+      "sha256": "332e566040ec686dd4f83b1678c29dc27aaba6fac6691aed3d006ee904d8d3b4"
     },
     {
       "path": "07_PLATFORM/frontend/src/pages/LevelsPage.tsx",
-      "bytes": 1142,
-      "sha256": "d953261442e42d56d3d3e76e79cfc83aa942759e58c7d3b312d96d017dc58f7c"
+      "bytes": 1178,
+      "sha256": "209379bcb86bc1a71a7d26e28fc26fe7b653641ef0faf5c736306a6427aee3fe"
     },
     {
       "path": "07_PLATFORM/frontend/src/pages/LoginPage.test.tsx",
-      "bytes": 3071,
-      "sha256": "2e1f6238b35340e2a1e6e52c65faae0647a9648c6e0789dd571f195f37670042"
+      "bytes": 3166,
+      "sha256": "8d025747a4fe3b5710fc4a5726e1c5d90018ac4f80960d05626ccc9766d68a27"
     },
     {
       "path": "07_PLATFORM/frontend/src/pages/LoginPage.tsx",
-      "bytes": 1868,
-      "sha256": "7ab6950193530ffc805411b73dfea596bc5cef58394640e621095c24f6dd1ab2"
+      "bytes": 1926,
+      "sha256": "d5194f983390df9b4e0024e1455f64a2e2c47b632aeaf126264ba4e1a7f4280a"
     },
     {
       "path": "07_PLATFORM/frontend/src/pages/PolicyPage.test.tsx",
-      "bytes": 3052,
-      "sha256": "63d4c8ca4bd82195181bc00bd99f4c22912a69a7c054743a64782ae25b822701"
+      "bytes": 3144,
+      "sha256": "9950e1eff25768de628025b09d64a1877d8d96d0061fec78f07633f9f3c3404c"
     },
     {
       "path": "07_PLATFORM/frontend/src/pages/PolicyPage.tsx",
-      "bytes": 4980,
-      "sha256": "0ba9c7a1aa44a7aad0381b64a62239acbd5dec4602adc96d9089540b9e412fb0"
+      "bytes": 5125,
+      "sha256": "5b77b7773e7464e3f44b8313aae5eca9906ed5743d45519665888b69b67ea088"
     },
     {
       "path": "07_PLATFORM/frontend/src/pages/ReleaseDetailPage.test.tsx",
-      "bytes": 4083,
-      "sha256": "d90a5864ab66580e74cc06df986c321863dc6a4b233e879aa007d9e151623e09"
+      "bytes": 4194,
+      "sha256": "1d22509825f2e95fc91ed96b08af8628517b90279e4185017783a2c0697155c6"
     },
     {
       "path": "07_PLATFORM/frontend/src/pages/ReleaseDetailPage.tsx",
-      "bytes": 3544,
-      "sha256": "5c738519ec6e1dcad67a08f71c090a06333ec84beafbdf47f0af056559606d83"
+      "bytes": 3655,
+      "sha256": "31ba75afef99a6add28cb78ebcb0eb219d4f4afcd86da3f7d86e98fa895ffddc"
     },
     {
       "path": "07_PLATFORM/frontend/src/pages/ReleasesPage.test.tsx",
-      "bytes": 2849,
-      "sha256": "65f0e7c04f4ab7fa72f416d179a6d069396a3f5c3f0346d51dfa08c1c3853c4f"
+      "bytes": 2947,
+      "sha256": "41438b507ceb0ae4f42ed90a48e5faad2e1435aa9e2b10da61b9d3c32598e0ed"
     },
     {
       "path": "07_PLATFORM/frontend/src/pages/ReleasesPage.tsx",
-      "bytes": 4395,
-      "sha256": "8c8f863fbd5a5d48acf7631fed48147935b5393cfdb04ceb92550f5531d4cfa1"
+      "bytes": 4524,
+      "sha256": "85d98d3422695f67a66739523f65096d17963796c847ca4493dfa5c12704234c"
     },
     {
       "path": "07_PLATFORM/frontend/src/pages/ServiceMemberDetailPage.test.tsx",
-      "bytes": 3751,
-      "sha256": "daa2a974b025eb1b05f0fdd7b5a6a19d1b137decaa8d3b5805eb160c243feece"
+      "bytes": 3849,
+      "sha256": "3e87beaf6da76138f53e1ccb3f0d22d1af3342426c29f10905f1b1176686d9c2"
     },
     {
       "path": "07_PLATFORM/frontend/src/pages/ServiceMemberDetailPage.tsx",
-      "bytes": 19360,
-      "sha256": "b04e38e5db1dd7c973b48fa017b1c60945d895769c69cca1d56213883de18b49"
+      "bytes": 19882,
+      "sha256": "0711ad397239bd25d25f77283c4eece8edb6cbb5ac58982161a2162fd333fbd0"
     },
     {
       "path": "07_PLATFORM/frontend/src/pages/ServiceMembersPage.tsx",
-      "bytes": 5517,
-      "sha256": "18595f4f7eaba627a75bbb096a318b6a2223286de7084670167a6e647cc8ed72"
+      "bytes": 5668,
+      "sha256": "007972d132a73074ef51a64c5fe255325d0045406f60f59520dece32c826403b"
     },
     {
       "path": "07_PLATFORM/frontend/src/pages/UsersPage.test.tsx",
-      "bytes": 2923,
-      "sha256": "6280292c914d10185e51590c6bc77e8975232aa29b344bcdc9ebfa951406eeba"
+      "bytes": 3008,
+      "sha256": "d1f12555525a844795c3354e47de16ce2b279f5f22a305fb24c8b7820b2c9566"
     },
     {
       "path": "07_PLATFORM/frontend/src/pages/UsersPage.tsx",
-      "bytes": 8085,
-      "sha256": "c08bd02d11d6f1ba1d9ab0594c43521abcab3d1fad13391d2914e9d3d260ac65"
+      "bytes": 8325,
+      "sha256": "d003c9cb57efd378df06ae86d5c80e581143942a2f9fc44bedc94aba862e39c9"
     },
     {
       "path": "07_PLATFORM/frontend/src/test/setup.ts",
-      "bytes": 165,
-      "sha256": "99d5d31cd43baf02e9f6b7731f1b5df4dd0e62cbd294a49cab9b6e5d99233cf3"
+      "bytes": 172,
+      "sha256": "7594cb5ead6cec5ce7f869697d888196908009135896a6bcb7a9928f72f7b0e1"
     },
     {
       "path": "07_PLATFORM/frontend/src/vite-env.d.ts",
-      "bytes": 38,
-      "sha256": "65996936fbb042915f7b74a200fcdde7e410f32a669b1ab9597cfaa4b0faddb5"
+      "bytes": 39,
+      "sha256": "424faf9241dd699dda995b367ed36665732da1e6ec1f33b2fd40394488ecac92"
     },
     {
       "path": "07_PLATFORM/frontend/tsconfig.json",
-      "bytes": 506,
-      "sha256": "5c277b328a46e41162637a8fbc5e53d59576912fd8b041cdfdc185800912eb99"
+      "bytes": 526,
+      "sha256": "e3472a8f920593adf15714a822e8470b6089ffc5b881ea133127bf395a66712a"
     },
     {
       "path": "07_PLATFORM/frontend/tsconfig.tsbuildinfo",
@@ -1870,223 +1005,223 @@
     },
     {
       "path": "07_PLATFORM/frontend/vite.config.ts",
-      "bytes": 796,
-      "sha256": "29d962fc4b3f37a52291f4dd2ad8dcf5cd44ee3bfd45849f395bcae5aee59155"
+      "bytes": 819,
+      "sha256": "8590d18e9da425102439eaaf3ae864b65fbd7037e864355cb91dc4564807f1b2"
     },
     {
       "path": "07_PLATFORM/php/health.php",
-      "bytes": 350,
-      "sha256": "7b6833790259ce3c7e83057aa60b0d253d57b6db77650b2985221bdf84d47053"
+      "bytes": 364,
+      "sha256": "bfbdd6c4b4a49601494fb456c8de1fb85cfd035c902bbe637a7296b6110e1e1c"
     },
     {
       "path": "08_INFRASTRUCTURE/docker/Dockerfile.api",
-      "bytes": 1167,
-      "sha256": "b95e0531e8a9fcc4abb139b5f5f73796ef657804ad3ee39466129d1f720ea52a"
+      "bytes": 1194,
+      "sha256": "b52aafbc41312dc217d30bf01dace512c5d2589f4461bee9020078d3b938e9b7"
     },
     {
       "path": "08_INFRASTRUCTURE/docker/Dockerfile.frontend",
-      "bytes": 186,
-      "sha256": "8e920f5b2c7ff968a665f99ba921c48f715d58fec2087f465ec4c18782fbe524"
+      "bytes": 197,
+      "sha256": "9635a59f08ad16cb986b1aeaa71cbd3477362f8deab494f88543c86284c2853c"
     },
     {
       "path": "08_INFRASTRUCTURE/docker/Dockerfile.frontend.prod",
-      "bytes": 845,
-      "sha256": "39e39b29000792ae538313ea8d182b4010eef4c944cfd4e18ef8fe34bf12ba48"
+      "bytes": 864,
+      "sha256": "cd1fd0aeba733021efb7919a329bed789cc1b36804572ddd422aaff210a53f0b"
     },
     {
       "path": "08_INFRASTRUCTURE/docker/frontend-static.conf",
-      "bytes": 137,
-      "sha256": "47cb79cfe3d529b9d70b854cb1770fa27feaef2cb53922a0d75b9b69e0c65d0f"
+      "bytes": 146,
+      "sha256": "c73f2a42c690ae4b4651f7c403652e067665e7fbd0e77866d30b12fb7c02eebd"
     },
     {
       "path": "08_INFRASTRUCTURE/kubernetes/academy.yaml",
-      "bytes": 7584,
-      "sha256": "8a9b0f508a0081b46ec414dd88794649ff0cb37f0b29498c14fac896daf570a6"
+      "bytes": 7882,
+      "sha256": "43d505910acc00dadf57734a4ace9541fce97c9bb9c1dfe286dca107002d167a"
     },
     {
       "path": "08_INFRASTRUCTURE/nginx/default.conf",
-      "bytes": 1195,
-      "sha256": "c7635db3d7282396815f250e1df24ce5b5534fb37a9b5af31bdf63c6435ea267"
+      "bytes": 1234,
+      "sha256": "c1dfb1445025174cc9be11634d5140ea3917a7ee61f8bdece8ebe166a4c36944"
     },
     {
       "path": "08_INFRASTRUCTURE/scripts/generate_manifest.py",
-      "bytes": 2765,
-      "sha256": "2e92df309dfd09014c52b61b8b981abb8ecb0402c6382dacd87fda51ef0d8b1e"
+      "bytes": 3279,
+      "sha256": "c10f31d5303bc334cedee61f6ff9e203300f94fd986c0c87f5807bd153bc6cbc"
     },
     {
       "path": "08_INFRASTRUCTURE/scripts/generate_release_status.py",
-      "bytes": 3953,
-      "sha256": "cddff273e65a15c2db432c617a617040c1cb125f90c43c76040d6c0467921a3c"
+      "bytes": 4050,
+      "sha256": "0fc98cc5b213efedf2f4a39be165f08174b00e9c0df41ee94fb5b594a777a086"
     },
     {
       "path": "08_INFRASTRUCTURE/scripts/validate_env.py",
-      "bytes": 1328,
-      "sha256": "e5c6cdc5eeb44c76b4d2c4500d0617b995a01685474602d36e4a241b1c086099"
+      "bytes": 1373,
+      "sha256": "581b8a8f709bea520b6ecea16fd6ffdf27e645a565a20d8f505833555c9f2e43"
     },
     {
       "path": "09_CONFIG/routing-policy.yaml",
-      "bytes": 737,
-      "sha256": "e3179f1f3824c0d784828e6fb9505dc2e08a5d3467642e4bf1290d06b19b4424"
+      "bytes": 776,
+      "sha256": "a2eada6e9650bdc9465797c6d38fe06c3a42b21f9f4cbab9416e39cc8fb21ec9"
     },
     {
       "path": "09_CONFIG/security-policy.yaml",
-      "bytes": 617,
-      "sha256": "1ff881f7e1919e4488b541955b77c953890f34e2bc4adf451e1b45c51817c0c7"
+      "bytes": 645,
+      "sha256": "df5322f59621c65736259ac5197786693ddd0e30b45a5ef97ad2bdc22254f98e"
     },
     {
       "path": "10_DOCS/api/API_REFERENCE.md",
-      "bytes": 24364,
-      "sha256": "4781175c75d002d94b8f0765a3ac47383168a5b0071156ae3691c32fbc71fc8e"
+      "bytes": 24661,
+      "sha256": "2292110dfc089cad3bba087742014e2f9bfa0c02bed4ae219f3b8d8a7dc4d258"
     },
     {
       "path": "10_DOCS/architecture/SYSTEM_ARCHITECTURE.md",
-      "bytes": 780,
-      "sha256": "82d4614d9c3249383060c24d7b750e50e0d81033cb768e103162aa61631ca495"
+      "bytes": 810,
+      "sha256": "2e6a8fa8b436935f98be65eeaa17865c205668ed4df4d8153b6d2bafa16189db"
     },
     {
       "path": "10_DOCS/development/DEVELOPER_GUIDE.md",
-      "bytes": 778,
-      "sha256": "fdc71c76bd777ab9980c7a5db28b4b926abb846f2a0c4009a18b7fa9f5060df2"
+      "bytes": 808,
+      "sha256": "d36bb00116bf7aa8445fb4ba6a0a1b3e5027385167626691fe00f20ed86f4825"
     },
     {
       "path": "10_DOCS/operations/RUNBOOK.md",
-      "bytes": 672,
-      "sha256": "52952e47eb69ea0f61a1a04ee18e4fda3f0c36e2102433d1ac93746d3a4a303c"
+      "bytes": 700,
+      "sha256": "ebbe75f31542b4be56b21da899afc8a77c8d1e6448ed853b0a336df7571d6ade"
     },
     {
       "path": "10_DOCS/security/THREAT_MODEL.md",
-      "bytes": 706,
-      "sha256": "a63b2f0dc94c4df4552cd44f946a49704e9eb9e1d890c04001240da7ba1a65b2"
+      "bytes": 745,
+      "sha256": "f291f5715c8967ea79e75441009f3b86596ab60aaedc12585c5837e71ffe872e"
     },
     {
       "path": "11_PERSONNEL/Personnel_Roster.md",
-      "bytes": 5002,
-      "sha256": "07a94cb17fa4b7210d4cf2e027707c61370d02734a9c2179ac13db74c7e9f73a"
+      "bytes": 5035,
+      "sha256": "fc9ceae5fe2436d2e671af5358c4f11995cb8b570176e9398147a088c51ae45b"
     },
     {
       "path": "CARC_AUDIT_SWEEP_2026-08-19.md",
-      "bytes": 6808,
-      "sha256": "9a9c44634f1d6b2c1b8a38d68088f8a3f845e925e44f2f204f412bad44c8cc52"
+      "bytes": 6900,
+      "sha256": "ee1e74760b1f28bae7a12eb112993eb0ae209019aa944af00e250d514528493c"
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 10609,
-      "sha256": "d5f63ad6c75fd409ba629881b8c8711c2426c70b4cceb83ad343d5401a383a4d"
+      "bytes": 10686,
+      "sha256": "6636a1414dafbf1b327680879ce248ace138f6041f50a74f1ea34a3ec5ff116d"
     },
     {
       "path": "CODE_OF_CONDUCT.md",
-      "bytes": 356,
-      "sha256": "3eadcb93a37bf2f62d479b01bf93592f7300c9dc100d79e5c4ee3a9951f2cc76"
+      "bytes": 361,
+      "sha256": "3c3320723afa11a87832c979a753c03d5f29982be9983da4296ddfdb7ec38b7d"
     },
     {
       "path": "CONTRIBUTING.md",
-      "bytes": 879,
-      "sha256": "4e78eecebf2d3dd9e6cd0e1ad3c47bde6d6059d826fe16e3abcc7c47f84aa72e"
-    },
-    {
-      "path": "Iteration_8_Delta_Audit_Eighth_Updated_ZIP.json",
-      "bytes": 2350,
-      "sha256": "fa649f513995948d70ced438e638d918c94d30576f1e772967bd9aa374126194"
-    },
-    {
-      "path": "Iteration_8_Delta_Audit_Eighth_Updated_ZIP.md",
-      "bytes": 5969,
-      "sha256": "236f9fb6563fb220d46fca68ae0a78c8a9c2e0b5fe6455ccd2d37916e730bba6"
-    },
-    {
-      "path": "Iteration_8_Delta_Audit_Fourth_Updated_ZIP.json",
-      "bytes": 2980,
-      "sha256": "56deea8bb643a7f7d5330c467ffd9cf6e880361a802c79832a313f6caa0ed1d6"
-    },
-    {
-      "path": "Iteration_8_Delta_Audit_Fourth_Updated_ZIP.md",
-      "bytes": 3798,
-      "sha256": "178acccc89e095b5ec029e9d23c6e4fb9a032ce9f76dea02cadb5292fb9e9083"
-    },
-    {
-      "path": "Iteration_8_Delta_Audit_Seventh_Updated_ZIP (1).json",
-      "bytes": 3065,
-      "sha256": "47f0c05bae798a4585eeeadde02dddea227a900e143cbb418e71bb6e0a8893e0"
-    },
-    {
-      "path": "Iteration_8_Delta_Audit_Seventh_Updated_ZIP (1).md",
-      "bytes": 4405,
-      "sha256": "e7320e4e4f5e013c78dc94e0a7e5bf3b5a460286875680b1ac11d01d6755838f"
-    },
-    {
-      "path": "Iteration_8_Delta_Audit_Seventh_Updated_ZIP.json",
-      "bytes": 3065,
-      "sha256": "47f0c05bae798a4585eeeadde02dddea227a900e143cbb418e71bb6e0a8893e0"
-    },
-    {
-      "path": "Iteration_8_Delta_Audit_Seventh_Updated_ZIP.md",
-      "bytes": 4405,
-      "sha256": "e7320e4e4f5e013c78dc94e0a7e5bf3b5a460286875680b1ac11d01d6755838f"
-    },
-    {
-      "path": "Iteration_8_Delta_Audit_Sixth_Updated_ZIP.json",
-      "bytes": 1907,
-      "sha256": "6c18526ce4b0a6c23137f26e7b8057b7359c9a8f3c1657d5e99792b320cb3756"
-    },
-    {
-      "path": "Iteration_8_Delta_Audit_Sixth_Updated_ZIP.md",
-      "bytes": 5495,
-      "sha256": "ceaaa7b087cfa4bd0da76185e3cc75059acc189a005ad325476017b2ed3859ba"
-    },
-    {
-      "path": "Iteration_8_Delta_Audit_Updated_ZIP.json",
-      "bytes": 3143,
-      "sha256": "0b5dd7f6cb0a1a665ef2fed5595d352009bab48cbe234b1a9ed7b52962e6b84a"
-    },
-    {
-      "path": "Iteration_8_Delta_Audit_Updated_ZIP.md",
-      "bytes": 5321,
-      "sha256": "aecb497a8d41c45675487d347b1321bf6b91fc7d386bf9814859708717324adb"
-    },
-    {
-      "path": "Iteration_8_Live_Evidence_Audit.json",
-      "bytes": 998,
-      "sha256": "659649110060ec0561025aae231c0f871c9d19c039beec1097eb3a515d7ef8c4"
-    },
-    {
-      "path": "Iteration_8_Live_Evidence_Audit.md",
-      "bytes": 5802,
-      "sha256": "ed9120b6467003953ec89783cb5e0cf0b136c613ae3f7ce3a888a14df85df0fc"
-    },
-    {
-      "path": "LICENSE",
-      "bytes": 35149,
-      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
-    },
-    {
-      "path": "Makefile",
-      "bytes": 2362,
-      "sha256": "92c9926494397b8dcbf2bf1cc31187effaed7b79b9b1107c9ffe2fe2af39d986"
-    },
-    {
-      "path": "README.md",
-      "bytes": 58701,
-      "sha256": "07029d4b1f8afa0418f1f9c3cb854e45bea85aad32c64da7a0f02e119ada7379"
-    },
-    {
-      "path": "README_UPDATED.md",
-      "bytes": 63458,
-      "sha256": "c93b3c06ca558f00ada7982594acf0767efb1297d23e9c179962fdace3b8cf8c"
-    },
-    {
-      "path": "RELEASE_STATUS.json",
-      "bytes": 755,
-      "sha256": "9cf5a1dccd9e04fbf90e2a616a76567a35b99699625685eba90f599c9955ed0d"
-    },
-    {
-      "path": "SECURITY.md",
-      "bytes": 903,
-      "sha256": "169ef6b4985d7981751f3e6d5ef35111914821ae2af60b86d3acaf46348aca66"
+      "bytes": 920,
+      "sha256": "b7869fd7e57b4c68ee85102400487228f6dbedb746e9276f3f98f0fc6ed01e5b"
     },
     {
       "path": "docker-compose.yml",
-      "bytes": 2006,
-      "sha256": "ba636ac9a66ab5701c26ad663db07db49cbad032a298992ba552a37b9416f682"
+      "bytes": 2084,
+      "sha256": "dbea27fb9a948c70e80e5f971dcc88de098c13c50d3c25f1df70b6575d92d53d"
+    },
+    {
+      "path": "Iteration_8_Delta_Audit_Eighth_Updated_ZIP.json",
+      "bytes": 2387,
+      "sha256": "da3deb9968fa1c0ebe4dcf5e46f966a79a096b36b89a9208f7858fe602c46f6b"
+    },
+    {
+      "path": "Iteration_8_Delta_Audit_Eighth_Updated_ZIP.md",
+      "bytes": 6139,
+      "sha256": "1e1d2148a5f401d9b74f859c3ea235120e4763d1ad719355a7d4a42f08e204aa"
+    },
+    {
+      "path": "Iteration_8_Delta_Audit_Fourth_Updated_ZIP.json",
+      "bytes": 3048,
+      "sha256": "ae8aecfc7485a78b1d3cdd69a6919c7687e98b5804e12fa062b08b95925e2a3d"
+    },
+    {
+      "path": "Iteration_8_Delta_Audit_Fourth_Updated_ZIP.md",
+      "bytes": 3886,
+      "sha256": "f9f5bb50ce9cce7d82a96af6e6c187b04e4ed330bd6fcd213457cc000ae2877a"
+    },
+    {
+      "path": "Iteration_8_Delta_Audit_Seventh_Updated_ZIP (1).json",
+      "bytes": 3129,
+      "sha256": "c98f1044f21c5c1d777d5d22d34e43232d0e64d0e0f7517fa181cfdbf3765bbf"
+    },
+    {
+      "path": "Iteration_8_Delta_Audit_Seventh_Updated_ZIP (1).md",
+      "bytes": 4526,
+      "sha256": "8bcd2e2dcdf710e97b1d29d363c745401178deb76fea58830205da567d179ef8"
+    },
+    {
+      "path": "Iteration_8_Delta_Audit_Seventh_Updated_ZIP.json",
+      "bytes": 3129,
+      "sha256": "c98f1044f21c5c1d777d5d22d34e43232d0e64d0e0f7517fa181cfdbf3765bbf"
+    },
+    {
+      "path": "Iteration_8_Delta_Audit_Seventh_Updated_ZIP.md",
+      "bytes": 4526,
+      "sha256": "8bcd2e2dcdf710e97b1d29d363c745401178deb76fea58830205da567d179ef8"
+    },
+    {
+      "path": "Iteration_8_Delta_Audit_Sixth_Updated_ZIP.json",
+      "bytes": 1943,
+      "sha256": "7c0fa993f91ac82a320c698a208eebc3aeae98d42a67680907732d12770dcfcb"
+    },
+    {
+      "path": "Iteration_8_Delta_Audit_Sixth_Updated_ZIP.md",
+      "bytes": 5635,
+      "sha256": "9c35ef632899ecc13588e810fc48f198f3129d8f491fd298a1d7aba4d577696e"
+    },
+    {
+      "path": "Iteration_8_Delta_Audit_Updated_ZIP.json",
+      "bytes": 3220,
+      "sha256": "c3d30bcc4c3986ef8e30241852c27757b9823cd216aeae9d0b5da93a4dd435a5"
+    },
+    {
+      "path": "Iteration_8_Delta_Audit_Updated_ZIP.md",
+      "bytes": 5437,
+      "sha256": "a68dc254d3dfa5b307c1074ca18e0e4339372825de59be188ecc05fbbbda0bb1"
+    },
+    {
+      "path": "Iteration_8_Live_Evidence_Audit.json",
+      "bytes": 1019,
+      "sha256": "0485a30adbc5cfe92ae846dd35000feb98dfba7be4e596ef7c7e8cf1a631d9f1"
+    },
+    {
+      "path": "Iteration_8_Live_Evidence_Audit.md",
+      "bytes": 5918,
+      "sha256": "19f6afbe8041b8a73902f8870e8e4ff4cf40e46c81dac412ebe48ed7965a4089"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 35823,
+      "sha256": "230184f60bae2feaf244f10a8bac053c8ff33a183bcc365b4d8b876d2b7f4809"
+    },
+    {
+      "path": "Makefile",
+      "bytes": 2425,
+      "sha256": "01ddabb7186a8a3843f1d3276baf15d51e5ed2702d545c755c7c37c17b12c6b0"
+    },
+    {
+      "path": "README.md",
+      "bytes": 59719,
+      "sha256": "43386a7d41b89dbbb218c8905c3ce4f22b9c9f71bf913cff4311c73075b1d4fd"
+    },
+    {
+      "path": "README_UPDATED.md",
+      "bytes": 64553,
+      "sha256": "2f1acee4482d264b7bea3fab547c447e6b82932c3b2ad6b9a2f17be50a707f42"
+    },
+    {
+      "path": "RELEASE_STATUS.json",
+      "bytes": 781,
+      "sha256": "379e0991e8b5b30ebe02734cbbdd5cd5f04f1596e9c2e60db05db184cbf1ed71"
+    },
+    {
+      "path": "SECURITY.md",
+      "bytes": 930,
+      "sha256": "e3f028cc6ef5f168f6c36d1491b75f766fdb42973bf60e5db5adc31d4452eb18"
     }
   ]
 }
