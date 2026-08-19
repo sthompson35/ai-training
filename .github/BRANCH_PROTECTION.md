@@ -64,14 +64,14 @@ Required ruleset
 |---|---|
 | Pull requests required | `required_pull_request_reviews` present (any non-null value enables this) |
 | At least one approval | `required_pull_request_reviews.required_approving_review_count: 1` |
-| CI checks required | `required_status_checks.contexts`: `CI / validate`, `CI / evidence`, `CI / e2e` — the job names in `.github/workflows/ci.yml`, prefixed with the workflow name the way GitHub reports them as status checks |
+| CI checks required | `required_status_checks.contexts`: `validate`, `evidence`, `e2e` — the job names in `.github/workflows/ci.yml` exactly as GitHub Actions reports them as check-runs, **not** prefixed with the workflow name. An earlier version of this doc claimed a `CI / ` prefix; that context string never matches anything a workflow reports, and required-but-never-satisfiable contexts block every merge permanently, including a PR meant to fix the contexts themselves — confirmed the hard way while bootstrapping this repository (see `app_id: null` on an unmatched context vs. a real `app_id` once corrected, via `gh api repos/OWNER/REPO/branches/main/protection/required_status_checks`) |
 | Branch must be current before merging | `required_status_checks.strict: true` |
 | Conversation resolution required | `required_conversation_resolution: true` |
 | Force pushes prohibited | `allow_force_pushes: false` |
 | Branch deletion prohibited | `allow_deletions: false` |
 | Administrator enforcement | `enforce_admins: true` — the ruleset applies to repo admins too, no bypass |
 | CODEOWNERS review | `required_pull_request_reviews.require_code_owner_reviews: true` — inert until `.github/CODEOWNERS`'s placeholder teams are replaced with real ones (see that file's own header comment) |
-| Signed commits | separate endpoint, `branches/main/protection/required_signatures`, `PUT` with no body → enabled |
+| Signed commits | separate endpoint, `branches/main/protection/required_signatures`, `POST` with no body → enabled (GitHub's API is inconsistent here — every other sub-resource on this page is `PUT`; this one 404s on `PUT` and only responds to `POST`) |
 | Direct production deployment allowed only from protected main | not a branch-protection field — enforced by two things together: (1) `release.yml` only triggers on `v*` tags, and a tag can only point at a commit that reached `main` through this ruleset; (2) the `production` Environment's deployment-branch policy restricts deploys to `main` and tags — see `ENVIRONMENTS.md` |
 
 Apply it
@@ -85,9 +85,9 @@ gh api -X PUT repos/OWNER/REPO/branches/main/protection \
   "required_status_checks": {
     "strict": true,
     "contexts": [
-      "CI / validate",
-      "CI / evidence",
-      "CI / e2e"
+      "validate",
+      "evidence",
+      "e2e"
     ]
   },
   "enforce_admins": true,
