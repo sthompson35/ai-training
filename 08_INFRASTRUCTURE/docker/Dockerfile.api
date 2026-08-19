@@ -1,0 +1,27 @@
+FROM python:3.12-slim
+
+ENV PYTHONDONTWRITEBYTECODE=1     PYTHONUNBUFFERED=1
+
+WORKDIR /app
+
+COPY 07_PLATFORM/backend/requirements.txt /tmp/requirements.txt
+RUN pip install --no-cache-dir -r /tmp/requirements.txt
+
+COPY 07_PLATFORM/backend /app
+COPY 01_CURRICULUM/module_catalog.csv /app/seed/module_catalog.csv
+COPY 01_CURRICULUM/lab_catalog.csv /app/seed/lab_catalog.csv
+COPY 02_CERTIFICATION/assessment_blueprints.csv /app/seed_cert/assessment_blueprints.csv
+COPY 04_KNOWLEDGE_BASE/glossary.csv /app/seed_kb/glossary.csv
+COPY 06_IMPLEMENTATION/governance_raci.csv /app/seed_governance/governance_raci.csv
+# Directory copy, not named files: 11_PERSONNEL ships with no CSV by default
+# (service_members starts empty in production, same as agent_cards/incidents/
+# releases) — a named-file COPY would fail the build until a real roster is
+# dropped in. seed.py's _seed_personnel() no-ops gracefully when the file
+# it's looking for isn't present.
+COPY 11_PERSONNEL/ /app/seed_personnel/
+
+RUN useradd --create-home --uid 10001 academy     && chown -R academy:academy /app
+USER academy
+
+EXPOSE 8000
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]

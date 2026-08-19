@@ -1,0 +1,37 @@
+{
+  "audit": "Iteration 8 Delta Audit - Sixth Updated ZIP",
+  "archive": "ai-training(4).zip",
+  "sha256": "5afb06414b3bf26747ee0ecd690001ce95253b028d985d9cf2e067e791690424",
+  "disposition": "MAJOR_PROGRESS_PRODUCTION_HOLD",
+  "improvements": {
+    "canonical_runtime_schema": "PASS",
+    "canonical_identity_resolver": "PASS_BY_CODE_INSPECTION",
+    "canonical_uniqueness_controls": "PASS_BY_CODE_INSPECTION",
+    "role_history_model": "PASS_BY_CODE_INSPECTION",
+    "victor_trooper_victor_canaries": "PRESENT",
+    "roster_row_count": 66,
+    "roster_identifier_uniqueness": "PASS_66_OF_66",
+    "unsupported_verified_state": "CORRECTED_ALL_66_UNVERIFIED",
+    "canonical_audit_linkage": "PASS_BY_CODE_INSPECTION"
+  },
+  "remaining_gates": {
+    "authoritative_roster_provenance": "FAIL",
+    "roster_reconciliation_to_established_academy_members": "FAIL",
+    "current_independent_pytest_execution": "HOLD_MISSING_BCRYPT",
+    "manifest_version_alignment": "FAIL",
+    "manifest_archive_completeness": "FAIL",
+    "release_env_hygiene": "FAIL",
+    "production_verified": "NO",
+    "production_promotion": "HOLD"
+  },
+  "critical_findings": [
+    "All 66 personnel rows now have production_verification_state=unverified.",
+    "All 66 rows still explicitly declare synthetic seed lineage and no authoritative source roster.",
+    "The synthetic roster omits established callsigns including @ADAM, @BARBARA, @BOBBY, @CASSIE, @EMMI, @INTI, and @VEX.",
+    "Synthetic Cindy and Mape roles do not match the previously established controlled role definitions.",
+    "manifest.json still declares 2.0.0 while README_UPDATED.md declares 2.2.0.",
+    ".env remains included despite .gitignore excluding it.",
+    "169 meaningful non-generated files are not represented by the current manifest.",
+    "Independent pytest rerun remains blocked because bcrypt==4.2.1 is unavailable in the audit environment."
+  ]
+}

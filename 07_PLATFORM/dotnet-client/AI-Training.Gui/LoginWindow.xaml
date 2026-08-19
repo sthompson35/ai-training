@@ -1,0 +1,20 @@
+<Window x:Class="AI_Training.Gui.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="AI Training Academy — Log in" Height="280" Width="360"
+        WindowStartupLocation="CenterScreen">
+    <StackPanel Margin="16">
+        <TextBlock Text="AI Training Academy" FontSize="18" FontWeight="Bold" Margin="0,0,0,16" />
+
+        <TextBlock Text="Username" Margin="0,0,0,4" />
+        <TextBox x:Name="UsernameBox" Margin="0,0,0,12" />
+
+        <TextBlock Text="Password" Margin="0,0,0,4" />
+        <PasswordBox x:Name="PasswordBox" Margin="0,0,0,12" />
+
+        <TextBlock x:Name="ErrorText" Foreground="Red" TextWrapping="Wrap" Margin="0,0,0,12" />
+
+        <Button x:Name="LoginButton" Content="Log in" Padding="8,4" HorizontalAlignment="Left"
+                Click="LoginButton_Click" IsDefault="True" />
+    </StackPanel>
+</Window>

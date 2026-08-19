@@ -1,0 +1,38 @@
+{
+  "audit": "Iteration 8 Delta Audit - Eighth Updated ZIP",
+  "archive": "ai-training(6).zip",
+  "sha256": "e568d1c9c4bb6bc337c6fbb327d081d612912bef29e75f09aa060ceb4eff10a3",
+  "disposition": "CANONICAL_EMPTY_PRODUCTION_MODEL_PASS_RELEASE_AND_INDEPENDENT_VERIFICATION_HOLD",
+  "gates": {
+    "canonical_runtime_schema": "PASS",
+    "canonical_exact_resolver": "PASS_BY_CODE_INSPECTION",
+    "canonical_uniqueness_controls": "PASS_BY_CODE_INSPECTION",
+    "versioned_role_history": "PASS_BY_CODE_INSPECTION",
+    "synthetic_fixture_separation": "PASS",
+    "empty_production_registry_behavior": "PASS_BY_CODE_INSPECTION",
+    "empty_registry_canary_semantics": "PASS_BY_CODE_INSPECTION",
+    "controlled_first_member_onboarding": "PASS_BY_CODE_INSPECTION",
+    "onboarding_audit_event": "PASS_BY_CODE_INSPECTION",
+    "source_lineage_required_for_canary_pass": "PASS",
+    "independent_verification_technical_enforcement": "FAIL",
+    "verification_evidence_binding": "FAIL",
+    "current_independent_pytest_execution": "HOLD_DEPENDENCY_UNAVAILABLE",
+    "manifest_version_alignment": "FAIL",
+    "manifest_archive_completeness": "FAIL",
+    "release_env_hygiene": "FAIL",
+    "production_verified": "NO",
+    "production_promotion": "HOLD"
+  },
+  "critical_findings": [
+    "Production registry intentionally starts empty; this is now correctly treated as NOT_APPLICABLE rather than failure.",
+    "Operational production identity canary is implemented in app/canary.py.",
+    "Dedicated tests cover empty-registry canary behavior and controlled first-member onboarding.",
+    "Synthetic personnel remain isolated under tests/fixtures/synthetic_personnel.",
+    "The same admin workflow can currently update production_verification_state to verified; no separate verifier identity, evidence record, or separation-of-duties check is enforced.",
+    "source_lineage is checked by the canary when identities exist, but upstream source/authority validation is organizational/manual rather than enforced by the API.",
+    "README_UPDATED.md declares 2.2.2 while manifest.json declares 2.0.0.",
+    ".env remains included although .gitignore excludes it.",
+    "178 meaningful non-generated files are not represented by the manifest.",
+    "Independent pytest execution remains blocked in the audit environment because bcrypt==4.2.1 is unavailable."
+  ]
+}

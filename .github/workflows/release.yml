@@ -1,0 +1,211 @@
+name: Release
+
+# Tag-triggered only — this is what "direct production deployment allowed
+# only from protected main" means mechanically: a v* tag can only exist on
+# a commit that reached main through the branch-protection ruleset in
+# BRANCH_PROTECTION.md (PR + approval + required CI + up-to-date branch).
+# Nothing here runs on arbitrary branch pushes.
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    outputs:
+      backend_passed: ${{ steps.backend.outputs.passed }}
+      backend_total: ${{ steps.backend.outputs.total }}
+      frontend_passed: ${{ steps.frontend.outputs.passed }}
+      frontend_total: ${{ steps.frontend.outputs.total }}
+      canary_status: ${{ steps.canary.outputs.status }}
+      gate_decision: ${{ steps.gate.outputs.decision }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install backend dependencies
+        run: pip install -r 07_PLATFORM/backend/requirements.txt
+
+      - name: Run backend tests
+        id: backend
+        working-directory: 07_PLATFORM/backend
+        run: |
+          set +e
+          pytest -q | tee /tmp/pytest.out
+          code=$?
+          set -e
+          summary=$(tail -1 /tmp/pytest.out)
+          passed=$(echo "$summary" | grep -oE '[0-9]+ passed' | grep -oE '[0-9]+' || echo 0)
+          failed=$(echo "$summary" | grep -oE '[0-9]+ failed' | grep -oE '[0-9]+' || echo 0)
+          total=$((passed + failed))
+          echo "passed=$passed" >> "$GITHUB_OUTPUT"
+          echo "total=$total" >> "$GITHUB_OUTPUT"
+          exit $code
+
+      - name: Install frontend dependencies
+        working-directory: 07_PLATFORM/frontend
+        run: npm install
+
+      - name: Run frontend tests
+        id: frontend
+        working-directory: 07_PLATFORM/frontend
+        run: |
+          set +e
+          npm run test 2>&1 | tee /tmp/vitest.out
+          code=$?
+          set -e
+          summary=$(grep -E "Tests +[0-9]+ passed" /tmp/vitest.out | tail -1)
+          passed=$(echo "$summary" | grep -oE '[0-9]+ passed' | grep -oE '[0-9]+' || echo 0)
+          failed_line=$(echo "$summary" | grep -oE '[0-9]+ failed' | grep -oE '[0-9]+' || echo 0)
+          total=$((passed + failed_line))
+          echo "passed=$passed" >> "$GITHUB_OUTPUT"
+          echo "total=$total" >> "$GITHUB_OUTPUT"
+          exit $code
+
+      - name: Typecheck and build frontend
+        working-directory: 07_PLATFORM/frontend
+        run: npm run build
+
+      - name: Start the stack for a live canary check
+        run: cp .env.example .env && docker compose up -d --build
+
+      - name: Wait for the API to become healthy
+        run: |
+          for i in $(seq 1 30); do
+            if curl -sf http://localhost:8001/health; then exit 0; fi
+            sleep 2
+          done
+          echo "API never became healthy" && exit 1
+
+      - name: Run the production identity canary
+        id: canary
+        run: |
+          status=$(docker compose exec -T api python -m app.canary | head -1 | sed 's/PRODUCTION_IDENTITY_CANARY = //')
+          echo "status=$status" >> "$GITHUB_OUTPUT"
+          echo "Canary reported: $status"
+          if [ "$status" = "FAIL" ]; then exit 1; fi
+
+      - name: Tear down
+        if: always()
+        run: docker compose down -v
+
+      - name: Confirm manifest.json is current
+        run: |
+          cp manifest.json /tmp/manifest.committed.json
+          python 08_INFRASTRUCTURE/scripts/generate_manifest.py
+          diff -q <(python -c "import json;d=json.load(open('/tmp/manifest.committed.json'));d['created_utc']='';print(json.dumps(d,sort_keys=True))") \
+                  <(python -c "import json;d=json.load(open('manifest.json'));d['created_utc']='';print(json.dumps(d,sort_keys=True))") \
+            || (echo "::error::manifest.json is stale for this tag — run 'make manifest' and re-tag" && exit 1)
+
+      - name: Determine production gate decision
+        id: gate
+        run: |
+          if [ "${{ steps.backend.outputs.passed }}" = "${{ steps.backend.outputs.total }}" ] && \
+             [ "${{ steps.frontend.outputs.passed }}" = "${{ steps.frontend.outputs.total }}" ] && \
+             [ "${{ steps.canary.outputs.status }}" != "FAIL" ]; then
+            echo "decision=GO" >> "$GITHUB_OUTPUT"
+          else
+            echo "decision=HOLD" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Generate RELEASE_STATUS.json
+        run: |
+          python 08_INFRASTRUCTURE/scripts/generate_release_status.py \
+            --backend-tests-passed "${{ steps.backend.outputs.passed }}" \
+            --backend-tests-total "${{ steps.backend.outputs.total }}" \
+            --frontend-tests-passed "${{ steps.frontend.outputs.passed }}" \
+            --frontend-tests-total "${{ steps.frontend.outputs.total }}" \
+            --canary-status "${{ steps.canary.outputs.status }}" \
+            --gate-decision "${{ steps.gate.outputs.decision }}" \
+            --notes "Generated by release.yml for ${{ github.ref_name }}"
+
+      - name: Compute checksums of release evidence
+        run: |
+          sha256sum manifest.json RELEASE_STATUS.json > SHA256SUMS.txt
+          cat SHA256SUMS.txt
+
+      - name: Upload release evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: release-evidence-${{ github.ref_name }}
+          path: |
+            manifest.json
+            RELEASE_STATUS.json
+            SHA256SUMS.txt
+          retention-days: 365
+
+  publish:
+    runs-on: ubuntu-latest
+    needs: verify
+    if: needs.verify.outputs.gate_decision == 'GO'
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: release-evidence-${{ github.ref_name }}
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: ${{ github.ref_name }}
+          body: |
+            Backend tests: ${{ needs.verify.outputs.backend_passed }}/${{ needs.verify.outputs.backend_total }}
+            Frontend tests: ${{ needs.verify.outputs.frontend_passed }}/${{ needs.verify.outputs.frontend_total }}
+            Production identity canary: ${{ needs.verify.outputs.canary_status }}
+            Production gate decision: ${{ needs.verify.outputs.gate_decision }}
+
+            See CHANGELOG.md for what changed. RELEASE_STATUS.json, manifest.json, and
+            SHA256SUMS.txt below are the evidence this release was cut from — check them
+            against the same names in the repository at this tag to confirm nothing was
+            substituted between CI and this release.
+          files: |
+            manifest.json
+            RELEASE_STATUS.json
+            SHA256SUMS.txt
+          generate_release_notes: true
+
+  deploy-production:
+    runs-on: ubuntu-latest
+    needs: [verify, publish]
+    if: needs.verify.outputs.gate_decision == 'GO'
+    environment: production # requires the "production" Environment + its
+      # required reviewers to exist on GitHub first — see ENVIRONMENTS.md.
+      # Until that Environment is created, this job has no approval gate to
+      # wait on and will simply fail to resolve the environment; it is not
+      # silently skipped.
+
+    steps:
+      - uses: actions/checkout@v4
+
+      # Placeholder deploy steps — this repo has no real target registry or
+      # cluster to deploy to. Replace with the real steps for your
+      # environment (e.g. `docker build` + push to a registry using
+      # secrets.REGISTRY_TOKEN, then `kubectl apply -f
+      # 08_INFRASTRUCTURE/kubernetes/academy.yaml`, or a `helm upgrade`).
+      # Every secret referenced below must be added to the "production"
+      # Environment's secrets before this can run for real — see
+      # ENVIRONMENTS.md for the exact names expected and why. None are
+      # fabricated or present in this repository.
+      - name: Deploy (placeholder — configure for your real target)
+        env:
+          DEPLOY_TARGET: ${{ secrets.DEPLOY_TARGET }}
+          REGISTRY_TOKEN: ${{ secrets.REGISTRY_TOKEN }}
+        run: |
+          echo "No real deploy target configured yet."
+          echo "This job exists to prove the gate: it only runs after verify+publish"
+          echo "succeed AND the production Environment's required approval is granted."
+          echo "Wire in real deploy steps here once DEPLOY_TARGET/REGISTRY_TOKEN exist."

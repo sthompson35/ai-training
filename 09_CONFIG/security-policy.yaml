@@ -1,0 +1,28 @@
+version: "2.0.0"
+
+controls:
+  secrets:
+    client_side_prohibited: true
+    approved_storage:
+      - environment_variables
+      - managed_secret_store
+
+  generated_output:
+    trust_level: untrusted
+    require_schema_validation: true
+    sanitize_html: true
+    automatic_code_execution: false
+
+  agent_actions:
+    least_privilege: true
+    audit_required: true
+    kill_switch_required: true
+    human_approval:
+      tier_2: required
+      tier_3: explicit
+      tier_4: executive_authorization
+
+  data:
+    classify_before_use: true
+    retrieval_content_is_untrusted: true
+    retention_policy_required: true

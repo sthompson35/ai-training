@@ -1,0 +1,422 @@
+{
+  "version": "1.0",
+  "domains": [
+    {
+      "id": "00",
+      "name": "Orientation and AI Literacy",
+      "modules": [
+        {
+          "id": "00.1",
+          "name": "Mission, scope, and responsible use"
+        },
+        {
+          "id": "00.2",
+          "name": "AI terminology and system map"
+        },
+        {
+          "id": "00.3",
+          "name": "AI risk awareness"
+        }
+      ]
+    },
+    {
+      "id": "01",
+      "name": "AI Foundations",
+      "modules": [
+        {
+          "id": "01.1",
+          "name": "Machine learning and neural networks"
+        },
+        {
+          "id": "01.2",
+          "name": "Transformers and attention"
+        },
+        {
+          "id": "01.3",
+          "name": "Model classes and right-sizing"
+        },
+        {
+          "id": "01.4",
+          "name": "Inference economics"
+        }
+      ]
+    },
+    {
+      "id": "02",
+      "name": "Prompt Engineering",
+      "modules": [
+        {
+          "id": "02.1",
+          "name": "Prompt anatomy"
+        },
+        {
+          "id": "02.2",
+          "name": "Few-shot and structured prompting"
+        },
+        {
+          "id": "02.3",
+          "name": "Prompt chains and decomposition"
+        },
+        {
+          "id": "02.4",
+          "name": "Prompt testing and version control"
+        }
+      ]
+    },
+    {
+      "id": "03",
+      "name": "Built-in and Client-Side AI",
+      "modules": [
+        {
+          "id": "03.1",
+          "name": "Built-in AI task APIs"
+        },
+        {
+          "id": "03.2",
+          "name": "On-device model availability"
+        },
+        {
+          "id": "03.3",
+          "name": "Hardware, storage, and runtime constraints"
+        },
+        {
+          "id": "03.4",
+          "name": "Offline AI and privacy"
+        }
+      ]
+    },
+    {
+      "id": "04",
+      "name": "Server-Side and Cloud AI",
+      "modules": [
+        {
+          "id": "04.1",
+          "name": "Cloud model selection"
+        },
+        {
+          "id": "04.2",
+          "name": "Secure API architecture"
+        },
+        {
+          "id": "04.3",
+          "name": "Streaming, state, and background work"
+        },
+        {
+          "id": "04.4",
+          "name": "Cloud cost controls"
+        }
+      ]
+    },
+    {
+      "id": "05",
+      "name": "Hybrid AI Architecture",
+      "modules": [
+        {
+          "id": "05.1",
+          "name": "Client/server routing"
+        },
+        {
+          "id": "05.2",
+          "name": "Graceful fallback"
+        },
+        {
+          "id": "05.3",
+          "name": "Resiliency patterns"
+        },
+        {
+          "id": "05.4",
+          "name": "Unified response contracts"
+        }
+      ]
+    },
+    {
+      "id": "06",
+      "name": "AI-Enhanced Content Consumption",
+      "modules": [
+        {
+          "id": "06.1",
+          "name": "Summarization"
+        },
+        {
+          "id": "06.2",
+          "name": "Translation and language detection"
+        },
+        {
+          "id": "06.3",
+          "name": "Categorization and characterization"
+        },
+        {
+          "id": "06.4",
+          "name": "Knowledge provider experiences"
+        }
+      ]
+    },
+    {
+      "id": "07",
+      "name": "AI-Supported Content Creation",
+      "modules": [
+        {
+          "id": "07.1",
+          "name": "Writing assistance"
+        },
+        {
+          "id": "07.2",
+          "name": "Proofreading and grammar correction"
+        },
+        {
+          "id": "07.3",
+          "name": "Rephrasing and tone control"
+        },
+        {
+          "id": "07.4",
+          "name": "Human approval and publication"
+        }
+      ]
+    },
+    {
+      "id": "08",
+      "name": "Knowledge Systems and RAG",
+      "modules": [
+        {
+          "id": "08.1",
+          "name": "Document ingestion and chunking"
+        },
+        {
+          "id": "08.2",
+          "name": "Embeddings and vector search"
+        },
+        {
+          "id": "08.3",
+          "name": "Hybrid retrieval and reranking"
+        },
+        {
+          "id": "08.4",
+          "name": "Grounded generation and citations"
+        }
+      ]
+    },
+    {
+      "id": "09",
+      "name": "Fine-Tuning and Model Adaptation",
+      "modules": [
+        {
+          "id": "09.1",
+          "name": "Prompting versus fine-tuning"
+        },
+        {
+          "id": "09.2",
+          "name": "Fine-tuning data design"
+        },
+        {
+          "id": "09.3",
+          "name": "LoRA, quantization, pruning, and distillation"
+        },
+        {
+          "id": "09.4",
+          "name": "Evaluation and rollback"
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "name": "AI Agents and Tool Use",
+      "modules": [
+        {
+          "id": "10.1",
+          "name": "Agent architecture"
+        },
+        {
+          "id": "10.2",
+          "name": "Function calling and tools"
+        },
+        {
+          "id": "10.3",
+          "name": "Agent memory and state"
+        },
+        {
+          "id": "10.4",
+          "name": "Human-in-the-loop controls"
+        }
+      ]
+    },
+    {
+      "id": "11",
+      "name": "Multi-Agent Systems",
+      "modules": [
+        {
+          "id": "11.1",
+          "name": "Delegation and orchestration"
+        },
+        {
+          "id": "11.2",
+          "name": "Shared context and communication"
+        },
+        {
+          "id": "11.3",
+          "name": "Reviewer and verification agents"
+        },
+        {
+          "id": "11.4",
+          "name": "Failure containment"
+        }
+      ]
+    },
+    {
+      "id": "12",
+      "name": "Automation and Integration",
+      "modules": [
+        {
+          "id": "12.1",
+          "name": "APIs, webhooks, and event flows"
+        },
+        {
+          "id": "12.2",
+          "name": "Workflow orchestration"
+        },
+        {
+          "id": "12.3",
+          "name": "MCP and connected tools"
+        },
+        {
+          "id": "12.4",
+          "name": "Observability"
+        }
+      ]
+    },
+    {
+      "id": "13",
+      "name": "AI Software and Infrastructure",
+      "modules": [
+        {
+          "id": "13.1",
+          "name": "Application architecture"
+        },
+        {
+          "id": "13.2",
+          "name": "Local runtimes and model formats"
+        },
+        {
+          "id": "13.3",
+          "name": "Containers, CI/CD, and deployment"
+        },
+        {
+          "id": "13.4",
+          "name": "Capacity planning"
+        }
+      ]
+    },
+    {
+      "id": "14",
+      "name": "Security, Privacy, and Governance",
+      "modules": [
+        {
+          "id": "14.1",
+          "name": "Threat model"
+        },
+        {
+          "id": "14.2",
+          "name": "Identity and access control"
+        },
+        {
+          "id": "14.3",
+          "name": "Data governance"
+        },
+        {
+          "id": "14.4",
+          "name": "Audit and compliance"
+        }
+      ]
+    },
+    {
+      "id": "15",
+      "name": "Evaluation and AI Operations",
+      "modules": [
+        {
+          "id": "15.1",
+          "name": "Quality metrics"
+        },
+        {
+          "id": "15.2",
+          "name": "Automated and human evaluation"
+        },
+        {
+          "id": "15.3",
+          "name": "Production monitoring"
+        },
+        {
+          "id": "15.4",
+          "name": "Incident response"
+        }
+      ]
+    },
+    {
+      "id": "16",
+      "name": "Business and Enterprise AI",
+      "modules": [
+        {
+          "id": "16.1",
+          "name": "Use-case selection"
+        },
+        {
+          "id": "16.2",
+          "name": "Product design and monetization"
+        },
+        {
+          "id": "16.3",
+          "name": "Change management"
+        },
+        {
+          "id": "16.4",
+          "name": "Executive governance"
+        }
+      ]
+    },
+    {
+      "id": "17",
+      "name": "Capstones and Mastery",
+      "modules": [
+        {
+          "id": "17.1",
+          "name": "Built-in AI application"
+        },
+        {
+          "id": "17.2",
+          "name": "Hybrid AI platform"
+        },
+        {
+          "id": "17.3",
+          "name": "Grounded agent system"
+        },
+        {
+          "id": "17.4",
+          "name": "Enterprise production review"
+        }
+      ]
+    }
+  ],
+  "content_types": [
+    "definition",
+    "lesson",
+    "lab",
+    "SOP",
+    "decision_record",
+    "evaluation",
+    "incident",
+    "model_card",
+    "tool_card"
+  ],
+  "risk_tiers": [
+    "Tier 0",
+    "Tier 1",
+    "Tier 2",
+    "Tier 3",
+    "Tier 4"
+  ],
+  "statuses": [
+    "draft",
+    "review",
+    "approved",
+    "deprecated",
+    "archived"
+  ]
+}

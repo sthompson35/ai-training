@@ -1,0 +1,33 @@
+.env
+.env.*
+!.env.example
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+node_modules/
+dist/
+build/
+coverage/
+*.log
+*.sqlite
+*.db
+.DS_Store
+.vscode/
+.idea/
+.cache/
+test-results/
+playwright-report/
+playwright/.cache/
+07_PLATFORM/frontend/e2e/.auth/
+
+# .NET build output (07_PLATFORM/dotnet-client) — compiled binaries, not
+# source; some resource DLL paths under here are long enough to break a
+# plain `git clone` on Windows without core.longpaths, on top of just being
+# build artifacts that don't belong in version control.
+bin/
+obj/
+*.dll
+*.pdb
+*.exe

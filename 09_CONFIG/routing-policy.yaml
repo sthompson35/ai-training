@@ -1,0 +1,39 @@
+version: "2.0.0"
+
+defaults:
+  route: server
+  timeout_seconds: 30
+  max_retries: 1
+  human_approval_tier: 2
+
+client_eligible_tasks:
+  - summarization
+  - translation
+  - language_detection
+  - proofreading
+  - rephrasing
+  - classification
+
+routing_rules:
+  - name: offline_local
+    when:
+      network_quality: offline
+      client_ai_available: true
+      task_in_client_eligible_list: true
+    route: client
+    degraded_mode: true
+
+  - name: current_information
+    when:
+      requires_current_data: true
+    route: server
+
+  - name: sensitive_local
+    when:
+      contains_sensitive_data: true
+      client_ai_available: true
+      task_in_client_eligible_list: true
+    route: client
+
+  - name: default_server
+    route: server
