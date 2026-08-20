@@ -6,6 +6,23 @@ from sqlalchemy.orm import Mapped, mapped_column, relationship
 from .db import Base
 
 
+def _require_resolved_identity(member: "ServiceMember | None", *, model: str, record_id, member_id: str | None) -> "ServiceMember":
+    """Backs the read-only owner/approver properties below. member_service_id
+    is nullable at the schema level (ON DELETE SET NULL) as a defensive
+    safety valve, but no code path in this application ever deletes a
+    ServiceMember row -- every write site resolves a real identity before
+    persisting the FK, so this should be unreachable in practice. Raising a
+    clear, specific error here beats letting that invariant violation surface
+    as an opaque AttributeError deeper in Pydantic serialization."""
+    if member is None:
+        raise ValueError(
+            f"{model} {record_id!r}: service_member_id={member_id!r} does not resolve to a "
+            "ServiceMember row. This should be unreachable -- no code path deletes a "
+            "ServiceMember -- so if this fires, the FK was set to a nonexistent id somehow."
+        )
+    return member
+
+
 class Level(Base):
     __tablename__ = "levels"
 
@@ -285,7 +302,9 @@ class AgentCard(Base):
         always populate a resolved owner_service_member_id (see
         identity_resolution.resolve_identifier_or_422, required on create).
         Read-only: nothing may setattr('owner', ...) on this model anymore."""
-        return self.owner_service_member.callsign
+        return _require_resolved_identity(
+            self.owner_service_member, model="AgentCard", record_id=self.id, member_id=self.owner_service_member_id
+        ).callsign
 
 
 class User(Base):
@@ -331,7 +350,9 @@ class Incident(Base):
     def owner(self) -> str:
         """Derived from owner_service_member_id -- see AgentCard.owner's
         docstring for why the free-text duplicate was dropped. Read-only."""
-        return self.owner_service_member.callsign
+        return _require_resolved_identity(
+            self.owner_service_member, model="Incident", record_id=self.id, member_id=self.owner_service_member_id
+        ).callsign
 
 
 class Release(Base):
@@ -357,7 +378,9 @@ class Release(Base):
     def approver(self) -> str:
         """Derived from approver_service_member_id -- see AgentCard.owner's
         docstring for why the free-text duplicate was dropped. Read-only."""
-        return self.approver_service_member.callsign
+        return _require_resolved_identity(
+            self.approver_service_member, model="Release", record_id=self.id, member_id=self.approver_service_member_id
+        ).callsign
 
 
 class RaciEntry(Base):

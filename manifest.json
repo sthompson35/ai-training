@@ -1,7 +1,7 @@
 {
   "package": "AI Training Academy Institutional Standard",
   "version": "2.4.0",
-  "created_utc": "2026-08-20T01:45:40.837465+00:00",
+  "created_utc": "2026-08-20T01:52:30.584588+00:00",
   "files": [
     {
       "path": ".env.example",
@@ -250,8 +250,8 @@
     },
     {
       "path": "07_PLATFORM/backend/app/orm.py",
-      "bytes": 20377,
-      "sha256": "b82b9b0ca86fb3a431819e97eba375878b2966bd9009f44355f3636c4c6c50b0"
+      "bytes": 21762,
+      "sha256": "f53b76f39e8efbebd4516939ffb9d3f165bf3b68c4a60dc3199b9eedb54d7e26"
     },
     {
       "path": "07_PLATFORM/backend/app/pagination.py",
