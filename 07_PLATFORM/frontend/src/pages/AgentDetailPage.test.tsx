@@ -5,15 +5,16 @@ import { MemoryRouter, Route, Routes } from "react-router-dom";
 import { AgentDetailPage } from "./AgentDetailPage";
 import { ToastProvider } from "../components/ToastProvider";
 
-const { getAgent, createAgent, updateAgent, deleteAgent } = vi.hoisted(() => ({
+const { getAgent, createAgent, updateAgent, deleteAgent, executeAgent } = vi.hoisted(() => ({
   getAgent: vi.fn(),
   createAgent: vi.fn(),
   updateAgent: vi.fn(),
   deleteAgent: vi.fn(),
+  executeAgent: vi.fn(),
 }));
 vi.mock("../lib/api", async (importOriginal) => {
   const actual = await importOriginal<typeof import("../lib/api")>();
-  return { ...actual, getAgent, createAgent, updateAgent, deleteAgent };
+  return { ...actual, getAgent, createAgent, updateAgent, deleteAgent, executeAgent };
 });
 
 const fixtureAgent = {
@@ -56,6 +57,7 @@ beforeEach(() => {
   getAgent.mockReset().mockResolvedValue(fixtureAgent);
   updateAgent.mockReset().mockResolvedValue(fixtureAgent);
   deleteAgent.mockReset().mockResolvedValue(undefined);
+  executeAgent.mockReset();
 });
 
 describe("AgentDetailPage", () => {
@@ -107,4 +109,78 @@ describe("AgentDetailPage", () => {
     },
     10000,
   );
+
+  it("runs the agent and displays the real output", async () => {
+    const user = userEvent.setup();
+    executeAgent.mockResolvedValue({
+      status: "completed",
+      output: "Ticket triaged: low priority.",
+      model: "gpt-mini",
+      prompt_tokens: 12,
+      completion_tokens: 6,
+      estimated_cost_usd: 0.000036,
+      approval_request_id: null,
+      reason: null,
+    });
+    renderPage();
+    await screen.findByRole("heading", { name: "Support Triage Agent" });
+
+    await user.type(screen.getByLabelText(/prompt/i), "Triage this ticket");
+    await user.click(screen.getByRole("button", { name: /^run$/i }));
+
+    expect(executeAgent).toHaveBeenCalledWith(1, {
+      prompt: "Triage this ticket",
+      model: undefined,
+      approval_request_id: undefined,
+    });
+    expect(await screen.findByText("Ticket triaged: low priority.")).toBeInTheDocument();
+  });
+
+  it("shows a pending-approval message with a retry action when gated", async () => {
+    const user = userEvent.setup();
+    executeAgent.mockResolvedValueOnce({
+      status: "pending_approval",
+      output: null,
+      model: null,
+      prompt_tokens: null,
+      completion_tokens: null,
+      estimated_cost_usd: 0,
+      approval_request_id: 42,
+      reason: "Agent risk_tier 2 requires human approval before executing.",
+    });
+    renderPage();
+    await screen.findByRole("heading", { name: "Support Triage Agent" });
+
+    await user.type(screen.getByLabelText(/prompt/i), "Do something risky");
+    await user.click(screen.getByRole("button", { name: /^run$/i }));
+
+    expect(await screen.findByText(/review in the approval queue/i)).toBeInTheDocument();
+    expect(screen.getByText(/requires human approval/i)).toBeInTheDocument();
+
+    executeAgent.mockResolvedValueOnce({
+      status: "completed",
+      output: "done",
+      model: "gpt-mini",
+      prompt_tokens: 1,
+      completion_tokens: 1,
+      estimated_cost_usd: 0.000001,
+      approval_request_id: null,
+      reason: null,
+    });
+    await user.click(screen.getByRole("button", { name: /retry now/i }));
+    expect(executeAgent).toHaveBeenLastCalledWith(1, {
+      prompt: "Do something risky",
+      model: undefined,
+      approval_request_id: 42,
+    });
+  });
+
+  it("disables the execute form when the kill switch is engaged", async () => {
+    getAgent.mockResolvedValue({ ...fixtureAgent, active: false });
+    renderPage();
+    await screen.findByRole("heading", { name: "Support Triage Agent" });
+
+    expect(screen.getByText(/kill switch is engaged/i)).toBeInTheDocument();
+    expect(screen.queryByLabelText(/prompt/i)).not.toBeInTheDocument();
+  });
 });

@@ -24,6 +24,13 @@ class RouteRequest(BaseModel):
     client_ai_available: bool = False
     risk_tier: int = Field(default=1, ge=0, le=4)
     approval_request_id: int | None = None
+    # Optional: everything above this line is what decide_route() has always
+    # taken -- metadata about a hypothetical task, never its content. prompt
+    # is additive and opt-in: when present (and the decision resolves to
+    # "server", not gated behind a pending approval), the request actually
+    # gets executed against the configured local inference server. Omit it
+    # and this endpoint behaves exactly as before -- a pure routing decision.
+    prompt: str | None = Field(default=None, min_length=1, max_length=50_000)
 
 
 class RouteResponse(BaseModel):
@@ -34,3 +41,6 @@ class RouteResponse(BaseModel):
     policy_version: str
     estimated_cost_usd: float = 0.0
     approval_request_id: int | None = None
+    output: str | None = None
+    prompt_tokens: int | None = None
+    completion_tokens: int | None = None

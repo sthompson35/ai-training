@@ -355,6 +355,27 @@ class AgentCardOut(AgentCardBase):
     owner_service_member_id: str | None = None
 
 
+class AgentExecuteRequest(BaseModel):
+    prompt: str = Field(min_length=1, max_length=50_000)
+    # Defaults to the first entry in the card's own approved_models when
+    # omitted. If supplied, must still be one of that card's approved
+    # models -- this field lets a caller pick among several approved
+    # models, not bypass the restriction.
+    model: str | None = None
+    approval_request_id: int | None = None
+
+
+class AgentExecuteResponse(BaseModel):
+    status: str  # "completed" | "pending_approval"
+    output: str | None = None
+    model: str | None = None
+    prompt_tokens: int | None = None
+    completion_tokens: int | None = None
+    estimated_cost_usd: float = 0.0
+    approval_request_id: int | None = None
+    reason: str | None = None
+
+
 class UserLogin(BaseModel):
     username: str = Field(min_length=1, max_length=120)
     password: str = Field(min_length=1)
