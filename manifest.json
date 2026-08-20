@@ -1,7 +1,7 @@
 {
   "package": "AI Training Academy Institutional Standard",
   "version": "2.4.0",
-  "created_utc": "2026-08-20T00:42:06.325588+00:00",
+  "created_utc": "2026-08-20T00:44:58.513414+00:00",
   "files": [
     {
       "path": ".env.example",
@@ -205,8 +205,8 @@
     },
     {
       "path": "07_PLATFORM/backend/app/csv_import.py",
-      "bytes": 221,
-      "sha256": "b84d671767510bb55f3e866ac59965fc4240d2530322ce32c72fe6ead9bcffd5"
+      "bytes": 902,
+      "sha256": "1186739c7132bc3d54d6e8617aa322804146d46f28823d0cf5c0c13000ad216e"
     },
     {
       "path": "07_PLATFORM/backend/app/curriculum.py",
@@ -410,8 +410,8 @@
     },
     {
       "path": "07_PLATFORM/backend/tests/test_service_members.py",
-      "bytes": 26207,
-      "sha256": "e23cd892a376dea5c97d9e51cdf94571b704349733087179a35d590f073401f5"
+      "bytes": 27628,
+      "sha256": "fef462c9ca9cdefc4f980581fdd30079400a8fcabd26d8a5e2eb926edcbf40ba"
     },
     {
       "path": "07_PLATFORM/backend/tests/test_users.py",
