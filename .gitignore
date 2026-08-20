@@ -10,6 +10,13 @@ node_modules/
 dist/
 build/
 coverage/
+
+# TypeScript incremental-build cache -- its content changes on every `tsc -b`
+# run (including ones an editor's TS server triggers in the background) and
+# isn't reproducible across machines/environments, which previously caused
+# false-positive manifest.json staleness failures in CI when this file's
+# checked-in content didn't match whatever a fresh `tsc -b` produced.
+*.tsbuildinfo
 *.log
 *.sqlite
 *.db
