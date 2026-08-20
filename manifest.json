@@ -1,7 +1,7 @@
 {
   "package": "AI Training Academy Institutional Standard",
   "version": "2.4.0",
-  "created_utc": "2026-08-19T23:24:12.588812+00:00",
+  "created_utc": "2026-08-20T00:42:06.325588+00:00",
   "files": [
     {
       "path": ".env.example",
@@ -226,7 +226,7 @@
     {
       "path": "07_PLATFORM/backend/app/identity_resolution.py",
       "bytes": 6084,
-      "sha256": "92f149a3d1f07e476da01d16bd9b8d1e890da5f2f5c75b0c0976b8f6a1a476ff"
+      "sha256": "3f730dfb5c339246eb55c1d2bf32882c44bdb55787ccb6458375e69c88da3127"
     },
     {
       "path": "07_PLATFORM/backend/app/incidents.py",
