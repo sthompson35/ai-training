@@ -1,7 +1,7 @@
 {
   "package": "AI Training Academy Institutional Standard",
   "version": "2.4.0",
-  "created_utc": "2026-08-20T23:49:16.629527+00:00",
+  "created_utc": "2026-08-20T23:55:33.889576+00:00",
   "files": [
     {
       "path": ".env.example",
@@ -35,8 +35,8 @@
     },
     {
       "path": ".github/workflows/release.yml",
-      "bytes": 10646,
-      "sha256": "cb8d5971bc960bb9eef70341023e6f5eba3deaeb1d2909ef2c49f619c4f47b03"
+      "bytes": 10940,
+      "sha256": "79563a9ab7d163afc2b011f7f8e906bc4c2337290a5829fc8670bb3b34e78a49"
     },
     {
       "path": ".gitignore",
@@ -985,8 +985,8 @@
     },
     {
       "path": "07_PLATFORM/frontend/src/pages/ServiceMemberDetailPage.tsx",
-      "bytes": 23560,
-      "sha256": "b84cae0cc69e994a8774e4380a3fb8a0b9cf0513ca53d13ee78b12535791734b"
+      "bytes": 23550,
+      "sha256": "ac2ee3bc8ae2cf774c98f2d630689ae1d780e6719745ea48383f3cda3bb34ab3"
     },
     {
       "path": "07_PLATFORM/frontend/src/pages/ServiceMembersPage.tsx",
