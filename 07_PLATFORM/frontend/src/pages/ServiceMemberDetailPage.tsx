@@ -254,16 +254,17 @@ export function ServiceMemberDetailPage(): React.ReactElement {
           </label>
           <label>
             Command layer
-            <select
+            <input
+              required
+              list="command-layer-options"
               value={createValues.command_layer}
-              onChange={(e) => setCreateValues({ ...createValues, command_layer: e.target.value as CommandLayer })}
-            >
+              onChange={(e) => setCreateValues({ ...createValues, command_layer: e.target.value })}
+            />
+            <datalist id="command-layer-options">
               {COMMAND_LAYERS.map((cl) => (
-                <option key={cl} value={cl}>
-                  {cl}
-                </option>
+                <option key={cl} value={cl} />
               ))}
-            </select>
+            </datalist>
           </label>
           <label>
             Current role
@@ -414,18 +415,17 @@ export function ServiceMemberDetailPage(): React.ReactElement {
               </label>
               <label>
                 New command layer
-                <select
+                <input
+                  required
+                  list="command-layer-options"
                   value={roleChange.new_command_layer}
-                  onChange={(e) =>
-                    setRoleChange({ ...roleChange, new_command_layer: e.target.value as CommandLayer })
-                  }
-                >
+                  onChange={(e) => setRoleChange({ ...roleChange, new_command_layer: e.target.value })}
+                />
+                <datalist id="command-layer-options">
                   {COMMAND_LAYERS.map((cl) => (
-                    <option key={cl} value={cl}>
-                      {cl}
-                    </option>
+                    <option key={cl} value={cl} />
                   ))}
-                </select>
+                </datalist>
               </label>
               <label>
                 Reason (optional)

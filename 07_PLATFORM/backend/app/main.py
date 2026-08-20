@@ -130,6 +130,7 @@ async def lifespan(app: FastAPI):
             conn.execute(
                 text("CREATE UNIQUE INDEX IF NOT EXISTS ix_agent_cards_service_member_id ON agent_cards (service_member_id)")
             )
+            conn.execute(text("ALTER TABLE agent_cards ADD COLUMN IF NOT EXISTS system_prompt TEXT"))
             conn.execute(
                 text(
                     "ALTER TABLE incidents ADD COLUMN IF NOT EXISTS owner_service_member_id VARCHAR(64) "

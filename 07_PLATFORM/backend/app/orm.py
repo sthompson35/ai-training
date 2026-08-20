@@ -292,6 +292,7 @@ class AgentCard(Base):
     approval_status: Mapped[str] = mapped_column(String(32), nullable=False, default="draft")
     evaluation_set: Mapped[str] = mapped_column(Text, nullable=False)
     last_review: Mapped[str] = mapped_column(String(20), nullable=False)
+    system_prompt: Mapped[str | None] = mapped_column(Text, nullable=True)
 
     owner_service_member: Mapped["ServiceMember"] = relationship(foreign_keys=[owner_service_member_id])
 

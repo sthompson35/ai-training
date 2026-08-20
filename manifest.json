@@ -1,7 +1,7 @@
 {
   "package": "AI Training Academy Institutional Standard",
   "version": "2.4.0",
-  "created_utc": "2026-08-20T22:19:04.742849+00:00",
+  "created_utc": "2026-08-20T23:45:44.950350+00:00",
   "files": [
     {
       "path": ".env.example",
@@ -170,8 +170,8 @@
     },
     {
       "path": "07_PLATFORM/backend/app/agents.py",
-      "bytes": 12385,
-      "sha256": "da8a929c5613545dc9d96f21e055dc5b80849792ca5f1a8a8a4c3d9cc2470d8c"
+      "bytes": 12420,
+      "sha256": "440fbd744529c44b9586fe0201c5ababdada57907e938d4cf92f9fefadde0d78"
     },
     {
       "path": "07_PLATFORM/backend/app/analytics.py",
@@ -235,8 +235,8 @@
     },
     {
       "path": "07_PLATFORM/backend/app/inference.py",
-      "bytes": 2783,
-      "sha256": "337e969aaf23748a6d4955d4b39fa46ce5844b3a3150134f1bc0d8fe6d9a9655"
+      "bytes": 2955,
+      "sha256": "03645a60549f1955a713dec354a7627ca6ddbb1107c1150e6ec484f18083bcd4"
     },
     {
       "path": "07_PLATFORM/backend/app/knowledge_base.py",
@@ -245,8 +245,8 @@
     },
     {
       "path": "07_PLATFORM/backend/app/main.py",
-      "bytes": 17050,
-      "sha256": "3ace50b54652f6cefc2336ab1738de69d15ef8ccd2be96d838414aac5ceece8d"
+      "bytes": 17152,
+      "sha256": "f507996db5b72d4af99b105eccec8ba52207481d349d9d6706ab502a8e3d490d"
     },
     {
       "path": "07_PLATFORM/backend/app/models.py",
@@ -255,8 +255,8 @@
     },
     {
       "path": "07_PLATFORM/backend/app/orm.py",
-      "bytes": 21762,
-      "sha256": "f53b76f39e8efbebd4516939ffb9d3f165bf3b68c4a60dc3199b9eedb54d7e26"
+      "bytes": 21837,
+      "sha256": "7aee854b4efc074a68227e537dfd2d366db3642c63928abda1226178adbda883"
     },
     {
       "path": "07_PLATFORM/backend/app/pagination.py",
@@ -285,8 +285,8 @@
     },
     {
       "path": "07_PLATFORM/backend/app/schemas.py",
-      "bytes": 15672,
-      "sha256": "9f5ec95dec29afc66825c1b22efcb1f488963368d36a7dfd004bf5eb2de2de21"
+      "bytes": 15902,
+      "sha256": "b7d62c075f1e8355472067cc9c10a53b0433c9d73def6e9a999106963015d4dc"
     },
     {
       "path": "07_PLATFORM/backend/app/search.py",
@@ -300,8 +300,8 @@
     },
     {
       "path": "07_PLATFORM/backend/app/service_members.py",
-      "bytes": 14080,
-      "sha256": "0c5528737d9b307c9a3610d1fb5c6433eb9b96a32bcec91e1fda65705a3fd844"
+      "bytes": 14074,
+      "sha256": "c3b167d7fa7441ec9d187574ffd90762667de5d973d8834c4133428a425c5e4f"
     },
     {
       "path": "07_PLATFORM/backend/app/users.py",
@@ -420,8 +420,8 @@
     },
     {
       "path": "07_PLATFORM/backend/tests/test_service_members.py",
-      "bytes": 30516,
-      "sha256": "7b11436663699a5005292be94b74391e98d901b40fa848405779da706f664425"
+      "bytes": 31546,
+      "sha256": "729b3466bb82aa809ab8bda8a96527af2f5d5b4b46c3e43cc3f0b00689335fbf"
     },
     {
       "path": "07_PLATFORM/backend/tests/test_users.py",
@@ -560,13 +560,13 @@
     },
     {
       "path": "07_PLATFORM/frontend/src/components/AgentCardForm.test.tsx",
-      "bytes": 2870,
-      "sha256": "f8658eb88b773cb1b3f6a84ba6c86371c19305f153e8cd1b58b9bf086213a0e3"
+      "bytes": 2901,
+      "sha256": "2be8602f92645294ba4e053c3e130727b2d31b5945a144f018eace0480621ef8"
     },
     {
       "path": "07_PLATFORM/frontend/src/components/AgentCardForm.tsx",
-      "bytes": 4493,
-      "sha256": "072487d81d767eac560fb50198a838bb9625520731b88ca43b4ab89bda835bd1"
+      "bytes": 4799,
+      "sha256": "24e55e114963464312ffc2fd042128b0b9e52c607c37ddce78f2d6ed192b8d84"
     },
     {
       "path": "07_PLATFORM/frontend/src/components/BarChart.test.tsx",
@@ -770,8 +770,8 @@
     },
     {
       "path": "07_PLATFORM/frontend/src/lib/api.ts",
-      "bytes": 35614,
-      "sha256": "2751a09f5ee8fde7c9b1da3ae2b8bf382a2b3dc8acd487fdc765c34d34286f0b"
+      "bytes": 36602,
+      "sha256": "9d0a7ff07bd383be2f2f86177067b089b8b24cf3ce7a2a54e5aa1c284d6e0c52"
     },
     {
       "path": "07_PLATFORM/frontend/src/lib/hybridRouter.js",
@@ -785,8 +785,8 @@
     },
     {
       "path": "07_PLATFORM/frontend/src/pages/AgentDetailPage.test.tsx",
-      "bytes": 6441,
-      "sha256": "d1f91049235820071dc98f552d32efab65da12cf440df18b1aad0189a9fb4e0b"
+      "bytes": 6470,
+      "sha256": "2dec19535526a12bace8af8670828f100a836f198d6775c82c651ab34f4a5e7b"
     },
     {
       "path": "07_PLATFORM/frontend/src/pages/AgentDetailPage.tsx",
@@ -985,8 +985,8 @@
     },
     {
       "path": "07_PLATFORM/frontend/src/pages/ServiceMemberDetailPage.tsx",
-      "bytes": 23485,
-      "sha256": "c29056b92fdab1e64fe1838fba6a0eece6a5dad985cd06e130839c84820a8d37"
+      "bytes": 23560,
+      "sha256": "b84cae0cc69e994a8774e4380a3fb8a0b9cf0513ca53d13ee78b12535791734b"
     },
     {
       "path": "07_PLATFORM/frontend/src/pages/ServiceMembersPage.tsx",
@@ -1115,8 +1115,18 @@
     },
     {
       "path": "11_PERSONNEL/Personnel_Roster.md",
-      "bytes": 5002,
-      "sha256": "07a94cb17fa4b7210d4cf2e027707c61370d02734a9c2179ac13db74c7e9f73a"
+      "bytes": 6489,
+      "sha256": "92db8e69f5d7aba52fa613cab563b2f142ecabe7360bddfccddda4527250e678"
+    },
+    {
+      "path": "11_PERSONNEL/personnel_role_history_seed.csv",
+      "bytes": 777,
+      "sha256": "f1cbfd899833aedd8095261a803ada48f7bd5bacdce1869884ef561e4156c141"
+    },
+    {
+      "path": "11_PERSONNEL/personnel_roster.csv",
+      "bytes": 35870,
+      "sha256": "a33eaa135386c18f45ce0cca9b8c8f67b10eaa15cec5ba35107da39e7bdc9759"
     },
     {
       "path": "CARC_AUDIT_SWEEP_2026-08-19.md",

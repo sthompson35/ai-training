@@ -77,6 +77,7 @@ describe("AgentCardForm", () => {
           approval_status: "approved",
           evaluation_set: "e",
           last_review: "2026-01-01",
+          system_prompt: null,
         }}
       />,
     );

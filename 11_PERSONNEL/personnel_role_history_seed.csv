@@ -1,0 +1,3 @@
+service_member_id,role_version,role,command_layer,readiness_state,change_reason
+ATA-CINDY-000,2,"People Operations, Talent Management, Workforce Planning & Organizational Readiness Commander",Academy People Operations,ready,R2.0 cutover (ATA-DEC-ID-2026-001): CINDY_ROLE_SPLIT resolved -- R1.0 Customer Service Operations Specialist duty preserved as historical; R2.0 People Operations Commander is the current assignment.
+ATA-MAPE-000,2,"Program Management, Portfolio Control, Milestone Governance & Strategic Delivery Commander",Academy Program Management,ready,R2.0 cutover (ATA-DEC-ID-2026-001): MAPE_ROLE_SPLIT resolved -- R1.0 Marketing Persona & Audience Intelligence Specialist duty preserved as historical; R2.0 Program Management Commander is the current assignment.

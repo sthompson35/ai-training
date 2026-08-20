@@ -29,15 +29,19 @@ def _env_float(name: str, default: float) -> float:
         return default
 
 
-def call_local_model(model: str, prompt: str, max_tokens: int = 512) -> dict:
+def call_local_model(model: str, prompt: str, system_prompt: str | None = None, max_tokens: int = 512) -> dict:
     base_url = os.getenv("LOCAL_INFERENCE_BASE_URL", "http://host.docker.internal:1234/v1")
     timeout = _env_float("AI_REQUEST_TIMEOUT_SECONDS", 30.0)
+    messages = []
+    if system_prompt:
+        messages.append({"role": "system", "content": system_prompt})
+    messages.append({"role": "user", "content": prompt})
     try:
         response = httpx.post(
             f"{base_url.rstrip('/')}/chat/completions",
             json={
                 "model": model,
-                "messages": [{"role": "user", "content": prompt}],
+                "messages": messages,
                 "max_tokens": max_tokens,
                 "temperature": 0.2,
             },

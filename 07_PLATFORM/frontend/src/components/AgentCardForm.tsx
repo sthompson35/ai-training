@@ -30,6 +30,7 @@ const defaults: AgentCardInput = {
   approval_status: "draft",
   evaluation_set: "",
   last_review: "",
+  system_prompt: null,
 };
 
 const textFields: Array<[keyof AgentCardInput, string]> = [
@@ -140,6 +141,13 @@ export function AgentCardForm({ initialValues, submitLabel, onSubmit, onCancel }
           />
         </label>
       ))}
+      <label>
+        System prompt (optional — used when this agent is executed via /v1/agents/{"{id}"}/execute)
+        <textarea
+          value={values.system_prompt ?? ""}
+          onChange={(e) => setField("system_prompt", e.target.value || null)}
+        />
+      </label>
       <div>
         <button type="submit" disabled={saving}>
           {saving ? "Saving…" : submitLabel}

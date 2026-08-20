@@ -243,7 +243,7 @@ def execute_agent(
             )
 
     try:
-        result = inference.call_local_model(model=model, prompt=payload.prompt)
+        result = inference.call_local_model(model=model, prompt=payload.prompt, system_prompt=agent.system_prompt)
     except inference.InferenceError as exc:
         raise HTTPException(status_code=502, detail=str(exc)) from exc
 

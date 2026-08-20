@@ -575,15 +575,16 @@ def test_user_identifier_rejects_double_linking(client, admin_headers):
     assert second.status_code == 409
 
 
-def test_production_seed_path_ships_no_synthetic_data():
-    """The default (unpatched) SEED_PERSONNEL_DIR is 11_PERSONNEL/ — it must
-    not contain the synthetic roster. service_members starts empty on a fresh
-    deployment, same as agent_cards/incidents/releases, until a real governed
-    roster is dropped in or imported via the API."""
-    assert not (seed.SEED_PERSONNEL_DIR / "personnel_roster.csv").exists(), (
-        "11_PERSONNEL/ must ship empty — synthetic test data belongs in "
-        "tests/fixtures/synthetic_personnel/ instead"
-    )
+def test_production_seed_path_ships_the_real_r2_roster():
+    """The default (unpatched) SEED_PERSONNEL_DIR is 11_PERSONNEL/ — it now
+    ships the real, sourced 66-identity roster from the AI Training Academy
+    R2.0 Canonical Identity, Role Governance & Production Control Manual (see
+    11_PERSONNEL/Personnel_Roster.md), not synthetic data, and is no longer
+    empty. Every seeded row still starts production_verification_state ==
+    "unverified" regardless of source (seeding has no acting admin/verifier —
+    matches the source manual's own G1-G8 HOLD disposition)."""
+    roster_csv = seed.SEED_PERSONNEL_DIR / "personnel_roster.csv"
+    assert roster_csv.exists(), "11_PERSONNEL/personnel_roster.csv must exist — see Personnel_Roster.md"
 
     engine = create_engine(
         "sqlite:///:memory:",
@@ -596,9 +597,29 @@ def test_production_seed_path_ships_no_synthetic_data():
     db = Session()
     seed.seed_if_empty(db)
 
-    assert db.execute(select(orm.ServiceMember)).scalars().all() == []
+    members = db.execute(select(orm.ServiceMember)).scalars().all()
+    assert len(members) == 66
+    assert all(m.production_verification_state == "unverified" for m in members)
+    assert all("Canonical Identity, Role Governance" in (m.source_lineage or "") for m in members)
+
+    victor = db.get(orm.ServiceMember, "ATA-VICTOR-000")
+    trooper_victor = db.get(orm.ServiceMember, "ATA-TROOPER_VICTOR-000")
+    assert victor is not None
+    assert trooper_victor is not None
+    assert victor.service_member_id != trooper_victor.service_member_id
+
+    cindy = db.get(orm.ServiceMember, "ATA-CINDY-000")
+    assert cindy is not None
+    assert cindy.role_version == 2
+    assert "People Operations" in cindy.current_role
+
+    mape = db.get(orm.ServiceMember, "ATA-MAPE-000")
+    assert mape is not None
+    assert mape.role_version == 2
+    assert "Program Management" in mape.current_role
+
     admin = db.execute(select(orm.User).where(orm.User.username == "admin")).scalar_one()
-    assert admin.service_member_id is None
+    assert admin.service_member_id == "ATA-ATLAS-000"
     db.close()
 
 
