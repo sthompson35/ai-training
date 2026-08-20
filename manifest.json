@@ -1,7 +1,7 @@
 {
   "package": "AI Training Academy Institutional Standard",
   "version": "2.4.0",
-  "created_utc": "2026-08-20T01:52:30.584588+00:00",
+  "created_utc": "2026-08-20T10:46:54.450734+00:00",
   "files": [
     {
       "path": ".env.example",
@@ -35,13 +35,18 @@
     },
     {
       "path": ".github/workflows/release.yml",
-      "bytes": 8516,
-      "sha256": "92b2fc34d120ca77b01a47c4f6b2ceb94dc008007f023befe46b22c177c10e84"
+      "bytes": 9035,
+      "sha256": "729756644e80da5cc5158caf94ac8a43ad3854f7b770abf4027957989cd5b8eb"
     },
     {
       "path": ".gitignore",
       "bytes": 947,
       "sha256": "2195264272105be3947d4c2fc855a9962b04dfc7b2b44cd4c3c632e728f2e177"
+    },
+    {
+      "path": ".mcp.json",
+      "bytes": 347,
+      "sha256": "894a8c01abcd6dba8ed565be435bdd2604a9d6854c7ad32d6822005c5cabc2cc"
     },
     {
       "path": "00_SOURCE/AI_TRAINING_SOURCE.pdf",
@@ -1092,6 +1097,11 @@
       "path": "10_DOCS/operations/RUNBOOK.md",
       "bytes": 672,
       "sha256": "52952e47eb69ea0f61a1a04ee18e4fda3f0c36e2102433d1ac93746d3a4a303c"
+    },
+    {
+      "path": "10_DOCS/operations/SELF_HOSTED_RUNNER.md",
+      "bytes": 4593,
+      "sha256": "c8b2f38266e203cc0d72a2f14d03491a22a735fb0eb7697cdf164b256328809a"
     },
     {
       "path": "10_DOCS/security/THREAT_MODEL.md",
