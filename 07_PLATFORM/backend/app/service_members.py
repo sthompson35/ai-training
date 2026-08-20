@@ -9,7 +9,13 @@ from .auth import require_admin
 from .csv_export import csv_response
 from .csv_import import parse_csv_rows
 from .db import get_db
-from .identity_resolution import apply_role_change, apply_verification, resolve_identifier, resolve_verifier_or_error
+from .identity_resolution import (
+    apply_lifecycle_transition,
+    apply_role_change,
+    apply_verification,
+    resolve_identifier,
+    resolve_verifier_or_error,
+)
 from .pagination import paginate
 
 router = APIRouter(prefix="/v1/service-members", tags=["service-members"])
@@ -188,14 +194,17 @@ def update_service_member(
     current_user: str = Depends(require_admin),
     _audit: None = Depends(log_audit_event),
 ):
-    """Updates only display_name/lifecycle_state/readiness_state/legacy_alias.
+    """Updates only display_name/readiness_state/legacy_alias.
 
     Identity fields (service_member_id, callsign_id, callsign), role fields
-    (current_role, role_version, command_layer), and production_verification_state
-    are not part of this schema and can never be changed here — identity is
-    immutable, role changes only happen through POST /{id}/role-change, and
-    verification state only through POST /{id}/verify (evidence + verifier +
-    method + separation-of-duties, not a bare label flip).
+    (current_role, role_version, command_layer), lifecycle_state, and
+    production_verification_state are not part of this schema and can never
+    be changed here — identity is immutable, role changes only happen
+    through POST /{id}/role-change, lifecycle transitions only through
+    POST /{id}/deactivate|reactivate|discharge (reason required, recorded
+    history), and verification state only through POST /{id}/verify
+    (evidence + verifier + method + separation-of-duties) — none of these
+    are bare label flips.
     """
     member = db.get(orm.ServiceMember, service_member_id)
     if member is None:
@@ -272,6 +281,74 @@ def get_verifications(service_member_id: str, db: Session = Depends(get_db)):
             select(orm.IdentityVerification)
             .where(orm.IdentityVerification.service_member_id == service_member_id)
             .order_by(orm.IdentityVerification.verified_at)
+        )
+        .scalars()
+        .all()
+    )
+
+
+def _transition_lifecycle(
+    service_member_id: str,
+    to_state: str,
+    payload: schemas.LifecycleTransitionRequest,
+    db: Session,
+    current_user: str,
+) -> orm.LifecycleTransitionHistory:
+    member = db.get(orm.ServiceMember, service_member_id)
+    if member is None:
+        raise HTTPException(status_code=404, detail="Service member not found")
+    actor = db.execute(select(orm.User.service_member_id).where(orm.User.username == current_user)).scalar_one_or_none()
+    return apply_lifecycle_transition(db, member, to_state, changed_by_id=actor, reason=payload.reason)
+
+
+@router.post("/{service_member_id}/deactivate", response_model=schemas.LifecycleTransitionHistoryOut)
+def deactivate_service_member(
+    service_member_id: str,
+    payload: schemas.LifecycleTransitionRequest,
+    db: Session = Depends(get_db),
+    current_user: str = Depends(require_admin),
+    _audit: None = Depends(log_audit_event),
+):
+    """Stand down an active identity to inactive. Reversible via /reactivate."""
+    return _transition_lifecycle(service_member_id, "inactive", payload, db, current_user)
+
+
+@router.post("/{service_member_id}/reactivate", response_model=schemas.LifecycleTransitionHistoryOut)
+def reactivate_service_member(
+    service_member_id: str,
+    payload: schemas.LifecycleTransitionRequest,
+    db: Session = Depends(get_db),
+    current_user: str = Depends(require_admin),
+    _audit: None = Depends(log_audit_event),
+):
+    """Bring an inactive identity back to active. Not valid from discharged."""
+    return _transition_lifecycle(service_member_id, "active", payload, db, current_user)
+
+
+@router.post("/{service_member_id}/discharge", response_model=schemas.LifecycleTransitionHistoryOut)
+def discharge_service_member(
+    service_member_id: str,
+    payload: schemas.LifecycleTransitionRequest,
+    db: Session = Depends(get_db),
+    current_user: str = Depends(require_admin),
+    _audit: None = Depends(log_audit_event),
+):
+    """Terminal transition to discharged. This registry's substitute for
+    deletion: the identity and its full history remain, permanently marked
+    as no longer active, rather than removed."""
+    return _transition_lifecycle(service_member_id, "discharged", payload, db, current_user)
+
+
+@router.get("/{service_member_id}/lifecycle-history", response_model=list[schemas.LifecycleTransitionHistoryOut])
+def get_lifecycle_history(service_member_id: str, db: Session = Depends(get_db)):
+    member = db.get(orm.ServiceMember, service_member_id)
+    if member is None:
+        raise HTTPException(status_code=404, detail="Service member not found")
+    return (
+        db.execute(
+            select(orm.LifecycleTransitionHistory)
+            .where(orm.LifecycleTransitionHistory.service_member_id == service_member_id)
+            .order_by(orm.LifecycleTransitionHistory.effective_at)
         )
         .scalars()
         .all()

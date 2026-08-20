@@ -1,7 +1,7 @@
 {
   "package": "AI Training Academy Institutional Standard",
   "version": "2.4.0",
-  "created_utc": "2026-08-20T01:13:00.588143+00:00",
+  "created_utc": "2026-08-20T01:25:52.933381+00:00",
   "files": [
     {
       "path": ".env.example",
@@ -225,8 +225,8 @@
     },
     {
       "path": "07_PLATFORM/backend/app/identity_resolution.py",
-      "bytes": 6084,
-      "sha256": "3f730dfb5c339246eb55c1d2bf32882c44bdb55787ccb6458375e69c88da3127"
+      "bytes": 7606,
+      "sha256": "1d99cd386461f22ad8f19012bc1beb41f731a17d28f0787ab01d590ea5918814"
     },
     {
       "path": "07_PLATFORM/backend/app/incidents.py",
@@ -240,8 +240,8 @@
     },
     {
       "path": "07_PLATFORM/backend/app/main.py",
-      "bytes": 12892,
-      "sha256": "f8f7d09dd095b99f41d856acf7b092d87f8761b06df6123b9ccd51c4459d1728"
+      "bytes": 14195,
+      "sha256": "ea7225cdfa8c06386a5264a37721b2b5271192fb1427b657525ed7fbfcc34bdb"
     },
     {
       "path": "07_PLATFORM/backend/app/models.py",
@@ -250,8 +250,8 @@
     },
     {
       "path": "07_PLATFORM/backend/app/orm.py",
-      "bytes": 17375,
-      "sha256": "d4d15427504229b8f65d382f00059389a1ba7e7a667dee1a5e59161c7f93e884"
+      "bytes": 19301,
+      "sha256": "fc01556b1e9aee08e7bc4a9458dc9ef5c3f2d3b2c1f4f436d5f69029c9a387ec"
     },
     {
       "path": "07_PLATFORM/backend/app/pagination.py",
@@ -280,8 +280,8 @@
     },
     {
       "path": "07_PLATFORM/backend/app/schemas.py",
-      "bytes": 14595,
-      "sha256": "282bb390fa621c0bbb3d1fb292c6419cc3f3d8cdc255b248d090c82942f9f42a"
+      "bytes": 14910,
+      "sha256": "5eb70971421af6aa8f908c12ae4e1ef17f2d8dd301d30b6b29084340d60fa56f"
     },
     {
       "path": "07_PLATFORM/backend/app/search.py",
@@ -295,8 +295,8 @@
     },
     {
       "path": "07_PLATFORM/backend/app/service_members.py",
-      "bytes": 10987,
-      "sha256": "b9c3f145fed96b56d2ae4469b2cb663684136bb813cff4b107b0f8ac16e9a01e"
+      "bytes": 14080,
+      "sha256": "0c5528737d9b307c9a3610d1fb5c6433eb9b96a32bcec91e1fda65705a3fd844"
     },
     {
       "path": "07_PLATFORM/backend/app/users.py",
@@ -410,8 +410,8 @@
     },
     {
       "path": "07_PLATFORM/backend/tests/test_service_members.py",
-      "bytes": 27628,
-      "sha256": "fef462c9ca9cdefc4f980581fdd30079400a8fcabd26d8a5e2eb926edcbf40ba"
+      "bytes": 30516,
+      "sha256": "7b11436663699a5005292be94b74391e98d901b40fa848405779da706f664425"
     },
     {
       "path": "07_PLATFORM/backend/tests/test_users.py",
@@ -522,6 +522,11 @@
       "path": "07_PLATFORM/frontend/e2e/global-setup.ts",
       "bytes": 3899,
       "sha256": "9eae4a367e4b16375b1124e8a9385d426d62ff57cad204e6fcb8f12044e389c3"
+    },
+    {
+      "path": "07_PLATFORM/frontend/e2e/identity.spec.ts",
+      "bytes": 5209,
+      "sha256": "99ab8eef58d42b54fd6be7a0da39efb648a6002bb1fc244c1a268f053bed9f38"
     },
     {
       "path": "07_PLATFORM/frontend/index.html",
@@ -755,8 +760,8 @@
     },
     {
       "path": "07_PLATFORM/frontend/src/lib/api.ts",
-      "bytes": 33722,
-      "sha256": "fc351fb9d03d7000713d5b3de095b1dae449fb629dbd1424e06322f6f67a9811"
+      "bytes": 35011,
+      "sha256": "a9a4aac5b485c7bd687023ccf093f31ad96013cddaa64c1eac614b0a3474b004"
     },
     {
       "path": "07_PLATFORM/frontend/src/lib/hybridRouter.js",
@@ -965,13 +970,13 @@
     },
     {
       "path": "07_PLATFORM/frontend/src/pages/ServiceMemberDetailPage.test.tsx",
-      "bytes": 3751,
-      "sha256": "daa2a974b025eb1b05f0fdd7b5a6a19d1b137decaa8d3b5805eb160c243feece"
+      "bytes": 6167,
+      "sha256": "0094dd8a6d3ec910468d8e787180a9d5b6ffefabcde289f58039ba614e178672"
     },
     {
       "path": "07_PLATFORM/frontend/src/pages/ServiceMemberDetailPage.tsx",
-      "bytes": 19360,
-      "sha256": "b04e38e5db1dd7c973b48fa017b1c60945d895769c69cca1d56213883de18b49"
+      "bytes": 23485,
+      "sha256": "c29056b92fdab1e64fe1838fba6a0eece6a5dad985cd06e130839c84820a8d37"
     },
     {
       "path": "07_PLATFORM/frontend/src/pages/ServiceMembersPage.tsx",
@@ -1070,8 +1075,8 @@
     },
     {
       "path": "10_DOCS/api/API_REFERENCE.md",
-      "bytes": 24364,
-      "sha256": "4781175c75d002d94b8f0765a3ac47383168a5b0071156ae3691c32fbc71fc8e"
+      "bytes": 26459,
+      "sha256": "58c4979e29f4a1f3f78492514564bb3eba492d65d6d31a5860831243ea2f0e48"
     },
     {
       "path": "10_DOCS/architecture/SYSTEM_ARCHITECTURE.md",

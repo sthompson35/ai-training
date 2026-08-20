@@ -4,8 +4,7 @@ import {
   COMMAND_LAYERS,
   CommandLayer,
   IdentityVerification,
-  LIFECYCLE_STATES,
-  LifecycleState,
+  LifecycleTransitionHistoryEntry,
   MEMBER_CLASSES,
   MemberClass,
   READINESS_STATES,
@@ -19,9 +18,13 @@ import {
   VerifyIdentityInput,
   changeServiceMemberRole,
   createServiceMember,
+  deactivateServiceMember,
+  dischargeServiceMember,
+  getLifecycleHistory,
   getRoleHistory,
   getServiceMember,
   getVerifications,
+  reactivateServiceMember,
   updateServiceMember,
   verifyIdentity,
 } from "../lib/api";
@@ -51,6 +54,7 @@ export function ServiceMemberDetailPage(): React.ReactElement {
   const [member, setMember] = useState<ServiceMember | null>(null);
   const [roleHistory, setRoleHistory] = useState<RoleAssignmentHistoryEntry[] | null>(null);
   const [verifications, setVerifications] = useState<IdentityVerification[] | null>(null);
+  const [lifecycleHistory, setLifecycleHistory] = useState<LifecycleTransitionHistoryEntry[] | null>(null);
   const [error, setError] = useState<string | null>(null);
 
   const [createValues, setCreateValues] = useState<ServiceMemberInput>(createDefaults);
@@ -75,6 +79,9 @@ export function ServiceMemberDetailPage(): React.ReactElement {
   });
   const [verifying, setVerifying] = useState(false);
 
+  const [lifecycleReason, setLifecycleReason] = useState("");
+  const [transitioningLifecycle, setTransitioningLifecycle] = useState(false);
+
   function refresh(): void {
     if (isNew) return;
     getServiceMember(serviceMemberId)
@@ -82,7 +89,6 @@ export function ServiceMemberDetailPage(): React.ReactElement {
         setMember(m);
         setEditValues({
           display_name: m.display_name,
-          lifecycle_state: m.lifecycle_state,
           readiness_state: m.readiness_state,
           legacy_alias: m.legacy_alias,
         });
@@ -95,6 +101,9 @@ export function ServiceMemberDetailPage(): React.ReactElement {
     getVerifications(serviceMemberId)
       .then((rows) => setVerifications([...rows].sort((a, b) => a.id - b.id)))
       .catch((err) => setError(err instanceof Error ? err.message : "Failed to load verification history"));
+    getLifecycleHistory(serviceMemberId)
+      .then(setLifecycleHistory)
+      .catch((err) => setError(err instanceof Error ? err.message : "Failed to load lifecycle history"));
   }
 
   useEffect(refresh, [serviceMemberId, isNew]);
@@ -164,6 +173,24 @@ export function ServiceMemberDetailPage(): React.ReactElement {
       toast.error(err instanceof Error ? err.message : "Failed to record verification");
     } finally {
       setVerifying(false);
+    }
+  }
+
+  async function handleLifecycleTransition(
+    action: (id: string, payload: { reason: string }) => Promise<unknown>,
+    successMessage: string,
+  ): Promise<void> {
+    if (isNew || !lifecycleReason.trim()) return;
+    setTransitioningLifecycle(true);
+    try {
+      await action(serviceMemberId!, { reason: lifecycleReason.trim() });
+      refresh();
+      toast.success(successMessage);
+      setLifecycleReason("");
+    } catch (err) {
+      toast.error(err instanceof Error ? err.message : "Failed to change lifecycle state");
+    } finally {
+      setTransitioningLifecycle(false);
     }
   }
 
@@ -294,21 +321,6 @@ export function ServiceMemberDetailPage(): React.ReactElement {
                 />
               </label>
               <label>
-                Lifecycle state
-                <select
-                  value={editValues!.lifecycle_state}
-                  onChange={(e) =>
-                    setEditValues({ ...editValues!, lifecycle_state: e.target.value as LifecycleState })
-                  }
-                >
-                  {LIFECYCLE_STATES.map((s) => (
-                    <option key={s} value={s}>
-                      {s}
-                    </option>
-                  ))}
-                </select>
-              </label>
-              <label>
                 Readiness state
                 <select
                   value={editValues!.readiness_state}
@@ -336,6 +348,53 @@ export function ServiceMemberDetailPage(): React.ReactElement {
                 </button>
               </div>
             </form>
+          </section>
+
+          <section style={{ marginBottom: 24 }}>
+            <h2>Lifecycle</h2>
+            <p>Current state: {member!.lifecycle_state}</p>
+            {member!.lifecycle_state === "discharged" ? (
+              <p>Discharged is terminal — no further lifecycle transitions are possible.</p>
+            ) : (
+              <div style={{ display: "grid", gap: 8, maxWidth: 480 }}>
+                <label>
+                  Reason (required for any transition below)
+                  <textarea
+                    required
+                    value={lifecycleReason}
+                    onChange={(e) => setLifecycleReason(e.target.value)}
+                  />
+                </label>
+                <div>
+                  {member!.lifecycle_state === "active" && (
+                    <button
+                      type="button"
+                      disabled={transitioningLifecycle || !lifecycleReason.trim()}
+                      onClick={() => handleLifecycleTransition(deactivateServiceMember, "Identity deactivated.")}
+                    >
+                      {transitioningLifecycle ? "Working…" : "Deactivate"}
+                    </button>
+                  )}
+                  {member!.lifecycle_state === "inactive" && (
+                    <button
+                      type="button"
+                      disabled={transitioningLifecycle || !lifecycleReason.trim()}
+                      onClick={() => handleLifecycleTransition(reactivateServiceMember, "Identity reactivated.")}
+                    >
+                      {transitioningLifecycle ? "Working…" : "Reactivate"}
+                    </button>
+                  )}
+                  <button
+                    type="button"
+                    disabled={transitioningLifecycle || !lifecycleReason.trim()}
+                    onClick={() => handleLifecycleTransition(dischargeServiceMember, "Identity discharged.")}
+                    style={{ marginLeft: 8 }}
+                  >
+                    {transitioningLifecycle ? "Working…" : "Discharge (terminal)"}
+                  </button>
+                </div>
+              </div>
+            )}
           </section>
 
           <section style={{ marginBottom: 24 }}>
@@ -472,6 +531,38 @@ export function ServiceMemberDetailPage(): React.ReactElement {
                       <td style={cellStyle}>{new Date(row.effective_at).toLocaleString()}</td>
                       <td style={cellStyle}>{row.changed_by ?? "—"}</td>
                       <td style={cellStyle}>{row.change_reason ?? "—"}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            )}
+          </section>
+
+          <section style={{ marginBottom: 24 }}>
+            <h2>Lifecycle history</h2>
+            {!lifecycleHistory ? (
+              <p>Loading lifecycle history…</p>
+            ) : lifecycleHistory.length === 0 ? (
+              <p>No lifecycle transitions yet.</p>
+            ) : (
+              <table style={{ width: "100%", borderCollapse: "collapse" }}>
+                <thead>
+                  <tr>
+                    <th style={cellStyle} scope="col">From</th>
+                    <th style={cellStyle} scope="col">To</th>
+                    <th style={cellStyle} scope="col">Reason</th>
+                    <th style={cellStyle} scope="col">Changed by</th>
+                    <th style={cellStyle} scope="col">Effective at</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {lifecycleHistory.map((row) => (
+                    <tr key={row.id}>
+                      <td style={cellStyle}>{row.from_state}</td>
+                      <td style={cellStyle}>{row.to_state}</td>
+                      <td style={cellStyle}>{row.reason}</td>
+                      <td style={cellStyle}>{row.changed_by ?? "—"}</td>
+                      <td style={cellStyle}>{new Date(row.effective_at).toLocaleString()}</td>
                     </tr>
                   ))}
                 </tbody>

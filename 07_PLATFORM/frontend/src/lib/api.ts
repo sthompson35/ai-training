@@ -820,9 +820,22 @@ export type ServiceMemberInput = {
 
 export type ServiceMemberUpdateInput = {
   display_name: string;
-  lifecycle_state: LifecycleState;
   readiness_state: ReadinessState;
   legacy_alias: string | null;
+};
+
+export type LifecycleTransitionInput = {
+  reason: string;
+};
+
+export type LifecycleTransitionHistoryEntry = {
+  id: number;
+  service_member_id: string;
+  from_state: string;
+  to_state: string;
+  reason: string;
+  changed_by: string | null;
+  effective_at: string;
 };
 
 export type RoleAssignmentHistoryEntry = {
@@ -921,4 +934,27 @@ export const verifyIdentity = (serviceMemberId: string, payload: VerifyIdentityI
 export const getVerifications = (serviceMemberId: string) =>
   request<IdentityVerification[]>(
     `/v1/service-members/${encodeURIComponent(serviceMemberId)}/verifications`,
+  );
+
+export const deactivateServiceMember = (serviceMemberId: string, payload: LifecycleTransitionInput) =>
+  request<LifecycleTransitionHistoryEntry>(
+    `/v1/service-members/${encodeURIComponent(serviceMemberId)}/deactivate`,
+    { method: "POST", body: JSON.stringify(payload) },
+  );
+
+export const reactivateServiceMember = (serviceMemberId: string, payload: LifecycleTransitionInput) =>
+  request<LifecycleTransitionHistoryEntry>(
+    `/v1/service-members/${encodeURIComponent(serviceMemberId)}/reactivate`,
+    { method: "POST", body: JSON.stringify(payload) },
+  );
+
+export const dischargeServiceMember = (serviceMemberId: string, payload: LifecycleTransitionInput) =>
+  request<LifecycleTransitionHistoryEntry>(
+    `/v1/service-members/${encodeURIComponent(serviceMemberId)}/discharge`,
+    { method: "POST", body: JSON.stringify(payload) },
+  );
+
+export const getLifecycleHistory = (serviceMemberId: string) =>
+  request<LifecycleTransitionHistoryEntry[]>(
+    `/v1/service-members/${encodeURIComponent(serviceMemberId)}/lifecycle-history`,
   );

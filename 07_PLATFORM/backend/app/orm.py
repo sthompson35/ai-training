@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from sqlalchemy import Boolean, DateTime, Float, ForeignKey, Integer, String, Text, UniqueConstraint, func
+from sqlalchemy import Boolean, DateTime, Float, ForeignKey, Index, Integer, String, Text, UniqueConstraint, func
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from .db import Base
@@ -151,6 +151,12 @@ class ServiceMember(Base):
         order_by="IdentityVerification.verified_at",
         foreign_keys="IdentityVerification.service_member_id",
     )
+    lifecycle_history: Mapped[list["LifecycleTransitionHistory"]] = relationship(
+        back_populates="service_member",
+        cascade="all, delete-orphan",
+        order_by="LifecycleTransitionHistory.effective_at",
+        foreign_keys="LifecycleTransitionHistory.service_member_id",
+    )
 
 
 class RoleAssignmentHistory(Base):
@@ -204,6 +210,40 @@ class IdentityVerification(Base):
 
     service_member: Mapped["ServiceMember"] = relationship(
         back_populates="verifications", foreign_keys=[service_member_id]
+    )
+
+
+class LifecycleTransitionHistory(Base):
+    """The governed record of every lifecycle_state change.
+
+    `ServiceMember.lifecycle_state` is only ever written by the transaction
+    that inserts one of these rows (see identity_resolution.apply_lifecycle_
+    transition) — never by the generic PUT /v1/service-members/{id} update,
+    which excludes this field for exactly that reason. "discharged" is
+    terminal (no further transitions are valid from it) and is this
+    registry's substitute for deletion: identities are never removed, only
+    moved to a state that means they're no longer active.
+    """
+
+    __tablename__ = "lifecycle_transition_history"
+    __table_args__ = (
+        Index("ix_lifecycle_history_member_effective", "service_member_id", "effective_at"),
+    )
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
+    service_member_id: Mapped[str] = mapped_column(
+        ForeignKey("service_members.service_member_id", ondelete="CASCADE"), nullable=False
+    )
+    from_state: Mapped[str] = mapped_column(String(32), nullable=False)
+    to_state: Mapped[str] = mapped_column(String(32), nullable=False)
+    reason: Mapped[str] = mapped_column(Text, nullable=False)
+    changed_by: Mapped[str | None] = mapped_column(
+        ForeignKey("service_members.service_member_id", ondelete="SET NULL"), nullable=True
+    )
+    effective_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())
+
+    service_member: Mapped["ServiceMember"] = relationship(
+        back_populates="lifecycle_history", foreign_keys=[service_member_id]
     )
 
 

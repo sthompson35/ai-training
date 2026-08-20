@@ -189,6 +189,32 @@ async def lifespan(app: FastAPI):
                     """
                 )
             )
+
+            # Governed lifecycle_state transitions (active/inactive/discharged):
+            # lifecycle_state is only ever written by the transaction that
+            # inserts one of these rows (see identity_resolution.apply_
+            # lifecycle_transition) -- never by the generic PUT update.
+            conn.execute(
+                text(
+                    """
+                    CREATE TABLE IF NOT EXISTS lifecycle_transition_history (
+                        id SERIAL PRIMARY KEY,
+                        service_member_id VARCHAR(64) NOT NULL REFERENCES service_members(service_member_id) ON DELETE CASCADE,
+                        from_state VARCHAR(32) NOT NULL,
+                        to_state VARCHAR(32) NOT NULL,
+                        reason TEXT NOT NULL,
+                        changed_by VARCHAR(64) REFERENCES service_members(service_member_id) ON DELETE SET NULL,
+                        effective_at TIMESTAMPTZ NOT NULL DEFAULT now()
+                    )
+                    """
+                )
+            )
+            conn.execute(
+                text(
+                    "CREATE INDEX IF NOT EXISTS ix_lifecycle_history_member_effective "
+                    "ON lifecycle_transition_history (service_member_id, effective_at)"
+                )
+            )
     db = SessionLocal()
     try:
         seed.seed_if_empty(db)
