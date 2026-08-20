@@ -45,7 +45,7 @@ EXCLUDED_DIR_NAMES = {
 }
 EXCLUDED_PATH_PREFIXES = ("07_PLATFORM/frontend/e2e/.auth",)
 EXCLUDED_FILENAMES = {".env", ".DS_Store", "manifest.json"}
-EXCLUDED_SUFFIXES = {".pyc", ".pyo", ".log", ".sqlite", ".db", ".dll", ".pdb", ".exe"}
+EXCLUDED_SUFFIXES = {".pyc", ".pyo", ".log", ".sqlite", ".db", ".dll", ".pdb", ".exe", ".tsbuildinfo"}
 
 
 def is_excluded(rel_path: Path) -> bool:
