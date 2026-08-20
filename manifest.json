@@ -1,7 +1,7 @@
 {
   "package": "AI Training Academy Institutional Standard",
   "version": "2.4.0",
-  "created_utc": "2026-08-20T01:18:36.758288+00:00",
+  "created_utc": "2026-08-20T01:25:52.933381+00:00",
   "files": [
     {
       "path": ".env.example",
@@ -240,8 +240,8 @@
     },
     {
       "path": "07_PLATFORM/backend/app/main.py",
-      "bytes": 13939,
-      "sha256": "556acdfc77a07f55e0dab9768991046fdc39754004a9fb3c0ca46f8d880372be"
+      "bytes": 14195,
+      "sha256": "ea7225cdfa8c06386a5264a37721b2b5271192fb1427b657525ed7fbfcc34bdb"
     },
     {
       "path": "07_PLATFORM/backend/app/models.py",
@@ -250,8 +250,8 @@
     },
     {
       "path": "07_PLATFORM/backend/app/orm.py",
-      "bytes": 19172,
-      "sha256": "796b19cae9dd6996283c23f8c7e03f880ea8eed4acc47ba55219a73cfecb933c"
+      "bytes": 19301,
+      "sha256": "fc01556b1e9aee08e7bc4a9458dc9ef5c3f2d3b2c1f4f436d5f69029c9a387ec"
     },
     {
       "path": "07_PLATFORM/backend/app/pagination.py",
@@ -975,8 +975,8 @@
     },
     {
       "path": "07_PLATFORM/frontend/src/pages/ServiceMemberDetailPage.tsx",
-      "bytes": 23534,
-      "sha256": "9b1b3c9f0ba70a1733a7c78487f7aa81a1e4d67228a1689e668e3ad2074e2482"
+      "bytes": 23485,
+      "sha256": "c29056b92fdab1e64fe1838fba6a0eece6a5dad985cd06e130839c84820a8d37"
     },
     {
       "path": "07_PLATFORM/frontend/src/pages/ServiceMembersPage.tsx",

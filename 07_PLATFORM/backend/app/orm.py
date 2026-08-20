@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from sqlalchemy import Boolean, DateTime, Float, ForeignKey, Integer, String, Text, UniqueConstraint, func
+from sqlalchemy import Boolean, DateTime, Float, ForeignKey, Index, Integer, String, Text, UniqueConstraint, func
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from .db import Base
@@ -226,6 +226,9 @@ class LifecycleTransitionHistory(Base):
     """
 
     __tablename__ = "lifecycle_transition_history"
+    __table_args__ = (
+        Index("ix_lifecycle_history_member_effective", "service_member_id", "effective_at"),
+    )
 
     id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
     service_member_id: Mapped[str] = mapped_column(

@@ -102,7 +102,7 @@ export function ServiceMemberDetailPage(): React.ReactElement {
       .then((rows) => setVerifications([...rows].sort((a, b) => a.id - b.id)))
       .catch((err) => setError(err instanceof Error ? err.message : "Failed to load verification history"));
     getLifecycleHistory(serviceMemberId)
-      .then((rows) => setLifecycleHistory([...rows].sort((a, b) => a.id - b.id)))
+      .then(setLifecycleHistory)
       .catch((err) => setError(err instanceof Error ? err.message : "Failed to load lifecycle history"));
   }
 

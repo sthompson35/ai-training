@@ -209,6 +209,12 @@ async def lifespan(app: FastAPI):
                     """
                 )
             )
+            conn.execute(
+                text(
+                    "CREATE INDEX IF NOT EXISTS ix_lifecycle_history_member_effective "
+                    "ON lifecycle_transition_history (service_member_id, effective_at)"
+                )
+            )
     db = SessionLocal()
     try:
         seed.seed_if_empty(db)
