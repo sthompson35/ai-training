@@ -1,7 +1,7 @@
 {
   "package": "AI Training Academy Institutional Standard",
   "version": "2.4.0",
-  "created_utc": "2026-08-20T23:19:51.146420+00:00",
+  "created_utc": "2026-08-20T23:49:33.560697+00:00",
   "files": [
     {
       "path": ".env.example",
@@ -35,8 +35,8 @@
     },
     {
       "path": ".github/workflows/release.yml",
-      "bytes": 10921,
-      "sha256": "b7c28f5d49d7d03930c1579b67d6812b36843ba7dce3051ce19c017ea5a5b127"
+      "bytes": 10940,
+      "sha256": "79563a9ab7d163afc2b011f7f8e906bc4c2337290a5829fc8670bb3b34e78a49"
     },
     {
       "path": ".gitignore",
