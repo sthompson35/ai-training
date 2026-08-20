@@ -206,6 +206,15 @@ jobs:
         run: |
           Set-Location $env:DEPLOY_DIR
           git fetch --tags origin
+          git reset --hard
+          # -e excludes .env and .mcp.json from the clean -- both are
+          # untracked by design (.gitignore) and machine-specific: .env
+          # carries this machine's own port-conflict workaround
+          # (API_PORT, see the file's own comment) and local model
+          # config, .mcp.json this machine's local MCP wiring. A plain
+          # `git clean -fdx` would delete them on every deploy and
+          # silently reintroduce whatever they exist to work around.
+          git clean -fdx -e .env -e .mcp.json
           git checkout "${{ github.ref_name }}"
           docker compose up -d --build
 
@@ -213,15 +222,22 @@ jobs:
         shell: pwsh
         run: |
           $ok = $false
+          $lastStatusCode = $null
+          $lastErrorMessage = $null
           for ($i = 0; $i -lt 30; $i++) {
             try {
               $resp = Invoke-WebRequest -Uri "http://localhost:8080/api/health" -UseBasicParsing -TimeoutSec 3
+              $lastStatusCode = $resp.StatusCode
               if ($resp.StatusCode -eq 200) { $ok = $true; break }
-            } catch {}
+            } catch {
+              $lastErrorMessage = $_.Exception.Message
+              if ($_.Exception.Response) { $lastStatusCode = [int]$_.Exception.Response.StatusCode }
+            }
             Start-Sleep -Seconds 2
           }
           if (-not $ok) {
-            Write-Error "Deployed stack never became healthy at http://localhost:8080/api/health"
+            Write-Error ("Deployed stack never became healthy at http://localhost:8080/api/health -- " +
+              "last status code: {0}, last error: {1}" -f ($lastStatusCode ?? "n/a"), ($lastErrorMessage ?? "n/a"))
             exit 1
           }
           Write-Output "Deployed stack is healthy."
