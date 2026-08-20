@@ -1,7 +1,7 @@
 {
   "package": "AI Training Academy Institutional Standard",
   "version": "2.4.0",
-  "created_utc": "2026-08-20T01:04:09.660275+00:00",
+  "created_utc": "2026-08-20T01:18:09.535631+00:00",
   "files": [
     {
       "path": ".env.example",
@@ -40,8 +40,8 @@
     },
     {
       "path": ".gitignore",
-      "bytes": 560,
-      "sha256": "d43002e89cb0bfe6ce68f48ed1818276068506168db9aa0f1e91b89efa497856"
+      "bytes": 947,
+      "sha256": "2195264272105be3947d4c2fc855a9962b04dfc7b2b44cd4c3c632e728f2e177"
     },
     {
       "path": "00_SOURCE/AI_TRAINING_SOURCE.pdf",
@@ -1004,11 +1004,6 @@
       "sha256": "5c277b328a46e41162637a8fbc5e53d59576912fd8b041cdfdc185800912eb99"
     },
     {
-      "path": "07_PLATFORM/frontend/tsconfig.tsbuildinfo",
-      "bytes": 3197,
-      "sha256": "a4f9c51a74769bf9c7548568269dab2b18937a5b74cbe37bad4bc7c4ddf197a2"
-    },
-    {
       "path": "07_PLATFORM/frontend/vite.config.ts",
       "bytes": 796,
       "sha256": "29d962fc4b3f37a52291f4dd2ad8dcf5cd44ee3bfd45849f395bcae5aee59155"
@@ -1050,8 +1045,8 @@
     },
     {
       "path": "08_INFRASTRUCTURE/scripts/generate_manifest.py",
-      "bytes": 3722,
-      "sha256": "9fac4d855c6f9e1e3a73c970d692eb8eb396d79f9d9963630db0ae894a39accf"
+      "bytes": 3738,
+      "sha256": "da1c3d0e0584537c1c89139f6e3cd890901fa82469a36a68721c3871cb6678ba"
     },
     {
       "path": "08_INFRASTRUCTURE/scripts/generate_release_status.py",
