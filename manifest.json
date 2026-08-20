@@ -1,7 +1,7 @@
 {
   "package": "AI Training Academy Institutional Standard",
   "version": "2.4.0",
-  "created_utc": "2026-08-20T01:25:52.933381+00:00",
+  "created_utc": "2026-08-20T01:45:40.837465+00:00",
   "files": [
     {
       "path": ".env.example",
@@ -170,8 +170,8 @@
     },
     {
       "path": "07_PLATFORM/backend/app/agents.py",
-      "bytes": 7823,
-      "sha256": "994340fe85736a1915abffc7baaf9ef875e1e5a37a21d681b0286015f1bc46f9"
+      "bytes": 8247,
+      "sha256": "a5a3635bf7314237cd51c762a4c5f83d15ccc5a30edbd333a25dbea76499b456"
     },
     {
       "path": "07_PLATFORM/backend/app/analytics.py",
@@ -230,8 +230,8 @@
     },
     {
       "path": "07_PLATFORM/backend/app/incidents.py",
-      "bytes": 8593,
-      "sha256": "f2538c052570976e6694aeac59c171f1f821e15b20a81e28d2fcb1bc25c6d035"
+      "bytes": 8883,
+      "sha256": "8461f47a9f79300024f0f4c551d289d95a83593cfcf30107e808179d04c383bd"
     },
     {
       "path": "07_PLATFORM/backend/app/knowledge_base.py",
@@ -240,8 +240,8 @@
     },
     {
       "path": "07_PLATFORM/backend/app/main.py",
-      "bytes": 14195,
-      "sha256": "ea7225cdfa8c06386a5264a37721b2b5271192fb1427b657525ed7fbfcc34bdb"
+      "bytes": 16090,
+      "sha256": "857f6c42c9d82068951e47b60c4bb400afb7f0e19a365b496fda8ad083025d4c"
     },
     {
       "path": "07_PLATFORM/backend/app/models.py",
@@ -250,8 +250,8 @@
     },
     {
       "path": "07_PLATFORM/backend/app/orm.py",
-      "bytes": 19301,
-      "sha256": "fc01556b1e9aee08e7bc4a9458dc9ef5c3f2d3b2c1f4f436d5f69029c9a387ec"
+      "bytes": 20377,
+      "sha256": "b82b9b0ca86fb3a431819e97eba375878b2966bd9009f44355f3636c4c6c50b0"
     },
     {
       "path": "07_PLATFORM/backend/app/pagination.py",
@@ -270,8 +270,8 @@
     },
     {
       "path": "07_PLATFORM/backend/app/releases.py",
-      "bytes": 6170,
-      "sha256": "20dbecf45f29a9d78e4344038c64320de277bdc6783b9555f8a6c272fd56facf"
+      "bytes": 6456,
+      "sha256": "8421712245cbcc56c04d3510d9dedc75a6ea2bc3e966877b00fd12a8e8a8d4a6"
     },
     {
       "path": "07_PLATFORM/backend/app/router.py",
@@ -335,8 +335,8 @@
     },
     {
       "path": "07_PLATFORM/backend/tests/test_analytics.py",
-      "bytes": 6621,
-      "sha256": "9ef37f684b78a70ee654a5db8bb5c1b82c0d6a4e38abe55b14af49128a9f9f27"
+      "bytes": 7153,
+      "sha256": "0efc9d5abb136aa2994fd4ce9a959b8ac163478447bef5bb2ffc82764e3d40f0"
     },
     {
       "path": "07_PLATFORM/backend/tests/test_audit.py",
@@ -370,8 +370,8 @@
     },
     {
       "path": "07_PLATFORM/backend/tests/test_incidents.py",
-      "bytes": 12712,
-      "sha256": "e08056943a62388546982c684b6f41812b2854270d0fe4d01f67fac193262589"
+      "bytes": 13113,
+      "sha256": "a1ce319dfc2ae7c36683e13c901b69da1abe82a16882d3a5ea7747e3ff972cf7"
     },
     {
       "path": "07_PLATFORM/backend/tests/test_knowledge_base.py",
@@ -405,8 +405,8 @@
     },
     {
       "path": "07_PLATFORM/backend/tests/test_search.py",
-      "bytes": 3352,
-      "sha256": "0208cb20a8986e60ac6feec5e4dd9e18558605121168a67976ca3093934f9e7e"
+      "bytes": 3723,
+      "sha256": "e5a36394e53a1e9682753391ec6359cf01d8f38509f9cf724f42ba6f688feeab"
     },
     {
       "path": "07_PLATFORM/backend/tests/test_service_members.py",

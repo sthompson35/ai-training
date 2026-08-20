@@ -34,13 +34,25 @@ def client():
         orm.Learner(name="Ada Zephyr", email="ada.zephyr@example.com"),
     )
     db.add(
+        orm.ServiceMember(
+            service_member_id="ATA-SRETEAM-000",
+            callsign_id="ATA-SM-SRETEAM-001",
+            callsign="@SRETEAM",
+            display_name="SRE Team",
+            member_class="human_trooper",
+            command_layer="support",
+            current_role="SRE",
+        )
+    )
+    db.flush()
+    db.add(
         orm.Incident(
             title="Zephyr gateway outage",
             severity="high",
             status="detected",
             description="Gateway dropped requests",
             impact="Checkout unavailable",
-            owner="sre-team",
+            owner_service_member_id="ATA-SRETEAM-000",
         )
     )
     # A non-matching row of a fourth type, to prove the search doesn't just

@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends, HTTPException, Query, Response, UploadFile
 from pydantic import ValidationError
 from sqlalchemy import select
-from sqlalchemy.orm import Session
+from sqlalchemy.orm import Session, joinedload
 
 from . import orm, schemas
 from .audit import log_audit_event
@@ -16,7 +16,7 @@ router = APIRouter(prefix="/v1", tags=["releases"])
 
 
 def _release_query(status: str | None, q: str | None):
-    stmt = select(orm.Release).order_by(orm.Release.id)
+    stmt = select(orm.Release).options(joinedload(orm.Release.approver_service_member)).order_by(orm.Release.id)
     if status:
         stmt = stmt.where(orm.Release.status == status)
     if q:
@@ -48,7 +48,7 @@ def export_releases(status: str | None = None, q: str | None = None, db: Session
 
 @router.get("/releases/{release_id}", response_model=schemas.ReleaseOut)
 def get_release(release_id: int, db: Session = Depends(get_db)):
-    release = db.get(orm.Release, release_id)
+    release = db.get(orm.Release, release_id, options=[joinedload(orm.Release.approver_service_member)])
     if release is None:
         raise HTTPException(status_code=404, detail="Release not found")
     return release
@@ -63,7 +63,7 @@ def create_release(
 ):
     approver_member = resolve_identifier_or_422(db, payload.approver, "approver")
     data = payload.model_dump()
-    data["approver"] = approver_member.callsign
+    data.pop("approver", None)  # read-only derived property, never a constructor kwarg
     release = orm.Release(**data, approver_service_member_id=approver_member.service_member_id)
     db.add(release)
     db.commit()
@@ -91,7 +91,7 @@ async def import_releases(
             skipped.append({"row": i, "reason": f"approver '{payload.approver}' does not resolve to a known canonical identity"})
             continue
         data = payload.model_dump()
-        data["approver"] = approver_member.callsign
+        data.pop("approver", None)  # read-only derived property, never a constructor kwarg
         db.add(orm.Release(**data, approver_service_member_id=approver_member.service_member_id))
         created += 1
     db.commit()
@@ -110,9 +110,10 @@ def update_release(
     if release is None:
         raise HTTPException(status_code=404, detail="Release not found")
     approver_member = resolve_identifier_or_422(db, payload.approver, "approver")
-    for field, value in payload.model_dump().items():
+    update_data = payload.model_dump()
+    update_data.pop("approver", None)  # read-only derived property, never a settable attribute
+    for field, value in update_data.items():
         setattr(release, field, value)
-    release.approver = approver_member.callsign
     release.approver_service_member_id = approver_member.service_member_id
     db.commit()
     db.refresh(release)

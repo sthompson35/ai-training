@@ -215,6 +215,41 @@ async def lifespan(app: FastAPI):
                     "ON lifecycle_transition_history (service_member_id, effective_at)"
                 )
             )
+
+            # agent_cards.owner / incidents.owner / releases.approver are no
+            # longer mapped columns -- orm.py derives them from
+            # owner_service_member_id / approver_service_member_id instead
+            # (every write path has required a resolved identity since R2
+            # shipped, so the FK is always populated going forward). But an
+            # already-persisted volume could in principle have rows from
+            # before that FK column existed, where it was added nullable and
+            # never backfilled -- for those, the free-text column is the
+            # *only* remaining record of who the owner/approver was. Drop it
+            # only when every row already has a resolved FK (provably lossless);
+            # otherwise leave it in place, orphaned but safe, until an
+            # operator backfills or verifies the gap by hand.
+            for table, text_column, fk_column in (
+                ("agent_cards", "owner", "owner_service_member_id"),
+                ("incidents", "owner", "owner_service_member_id"),
+                ("releases", "approver", "approver_service_member_id"),
+            ):
+                conn.execute(
+                    text(
+                        f"""
+                        DO $$
+                        BEGIN
+                            IF EXISTS (
+                                SELECT 1 FROM information_schema.columns
+                                WHERE table_name = '{table}' AND column_name = '{text_column}'
+                            ) AND NOT EXISTS (
+                                SELECT 1 FROM {table} WHERE {fk_column} IS NULL
+                            ) THEN
+                                EXECUTE 'ALTER TABLE {table} DROP COLUMN {text_column}';
+                            END IF;
+                        END $$;
+                        """
+                    )
+                )
     db = SessionLocal()
     try:
         seed.seed_if_empty(db)

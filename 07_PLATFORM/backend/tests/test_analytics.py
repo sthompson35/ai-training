@@ -111,20 +111,32 @@ def test_analytics_groups_and_counts_correctly():
     db.add(orm.RaciEntry(activity="Act 2", role="Owner", responsibility="A"))
     db.add(orm.RaciEntry(activity="Act 3", role="Reviewer", responsibility="R"))
 
-    db.add(orm.Incident(title="Incident 1", severity="high", status="detected", description="d", impact="i", owner="o"))
-    db.add(orm.Incident(title="Incident 2", severity="high", status="resolved", description="d", impact="i", owner="o"))
-    db.add(orm.Incident(title="Incident 3", severity="critical", status="detected", description="d", impact="i", owner="o"))
+    member = orm.ServiceMember(
+        service_member_id="ATA-VICTOR-000",
+        callsign_id="ATA-SM-VICTOR-001",
+        callsign="@VICTOR",
+        display_name="Priya Moreno",
+        member_class="human_trooper",
+        command_layer="support",
+        current_role="Support Technician",
+    )
+    db.add(member)
+    db.flush()
+
+    db.add(orm.Incident(title="Incident 1", severity="high", status="detected", description="d", impact="i", owner_service_member_id=member.service_member_id))
+    db.add(orm.Incident(title="Incident 2", severity="high", status="resolved", description="d", impact="i", owner_service_member_id=member.service_member_id))
+    db.add(orm.Incident(title="Incident 3", severity="critical", status="detected", description="d", impact="i", owner_service_member_id=member.service_member_id))
 
     db.add(
         orm.Release(
             title="Release 1", version="1.0", rationale="r", expected_impact="e", test_evidence="t",
-            approver="a", release_date="2026-01-01", rollback_target="rt", status="proposed",
+            approver_service_member_id=member.service_member_id, release_date="2026-01-01", rollback_target="rt", status="proposed",
         )
     )
     db.add(
         orm.Release(
             title="Release 2", version="1.1", rationale="r", expected_impact="e", test_evidence="t",
-            approver="a", release_date="2026-01-02", rollback_target="rt", status="released",
+            approver_service_member_id=member.service_member_id, release_date="2026-01-02", rollback_target="rt", status="released",
         )
     )
 

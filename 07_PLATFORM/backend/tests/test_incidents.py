@@ -40,10 +40,22 @@ def client():
 
     db = TestingSession()
     db.add(
+        orm.ServiceMember(
+            service_member_id="ATA-AGENTOWNER-000",
+            callsign_id="ATA-SM-AGENTOWNER-001",
+            callsign="@AGENTOWNER",
+            display_name="Agent Card Owner",
+            member_class="human_trooper",
+            command_layer="support",
+            current_role="Support Engineer",
+        )
+    )
+    db.flush()
+    db.add(
         orm.AgentCard(
             id=1,
             name="Support Triage Agent",
-            owner="support-eng",
+            owner_service_member_id="ATA-AGENTOWNER-000",
             version="1.0",
             purpose="p",
             non_goals="n",

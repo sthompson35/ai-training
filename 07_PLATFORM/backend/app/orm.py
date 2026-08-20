@@ -252,7 +252,6 @@ class AgentCard(Base):
 
     id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
     name: Mapped[str] = mapped_column(String(200), nullable=False, unique=True)
-    owner: Mapped[str] = mapped_column(String(120), nullable=False)
     owner_service_member_id: Mapped[str | None] = mapped_column(
         ForeignKey("service_members.service_member_id", ondelete="SET NULL"), nullable=True
     )
@@ -276,6 +275,17 @@ class AgentCard(Base):
     approval_status: Mapped[str] = mapped_column(String(32), nullable=False, default="draft")
     evaluation_set: Mapped[str] = mapped_column(Text, nullable=False)
     last_review: Mapped[str] = mapped_column(String(20), nullable=False)
+
+    owner_service_member: Mapped["ServiceMember"] = relationship(foreign_keys=[owner_service_member_id])
+
+    @property
+    def owner(self) -> str:
+        """Derived from owner_service_member_id, not a stored column -- the
+        free-text duplicate was dropped once every write path was proven to
+        always populate a resolved owner_service_member_id (see
+        identity_resolution.resolve_identifier_or_422, required on create).
+        Read-only: nothing may setattr('owner', ...) on this model anymore."""
+        return self.owner_service_member.callsign
 
 
 class User(Base):
@@ -302,7 +312,6 @@ class Incident(Base):
     impact: Mapped[str] = mapped_column(Text, nullable=False)
     root_cause: Mapped[str | None] = mapped_column(Text, nullable=True)
     corrective_action: Mapped[str | None] = mapped_column(Text, nullable=True)
-    owner: Mapped[str] = mapped_column(String(120), nullable=False)
     owner_service_member_id: Mapped[str | None] = mapped_column(
         ForeignKey("service_members.service_member_id", ondelete="SET NULL"), nullable=True
     )
@@ -316,6 +325,14 @@ class Incident(Base):
     opened_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())
     resolved_at: Mapped[str | None] = mapped_column(String(20), nullable=True)
 
+    owner_service_member: Mapped["ServiceMember"] = relationship(foreign_keys=[owner_service_member_id])
+
+    @property
+    def owner(self) -> str:
+        """Derived from owner_service_member_id -- see AgentCard.owner's
+        docstring for why the free-text duplicate was dropped. Read-only."""
+        return self.owner_service_member.callsign
+
 
 class Release(Base):
     __tablename__ = "releases"
@@ -326,7 +343,6 @@ class Release(Base):
     rationale: Mapped[str] = mapped_column(Text, nullable=False)
     expected_impact: Mapped[str] = mapped_column(Text, nullable=False)
     test_evidence: Mapped[str] = mapped_column(Text, nullable=False)
-    approver: Mapped[str] = mapped_column(String(120), nullable=False)
     approver_service_member_id: Mapped[str | None] = mapped_column(
         ForeignKey("service_members.service_member_id", ondelete="SET NULL"), nullable=True
     )
@@ -334,6 +350,14 @@ class Release(Base):
     release_date: Mapped[str] = mapped_column(String(20), nullable=False)
     rollback_target: Mapped[str] = mapped_column(Text, nullable=False)
     status: Mapped[str] = mapped_column(String(20), nullable=False, default="proposed")
+
+    approver_service_member: Mapped["ServiceMember"] = relationship(foreign_keys=[approver_service_member_id])
+
+    @property
+    def approver(self) -> str:
+        """Derived from approver_service_member_id -- see AgentCard.owner's
+        docstring for why the free-text duplicate was dropped. Read-only."""
+        return self.approver_service_member.callsign
 
 
 class RaciEntry(Base):
