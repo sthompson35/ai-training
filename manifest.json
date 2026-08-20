@@ -1,7 +1,7 @@
 {
   "package": "AI Training Academy Institutional Standard",
   "version": "2.4.0",
-  "created_utc": "2026-08-20T01:18:09.535631+00:00",
+  "created_utc": "2026-08-20T01:18:36.758288+00:00",
   "files": [
     {
       "path": ".env.example",
@@ -522,6 +522,11 @@
       "path": "07_PLATFORM/frontend/e2e/global-setup.ts",
       "bytes": 3899,
       "sha256": "9eae4a367e4b16375b1124e8a9385d426d62ff57cad204e6fcb8f12044e389c3"
+    },
+    {
+      "path": "07_PLATFORM/frontend/e2e/identity.spec.ts",
+      "bytes": 5209,
+      "sha256": "99ab8eef58d42b54fd6be7a0da39efb648a6002bb1fc244c1a268f053bed9f38"
     },
     {
       "path": "07_PLATFORM/frontend/index.html",
