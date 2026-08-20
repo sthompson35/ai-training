@@ -221,21 +221,25 @@ jobs:
       - name: Wait for the deployed stack to become healthy
         shell: pwsh
         run: |
-          # `docker compose up -d --build` in the previous step returns as
-          # soon as containers are *started*, not once they're actually
-          # ready -- a real image rebuild (not a no-op cache hit, since this
-          # step just checked out a different commit) plus the api
-          # container's own docker-level healthcheck grace period
-          # (interval 15s x retries 5 = up to 75s) can outlast a short
-          # window on its own, before the gateway can even proxy to it.
-          # Measured empirically on the first real run of this job: 30
-          # attempts (~150s) wasn't enough; 90 (~450s) gives real headroom.
+          # 127.0.0.1, not localhost: on this runner, PowerShell's
+          # Invoke-WebRequest (System.Net.Http.HttpClient under the hood)
+          # resolves "localhost" and tries the IPv6 ([::1]) candidate first.
+          # Nothing answers there fast enough, and it never falls back to
+          # IPv4 within the timeout -- every single attempt burns the full
+          # -TimeoutSec doing that, even though the server is right there
+          # and curl/browsers reach it in milliseconds via the same
+          # dual-stack publish (0.0.0.0 and [::] are both bound). Confirmed
+          # directly: "localhost" timed out at 3034ms, "127.0.0.1" answered
+          # in 44ms, same machine, same moment. This -- not rebuild timing
+          # -- is why the previous two real runs of this job both burned
+          # their entire retry budget and failed with an identical timeout
+          # message on every attempt.
           $ok = $false
           $lastStatusCode = $null
           $lastErrorMessage = $null
-          for ($i = 0; $i -lt 90; $i++) {
+          for ($i = 0; $i -lt 60; $i++) {
             try {
-              $resp = Invoke-WebRequest -Uri "http://localhost:8080/api/health" -UseBasicParsing -TimeoutSec 3
+              $resp = Invoke-WebRequest -Uri "http://127.0.0.1:8080/api/health" -UseBasicParsing -TimeoutSec 3
               $lastStatusCode = $resp.StatusCode
               if ($resp.StatusCode -eq 200) { $ok = $true; break }
             } catch {
@@ -245,8 +249,8 @@ jobs:
             Start-Sleep -Seconds 2
           }
           if (-not $ok) {
-            Write-Error ("Deployed stack never became healthy at http://localhost:8080/api/health -- " +
-              "last status code: {0}, last error: {1}" -f ($lastStatusCode ?? "n/a"), ($lastErrorMessage ?? "n/a"))
+            Write-Error ("Deployed stack never became healthy at http://127.0.0.1:8080/api/health -- " +
+              "last status code: {0}, last error: {1}, attempts: {2}" -f ($lastStatusCode ?? "n/a"), ($lastErrorMessage ?? "n/a"), $i)
             exit 1
           }
           Write-Output "Deployed stack is healthy."
