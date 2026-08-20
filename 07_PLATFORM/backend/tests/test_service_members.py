@@ -584,15 +584,24 @@ def test_production_seed_path_ships_the_real_r2_roster(monkeypatch):
     "unverified" regardless of source (seeding has no acting admin/verifier —
     matches the source manual's own G1-G8 HOLD disposition).
 
-    seed.SEED_PERSONNEL_DIR itself is only 11_PERSONNEL/ inside the deployed
-    docker container, where docker-compose.yml volume-mounts
-    ./11_PERSONNEL:/app/seed_personnel:ro -- on a bare checkout (e.g. this
-    test running directly on a CI runner) it's a directory that doesn't
-    exist at all, so the real repo-root path is resolved explicitly here
-    instead of trusting SEED_PERSONNEL_DIR to already point at it.
+    seed.SEED_PERSONNEL_DIR already resolves correctly to the real roster
+    inside the deployed docker container (docker-compose.yml volume-mounts
+    ./11_PERSONNEL:/app/seed_personnel:ro), but on a bare checkout -- e.g.
+    CI's validate job, which runs pytest directly with no Docker involved --
+    it's a directory that doesn't exist at all. A fixed ancestor-count
+    (parents[N]) isn't safe here either: it'd assume the on-disk layout
+    always mirrors the git repo's directory depth, which Docker's own
+    backend-only bind mount already violates. So this checks the unpatched
+    SEED_PERSONNEL_DIR first, and only if that comes up empty, walks upward
+    from this test file looking for a real 11_PERSONNEL/ sibling directory.
     """
-    repo_root = Path(__file__).resolve().parents[3]
-    real_roster_dir = repo_root / "11_PERSONNEL"
+    real_roster_dir = seed.SEED_PERSONNEL_DIR
+    if not (real_roster_dir / "personnel_roster.csv").exists():
+        for ancestor in Path(__file__).resolve().parents:
+            candidate = ancestor / "11_PERSONNEL"
+            if (candidate / "personnel_roster.csv").exists():
+                real_roster_dir = candidate
+                break
     assert (real_roster_dir / "personnel_roster.csv").exists(), (
         "11_PERSONNEL/personnel_roster.csv must exist — see Personnel_Roster.md"
     )
