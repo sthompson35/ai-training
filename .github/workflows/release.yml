@@ -179,7 +179,12 @@ jobs:
           generate_release_notes: true
 
   deploy-production:
-    runs-on: ubuntu-latest
+    # A self-hosted runner on the machine that actually runs the production
+    # docker compose stack -- ubuntu-latest (a GitHub-hosted runner) cannot
+    # reach this machine at all, hosted or otherwise. "local-docker" is this
+    # runner's registered label; see 10_DOCS/operations/SELF_HOSTED_RUNNER.md for
+    # how it's set up.
+    runs-on: [self-hosted, local-docker]
     needs: [verify, publish]
     if: needs.verify.outputs.gate_decision == 'GO'
     environment: production # requires the "production" Environment + its
@@ -189,23 +194,50 @@ jobs:
       # silently skipped.
 
     steps:
-      - uses: actions/checkout@v4
-
-      # Placeholder deploy steps — this repo has no real target registry or
-      # cluster to deploy to. Replace with the real steps for your
-      # environment (e.g. `docker build` + push to a registry using
-      # secrets.REGISTRY_TOKEN, then `kubectl apply -f
-      # 08_INFRASTRUCTURE/kubernetes/academy.yaml`, or a `helm upgrade`).
-      # Every secret referenced below must be added to the "production"
-      # Environment's secrets before this can run for real — see
-      # ENVIRONMENTS.md for the exact names expected and why. None are
-      # fabricated or present in this repository.
-      - name: Deploy (placeholder — configure for your real target)
+      # Deliberately no actions/checkout here: this deploys the one real,
+      # persistent docker compose stack that already lives at DEPLOY_DIR on
+      # this runner's own machine, not a fresh throwaway checkout in the
+      # runner's own _work directory. "Deploy" means updating that stack in
+      # place to the exact tagged commit, not standing up a second one.
+      - name: Deploy the released tag to the local docker compose stack
+        shell: pwsh
         env:
-          DEPLOY_TARGET: ${{ secrets.DEPLOY_TARGET }}
-          REGISTRY_TOKEN: ${{ secrets.REGISTRY_TOKEN }}
+          DEPLOY_DIR: C:\ai-training\ai-training
         run: |
-          echo "No real deploy target configured yet."
-          echo "This job exists to prove the gate: it only runs after verify+publish"
-          echo "succeed AND the production Environment's required approval is granted."
-          echo "Wire in real deploy steps here once DEPLOY_TARGET/REGISTRY_TOKEN exist."
+          Set-Location $env:DEPLOY_DIR
+          git fetch --tags origin
+          git reset --hard
+          # -e excludes .env and .mcp.json from the clean -- both are
+          # untracked by design (.gitignore) and machine-specific: .env
+          # carries this machine's own port-conflict workaround
+          # (API_PORT, see the file's own comment) and local model
+          # config, .mcp.json this machine's local MCP wiring. A plain
+          # `git clean -fdx` would delete them on every deploy and
+          # silently reintroduce whatever they exist to work around.
+          git clean -fdx -e .env -e .mcp.json
+          git checkout "${{ github.ref_name }}"
+          docker compose up -d --build
+
+      - name: Wait for the deployed stack to become healthy
+        shell: pwsh
+        run: |
+          $ok = $false
+          $lastStatusCode = $null
+          $lastErrorMessage = $null
+          for ($i = 0; $i -lt 30; $i++) {
+            try {
+              $resp = Invoke-WebRequest -Uri "http://localhost:8080/api/health" -UseBasicParsing -TimeoutSec 3
+              $lastStatusCode = $resp.StatusCode
+              if ($resp.StatusCode -eq 200) { $ok = $true; break }
+            } catch {
+              $lastErrorMessage = $_.Exception.Message
+              if ($_.Exception.Response) { $lastStatusCode = [int]$_.Exception.Response.StatusCode }
+            }
+            Start-Sleep -Seconds 2
+          }
+          if (-not $ok) {
+            Write-Error ("Deployed stack never became healthy at http://localhost:8080/api/health -- " +
+              "last status code: {0}, last error: {1}" -f ($lastStatusCode ?? "n/a"), ($lastErrorMessage ?? "n/a"))
+            exit 1
+          }
+          Write-Output "Deployed stack is healthy."

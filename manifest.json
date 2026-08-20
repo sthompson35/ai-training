@@ -1,7 +1,7 @@
 {
   "package": "AI Training Academy Institutional Standard",
   "version": "2.4.0",
-  "created_utc": "2026-08-20T10:45:23.856079+00:00",
+  "created_utc": "2026-08-20T10:56:18.342103+00:00",
   "files": [
     {
       "path": ".env.example",
@@ -35,8 +35,8 @@
     },
     {
       "path": ".github/workflows/release.yml",
-      "bytes": 8516,
-      "sha256": "92b2fc34d120ca77b01a47c4f6b2ceb94dc008007f023befe46b22c177c10e84"
+      "bytes": 9999,
+      "sha256": "f95be1f74c85cb191dc8ac6bfeabfc15617dcff543bbd88112f69d5b4370907f"
     },
     {
       "path": ".gitignore",
@@ -1102,6 +1102,11 @@
       "path": "10_DOCS/operations/RUNBOOK.md",
       "bytes": 672,
       "sha256": "52952e47eb69ea0f61a1a04ee18e4fda3f0c36e2102433d1ac93746d3a4a303c"
+    },
+    {
+      "path": "10_DOCS/operations/SELF_HOSTED_RUNNER.md",
+      "bytes": 4593,
+      "sha256": "c8b2f38266e203cc0d72a2f14d03491a22a735fb0eb7697cdf164b256328809a"
     },
     {
       "path": "10_DOCS/security/THREAT_MODEL.md",
