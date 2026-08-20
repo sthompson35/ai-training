@@ -5,15 +5,38 @@ import { MemoryRouter, Route, Routes } from "react-router-dom";
 import { ServiceMemberDetailPage } from "./ServiceMemberDetailPage";
 import { ToastProvider } from "../components/ToastProvider";
 
-const { getServiceMember, getRoleHistory, getVerifications, verifyIdentity } = vi.hoisted(() => ({
+const {
+  getServiceMember,
+  getRoleHistory,
+  getVerifications,
+  getLifecycleHistory,
+  verifyIdentity,
+  deactivateServiceMember,
+  reactivateServiceMember,
+  dischargeServiceMember,
+} = vi.hoisted(() => ({
   getServiceMember: vi.fn(),
   getRoleHistory: vi.fn(),
   getVerifications: vi.fn(),
+  getLifecycleHistory: vi.fn(),
   verifyIdentity: vi.fn(),
+  deactivateServiceMember: vi.fn(),
+  reactivateServiceMember: vi.fn(),
+  dischargeServiceMember: vi.fn(),
 }));
 vi.mock("../lib/api", async (importOriginal) => {
   const actual = await importOriginal<typeof import("../lib/api")>();
-  return { ...actual, getServiceMember, getRoleHistory, getVerifications, verifyIdentity };
+  return {
+    ...actual,
+    getServiceMember,
+    getRoleHistory,
+    getVerifications,
+    getLifecycleHistory,
+    verifyIdentity,
+    deactivateServiceMember,
+    reactivateServiceMember,
+    dischargeServiceMember,
+  };
 });
 
 const fixtureMember = {
@@ -63,7 +86,11 @@ beforeEach(() => {
   getServiceMember.mockReset().mockResolvedValue(fixtureMember);
   getRoleHistory.mockReset().mockResolvedValue([]);
   getVerifications.mockReset().mockResolvedValue([]);
+  getLifecycleHistory.mockReset().mockResolvedValue([]);
   verifyIdentity.mockReset().mockResolvedValue({ ...fixtureVerification, outcome: "verified" });
+  deactivateServiceMember.mockReset();
+  reactivateServiceMember.mockReset();
+  dischargeServiceMember.mockReset();
 });
 
 describe("ServiceMemberDetailPage verification workflow", () => {
@@ -94,5 +121,48 @@ describe("ServiceMemberDetailPage verification workflow", () => {
       }),
     );
     expect(await screen.findByText(/verification recorded — outcome: verified/i)).toBeInTheDocument();
+  });
+});
+
+describe("ServiceMemberDetailPage lifecycle workflow", () => {
+  it("does not show lifecycle_state as an editable field in the edit form", async () => {
+    renderPage();
+    await screen.findByRole("heading", { name: "Victor Trooper" });
+    expect(screen.queryByLabelText(/^lifecycle state$/i)).not.toBeInTheDocument();
+  });
+
+  it("requires a reason before enabling deactivate, and calls deactivateServiceMember with it", async () => {
+    const user = userEvent.setup();
+    deactivateServiceMember.mockResolvedValue({
+      id: 1,
+      service_member_id: "SM-1",
+      from_state: "active",
+      to_state: "inactive",
+      reason: "Extended leave",
+      changed_by: null,
+      effective_at: "2026-01-03T00:00:00Z",
+    });
+    renderPage();
+    await screen.findByRole("heading", { name: "Victor Trooper" });
+
+    const deactivateButton = screen.getByRole("button", { name: /^deactivate$/i });
+    expect(deactivateButton).toBeDisabled();
+
+    await user.type(screen.getByLabelText(/reason \(required for any transition/i), "Extended leave");
+    expect(deactivateButton).toBeEnabled();
+
+    await user.click(deactivateButton);
+    expect(deactivateServiceMember).toHaveBeenCalledWith("SM-1", { reason: "Extended leave" });
+    expect(await screen.findByText(/identity deactivated/i)).toBeInTheDocument();
+  });
+
+  it("shows discharged as terminal with no further transition buttons", async () => {
+    getServiceMember.mockResolvedValue({ ...fixtureMember, lifecycle_state: "discharged" });
+    renderPage();
+    await screen.findByRole("heading", { name: "Victor Trooper" });
+
+    expect(screen.getByText(/discharged is terminal/i)).toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: /reactivate/i })).not.toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: /discharge/i })).not.toBeInTheDocument();
   });
 });

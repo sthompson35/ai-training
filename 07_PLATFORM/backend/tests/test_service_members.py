@@ -178,18 +178,18 @@ def test_create_never_accepts_a_caller_supplied_verification_state(client, admin
     assert created.json()["production_verification_state"] == "unverified"
 
 
-def test_update_endpoint_cannot_change_identity_role_or_verification_fields(client, admin_headers):
+def test_update_endpoint_cannot_change_identity_role_lifecycle_or_verification_fields(client, admin_headers):
     client.post("/v1/service-members", json=member_payload(), headers=admin_headers)
 
     update = client.put(
         "/v1/service-members/ATA-VICTOR-000",
         json={
             "display_name": "Priya M.",
-            "lifecycle_state": "inactive",
             "readiness_state": "stand_down",
-            "production_verification_state": "verified",
             "legacy_alias": "ATA-SM-023",
             # extra fields below must be silently ignored by the update schema
+            "lifecycle_state": "inactive",
+            "production_verification_state": "verified",
             "current_role": "Should not apply",
             "role_version": 99,
             "service_member_id": "ATA-SHOULD-NOT-APPLY-000",
@@ -199,11 +199,85 @@ def test_update_endpoint_cannot_change_identity_role_or_verification_fields(clie
     assert update.status_code == 200
     body = update.json()
     assert body["display_name"] == "Priya M."
-    assert body["lifecycle_state"] == "inactive"
+    assert body["lifecycle_state"] == "active"  # PUT cannot change lifecycle_state
     assert body["current_role"] == "Support Technician"
     assert body["production_verification_state"] == "unverified"  # PUT cannot promote to verified
     assert body["role_version"] == 1
     assert body["service_member_id"] == "ATA-VICTOR-000"
+
+
+def test_deactivate_reactivate_round_trip_records_history(client, admin_headers):
+    client.post("/v1/service-members", json=member_payload(), headers=admin_headers)
+
+    deactivate = client.post(
+        "/v1/service-members/ATA-VICTOR-000/deactivate",
+        json={"reason": "Extended leave"},
+        headers=admin_headers,
+    )
+    assert deactivate.status_code == 200
+    assert deactivate.json()["from_state"] == "active"
+    assert deactivate.json()["to_state"] == "inactive"
+
+    fetched = client.get("/v1/service-members/ATA-VICTOR-000")
+    assert fetched.json()["lifecycle_state"] == "inactive"
+
+    reactivate = client.post(
+        "/v1/service-members/ATA-VICTOR-000/reactivate",
+        json={"reason": "Returned from leave"},
+        headers=admin_headers,
+    )
+    assert reactivate.status_code == 200
+    assert reactivate.json()["from_state"] == "inactive"
+    assert reactivate.json()["to_state"] == "active"
+
+    history = client.get("/v1/service-members/ATA-VICTOR-000/lifecycle-history").json()
+    assert [row["to_state"] for row in history] == ["inactive", "active"]
+    assert history[0]["reason"] == "Extended leave"
+    assert history[1]["reason"] == "Returned from leave"
+
+
+def test_discharge_is_terminal(client, admin_headers):
+    client.post("/v1/service-members", json=member_payload(), headers=admin_headers)
+
+    discharge = client.post(
+        "/v1/service-members/ATA-VICTOR-000/discharge",
+        json={"reason": "Left the organization"},
+        headers=admin_headers,
+    )
+    assert discharge.status_code == 200
+    assert discharge.json()["to_state"] == "discharged"
+
+    still_resolves = client.get("/v1/service-members/resolve", params={"identifier": "@VICTOR"})
+    assert still_resolves.status_code == 200
+    assert still_resolves.json()["lifecycle_state"] == "discharged"
+
+    reactivate_attempt = client.post(
+        "/v1/service-members/ATA-VICTOR-000/reactivate",
+        json={"reason": "Should not be allowed"},
+        headers=admin_headers,
+    )
+    assert reactivate_attempt.status_code == 409
+
+    deactivate_attempt = client.post(
+        "/v1/service-members/ATA-VICTOR-000/deactivate",
+        json={"reason": "Should also not be allowed"},
+        headers=admin_headers,
+    )
+    assert deactivate_attempt.status_code == 409
+
+
+def test_lifecycle_transition_requires_admin_and_a_reason(client, auth_headers, admin_headers):
+    client.post("/v1/service-members", json=member_payload(), headers=admin_headers)
+
+    non_admin = client.post(
+        "/v1/service-members/ATA-VICTOR-000/deactivate", json={"reason": "x"}, headers=auth_headers
+    )
+    assert non_admin.status_code == 403
+
+    missing_reason = client.post(
+        "/v1/service-members/ATA-VICTOR-000/deactivate", json={"reason": ""}, headers=admin_headers
+    )
+    assert missing_reason.status_code == 422
 
 
 def _create_linked_operator(client, admin_headers, username, callsign):

@@ -89,6 +89,51 @@ def apply_role_change(
     return history_row
 
 
+_VALID_LIFECYCLE_TRANSITIONS: dict[str, set[str]] = {
+    "active": {"inactive", "discharged"},
+    "inactive": {"active", "discharged"},
+    "discharged": set(),  # terminal: this registry's substitute for deletion
+}
+
+
+def apply_lifecycle_transition(
+    db: Session,
+    service_member: orm.ServiceMember,
+    to_state: str,
+    changed_by_id: str | None,
+    reason: str,
+) -> orm.LifecycleTransitionHistory:
+    """The only code path allowed to change lifecycle_state.
+
+    Every transition is recorded as a new lifecycle_transition_history row
+    with a required reason — never a silent field flip. "discharged" is
+    terminal; from_state is looked up from the transition table, not
+    accepted as caller input, so a stale/forged from_state can't smuggle in
+    an otherwise-invalid transition.
+    """
+    from_state = service_member.lifecycle_state
+    allowed = _VALID_LIFECYCLE_TRANSITIONS.get(from_state, set())
+    if to_state not in allowed:
+        raise HTTPException(
+            status_code=409,
+            detail=f"Cannot transition lifecycle_state from '{from_state}' to '{to_state}'",
+        )
+
+    service_member.lifecycle_state = to_state
+    history_row = orm.LifecycleTransitionHistory(
+        service_member_id=service_member.service_member_id,
+        from_state=from_state,
+        to_state=to_state,
+        reason=reason,
+        changed_by=changed_by_id,
+    )
+    db.add(history_row)
+    db.commit()
+    db.refresh(service_member)
+    db.refresh(history_row)
+    return history_row
+
+
 def resolve_verifier_or_error(db: Session, username: str) -> orm.ServiceMember:
     """The verifier is never a free-text/caller-supplied field — it is always
     derived from the authenticated admin's own linked identity, so a

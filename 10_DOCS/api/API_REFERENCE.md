@@ -172,10 +172,14 @@ Verification of this registry splits into two independent classes, matching that
 | GET | `/v1/service-members/{service_member_id}` | Identity detail. |
 | GET | `/v1/service-members/{service_member_id}/role-history` | Versioned duty-assignment history, oldest first. |
 | GET | `/v1/service-members/{service_member_id}/verifications` | Independent-verification history, oldest first — see below. |
+| GET | `/v1/service-members/{service_member_id}/lifecycle-history` | Lifecycle-transition history, oldest first — see "Lifecycle transitions" below. |
 | POST | `/v1/service-members` | Admin only. Create an identity — see field list below. `409` on any collision (`service_member_id`, `callsign_id`, `callsign`, or `legacy_alias` already in use). `production_verification_state` is not an accepted field here; every new identity starts `unverified` regardless of what's sent. `created_by_service_member_id` is recorded automatically from the caller's own linked identity (`null` if the caller's account isn't linked to one). |
-| PUT | `/v1/service-members/{service_member_id}` | Admin only. Updates **only** `display_name, lifecycle_state, readiness_state, legacy_alias`. Identity fields (`service_member_id, callsign_id, callsign`), role fields (`current_role, role_version, command_layer`), and `production_verification_state` are not accepted here — identity is immutable, role changes only happen through the role-change endpoint below, and verification state only through the verify endpoint below. |
+| PUT | `/v1/service-members/{service_member_id}` | Admin only. Updates **only** `display_name, readiness_state, legacy_alias`. Identity fields (`service_member_id, callsign_id, callsign`), role fields (`current_role, role_version, command_layer`), `lifecycle_state`, and `production_verification_state` are not accepted here — identity is immutable, role changes only happen through the role-change endpoint below, lifecycle transitions only through the deactivate/reactivate/discharge endpoints below, and verification state only through the verify endpoint below. |
 | POST | `/v1/service-members/{service_member_id}/role-change` | Admin only. Body: `{new_role, new_command_layer, reason}`. The **only** way to change an identity's role — increments `role_version` and appends one `role_assignment_history` row in the same transaction; never mutates prior history, never creates a new identity. |
 | POST | `/v1/service-members/{service_member_id}/verify` | Admin only. Body: `{evidence_reference, verification_method, outcome, notes}`. The **only** way `production_verification_state` moves to `verified` or `revoked` — see "Independent verification" below. |
+| POST | `/v1/service-members/{service_member_id}/deactivate` | Admin only. Body: `{reason}` (required). Transitions `active -> inactive`. `409` if not currently `active`. |
+| POST | `/v1/service-members/{service_member_id}/reactivate` | Admin only. Body: `{reason}` (required). Transitions `inactive -> active`. `409` if not currently `inactive` (including from `discharged` — reactivation is not valid there). |
+| POST | `/v1/service-members/{service_member_id}/discharge` | Admin only. Body: `{reason}` (required). Transitions `active` or `inactive -> discharged`. `409` if already `discharged`. This is the registry's substitute for deletion — see below. |
 
 Identity fields (create-only): `service_member_id` (`ATA-<CALLSIGN>-000`), `callsign_id` (`ATA-SM-<CALLSIGN>-001`), `callsign` (`@<CALLSIGN>`), `display_name`, `member_class`, `command_layer`, `current_role`, plus optional `lifecycle_state`, `readiness_state`, `legacy_alias` (a migration alias like `ATA-SM-001`, never reused), `source_lineage`.
 
@@ -185,7 +189,22 @@ Identity fields (create-only): `service_member_id` (`ATA-<CALLSIGN>-000`), `call
 - `readiness_state`: `ready, not_ready, in_training, stand_down` (default `ready`).
 - `production_verification_state`: `unverified, verified, revoked` — **read-only output field**, the identity-verification term in the README's `PRODUCTION_VERIFIED` equation. Always starts `unverified`; only `POST .../verify` can move it.
 
-There is no delete endpoint — canonical identities are not discardable; retire one via `lifecycle_state` instead.
+There is no delete endpoint — canonical identities are not discardable; retire one via the deactivate/discharge endpoints above instead.
+
+### Lifecycle transitions
+
+`lifecycle_state` is only ever written by `POST .../deactivate|reactivate|discharge` — never by the generic `PUT` update, and never as a bare field flip. Every transition requires a `reason` and appends one `lifecycle_transition_history` row (`from_state`, `to_state`, `reason`, `changed_by`, `effective_at`); prior rows are never mutated.
+
+Valid transitions:
+
+| From | To | Endpoint |
+|---|---|---|
+| `active` | `inactive` | `/deactivate` |
+| `inactive` | `active` | `/reactivate` |
+| `active` or `inactive` | `discharged` | `/discharge` |
+| `discharged` | *(none)* | terminal — no endpoint transitions out of `discharged` |
+
+`discharged` is this registry's substitute for deletion: the identity, its full role history, its verification history, and every FK reference to it (an incident's `owner_service_member_id`, an agent's `service_member_id` link, etc.) all remain exactly as they were — only `lifecycle_state` changes, permanently. A discharged identity still resolves normally through `GET /v1/service-members/resolve` (historical references must keep working), it just can no longer be transitioned to any other state.
 
 ### Independent verification
 

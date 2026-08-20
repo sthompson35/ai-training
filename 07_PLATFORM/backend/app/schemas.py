@@ -238,7 +238,6 @@ class ServiceMemberCreate(ServiceMemberBase):
 
 class ServiceMemberUpdate(BaseModel):
     display_name: str = Field(min_length=1, max_length=200)
-    lifecycle_state: LifecycleState
     readiness_state: ReadinessState
     legacy_alias: str | None = Field(default=None, max_length=32)
 
@@ -300,6 +299,22 @@ class IdentityVerificationOut(BaseModel):
     verifier_service_member_id: str
     notes: str | None
     verified_at: datetime
+
+
+class LifecycleTransitionRequest(BaseModel):
+    reason: str = Field(min_length=1, max_length=500)
+
+
+class LifecycleTransitionHistoryOut(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+
+    id: int
+    service_member_id: str
+    from_state: str
+    to_state: str
+    reason: str
+    changed_by: str | None
+    effective_at: datetime
 
 
 class AgentCardBase(BaseModel):
