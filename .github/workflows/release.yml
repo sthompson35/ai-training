@@ -221,10 +221,19 @@ jobs:
       - name: Wait for the deployed stack to become healthy
         shell: pwsh
         run: |
+          # `docker compose up -d --build` in the previous step returns as
+          # soon as containers are *started*, not once they're actually
+          # ready -- a real image rebuild (not a no-op cache hit, since this
+          # step just checked out a different commit) plus the api
+          # container's own docker-level healthcheck grace period
+          # (interval 15s x retries 5 = up to 75s) can outlast a short
+          # window on its own, before the gateway can even proxy to it.
+          # Measured empirically on the first real run of this job: 30
+          # attempts (~150s) wasn't enough; 90 (~450s) gives real headroom.
           $ok = $false
           $lastStatusCode = $null
           $lastErrorMessage = $null
-          for ($i = 0; $i -lt 30; $i++) {
+          for ($i = 0; $i -lt 90; $i++) {
             try {
               $resp = Invoke-WebRequest -Uri "http://localhost:8080/api/health" -UseBasicParsing -TimeoutSec 3
               $lastStatusCode = $resp.StatusCode
