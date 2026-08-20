@@ -1,6 +1,11 @@
 .env
 .env.*
 !.env.example
+
+# Local MCP server wiring (e.g. a Postgres MCP server pointed at this
+# machine's own docker compose network/credentials) -- machine-specific,
+# not something every clone of this repo should get for free.
+.mcp.json
 __pycache__/
 *.py[cod]
 .pytest_cache/

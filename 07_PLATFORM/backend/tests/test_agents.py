@@ -159,3 +159,110 @@ def test_agents_pagination_and_search(client, auth_headers):
     search = client.get("/v1/agents", params={"q": "refund"})
     assert len(search.json()) == 1
     assert search.json()[0]["name"] == "Refund Review Agent"
+
+
+def test_execute_blocked_when_kill_switch_engaged(client, auth_headers):
+    agent = client.post("/v1/agents", json=agent_payload(active=False), headers=auth_headers).json()
+    response = client.post(f"/v1/agents/{agent['id']}/execute", json={"prompt": "hello"}, headers=auth_headers)
+    assert response.status_code == 409
+    assert "kill switch" in response.json()["detail"]
+
+
+def test_execute_rejects_a_model_not_in_approved_models(client, auth_headers):
+    agent = client.post(
+        "/v1/agents", json=agent_payload(risk_tier=0, approved_models="gpt-mini, gpt-large"), headers=auth_headers
+    ).json()
+    response = client.post(
+        f"/v1/agents/{agent['id']}/execute",
+        json={"prompt": "hello", "model": "not-approved"},
+        headers=auth_headers,
+    )
+    assert response.status_code == 422
+    assert "not-approved" in response.json()["detail"]
+
+
+def test_execute_high_risk_creates_a_pending_approval_without_calling_inference(client, auth_headers, monkeypatch):
+    called = []
+    monkeypatch.setattr("app.agents.inference.call_local_model", lambda **kw: called.append(kw))
+
+    agent = client.post("/v1/agents", json=agent_payload(risk_tier=2), headers=auth_headers).json()
+    response = client.post(f"/v1/agents/{agent['id']}/execute", json={"prompt": "hello"}, headers=auth_headers)
+
+    assert response.status_code == 200
+    body = response.json()
+    assert body["status"] == "pending_approval"
+    assert body["approval_request_id"] is not None
+    assert body["output"] is None
+    assert called == []  # inference must never be attempted while gated
+
+
+def test_execute_low_risk_calls_the_local_model_and_defaults_to_the_first_approved_model(
+    client, auth_headers, monkeypatch
+):
+    monkeypatch.setattr(
+        "app.agents.inference.call_local_model",
+        lambda model, prompt, **kw: {"output": f"[{model}] handled: {prompt}", "prompt_tokens": 7, "completion_tokens": 3},
+    )
+
+    agent = client.post(
+        "/v1/agents", json=agent_payload(risk_tier=0, approved_models="gpt-mini, gpt-large"), headers=auth_headers
+    ).json()
+    response = client.post(
+        f"/v1/agents/{agent['id']}/execute", json={"prompt": "triage this ticket"}, headers=auth_headers
+    )
+
+    assert response.status_code == 200
+    body = response.json()
+    assert body["status"] == "completed"
+    assert body["model"] == "gpt-mini"  # first entry, since no model was requested
+    assert body["output"] == "[gpt-mini] handled: triage this ticket"
+    assert body["prompt_tokens"] == 7
+    assert body["completion_tokens"] == 3
+    assert body["estimated_cost_usd"] > 0
+
+
+def test_execute_reports_a_misconfigured_approval_tier_clearly(client, auth_headers, monkeypatch):
+    monkeypatch.setenv("REQUIRE_HUMAN_APPROVAL_TIER", "not-a-number")
+    agent = client.post("/v1/agents", json=agent_payload(risk_tier=0), headers=auth_headers).json()
+
+    response = client.post(f"/v1/agents/{agent['id']}/execute", json={"prompt": "hello"}, headers=auth_headers)
+
+    assert response.status_code == 500
+    assert "REQUIRE_HUMAN_APPROVAL_TIER" in response.json()["detail"]
+
+
+def test_execute_surfaces_inference_failures_as_502(client, auth_headers, monkeypatch):
+    from app.inference import InferenceError
+
+    def raise_error(**kw):
+        raise InferenceError("local inference server unreachable")
+
+    monkeypatch.setattr("app.agents.inference.call_local_model", raise_error)
+
+    agent = client.post("/v1/agents", json=agent_payload(risk_tier=0), headers=auth_headers).json()
+    response = client.post(f"/v1/agents/{agent['id']}/execute", json={"prompt": "hello"}, headers=auth_headers)
+
+    assert response.status_code == 502
+    assert "unreachable" in response.json()["detail"]
+
+
+def test_execute_approved_request_bypasses_the_gate_on_retry(client, auth_headers, admin_headers, monkeypatch):
+    monkeypatch.setattr(
+        "app.agents.inference.call_local_model",
+        lambda model, prompt, **kw: {"output": "done", "prompt_tokens": 1, "completion_tokens": 1},
+    )
+
+    agent = client.post("/v1/agents", json=agent_payload(risk_tier=2), headers=auth_headers).json()
+    gated = client.post(f"/v1/agents/{agent['id']}/execute", json={"prompt": "hello"}, headers=auth_headers).json()
+    approval_id = gated["approval_request_id"]
+
+    client.post(f"/v1/policy/approvals/{approval_id}/approve", json={"note": "ok"}, headers=admin_headers)
+
+    retried = client.post(
+        f"/v1/agents/{agent['id']}/execute",
+        json={"prompt": "hello", "approval_request_id": approval_id},
+        headers=auth_headers,
+    )
+    assert retried.status_code == 200
+    assert retried.json()["status"] == "completed"
+    assert retried.json()["output"] == "done"

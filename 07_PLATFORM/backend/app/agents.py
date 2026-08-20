@@ -1,9 +1,11 @@
+import os
+
 from fastapi import APIRouter, Depends, HTTPException, Query, Response, UploadFile
 from pydantic import ValidationError
 from sqlalchemy import select
 from sqlalchemy.orm import Session, joinedload
 
-from . import orm, schemas
+from . import inference, orm, schemas
 from .audit import log_audit_event
 from .auth import get_current_user
 from .csv_export import csv_response
@@ -168,6 +170,103 @@ def update_agent(
     db.commit()
     db.refresh(agent)
     return agent
+
+
+@router.post("/agents/{agent_id}/execute", response_model=schemas.AgentExecuteResponse)
+def execute_agent(
+    agent_id: int,
+    payload: schemas.AgentExecuteRequest,
+    db: Session = Depends(get_db),
+    current_user: str = Depends(get_current_user),
+    _audit: None = Depends(log_audit_event),
+):
+    """The one place an Agent Card actually does something, rather than just
+    describing what it's allowed to do. Every governance field on the card
+    is enforced for real here, not just displayed:
+
+    - active=False (the kill switch) blocks execution outright.
+    - approved_models restricts which model this specific card may call --
+      a free-text, comma-separated allowlist the card's own admin set.
+    - risk_tier is checked against the same REQUIRE_HUMAN_APPROVAL_TIER
+      policy gate /v1/route uses, via the same ApprovalRequest mechanism
+      and the existing /v1/policy/approvals review queue -- there is no
+      separate approval path for agents to fall through.
+    """
+    agent = db.get(orm.AgentCard, agent_id)
+    if agent is None:
+        raise HTTPException(status_code=404, detail="Agent not found")
+    if not agent.active:
+        raise HTTPException(status_code=409, detail="This agent's kill switch is engaged -- it cannot execute")
+
+    approved_models = [m.strip() for m in agent.approved_models.split(",") if m.strip()]
+    if not approved_models:
+        raise HTTPException(status_code=422, detail="This agent card has no approved_models configured")
+    model = payload.model or approved_models[0]
+    if model not in approved_models:
+        raise HTTPException(
+            status_code=422,
+            detail=f"'{model}' is not in this agent's approved_models ({', '.join(approved_models)})",
+        )
+
+    try:
+        approval_tier = int(os.getenv("REQUIRE_HUMAN_APPROVAL_TIER", "2"))
+    except ValueError:
+        # A misconfigured env var shouldn't 500 every execute call with an
+        # opaque traceback -- fail toward the safer default (gate more
+        # requests, not fewer) and say exactly what's wrong.
+        raise HTTPException(
+            status_code=500,
+            detail="Server misconfiguration: REQUIRE_HUMAN_APPROVAL_TIER is not a valid integer.",
+        )
+    task_type = f"agent-execute:{agent.id}"
+    if agent.risk_tier >= approval_tier:
+        bypassed = False
+        if payload.approval_request_id is not None:
+            existing = db.get(orm.ApprovalRequest, payload.approval_request_id)
+            if existing is not None and existing.status == "approved" and existing.task_type == task_type:
+                bypassed = True
+        if not bypassed:
+            approval = orm.ApprovalRequest(
+                task_type=task_type,
+                route="server",
+                risk_tier=agent.risk_tier,
+                input_chars=len(payload.prompt),
+                reason=f"Agent '{agent.name}' risk_tier {agent.risk_tier} requires human approval before executing.",
+            )
+            db.add(approval)
+            db.commit()
+            db.refresh(approval)
+            return schemas.AgentExecuteResponse(
+                status="pending_approval",
+                approval_request_id=approval.id,
+                reason=approval.reason,
+            )
+
+    try:
+        result = inference.call_local_model(model=model, prompt=payload.prompt)
+    except inference.InferenceError as exc:
+        raise HTTPException(status_code=502, detail=str(exc)) from exc
+
+    cost_per_1k = float(os.getenv("AI_SERVER_COST_PER_1K_CHARS_USD", "0.002"))
+    estimated_cost = round((len(payload.prompt) / 1000) * cost_per_1k, 6)
+    db.add(
+        orm.RouteCostLog(
+            task_type=task_type,
+            route="server",
+            input_chars=len(payload.prompt),
+            estimated_cost_usd=estimated_cost,
+        )
+    )
+    db.commit()
+
+    return schemas.AgentExecuteResponse(
+        status="completed",
+        output=result["output"],
+        model=model,
+        prompt_tokens=result["prompt_tokens"],
+        completion_tokens=result["completion_tokens"],
+        estimated_cost_usd=estimated_cost,
+    )
 
 
 @router.delete("/agents/{agent_id}", status_code=204)
