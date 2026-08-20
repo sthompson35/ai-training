@@ -4,7 +4,7 @@ from sqlalchemy.orm import Session
 
 from . import orm
 
-RESOLUTION_TIERS = "service_member_id, callsign_id, callsign, legacy alias"
+RESOLUTION_TIERS = "service_member_id, callsign_id, callsign, legacy_alias"
 
 
 def resolve_identifier(db: Session, identifier: str) -> orm.ServiceMember | None:

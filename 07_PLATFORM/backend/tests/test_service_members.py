@@ -639,6 +639,36 @@ def test_seed_admin_user_links_to_atlas_when_personnel_is_seeded(monkeypatch):
     db.close()
 
 
+def test_import_survives_a_ragged_row_with_extra_trailing_columns(client, admin_headers):
+    """csv.DictReader stashes fields past the header under a `None` key; an
+    earlier version of the shared parse_csv_rows() unpacked that straight
+    into `**row`, which raises TypeError (not the ValidationError callers
+    catch) and 500s the whole import instead of skipping just the bad row.
+    A well-formed row must still import even when a later row is ragged."""
+    header = "service_member_id,callsign_id,callsign,display_name,member_class,command_layer,current_role,legacy_alias"
+    good_row = "ATA-VICTOR-000,ATA-SM-VICTOR-001,@VICTOR,Priya Moreno,human_trooper,support,Support Technician,ATA-SM-023"
+    ragged_row = (
+        "ATA-MAPE-000,ATA-SM-MAPE-001,@MAPE,Dana Cole,human_trooper,field_operations,Field Lead,"
+        "ATA-SM-024,unexpected-extra-field"
+    )
+    csv_content = f"{header}\n{good_row}\n{ragged_row}\n"
+
+    response = client.post(
+        "/v1/service-members/import",
+        files={"file": ("members.csv", csv_content, "text/csv")},
+        headers=admin_headers,
+    )
+
+    assert response.status_code == 200
+    body = response.json()
+    assert body["created"] == 2
+    assert body["skipped"] == []
+
+    fetched = client.get("/v1/service-members/resolve", params={"identifier": "@MAPE"})
+    assert fetched.status_code == 200
+    assert fetched.json()["display_name"] == "Dana Cole"
+
+
 def test_seed_backfills_admin_link_on_an_already_provisioned_deployment(monkeypatch):
     """Simulates a Postgres volume that already had an `admin` user (e.g.
     provisioned before personnel seeding existed) — the retrofit link must
