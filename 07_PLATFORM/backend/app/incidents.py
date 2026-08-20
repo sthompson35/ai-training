@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends, HTTPException, Query, Response, UploadFile
 from pydantic import ValidationError
 from sqlalchemy import select
-from sqlalchemy.orm import Session
+from sqlalchemy.orm import Session, joinedload
 
 from . import orm, schemas
 from .audit import log_audit_event
@@ -18,7 +18,7 @@ router = APIRouter(prefix="/v1", tags=["incidents"])
 def _incident_query(
     status: str | None, severity: str | None, agent_id: int | None, release_id: int | None, q: str | None
 ):
-    stmt = select(orm.Incident).order_by(orm.Incident.id)
+    stmt = select(orm.Incident).options(joinedload(orm.Incident.owner_service_member)).order_by(orm.Incident.id)
     if status:
         stmt = stmt.where(orm.Incident.status == status)
     if severity:
@@ -66,7 +66,7 @@ def export_incidents(
 
 @router.get("/incidents/{incident_id}", response_model=schemas.IncidentOut)
 def get_incident(incident_id: int, db: Session = Depends(get_db)):
-    incident = db.get(orm.Incident, incident_id)
+    incident = db.get(orm.Incident, incident_id, options=[joinedload(orm.Incident.owner_service_member)])
     if incident is None:
         raise HTTPException(status_code=404, detail="Incident not found")
     return incident
@@ -85,7 +85,7 @@ def create_incident(
         raise HTTPException(status_code=422, detail="Unknown release_id")
     owner_member = resolve_identifier_or_422(db, payload.owner, "owner")
     data = payload.model_dump()
-    data["owner"] = owner_member.callsign
+    data.pop("owner", None)  # read-only derived property, never a constructor kwarg
     incident = orm.Incident(**data, owner_service_member_id=owner_member.service_member_id)
     db.add(incident)
     db.commit()
@@ -119,7 +119,7 @@ async def import_incidents(
             skipped.append({"row": i, "reason": f"owner '{payload.owner}' does not resolve to a known canonical identity"})
             continue
         data = payload.model_dump()
-        data["owner"] = owner_member.callsign
+        data.pop("owner", None)  # read-only derived property, never a constructor kwarg
         db.add(orm.Incident(**data, owner_service_member_id=owner_member.service_member_id))
         created += 1
     db.commit()
@@ -142,9 +142,10 @@ def update_incident(
     if payload.release_id is not None and db.get(orm.Release, payload.release_id) is None:
         raise HTTPException(status_code=422, detail="Unknown release_id")
     owner_member = resolve_identifier_or_422(db, payload.owner, "owner")
-    for field, value in payload.model_dump().items():
+    update_data = payload.model_dump()
+    update_data.pop("owner", None)  # read-only derived property, never a settable attribute
+    for field, value in update_data.items():
         setattr(incident, field, value)
-    incident.owner = owner_member.callsign
     incident.owner_service_member_id = owner_member.service_member_id
     db.commit()
     db.refresh(incident)

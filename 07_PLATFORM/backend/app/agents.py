@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends, HTTPException, Query, Response, UploadFile
 from pydantic import ValidationError
 from sqlalchemy import select
-from sqlalchemy.orm import Session
+from sqlalchemy.orm import Session, joinedload
 
 from . import orm, schemas
 from .audit import log_audit_event
@@ -16,14 +16,15 @@ from .pagination import paginate
 def _resolve_agent_identity_fields(db, payload: schemas.AgentCardBase, current_agent_id: int | None = None) -> dict:
     """Resolves `owner` (required) and the optional AI-agent identity link.
 
-    Returns the fields to merge into the ORM kwargs: canonical `owner` text,
-    `owner_service_member_id`, and `service_member_id` (None if not linking
+    Returns the fields to merge into the ORM kwargs: `owner_service_member_id`
+    (the resolved owner -- `owner` itself is a read-only derived property, no
+    longer a settable column) and `service_member_id` (None if not linking
     this card to a registry identity). `current_agent_id` should be passed on
     update so an agent keeping its own existing link isn't rejected as a
     conflict with itself.
     """
     owner_member = resolve_identifier_or_422(db, payload.owner, "owner")
-    fields = {"owner": owner_member.callsign, "owner_service_member_id": owner_member.service_member_id}
+    fields = {"owner_service_member_id": owner_member.service_member_id}
     if payload.service_member_id:
         link_member = resolve_identifier_or_422(db, payload.service_member_id, "service_member_id")
         already_linked = db.execute(
@@ -43,7 +44,7 @@ router = APIRouter(prefix="/v1", tags=["agents"])
 
 
 def _agent_query(q: str | None):
-    stmt = select(orm.AgentCard).order_by(orm.AgentCard.id)
+    stmt = select(orm.AgentCard).options(joinedload(orm.AgentCard.owner_service_member)).order_by(orm.AgentCard.id)
     if q:
         stmt = stmt.where(orm.AgentCard.name.ilike(f"%{q}%"))
     return stmt
@@ -72,7 +73,7 @@ def export_agents(q: str | None = None, db: Session = Depends(get_db)):
 
 @router.get("/agents/{agent_id}", response_model=schemas.AgentCardOut)
 def get_agent(agent_id: int, db: Session = Depends(get_db)):
-    agent = db.get(orm.AgentCard, agent_id)
+    agent = db.get(orm.AgentCard, agent_id, options=[joinedload(orm.AgentCard.owner_service_member)])
     if agent is None:
         raise HTTPException(status_code=404, detail="Agent not found")
     return agent
@@ -90,6 +91,7 @@ def create_agent(
         raise HTTPException(status_code=409, detail="An agent with this name already exists")
     identity_fields = _resolve_agent_identity_fields(db, payload)
     data = payload.model_dump()
+    data.pop("owner", None)  # read-only derived property, never a constructor kwarg
     data.update(identity_fields)
     agent = orm.AgentCard(**data)
     db.add(agent)
@@ -122,7 +124,7 @@ async def import_agents(
             skipped.append({"row": i, "reason": f"owner '{payload.owner}' does not resolve to a known canonical identity"})
             continue
         data = payload.model_dump()
-        data["owner"] = owner_member.callsign
+        data.pop("owner", None)  # read-only derived property, never a constructor kwarg
         data["owner_service_member_id"] = owner_member.service_member_id
         link_member = None
         if payload.service_member_id:
@@ -157,7 +159,9 @@ def update_agent(
     if agent is None:
         raise HTTPException(status_code=404, detail="Agent not found")
     identity_fields = _resolve_agent_identity_fields(db, payload, current_agent_id=agent_id)
-    for field, value in payload.model_dump().items():
+    update_data = payload.model_dump()
+    update_data.pop("owner", None)  # read-only derived property, never a settable attribute
+    for field, value in update_data.items():
         setattr(agent, field, value)
     for field, value in identity_fields.items():
         setattr(agent, field, value)
