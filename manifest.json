@@ -1,12 +1,12 @@
 {
   "package": "AI Training Academy Institutional Standard",
   "version": "2.4.0",
-  "created_utc": "2026-08-20T01:52:30.584588+00:00",
+  "created_utc": "2026-08-20T10:37:38.116819+00:00",
   "files": [
     {
       "path": ".env.example",
-      "bytes": 1743,
-      "sha256": "d9118ded28e285ade6e50a2cbf9850f2a208cc5d5449259b96cf60b4fb30d566"
+      "bytes": 2309,
+      "sha256": "d34131171d23bf0cb3bd5718b21cba856c7a530a179dc06b374a50515ee0f4a1"
     },
     {
       "path": ".gitattributes",
@@ -40,8 +40,8 @@
     },
     {
       "path": ".gitignore",
-      "bytes": 947,
-      "sha256": "2195264272105be3947d4c2fc855a9962b04dfc7b2b44cd4c3c632e728f2e177"
+      "bytes": 1163,
+      "sha256": "327136dfd3508068b0632082da4822f4abddd789e50f1afc633cce45737eaf0b"
     },
     {
       "path": "00_SOURCE/AI_TRAINING_SOURCE.pdf",
@@ -170,8 +170,8 @@
     },
     {
       "path": "07_PLATFORM/backend/app/agents.py",
-      "bytes": 8247,
-      "sha256": "a5a3635bf7314237cd51c762a4c5f83d15ccc5a30edbd333a25dbea76499b456"
+      "bytes": 11975,
+      "sha256": "3bbb42342c77393f761980bbc5fe0257c6fa9a90cf64526cf739c0e434737606"
     },
     {
       "path": "07_PLATFORM/backend/app/analytics.py",
@@ -234,19 +234,24 @@
       "sha256": "8461f47a9f79300024f0f4c551d289d95a83593cfcf30107e808179d04c383bd"
     },
     {
+      "path": "07_PLATFORM/backend/app/inference.py",
+      "bytes": 2072,
+      "sha256": "aab11af9d4731a22274b07516ee2ca1cd6f4690ecb5f09a4adeeae2c21d9d506"
+    },
+    {
       "path": "07_PLATFORM/backend/app/knowledge_base.py",
       "bytes": 9215,
       "sha256": "d58076f89af95bf9d20969bfc8561fd06f2b298f76061b085a499b2a0d61df54"
     },
     {
       "path": "07_PLATFORM/backend/app/main.py",
-      "bytes": 16090,
-      "sha256": "857f6c42c9d82068951e47b60c4bb400afb7f0e19a365b496fda8ad083025d4c"
+      "bytes": 17050,
+      "sha256": "3ace50b54652f6cefc2336ab1738de69d15ef8ccd2be96d838414aac5ceece8d"
     },
     {
       "path": "07_PLATFORM/backend/app/models.py",
-      "bytes": 952,
-      "sha256": "f961a606324f8fa1db75c38b586435f1457227257ce8770b18c58389891b5ba4"
+      "bytes": 1593,
+      "sha256": "3b95701b1a04c48785bf46d01f67c95bf921be4696928180e58606463647ce3a"
     },
     {
       "path": "07_PLATFORM/backend/app/orm.py",
@@ -280,8 +285,8 @@
     },
     {
       "path": "07_PLATFORM/backend/app/schemas.py",
-      "bytes": 14910,
-      "sha256": "5eb70971421af6aa8f908c12ae4e1ef17f2d8dd301d30b6b29084340d60fa56f"
+      "bytes": 15672,
+      "sha256": "9f5ec95dec29afc66825c1b22efcb1f488963368d36a7dfd004bf5eb2de2de21"
     },
     {
       "path": "07_PLATFORM/backend/app/search.py",
@@ -330,8 +335,8 @@
     },
     {
       "path": "07_PLATFORM/backend/tests/test_agents.py",
-      "bytes": 5260,
-      "sha256": "41f85df0f7f9b1dfab656281873083a5d5d30c8a542a52adbfe8162f04c7c93f"
+      "bytes": 9464,
+      "sha256": "2bc72a08e141f448e2b3ba16164515165d96f461b279a87cd5467f2b392c7c22"
     },
     {
       "path": "07_PLATFORM/backend/tests/test_analytics.py",
@@ -380,8 +385,8 @@
     },
     {
       "path": "07_PLATFORM/backend/tests/test_policy.py",
-      "bytes": 4859,
-      "sha256": "6693991a7a4b726408e2d9218b1026ca61f6b45fbc9d76f6ad984a3691a9e41d"
+      "bytes": 6788,
+      "sha256": "117c94c02d15011817db31d52de049aac04ed876f34d5f2d5628ec555d0358ea"
     },
     {
       "path": "07_PLATFORM/backend/tests/test_production_identity_canary.py",
@@ -760,8 +765,8 @@
     },
     {
       "path": "07_PLATFORM/frontend/src/lib/api.ts",
-      "bytes": 35011,
-      "sha256": "a9a4aac5b485c7bd687023ccf093f31ad96013cddaa64c1eac614b0a3474b004"
+      "bytes": 35614,
+      "sha256": "2751a09f5ee8fde7c9b1da3ae2b8bf382a2b3dc8acd487fdc765c34d34286f0b"
     },
     {
       "path": "07_PLATFORM/frontend/src/lib/hybridRouter.js",
@@ -775,13 +780,13 @@
     },
     {
       "path": "07_PLATFORM/frontend/src/pages/AgentDetailPage.test.tsx",
-      "bytes": 3732,
-      "sha256": "01280e6945e26d86e9ddab822f60390b1edaa902b4531d2a4a7c87973eb90d98"
+      "bytes": 6441,
+      "sha256": "d1f91049235820071dc98f552d32efab65da12cf440df18b1aad0189a9fb4e0b"
     },
     {
       "path": "07_PLATFORM/frontend/src/pages/AgentDetailPage.tsx",
-      "bytes": 3427,
-      "sha256": "090a8d3993cf90962e0f9b739e4ef7d69ccd9b56f18cd71156f0af4128f235f1"
+      "bytes": 7188,
+      "sha256": "625178ee845c1c09bfbf77bb74ee46542d06e7bd036542321b94a2cd9f68abc3"
     },
     {
       "path": "07_PLATFORM/frontend/src/pages/AgentsPage.test.tsx",
@@ -1050,8 +1055,8 @@
     },
     {
       "path": "08_INFRASTRUCTURE/scripts/generate_manifest.py",
-      "bytes": 3738,
-      "sha256": "da1c3d0e0584537c1c89139f6e3cd890901fa82469a36a68721c3871cb6678ba"
+      "bytes": 3751,
+      "sha256": "230ba5a6db2b2cbd46c9087eef38343dedf0196c7d6f2e023c1a0346d2fded3b"
     },
     {
       "path": "08_INFRASTRUCTURE/scripts/generate_release_status.py",
@@ -1225,8 +1230,8 @@
     },
     {
       "path": "docker-compose.yml",
-      "bytes": 2006,
-      "sha256": "ba636ac9a66ab5701c26ad663db07db49cbad032a298992ba552a37b9416f682"
+      "bytes": 2339,
+      "sha256": "fc8a0f328e4bb23041e283a2f7e035a976ae022c28cf050956480475ad04c4dc"
     }
   ]
 }

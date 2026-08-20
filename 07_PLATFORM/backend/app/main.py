@@ -2,11 +2,11 @@ import os
 import uuid
 from contextlib import asynccontextmanager
 
-from fastapi import Depends, FastAPI, Header
+from fastapi import Depends, FastAPI, Header, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy import text
 from sqlalchemy.orm import Session
-from . import orm, seed
+from . import inference, orm, seed
 from .agents import router as agents_router
 from .analytics import router as analytics_router
 from .audit import router as audit_router
@@ -347,6 +347,22 @@ def route_ai_request(
             decision.estimated_cost_usd = 0.0
             decision.approval_request_id = approval.id
             return decision
+
+    # Real execution is opt-in (payload.prompt) and only ever happens for the
+    # "server" route -- "client" means on-device execution in the caller's
+    # own browser/app, which this backend has no way to perform on their
+    # behalf, so a prompt supplied alongside a client/unavailable decision is
+    # silently not executed rather than routed somewhere the decision didn't
+    # actually select.
+    if payload.prompt is not None and decision.route == RouteDecision.server:
+        model = os.getenv("AI_SERVER_MODEL", "model_placeholder")
+        try:
+            result = inference.call_local_model(model=model, prompt=payload.prompt)
+        except inference.InferenceError as exc:
+            raise HTTPException(status_code=502, detail=str(exc)) from exc
+        decision.output = result["output"]
+        decision.prompt_tokens = result["prompt_tokens"]
+        decision.completion_tokens = result["completion_tokens"]
 
     db.add(
         orm.RouteCostLog(

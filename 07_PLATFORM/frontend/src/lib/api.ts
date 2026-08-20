@@ -516,6 +516,29 @@ export const updateAgent = (agentId: number, payload: AgentCardInput) =>
 export const deleteAgent = (agentId: number) =>
   request<void>(`/v1/agents/${agentId}`, { method: "DELETE" });
 
+export type AgentExecuteInput = {
+  prompt: string;
+  model?: string;
+  approval_request_id?: number;
+};
+
+export type AgentExecuteResult = {
+  status: "completed" | "pending_approval";
+  output: string | null;
+  model: string | null;
+  prompt_tokens: number | null;
+  completion_tokens: number | null;
+  estimated_cost_usd: number;
+  approval_request_id: number | null;
+  reason: string | null;
+};
+
+export const executeAgent = (agentId: number, payload: AgentExecuteInput) =>
+  request<AgentExecuteResult>(`/v1/agents/${agentId}/execute`, {
+    method: "POST",
+    body: JSON.stringify(payload),
+  });
+
 export type IncidentSeverity = "low" | "medium" | "high" | "critical";
 export type IncidentStatus = "detected" | "contained" | "investigating" | "corrected" | "resolved";
 export type CapaStatus = "open" | "in_progress" | "verified" | "closed";

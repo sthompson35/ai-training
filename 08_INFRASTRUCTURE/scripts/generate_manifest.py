@@ -44,7 +44,7 @@ EXCLUDED_DIR_NAMES = {
     "obj",
 }
 EXCLUDED_PATH_PREFIXES = ("07_PLATFORM/frontend/e2e/.auth",)
-EXCLUDED_FILENAMES = {".env", ".DS_Store", "manifest.json"}
+EXCLUDED_FILENAMES = {".env", ".DS_Store", "manifest.json", ".mcp.json"}
 EXCLUDED_SUFFIXES = {".pyc", ".pyo", ".log", ".sqlite", ".db", ".dll", ".pdb", ".exe", ".tsbuildinfo"}
 
 
