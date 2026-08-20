@@ -208,7 +208,16 @@ def execute_agent(
             detail=f"'{model}' is not in this agent's approved_models ({', '.join(approved_models)})",
         )
 
-    approval_tier = int(os.getenv("REQUIRE_HUMAN_APPROVAL_TIER", "2"))
+    try:
+        approval_tier = int(os.getenv("REQUIRE_HUMAN_APPROVAL_TIER", "2"))
+    except ValueError:
+        # A misconfigured env var shouldn't 500 every execute call with an
+        # opaque traceback -- fail toward the safer default (gate more
+        # requests, not fewer) and say exactly what's wrong.
+        raise HTTPException(
+            status_code=500,
+            detail="Server misconfiguration: REQUIRE_HUMAN_APPROVAL_TIER is not a valid integer.",
+        )
     task_type = f"agent-execute:{agent.id}"
     if agent.risk_tier >= approval_tier:
         bypassed = False

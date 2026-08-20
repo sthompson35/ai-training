@@ -20,9 +20,18 @@ class InferenceError(Exception):
     server itself is fine, it's the upstream model call that failed."""
 
 
+def _env_float(name: str, default: float) -> float:
+    """Operator-controlled env vars still get typo'd -- a clear fallback
+    beats a raw ValueError/500 the caller has no way to act on."""
+    try:
+        return float(os.getenv(name, str(default)))
+    except (TypeError, ValueError):
+        return default
+
+
 def call_local_model(model: str, prompt: str, max_tokens: int = 512) -> dict:
     base_url = os.getenv("LOCAL_INFERENCE_BASE_URL", "http://host.docker.internal:1234/v1")
-    timeout = float(os.getenv("AI_REQUEST_TIMEOUT_SECONDS", "30"))
+    timeout = _env_float("AI_REQUEST_TIMEOUT_SECONDS", 30.0)
     try:
         response = httpx.post(
             f"{base_url.rstrip('/')}/chat/completions",
@@ -42,7 +51,14 @@ def call_local_model(model: str, prompt: str, max_tokens: int = 512) -> dict:
     try:
         content = data["choices"][0]["message"]["content"]
     except (KeyError, IndexError) as exc:
-        raise InferenceError(f"Local inference server returned an unexpected response shape: {data}") from exc
+        # Report the shape of what came back, not its contents -- this
+        # message reaches API clients verbatim via the 502 detail, and a
+        # malformed response could in principle contain large or sensitive
+        # model output that has no business being echoed back.
+        raise InferenceError(
+            f"Local inference server returned an unexpected response shape "
+            f"(top-level keys: {sorted(data.keys()) if isinstance(data, dict) else type(data).__name__})"
+        ) from exc
 
     usage = data.get("usage", {})
     return {

@@ -221,6 +221,16 @@ def test_execute_low_risk_calls_the_local_model_and_defaults_to_the_first_approv
     assert body["estimated_cost_usd"] > 0
 
 
+def test_execute_reports_a_misconfigured_approval_tier_clearly(client, auth_headers, monkeypatch):
+    monkeypatch.setenv("REQUIRE_HUMAN_APPROVAL_TIER", "not-a-number")
+    agent = client.post("/v1/agents", json=agent_payload(risk_tier=0), headers=auth_headers).json()
+
+    response = client.post(f"/v1/agents/{agent['id']}/execute", json={"prompt": "hello"}, headers=auth_headers)
+
+    assert response.status_code == 500
+    assert "REQUIRE_HUMAN_APPROVAL_TIER" in response.json()["detail"]
+
+
 def test_execute_surfaces_inference_failures_as_502(client, auth_headers, monkeypatch):
     from app.inference import InferenceError
 
