@@ -250,7 +250,7 @@ jobs:
           }
           if (-not $ok) {
             Write-Error ("Deployed stack never became healthy at http://127.0.0.1:8080/api/health -- " +
-              "last status code: {0}, last error: {1}" -f ($lastStatusCode ?? "n/a"), ($lastErrorMessage ?? "n/a"))
+              "last status code: {0}, last error: {1}, attempts: {2}" -f ($lastStatusCode ?? "n/a"), ($lastErrorMessage ?? "n/a"), $i)
             exit 1
           }
           Write-Output "Deployed stack is healthy."
