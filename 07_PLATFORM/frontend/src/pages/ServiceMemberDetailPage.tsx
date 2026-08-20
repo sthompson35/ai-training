@@ -204,6 +204,15 @@ export function ServiceMemberDetailPage(): React.ReactElement {
       </p>
       <h1>{isNew ? "New Service Member" : member!.display_name}</h1>
 
+      {/* Shared by both the create form and the role-change form below --
+          only one of which is ever mounted at a time (isNew), but a single
+          instance avoids two elements sharing this id regardless. */}
+      <datalist id="command-layer-options">
+        {COMMAND_LAYERS.map((cl) => (
+          <option key={cl} value={cl} />
+        ))}
+      </datalist>
+
       {isNew ? (
         <form onSubmit={handleCreate} style={{ display: "grid", gap: 8, maxWidth: 480 }}>
           <label>
@@ -260,11 +269,6 @@ export function ServiceMemberDetailPage(): React.ReactElement {
               value={createValues.command_layer}
               onChange={(e) => setCreateValues({ ...createValues, command_layer: e.target.value })}
             />
-            <datalist id="command-layer-options">
-              {COMMAND_LAYERS.map((cl) => (
-                <option key={cl} value={cl} />
-              ))}
-            </datalist>
           </label>
           <label>
             Current role
@@ -421,11 +425,6 @@ export function ServiceMemberDetailPage(): React.ReactElement {
                   value={roleChange.new_command_layer}
                   onChange={(e) => setRoleChange({ ...roleChange, new_command_layer: e.target.value })}
                 />
-                <datalist id="command-layer-options">
-                  {COMMAND_LAYERS.map((cl) => (
-                    <option key={cl} value={cl} />
-                  ))}
-                </datalist>
               </label>
               <label>
                 Reason (optional)
