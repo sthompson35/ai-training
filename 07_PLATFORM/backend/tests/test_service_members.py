@@ -575,16 +575,28 @@ def test_user_identifier_rejects_double_linking(client, admin_headers):
     assert second.status_code == 409
 
 
-def test_production_seed_path_ships_the_real_r2_roster():
-    """The default (unpatched) SEED_PERSONNEL_DIR is 11_PERSONNEL/ — it now
-    ships the real, sourced 66-identity roster from the AI Training Academy
-    R2.0 Canonical Identity, Role Governance & Production Control Manual (see
+def test_production_seed_path_ships_the_real_r2_roster(monkeypatch):
+    """11_PERSONNEL/ (the repo-root directory) now ships the real, sourced
+    66-identity roster from the AI Training Academy R2.0 Canonical Identity,
+    Role Governance & Production Control Manual (see
     11_PERSONNEL/Personnel_Roster.md), not synthetic data, and is no longer
     empty. Every seeded row still starts production_verification_state ==
     "unverified" regardless of source (seeding has no acting admin/verifier —
-    matches the source manual's own G1-G8 HOLD disposition)."""
-    roster_csv = seed.SEED_PERSONNEL_DIR / "personnel_roster.csv"
-    assert roster_csv.exists(), "11_PERSONNEL/personnel_roster.csv must exist — see Personnel_Roster.md"
+    matches the source manual's own G1-G8 HOLD disposition).
+
+    seed.SEED_PERSONNEL_DIR itself is only 11_PERSONNEL/ inside the deployed
+    docker container, where docker-compose.yml volume-mounts
+    ./11_PERSONNEL:/app/seed_personnel:ro -- on a bare checkout (e.g. this
+    test running directly on a CI runner) it's a directory that doesn't
+    exist at all, so the real repo-root path is resolved explicitly here
+    instead of trusting SEED_PERSONNEL_DIR to already point at it.
+    """
+    repo_root = Path(__file__).resolve().parents[3]
+    real_roster_dir = repo_root / "11_PERSONNEL"
+    assert (real_roster_dir / "personnel_roster.csv").exists(), (
+        "11_PERSONNEL/personnel_roster.csv must exist — see Personnel_Roster.md"
+    )
+    monkeypatch.setattr(seed, "SEED_PERSONNEL_DIR", real_roster_dir)
 
     engine = create_engine(
         "sqlite:///:memory:",
