@@ -575,15 +575,37 @@ def test_user_identifier_rejects_double_linking(client, admin_headers):
     assert second.status_code == 409
 
 
-def test_production_seed_path_ships_no_synthetic_data():
-    """The default (unpatched) SEED_PERSONNEL_DIR is 11_PERSONNEL/ — it must
-    not contain the synthetic roster. service_members starts empty on a fresh
-    deployment, same as agent_cards/incidents/releases, until a real governed
-    roster is dropped in or imported via the API."""
-    assert not (seed.SEED_PERSONNEL_DIR / "personnel_roster.csv").exists(), (
-        "11_PERSONNEL/ must ship empty — synthetic test data belongs in "
-        "tests/fixtures/synthetic_personnel/ instead"
+def test_production_seed_path_ships_the_real_r2_roster(monkeypatch):
+    """11_PERSONNEL/ (the repo-root directory) now ships the real, sourced
+    66-identity roster from the AI Training Academy R2.0 Canonical Identity,
+    Role Governance & Production Control Manual (see
+    11_PERSONNEL/Personnel_Roster.md), not synthetic data, and is no longer
+    empty. Every seeded row still starts production_verification_state ==
+    "unverified" regardless of source (seeding has no acting admin/verifier —
+    matches the source manual's own G1-G8 HOLD disposition).
+
+    seed.SEED_PERSONNEL_DIR already resolves correctly to the real roster
+    inside the deployed docker container (docker-compose.yml volume-mounts
+    ./11_PERSONNEL:/app/seed_personnel:ro), but on a bare checkout -- e.g.
+    CI's validate job, which runs pytest directly with no Docker involved --
+    it's a directory that doesn't exist at all. A fixed ancestor-count
+    (parents[N]) isn't safe here either: it'd assume the on-disk layout
+    always mirrors the git repo's directory depth, which Docker's own
+    backend-only bind mount already violates. So this checks the unpatched
+    SEED_PERSONNEL_DIR first, and only if that comes up empty, walks upward
+    from this test file looking for a real 11_PERSONNEL/ sibling directory.
+    """
+    real_roster_dir = seed.SEED_PERSONNEL_DIR
+    if not (real_roster_dir / "personnel_roster.csv").exists():
+        for ancestor in Path(__file__).resolve().parents:
+            candidate = ancestor / "11_PERSONNEL"
+            if (candidate / "personnel_roster.csv").exists():
+                real_roster_dir = candidate
+                break
+    assert (real_roster_dir / "personnel_roster.csv").exists(), (
+        "11_PERSONNEL/personnel_roster.csv must exist — see Personnel_Roster.md"
     )
+    monkeypatch.setattr(seed, "SEED_PERSONNEL_DIR", real_roster_dir)
 
     engine = create_engine(
         "sqlite:///:memory:",
@@ -596,9 +618,29 @@ def test_production_seed_path_ships_no_synthetic_data():
     db = Session()
     seed.seed_if_empty(db)
 
-    assert db.execute(select(orm.ServiceMember)).scalars().all() == []
+    members = db.execute(select(orm.ServiceMember)).scalars().all()
+    assert len(members) == 66
+    assert all(m.production_verification_state == "unverified" for m in members)
+    assert all("Canonical Identity, Role Governance" in (m.source_lineage or "") for m in members)
+
+    victor = db.get(orm.ServiceMember, "ATA-VICTOR-000")
+    trooper_victor = db.get(orm.ServiceMember, "ATA-TROOPER_VICTOR-000")
+    assert victor is not None
+    assert trooper_victor is not None
+    assert victor.service_member_id != trooper_victor.service_member_id
+
+    cindy = db.get(orm.ServiceMember, "ATA-CINDY-000")
+    assert cindy is not None
+    assert cindy.role_version == 2
+    assert "People Operations" in cindy.current_role
+
+    mape = db.get(orm.ServiceMember, "ATA-MAPE-000")
+    assert mape is not None
+    assert mape.role_version == 2
+    assert "Program Management" in mape.current_role
+
     admin = db.execute(select(orm.User).where(orm.User.username == "admin")).scalar_one()
-    assert admin.service_member_id is None
+    assert admin.service_member_id == "ATA-ATLAS-000"
     db.close()
 
 

@@ -38,6 +38,7 @@ const fixtureAgent = {
   approval_status: "approved" as const,
   evaluation_set: "eval-v1",
   last_review: "2026-01-01",
+  system_prompt: null,
 };
 
 function renderPage() {
@@ -125,7 +126,7 @@ describe("AgentDetailPage", () => {
     renderPage();
     await screen.findByRole("heading", { name: "Support Triage Agent" });
 
-    await user.type(screen.getByLabelText(/prompt/i), "Triage this ticket");
+    await user.type(screen.getByLabelText(/^prompt$/i), "Triage this ticket");
     await user.click(screen.getByRole("button", { name: /^run$/i }));
 
     expect(executeAgent).toHaveBeenCalledWith(1, {
@@ -151,7 +152,7 @@ describe("AgentDetailPage", () => {
     renderPage();
     await screen.findByRole("heading", { name: "Support Triage Agent" });
 
-    await user.type(screen.getByLabelText(/prompt/i), "Do something risky");
+    await user.type(screen.getByLabelText(/^prompt$/i), "Do something risky");
     await user.click(screen.getByRole("button", { name: /^run$/i }));
 
     expect(await screen.findByText(/review in the approval queue/i)).toBeInTheDocument();
@@ -181,6 +182,6 @@ describe("AgentDetailPage", () => {
     await screen.findByRole("heading", { name: "Support Triage Agent" });
 
     expect(screen.getByText(/kill switch is engaged/i)).toBeInTheDocument();
-    expect(screen.queryByLabelText(/prompt/i)).not.toBeInTheDocument();
+    expect(screen.queryByLabelText(/^prompt$/i)).not.toBeInTheDocument();
   });
 });

@@ -233,7 +233,7 @@ def change_role(
         db,
         member,
         new_role=payload.new_role,
-        new_command_layer=payload.new_command_layer.value,
+        new_command_layer=payload.new_command_layer,
         changed_by_id=actor,
         reason=payload.reason,
     )

@@ -192,14 +192,6 @@ class MemberClass(str, Enum):
     ai_agent = "ai_agent"
 
 
-class CommandLayer(str, Enum):
-    command = "command"
-    field_operations = "field_operations"
-    support = "support"
-    training = "training"
-    executive = "executive"
-
-
 class LifecycleState(str, Enum):
     active = "active"
     inactive = "inactive"
@@ -222,7 +214,7 @@ class ProductionVerificationState(str, Enum):
 class ServiceMemberBase(BaseModel):
     display_name: str = Field(min_length=1, max_length=200)
     member_class: MemberClass
-    command_layer: CommandLayer
+    command_layer: str = Field(min_length=1, max_length=120)
     current_role: str = Field(min_length=1, max_length=120)
     lifecycle_state: LifecycleState = LifecycleState.active
     readiness_state: ReadinessState = ReadinessState.ready
@@ -271,7 +263,7 @@ class RoleAssignmentHistoryOut(BaseModel):
 
 class RoleChangeRequest(BaseModel):
     new_role: str = Field(min_length=1, max_length=120)
-    new_command_layer: CommandLayer
+    new_command_layer: str = Field(min_length=1, max_length=120)
     reason: str | None = Field(default=None, max_length=500)
 
 
@@ -338,6 +330,11 @@ class AgentCardBase(BaseModel):
     approval_status: ApprovalStatus = ApprovalStatus.draft
     evaluation_set: str
     last_review: str = Field(min_length=1, max_length=20)
+    # Optional: the governed prompt this agent runs with when executed via
+    # /v1/agents/{id}/execute (see inference.call_local_model). Governance
+    # fields above (approved_models, budgets, kill_switch, ...) still gate
+    # execution regardless of what this prompt says.
+    system_prompt: str | None = Field(default=None, max_length=20_000)
 
 
 class AgentCardCreate(AgentCardBase):

@@ -499,6 +499,7 @@ export type AgentCard = {
   approval_status: ApprovalStatus;
   evaluation_set: string;
   last_review: string;
+  system_prompt: string | null;
 };
 
 export type AgentCardInput = Omit<AgentCard, "id" | "owner_service_member_id">;
@@ -779,14 +780,46 @@ export type MemberClass = "human_trooper" | "ai_agent";
 
 export const MEMBER_CLASSES: MemberClass[] = ["human_trooper", "ai_agent"];
 
-export type CommandLayer = "command" | "field_operations" | "support" | "training" | "executive";
+// Free text (backend enforces only min/max length): the canonical R2 roster's
+// command_layer values are actual department names (e.g. "Technology Command",
+// "Academy Growth Operations"), not a fixed enum. This list is suggestions for
+// a <datalist>, not an exhaustive/enforced set.
+export type CommandLayer = string;
 
 export const COMMAND_LAYERS: CommandLayer[] = [
-  "command",
-  "field_operations",
-  "support",
-  "training",
-  "executive",
+  "Academy Business Services",
+  "Academy Support Operations",
+  "Academy Growth Operations",
+  "Academy Sales Operations",
+  "Academy Social Operations",
+  "Academy Writing Operations",
+  "Academy People Operations",
+  "Academy Program Management",
+  "Strategic Command",
+  "Executive Command",
+  "AI Command",
+  "Operations Command",
+  "Independent Assurance",
+  "Knowledge Command",
+  "Academy Command",
+  "Real Estate Operations",
+  "Capital Operations",
+  "Legal & Compliance",
+  "Finance & Governance",
+  "Technology Command",
+  "Data Command",
+  "Automation Command",
+  "Security Command",
+  "Telemetry & Analytics",
+  "Web3 Command",
+  "Brand Command",
+  "Growth Command",
+  "Commerce Command",
+  "Creative Command",
+  "Media Command",
+  "Logistics Command",
+  "Recon Command",
+  "Continuity & R&D",
 ];
 
 export type LifecycleState = "active" | "inactive" | "discharged";
